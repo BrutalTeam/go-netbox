@@ -641,7 +641,7 @@ func (o *Cluster) UnmarshalJSON(data []byte) (err error) {
 		"created",
 		"last_updated",
 		//"device_count",
-		"virtualmachine_count",
+		//"virtualmachine_count",
 	}
 
 	allProperties := make(map[string]interface{})

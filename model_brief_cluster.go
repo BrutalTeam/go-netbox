@@ -240,7 +240,7 @@ func (o *BriefCluster) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"name",
-		"virtualmachine_count",
+		//"virtualmachine_count",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -295,7 +295,7 @@ func (o *BriefPlatform) UnmarshalJSON(data []byte) (err error) {
 		"name",
 		"slug",
 		//"device_count",
-		"virtualmachine_count",
+		//"virtualmachine_count",
 	}
 
 	allProperties := make(map[string]interface{})

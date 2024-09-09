@@ -732,7 +732,7 @@ func (o *Tenant) UnmarshalJSON(data []byte) (err error) {
 		"prefix_count",
 		"rack_count",
 		"site_count",
-		"virtualmachine_count",
+		//"virtualmachine_count",
 		"vlan_count",
 		"vrf_count",
 		"cluster_count",
