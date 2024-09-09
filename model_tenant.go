@@ -62,7 +62,7 @@ func NewTenant(id int32, url string, display string, name string, slug string, c
 	this.Created = created
 	this.LastUpdated = lastUpdated
 	this.CircuitCount = circuitCount
-	this.DeviceCount = deviceCount
+	this.DeviceCount.Set(&deviceCount)
 	this.IpaddressCount = ipaddressCount
 	this.PrefixCount = prefixCount
 	this.RackCount = rackCount
@@ -451,12 +451,11 @@ func (o *Tenant) SetCircuitCount(v int64) {
 
 // GetDeviceCount returns the DeviceCount field value
 func (o *Tenant) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value
@@ -465,12 +464,12 @@ func (o *Tenant) GetDeviceCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
 // SetDeviceCount sets field value
 func (o *Tenant) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
 }
 
 // GetIpaddressCount returns the IpaddressCount field value

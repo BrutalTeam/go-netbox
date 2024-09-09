@@ -38,7 +38,7 @@ type Location struct {
 	Created              NullableTime           `json:"created"`
 	LastUpdated          NullableTime           `json:"last_updated"`
 	RackCount            int32                  `json:"rack_count"`
-	DeviceCount          NullableInt64   `json:"device_count,omitempty"`
+	DeviceCount          NullableInt32   `json:"device_count,omitempty"`
 	Depth                int32                  `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
@@ -60,7 +60,7 @@ func NewLocation(id int32, url string, display string, name string, slug string,
 	this.Created = created
 	this.LastUpdated = lastUpdated
 	this.RackCount = rackCount
-	this.DeviceCount = deviceCount
+	this.DeviceCount.Set(&deviceCount)
 	this.Depth = depth
 	return &this
 }
@@ -541,12 +541,11 @@ func (o *Location) SetRackCount(v int32) {
 
 // GetDeviceCount returns the DeviceCount field value
 func (o *Location) GetDeviceCount() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int32
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value
@@ -555,12 +554,12 @@ func (o *Location) GetDeviceCountOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
 // SetDeviceCount sets field value
 func (o *Location) SetDeviceCount(v int32) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
 }
 
 // GetDepth returns the Depth field value

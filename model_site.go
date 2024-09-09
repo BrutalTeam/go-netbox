@@ -74,7 +74,7 @@ func NewSite(id int32, url string, display string, name string, slug string, cre
 	this.Created = created
 	this.LastUpdated = lastUpdated
 	this.CircuitCount = circuitCount
-	this.DeviceCount = deviceCount
+	this.DeviceCount.Set(&deviceCount)
 	this.PrefixCount = prefixCount
 	this.RackCount = rackCount
 	this.VirtualmachineCount = virtualmachineCount
@@ -834,12 +834,11 @@ func (o *Site) SetCircuitCount(v int64) {
 
 // GetDeviceCount returns the DeviceCount field value
 func (o *Site) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value
@@ -848,12 +847,12 @@ func (o *Site) GetDeviceCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
 // SetDeviceCount sets field value
 func (o *Site) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
 }
 
 // GetPrefixCount returns the PrefixCount field value

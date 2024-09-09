@@ -56,7 +56,7 @@ func NewCluster(id int32, url string, display string, name string, type_ BriefCl
 	this.Type = type_
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.DeviceCount = deviceCount
+	this.DeviceCount.Set(&deviceCount)
 	this.VirtualmachineCount = virtualmachineCount
 	return &this
 }
@@ -532,12 +532,11 @@ func (o *Cluster) SetLastUpdated(v time.Time) {
 
 // GetDeviceCount returns the DeviceCount field value
 func (o *Cluster) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value
@@ -546,12 +545,12 @@ func (o *Cluster) GetDeviceCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
 // SetDeviceCount sets field value
 func (o *Cluster) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
 }
 
 // GetVirtualmachineCount returns the VirtualmachineCount field value

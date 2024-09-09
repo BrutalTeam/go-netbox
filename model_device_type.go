@@ -79,7 +79,7 @@ func NewDeviceType(id int32, url string, display string, manufacturer BriefManuf
 	this.UHeight = &uHeight
 	this.Created = created
 	this.LastUpdated = lastUpdated
-	this.DeviceCount = deviceCount
+	this.DeviceCount.Set(&deviceCount)
 	this.ConsolePortTemplateCount = consolePortTemplateCount
 	this.ConsoleServerPortTemplateCount = consoleServerPortTemplateCount
 	this.PowerPortTemplateCount = powerPortTemplateCount
@@ -858,12 +858,11 @@ func (o *DeviceType) SetLastUpdated(v time.Time) {
 
 // GetDeviceCount returns the DeviceCount field value
 func (o *DeviceType) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value
@@ -872,12 +871,12 @@ func (o *DeviceType) GetDeviceCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
 // SetDeviceCount sets field value
 func (o *DeviceType) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
 }
 
 // GetConsolePortTemplateCount returns the ConsolePortTemplateCount field value

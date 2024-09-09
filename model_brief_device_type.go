@@ -45,7 +45,7 @@ func NewBriefDeviceType(id int32, url string, display string, manufacturer Brief
 	this.Manufacturer = manufacturer
 	this.Model = model
 	this.Slug = slug
-	this.DeviceCount = deviceCount
+	this.DeviceCount.Set(&deviceCount)
 	return &this
 }
 
@@ -235,12 +235,11 @@ func (o *BriefDeviceType) SetDescription(v string) {
 
 // GetDeviceCount returns the DeviceCount field value
 func (o *BriefDeviceType) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value
@@ -249,12 +248,12 @@ func (o *BriefDeviceType) GetDeviceCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
 // SetDeviceCount sets field value
 func (o *BriefDeviceType) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
 }
 
 func (o BriefDeviceType) MarshalJSON() ([]byte, error) {

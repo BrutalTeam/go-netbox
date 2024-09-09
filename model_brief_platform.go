@@ -44,7 +44,7 @@ func NewBriefPlatform(id int32, url string, display string, name string, slug st
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.DeviceCount = deviceCount
+	this.DeviceCount.Set(&deviceCount)
 	this.VirtualmachineCount = virtualmachineCount
 	return &this
 }
@@ -211,12 +211,11 @@ func (o *BriefPlatform) SetDescription(v string) {
 
 // GetDeviceCount returns the DeviceCount field value
 func (o *BriefPlatform) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value
@@ -225,12 +224,12 @@ func (o *BriefPlatform) GetDeviceCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
 // SetDeviceCount sets field value
 func (o *BriefPlatform) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
 }
 
 // GetVirtualmachineCount returns the VirtualmachineCount field value

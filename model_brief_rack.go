@@ -41,7 +41,7 @@ func NewBriefRack(id int32, url string, display string, name string, deviceCount
 	this.Url = url
 	this.Display = display
 	this.Name = name
-	this.DeviceCount = deviceCount
+	this.DeviceCount.Set(&deviceCount)
 	return &this
 }
 
@@ -183,12 +183,11 @@ func (o *BriefRack) SetDescription(v string) {
 
 // GetDeviceCount returns the DeviceCount field value
 func (o *BriefRack) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value
@@ -197,12 +196,12 @@ func (o *BriefRack) GetDeviceCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
 // SetDeviceCount sets field value
 func (o *BriefRack) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
 }
 
 func (o BriefRack) MarshalJSON() ([]byte, error) {
