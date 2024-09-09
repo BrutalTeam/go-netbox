@@ -268,7 +268,7 @@ func (o *BriefManufacturer) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"devicetype_count",
+		//"devicetype_count",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -455,7 +455,7 @@ func (o *Manufacturer) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"devicetype_count",
+		//"devicetype_count",
 		"inventoryitem_count",
 		"platform_count",
 	}
