@@ -27,7 +27,7 @@ type BriefDeviceType struct {
 	Model                string            `json:"model"`
 	Slug                 string            `json:"slug"`
 	Description          *string           `json:"description,omitempty"`
-	DeviceCount          int64             `json:"device_count"`
+	DeviceCount          NullableInt64     `json:"device_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -37,7 +37,7 @@ type _BriefDeviceType BriefDeviceType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefDeviceType(id int32, url string, display string, manufacturer BriefManufacturer, model string, slug string, deviceCount int64) *BriefDeviceType {
+func NewBriefDeviceType(id int32, url string, display string, manufacturer BriefManufacturer, model string, slug string) *BriefDeviceType {
 	this := BriefDeviceType{}
 	this.Id = id
 	this.Url = url
@@ -45,7 +45,6 @@ func NewBriefDeviceType(id int32, url string, display string, manufacturer Brief
 	this.Manufacturer = manufacturer
 	this.Model = model
 	this.Slug = slug
-	this.DeviceCount = deviceCount
 	return &this
 }
 
@@ -233,28 +232,47 @@ func (o *BriefDeviceType) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetDeviceCount returns the DeviceCount field value
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BriefDeviceType) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
-// GetDeviceCountOk returns a tuple with the DeviceCount field value
+// GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BriefDeviceType) GetDeviceCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
-// SetDeviceCount sets field value
+// HasDeviceCount returns a boolean if a field has been set.
+func (o *BriefDeviceType) HasDeviceCount() bool {
+	if o != nil && o.DeviceCount.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceCount gets a reference to the given NullableInt64 and assigns it to the DeviceCount field.
 func (o *BriefDeviceType) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
+}
+
+// SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
+func (o *BriefDeviceType) SetDeviceCountNil() {
+	o.DeviceCount.Set(nil)
+}
+
+// UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
+func (o *BriefDeviceType) UnsetDeviceCount() {
+	o.DeviceCount.Unset()
 }
 
 func (o BriefDeviceType) MarshalJSON() ([]byte, error) {
@@ -276,7 +294,9 @@ func (o BriefDeviceType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["device_count"] = o.DeviceCount
+	if o.DeviceCount.IsSet() {
+		toSerialize["device_count"] = o.DeviceCount.Get()
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -296,7 +316,6 @@ func (o *BriefDeviceType) UnmarshalJSON(data []byte) (err error) {
 		"manufacturer",
 		"model",
 		"slug",
-		"device_count",
 	}
 
 	allProperties := make(map[string]interface{})

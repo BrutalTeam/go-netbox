@@ -20,13 +20,13 @@ var _ MappedNullable = &BriefManufacturer{}
 
 // BriefManufacturer Adds support for custom fields and tags.
 type BriefManufacturer struct {
-	Id                   int32   `json:"id"`
-	Url                  string  `json:"url"`
-	Display              string  `json:"display"`
-	Name                 string  `json:"name"`
-	Slug                 string  `json:"slug"`
-	Description          *string `json:"description,omitempty"`
-	DevicetypeCount      int64   `json:"devicetype_count"`
+	Id                   int32         `json:"id"`
+	Url                  string        `json:"url"`
+	Display              string        `json:"display"`
+	Name                 string        `json:"name"`
+	Slug                 string        `json:"slug"`
+	Description          *string       `json:"description,omitempty"`
+	DevicetypeCount      NullableInt64 `json:"devicetype_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -36,14 +36,13 @@ type _BriefManufacturer BriefManufacturer
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefManufacturer(id int32, url string, display string, name string, slug string, devicetypeCount int64) *BriefManufacturer {
+func NewBriefManufacturer(id int32, url string, display string, name string, slug string) *BriefManufacturer {
 	this := BriefManufacturer{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.DevicetypeCount = devicetypeCount
 	return &this
 }
 
@@ -207,28 +206,47 @@ func (o *BriefManufacturer) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetDevicetypeCount returns the DevicetypeCount field value
+// GetDevicetypeCount returns the DevicetypeCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BriefManufacturer) GetDevicetypeCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DevicetypeCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DevicetypeCount
+	return *o.DevicetypeCount.Get()
 }
 
-// GetDevicetypeCountOk returns a tuple with the DevicetypeCount field value
+// GetDevicetypeCountOk returns a tuple with the DevicetypeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BriefManufacturer) GetDevicetypeCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DevicetypeCount, true
+	return o.DevicetypeCount.Get(), o.DevicetypeCount.IsSet()
 }
 
-// SetDevicetypeCount sets field value
+// HasDevicetypeCount returns a boolean if a field has been set.
+func (o *BriefManufacturer) HasDevicetypeCount() bool {
+	if o != nil && o.DevicetypeCount.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDevicetypeCount gets a reference to the given NullableInt64 and assigns it to the DevicetypeCount field.
 func (o *BriefManufacturer) SetDevicetypeCount(v int64) {
-	o.DevicetypeCount = v
+	o.DevicetypeCount.Set(&v)
+}
+
+// SetDevicetypeCountNil sets the value for DevicetypeCount to be an explicit nil
+func (o *BriefManufacturer) SetDevicetypeCountNil() {
+	o.DevicetypeCount.Set(nil)
+}
+
+// UnsetDevicetypeCount ensures that no value is present for DevicetypeCount, not even an explicit nil
+func (o *BriefManufacturer) UnsetDevicetypeCount() {
+	o.DevicetypeCount.Unset()
 }
 
 func (o BriefManufacturer) MarshalJSON() ([]byte, error) {
@@ -249,7 +267,9 @@ func (o BriefManufacturer) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["devicetype_count"] = o.DevicetypeCount
+	if o.DevicetypeCount.IsSet() {
+		toSerialize["devicetype_count"] = o.DevicetypeCount.Get()
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -268,7 +288,6 @@ func (o *BriefManufacturer) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"devicetype_count",
 	}
 
 	allProperties := make(map[string]interface{})

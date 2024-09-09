@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Family** | **int32** |  | [readonly] 
 **Prefix** | **string** |  | [readonly] 
-**Vrf** | [**NullableBriefVRF**](BriefVRF.md) |  | [readonly] 
+**Vrf** | Pointer to [**NullableBriefVRF**](BriefVRF.md) |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewAvailablePrefix
 
-`func NewAvailablePrefix(family int32, prefix string, vrf NullableBriefVRF, ) *AvailablePrefix`
+`func NewAvailablePrefix(family int32, prefix string, ) *AvailablePrefix`
 
 NewAvailablePrefix instantiates a new AvailablePrefix object
 This constructor will assign default values to properties that have it defined,
@@ -86,6 +86,11 @@ and a boolean to check if the value has been set.
 
 SetVrf sets Vrf field to given value.
 
+### HasVrf
+
+`func (o *AvailablePrefix) HasVrf() bool`
+
+HasVrf returns a boolean if a field has been set.
 
 ### SetVrfNil
 

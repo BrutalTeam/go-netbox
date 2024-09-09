@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **ExportTargets** | Pointer to [**[]RouteTarget**](RouteTarget.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **IpaddressCount** | **int64** |  | [readonly] 
 **PrefixCount** | **int64** |  | [readonly] 
 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewVRF
 
-`func NewVRF(id int32, url string, display string, name string, created NullableTime, lastUpdated NullableTime, ipaddressCount int64, prefixCount int64, ) *VRF`
+`func NewVRF(id int32, url string, display string, name string, ipaddressCount int64, prefixCount int64, ) *VRF`
 
 NewVRF instantiates a new VRF object
 This constructor will assign default values to properties that have it defined,
@@ -385,6 +385,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *VRF) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -415,6 +420,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *VRF) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

@@ -20,12 +20,12 @@ var _ MappedNullable = &BriefCluster{}
 
 // BriefCluster Adds support for custom fields and tags.
 type BriefCluster struct {
-	Id                   int32   `json:"id"`
-	Url                  string  `json:"url"`
-	Display              string  `json:"display"`
-	Name                 string  `json:"name"`
-	Description          *string `json:"description,omitempty"`
-	VirtualmachineCount  int64   `json:"virtualmachine_count"`
+	Id                   int32         `json:"id"`
+	Url                  string        `json:"url"`
+	Display              string        `json:"display"`
+	Name                 string        `json:"name"`
+	Description          *string       `json:"description,omitempty"`
+	VirtualmachineCount  NullableInt64 `json:"virtualmachine_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,13 +35,12 @@ type _BriefCluster BriefCluster
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefCluster(id int32, url string, display string, name string, virtualmachineCount int64) *BriefCluster {
+func NewBriefCluster(id int32, url string, display string, name string) *BriefCluster {
 	this := BriefCluster{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
-	this.VirtualmachineCount = virtualmachineCount
 	return &this
 }
 
@@ -181,28 +180,47 @@ func (o *BriefCluster) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetVirtualmachineCount returns the VirtualmachineCount field value
+// GetVirtualmachineCount returns the VirtualmachineCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BriefCluster) GetVirtualmachineCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.VirtualmachineCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.VirtualmachineCount
+	return *o.VirtualmachineCount.Get()
 }
 
-// GetVirtualmachineCountOk returns a tuple with the VirtualmachineCount field value
+// GetVirtualmachineCountOk returns a tuple with the VirtualmachineCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BriefCluster) GetVirtualmachineCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.VirtualmachineCount, true
+	return o.VirtualmachineCount.Get(), o.VirtualmachineCount.IsSet()
 }
 
-// SetVirtualmachineCount sets field value
+// HasVirtualmachineCount returns a boolean if a field has been set.
+func (o *BriefCluster) HasVirtualmachineCount() bool {
+	if o != nil && o.VirtualmachineCount.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetVirtualmachineCount gets a reference to the given NullableInt64 and assigns it to the VirtualmachineCount field.
 func (o *BriefCluster) SetVirtualmachineCount(v int64) {
-	o.VirtualmachineCount = v
+	o.VirtualmachineCount.Set(&v)
+}
+
+// SetVirtualmachineCountNil sets the value for VirtualmachineCount to be an explicit nil
+func (o *BriefCluster) SetVirtualmachineCountNil() {
+	o.VirtualmachineCount.Set(nil)
+}
+
+// UnsetVirtualmachineCount ensures that no value is present for VirtualmachineCount, not even an explicit nil
+func (o *BriefCluster) UnsetVirtualmachineCount() {
+	o.VirtualmachineCount.Unset()
 }
 
 func (o BriefCluster) MarshalJSON() ([]byte, error) {
@@ -222,7 +240,9 @@ func (o BriefCluster) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["virtualmachine_count"] = o.VirtualmachineCount
+	if o.VirtualmachineCount.IsSet() {
+		toSerialize["virtualmachine_count"] = o.VirtualmachineCount.Get()
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -240,7 +260,6 @@ func (o *BriefCluster) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"name",
-		"virtualmachine_count",
 	}
 
 	allProperties := make(map[string]interface{})

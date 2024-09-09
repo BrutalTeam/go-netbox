@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Role** | Pointer to [**NullableBriefDeviceRole**](BriefDeviceRole.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **Platform** | Pointer to [**NullableBriefPlatform**](BriefPlatform.md) |  | [optional] 
-**PrimaryIp** | [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [readonly] 
+**PrimaryIp** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] [readonly] 
 **PrimaryIp4** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
 **PrimaryIp6** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
 **Vcpus** | Pointer to **NullableFloat64** |  | [optional] 
@@ -27,9 +27,9 @@ Name | Type | Description | Notes
 **LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**ConfigContext** | **interface{}** |  | [readonly] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**ConfigContext** | Pointer to **interface{}** |  | [optional] [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **InterfaceCount** | **int32** |  | [readonly] 
 **VirtualDiskCount** | **int32** |  | [readonly] 
 
@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualMachineWithConfigContext
 
-`func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, primaryIp NullableBriefIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, interfaceCount int32, virtualDiskCount int32, ) *VirtualMachineWithConfigContext`
+`func NewVirtualMachineWithConfigContext(id int32, url string, display string, name string, interfaceCount int32, virtualDiskCount int32, ) *VirtualMachineWithConfigContext`
 
 NewVirtualMachineWithConfigContext instantiates a new VirtualMachineWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -386,6 +386,11 @@ and a boolean to check if the value has been set.
 
 SetPrimaryIp sets PrimaryIp field to given value.
 
+### HasPrimaryIp
+
+`func (o *VirtualMachineWithConfigContext) HasPrimaryIp() bool`
+
+HasPrimaryIp returns a boolean if a field has been set.
 
 ### SetPrimaryIpNil
 
@@ -761,6 +766,11 @@ and a boolean to check if the value has been set.
 
 SetConfigContext sets ConfigContext field to given value.
 
+### HasConfigContext
+
+`func (o *VirtualMachineWithConfigContext) HasConfigContext() bool`
+
+HasConfigContext returns a boolean if a field has been set.
 
 ### SetConfigContextNil
 
@@ -791,6 +801,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *VirtualMachineWithConfigContext) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -821,6 +836,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *VirtualMachineWithConfigContext) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

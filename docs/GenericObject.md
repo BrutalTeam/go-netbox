@@ -6,13 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectType** | **string** |  | 
 **ObjectId** | **int32** |  | 
-**Object** | **interface{}** |  | [readonly] 
+**Object** | Pointer to **interface{}** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewGenericObject
 
-`func NewGenericObject(objectType string, objectId int32, object interface{}, ) *GenericObject`
+`func NewGenericObject(objectType string, objectId int32, ) *GenericObject`
 
 NewGenericObject instantiates a new GenericObject object
 This constructor will assign default values to properties that have it defined,
@@ -86,6 +86,11 @@ and a boolean to check if the value has been set.
 
 SetObject sets Object field to given value.
 
+### HasObject
+
+`func (o *GenericObject) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
 
 ### SetObjectNil
 

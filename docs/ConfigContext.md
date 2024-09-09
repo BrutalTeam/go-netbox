@@ -27,16 +27,16 @@ Name | Type | Description | Notes
 **DataSource** | Pointer to [**BriefDataSource**](BriefDataSource.md) |  | [optional] 
 **DataPath** | **string** | Path to remote file (relative to data source root) | [readonly] 
 **DataFile** | [**BriefDataFile**](BriefDataFile.md) |  | [readonly] 
-**DataSynced** | **NullableTime** |  | [readonly] 
+**DataSynced** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **Data** | **interface{}** |  | 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewConfigContext
 
-`func NewConfigContext(id int32, url string, display string, name string, dataPath string, dataFile BriefDataFile, dataSynced NullableTime, data interface{}, created NullableTime, lastUpdated NullableTime, ) *ConfigContext`
+`func NewConfigContext(id int32, url string, display string, name string, dataPath string, dataFile BriefDataFile, data interface{}, ) *ConfigContext`
 
 NewConfigContext instantiates a new ConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -615,6 +615,11 @@ and a boolean to check if the value has been set.
 
 SetDataSynced sets DataSynced field to given value.
 
+### HasDataSynced
+
+`func (o *ConfigContext) HasDataSynced() bool`
+
+HasDataSynced returns a boolean if a field has been set.
 
 ### SetDataSyncedNil
 
@@ -675,6 +680,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ConfigContext) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -705,6 +715,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *ConfigContext) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

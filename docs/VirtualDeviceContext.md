@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Device** | [**BriefDevice**](BriefDevice.md) |  | 
 **Identifier** | Pointer to **NullableInt32** |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
-**PrimaryIp** | [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [readonly] 
+**PrimaryIp** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] [readonly] 
 **PrimaryIp4** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
 **PrimaryIp6** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
 **Status** | [**VirtualDeviceContextStatus**](VirtualDeviceContextStatus.md) |  | 
@@ -19,15 +19,15 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **InterfaceCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewVirtualDeviceContext
 
-`func NewVirtualDeviceContext(id int32, url string, display string, name string, device BriefDevice, primaryIp NullableBriefIPAddress, status VirtualDeviceContextStatus, created NullableTime, lastUpdated NullableTime, interfaceCount int64, ) *VirtualDeviceContext`
+`func NewVirtualDeviceContext(id int32, url string, display string, name string, device BriefDevice, status VirtualDeviceContextStatus, interfaceCount int64, ) *VirtualDeviceContext`
 
 NewVirtualDeviceContext instantiates a new VirtualDeviceContext object
 This constructor will assign default values to properties that have it defined,
@@ -231,6 +231,11 @@ and a boolean to check if the value has been set.
 
 SetPrimaryIp sets PrimaryIp field to given value.
 
+### HasPrimaryIp
+
+`func (o *VirtualDeviceContext) HasPrimaryIp() bool`
+
+HasPrimaryIp returns a boolean if a field has been set.
 
 ### SetPrimaryIpNil
 
@@ -451,6 +456,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *VirtualDeviceContext) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -481,6 +491,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *VirtualDeviceContext) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

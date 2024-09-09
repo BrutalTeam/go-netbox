@@ -33,10 +33,10 @@ type DeviceRole struct {
 	Description          *string                     `json:"description,omitempty"`
 	Tags                 []NestedTag                 `json:"tags,omitempty"`
 	CustomFields         map[string]interface{}      `json:"custom_fields,omitempty"`
-	Created              NullableTime                `json:"created"`
-	LastUpdated          NullableTime                `json:"last_updated"`
-	DeviceCount          int64                       `json:"device_count"`
-	VirtualmachineCount  int64                       `json:"virtualmachine_count"`
+	Created              NullableTime                `json:"created,omitempty"`
+	LastUpdated          NullableTime                `json:"last_updated,omitempty"`
+	DeviceCount          NullableInt64               `json:"device_count,omitempty"`
+	VirtualmachineCount  NullableInt64               `json:"virtualmachine_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -46,17 +46,13 @@ type _DeviceRole DeviceRole
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeviceRole(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, deviceCount int64, virtualmachineCount int64) *DeviceRole {
+func NewDeviceRole(id int32, url string, display string, name string, slug string) *DeviceRole {
 	this := DeviceRole{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.Created = created
-	this.LastUpdated = lastUpdated
-	this.DeviceCount = deviceCount
-	this.VirtualmachineCount = virtualmachineCount
 	return &this
 }
 
@@ -391,18 +387,16 @@ func (o *DeviceRole) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DeviceRole) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DeviceRole) GetCreatedOk() (*time.Time, bool) {
@@ -412,23 +406,40 @@ func (o *DeviceRole) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *DeviceRole) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *DeviceRole) SetCreated(v time.Time) {
 	o.Created.Set(&v)
 }
 
-// GetLastUpdated returns the LastUpdated field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *DeviceRole) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *DeviceRole) UnsetCreated() {
+	o.Created.Unset()
+}
+
+// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DeviceRole) GetLastUpdated() time.Time {
-	if o == nil || o.LastUpdated.Get() == nil {
+	if o == nil || IsNil(o.LastUpdated.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.LastUpdated.Get()
 }
 
-// GetLastUpdatedOk returns a tuple with the LastUpdated field value
+// GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DeviceRole) GetLastUpdatedOk() (*time.Time, bool) {
@@ -438,57 +449,114 @@ func (o *DeviceRole) GetLastUpdatedOk() (*time.Time, bool) {
 	return o.LastUpdated.Get(), o.LastUpdated.IsSet()
 }
 
-// SetLastUpdated sets field value
+// HasLastUpdated returns a boolean if a field has been set.
+func (o *DeviceRole) HasLastUpdated() bool {
+	if o != nil && o.LastUpdated.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLastUpdated gets a reference to the given NullableTime and assigns it to the LastUpdated field.
 func (o *DeviceRole) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetDeviceCount returns the DeviceCount field value
+// SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+func (o *DeviceRole) SetLastUpdatedNil() {
+	o.LastUpdated.Set(nil)
+}
+
+// UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+func (o *DeviceRole) UnsetLastUpdated() {
+	o.LastUpdated.Unset()
+}
+
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DeviceRole) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
-// GetDeviceCountOk returns a tuple with the DeviceCount field value
+// GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DeviceRole) GetDeviceCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
-// SetDeviceCount sets field value
+// HasDeviceCount returns a boolean if a field has been set.
+func (o *DeviceRole) HasDeviceCount() bool {
+	if o != nil && o.DeviceCount.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceCount gets a reference to the given NullableInt64 and assigns it to the DeviceCount field.
 func (o *DeviceRole) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
 }
 
-// GetVirtualmachineCount returns the VirtualmachineCount field value
+// SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
+func (o *DeviceRole) SetDeviceCountNil() {
+	o.DeviceCount.Set(nil)
+}
+
+// UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
+func (o *DeviceRole) UnsetDeviceCount() {
+	o.DeviceCount.Unset()
+}
+
+// GetVirtualmachineCount returns the VirtualmachineCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DeviceRole) GetVirtualmachineCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.VirtualmachineCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.VirtualmachineCount
+	return *o.VirtualmachineCount.Get()
 }
 
-// GetVirtualmachineCountOk returns a tuple with the VirtualmachineCount field value
+// GetVirtualmachineCountOk returns a tuple with the VirtualmachineCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DeviceRole) GetVirtualmachineCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.VirtualmachineCount, true
+	return o.VirtualmachineCount.Get(), o.VirtualmachineCount.IsSet()
 }
 
-// SetVirtualmachineCount sets field value
+// HasVirtualmachineCount returns a boolean if a field has been set.
+func (o *DeviceRole) HasVirtualmachineCount() bool {
+	if o != nil && o.VirtualmachineCount.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetVirtualmachineCount gets a reference to the given NullableInt64 and assigns it to the VirtualmachineCount field.
 func (o *DeviceRole) SetVirtualmachineCount(v int64) {
-	o.VirtualmachineCount = v
+	o.VirtualmachineCount.Set(&v)
+}
+
+// SetVirtualmachineCountNil sets the value for VirtualmachineCount to be an explicit nil
+func (o *DeviceRole) SetVirtualmachineCountNil() {
+	o.VirtualmachineCount.Set(nil)
+}
+
+// UnsetVirtualmachineCount ensures that no value is present for VirtualmachineCount, not even an explicit nil
+func (o *DeviceRole) UnsetVirtualmachineCount() {
+	o.VirtualmachineCount.Unset()
 }
 
 func (o DeviceRole) MarshalJSON() ([]byte, error) {
@@ -524,10 +592,18 @@ func (o DeviceRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
-	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["device_count"] = o.DeviceCount
-	toSerialize["virtualmachine_count"] = o.VirtualmachineCount
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
+	if o.LastUpdated.IsSet() {
+		toSerialize["last_updated"] = o.LastUpdated.Get()
+	}
+	if o.DeviceCount.IsSet() {
+		toSerialize["device_count"] = o.DeviceCount.Get()
+	}
+	if o.VirtualmachineCount.IsSet() {
+		toSerialize["virtualmachine_count"] = o.VirtualmachineCount.Get()
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -546,10 +622,6 @@ func (o *DeviceRole) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"created",
-		"last_updated",
-		"device_count",
-		"virtualmachine_count",
 	}
 
 	allProperties := make(map[string]interface{})

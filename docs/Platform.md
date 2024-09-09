@@ -14,16 +14,16 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
-**DeviceCount** | **int64** |  | [readonly] 
-**VirtualmachineCount** | **int64** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**DeviceCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
+**VirtualmachineCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewPlatform
 
-`func NewPlatform(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, deviceCount int64, virtualmachineCount int64, ) *Platform`
+`func NewPlatform(id int32, url string, display string, name string, slug string, ) *Platform`
 
 NewPlatform instantiates a new Platform object
 This constructor will assign default values to properties that have it defined,
@@ -302,6 +302,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Platform) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -332,6 +337,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *Platform) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 
@@ -362,7 +372,22 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
 
+`func (o *Platform) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
+
+### SetDeviceCountNil
+
+`func (o *Platform) SetDeviceCountNil(b bool)`
+
+ SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
+
+### UnsetDeviceCount
+`func (o *Platform) UnsetDeviceCount()`
+
+UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
 ### GetVirtualmachineCount
 
 `func (o *Platform) GetVirtualmachineCount() int64`
@@ -382,7 +407,22 @@ and a boolean to check if the value has been set.
 
 SetVirtualmachineCount sets VirtualmachineCount field to given value.
 
+### HasVirtualmachineCount
 
+`func (o *Platform) HasVirtualmachineCount() bool`
+
+HasVirtualmachineCount returns a boolean if a field has been set.
+
+### SetVirtualmachineCountNil
+
+`func (o *Platform) SetVirtualmachineCountNil(b bool)`
+
+ SetVirtualmachineCountNil sets the value for VirtualmachineCount to be an explicit nil
+
+### UnsetVirtualmachineCount
+`func (o *Platform) UnsetVirtualmachineCount()`
+
+UnsetVirtualmachineCount ensures that no value is present for VirtualmachineCount, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

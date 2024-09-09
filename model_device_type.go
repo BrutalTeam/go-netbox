@@ -45,9 +45,9 @@ type DeviceType struct {
 	Comments                       *string                         `json:"comments,omitempty"`
 	Tags                           []NestedTag                     `json:"tags,omitempty"`
 	CustomFields                   map[string]interface{}          `json:"custom_fields,omitempty"`
-	Created                        NullableTime                    `json:"created"`
-	LastUpdated                    NullableTime                    `json:"last_updated"`
-	DeviceCount                    int64                           `json:"device_count"`
+	Created                        NullableTime                    `json:"created,omitempty"`
+	LastUpdated                    NullableTime                    `json:"last_updated,omitempty"`
+	DeviceCount                    NullableInt64                   `json:"device_count,omitempty"`
 	ConsolePortTemplateCount       int32                           `json:"console_port_template_count"`
 	ConsoleServerPortTemplateCount int32                           `json:"console_server_port_template_count"`
 	PowerPortTemplateCount         int32                           `json:"power_port_template_count"`
@@ -67,7 +67,7 @@ type _DeviceType DeviceType
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeviceType(id int32, url string, display string, manufacturer BriefManufacturer, model string, slug string, created NullableTime, lastUpdated NullableTime, deviceCount int64, consolePortTemplateCount int32, consoleServerPortTemplateCount int32, powerPortTemplateCount int32, powerOutletTemplateCount int32, interfaceTemplateCount int32, frontPortTemplateCount int32, rearPortTemplateCount int32, deviceBayTemplateCount int32, moduleBayTemplateCount int32, inventoryItemTemplateCount int32) *DeviceType {
+func NewDeviceType(id int32, url string, display string, manufacturer BriefManufacturer, model string, slug string, consolePortTemplateCount int32, consoleServerPortTemplateCount int32, powerPortTemplateCount int32, powerOutletTemplateCount int32, interfaceTemplateCount int32, frontPortTemplateCount int32, rearPortTemplateCount int32, deviceBayTemplateCount int32, moduleBayTemplateCount int32, inventoryItemTemplateCount int32) *DeviceType {
 	this := DeviceType{}
 	this.Id = id
 	this.Url = url
@@ -77,9 +77,6 @@ func NewDeviceType(id int32, url string, display string, manufacturer BriefManuf
 	this.Slug = slug
 	var uHeight float64 = 1.0
 	this.UHeight = &uHeight
-	this.Created = created
-	this.LastUpdated = lastUpdated
-	this.DeviceCount = deviceCount
 	this.ConsolePortTemplateCount = consolePortTemplateCount
 	this.ConsoleServerPortTemplateCount = consoleServerPortTemplateCount
 	this.PowerPortTemplateCount = powerPortTemplateCount
@@ -804,18 +801,16 @@ func (o *DeviceType) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DeviceType) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DeviceType) GetCreatedOk() (*time.Time, bool) {
@@ -825,23 +820,40 @@ func (o *DeviceType) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *DeviceType) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *DeviceType) SetCreated(v time.Time) {
 	o.Created.Set(&v)
 }
 
-// GetLastUpdated returns the LastUpdated field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *DeviceType) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *DeviceType) UnsetCreated() {
+	o.Created.Unset()
+}
+
+// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DeviceType) GetLastUpdated() time.Time {
-	if o == nil || o.LastUpdated.Get() == nil {
+	if o == nil || IsNil(o.LastUpdated.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.LastUpdated.Get()
 }
 
-// GetLastUpdatedOk returns a tuple with the LastUpdated field value
+// GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DeviceType) GetLastUpdatedOk() (*time.Time, bool) {
@@ -851,33 +863,71 @@ func (o *DeviceType) GetLastUpdatedOk() (*time.Time, bool) {
 	return o.LastUpdated.Get(), o.LastUpdated.IsSet()
 }
 
-// SetLastUpdated sets field value
+// HasLastUpdated returns a boolean if a field has been set.
+func (o *DeviceType) HasLastUpdated() bool {
+	if o != nil && o.LastUpdated.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLastUpdated gets a reference to the given NullableTime and assigns it to the LastUpdated field.
 func (o *DeviceType) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
 }
 
-// GetDeviceCount returns the DeviceCount field value
+// SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+func (o *DeviceType) SetLastUpdatedNil() {
+	o.LastUpdated.Set(nil)
+}
+
+// UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+func (o *DeviceType) UnsetLastUpdated() {
+	o.LastUpdated.Unset()
+}
+
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DeviceType) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
-// GetDeviceCountOk returns a tuple with the DeviceCount field value
+// GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DeviceType) GetDeviceCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
-// SetDeviceCount sets field value
+// HasDeviceCount returns a boolean if a field has been set.
+func (o *DeviceType) HasDeviceCount() bool {
+	if o != nil && o.DeviceCount.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceCount gets a reference to the given NullableInt64 and assigns it to the DeviceCount field.
 func (o *DeviceType) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
+}
+
+// SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
+func (o *DeviceType) SetDeviceCountNil() {
+	o.DeviceCount.Set(nil)
+}
+
+// UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
+func (o *DeviceType) UnsetDeviceCount() {
+	o.DeviceCount.Unset()
 }
 
 // GetConsolePortTemplateCount returns the ConsolePortTemplateCount field value
@@ -1181,9 +1231,15 @@ func (o DeviceType) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
-	toSerialize["last_updated"] = o.LastUpdated.Get()
-	toSerialize["device_count"] = o.DeviceCount
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
+	if o.LastUpdated.IsSet() {
+		toSerialize["last_updated"] = o.LastUpdated.Get()
+	}
+	if o.DeviceCount.IsSet() {
+		toSerialize["device_count"] = o.DeviceCount.Get()
+	}
 	toSerialize["console_port_template_count"] = o.ConsolePortTemplateCount
 	toSerialize["console_server_port_template_count"] = o.ConsoleServerPortTemplateCount
 	toSerialize["power_port_template_count"] = o.PowerPortTemplateCount
@@ -1213,9 +1269,6 @@ func (o *DeviceType) UnmarshalJSON(data []byte) (err error) {
 		"manufacturer",
 		"model",
 		"slug",
-		"created",
-		"last_updated",
-		"device_count",
 		"console_port_template_count",
 		"console_server_port_template_count",
 		"power_port_template_count",

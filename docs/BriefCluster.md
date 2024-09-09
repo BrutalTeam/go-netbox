@@ -9,13 +9,13 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**VirtualmachineCount** | **int64** |  | [readonly] 
+**VirtualmachineCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewBriefCluster
 
-`func NewBriefCluster(id int32, url string, display string, name string, virtualmachineCount int64, ) *BriefCluster`
+`func NewBriefCluster(id int32, url string, display string, name string, ) *BriefCluster`
 
 NewBriefCluster instantiates a new BriefCluster object
 This constructor will assign default values to properties that have it defined,
@@ -154,7 +154,22 @@ and a boolean to check if the value has been set.
 
 SetVirtualmachineCount sets VirtualmachineCount field to given value.
 
+### HasVirtualmachineCount
 
+`func (o *BriefCluster) HasVirtualmachineCount() bool`
+
+HasVirtualmachineCount returns a boolean if a field has been set.
+
+### SetVirtualmachineCountNil
+
+`func (o *BriefCluster) SetVirtualmachineCountNil(b bool)`
+
+ SetVirtualmachineCountNil sets the value for VirtualmachineCount to be an explicit nil
+
+### UnsetVirtualmachineCount
+`func (o *BriefCluster) UnsetVirtualmachineCount()`
+
+UnsetVirtualmachineCount ensures that no value is present for VirtualmachineCount, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

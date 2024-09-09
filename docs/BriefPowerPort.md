@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **Device** | [**BriefDevice**](BriefDevice.md) |  | 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**Cable** | [**NullableBriefCable**](BriefCable.md) |  | [readonly] 
+**Cable** | Pointer to [**NullableBriefCable**](BriefCable.md) |  | [optional] [readonly] 
 **Occupied** | **bool** |  | [readonly] 
 
 ## Methods
 
 ### NewBriefPowerPort
 
-`func NewBriefPowerPort(id int32, url string, display string, device BriefDevice, name string, cable NullableBriefCable, occupied bool, ) *BriefPowerPort`
+`func NewBriefPowerPort(id int32, url string, display string, device BriefDevice, name string, occupied bool, ) *BriefPowerPort`
 
 NewBriefPowerPort instantiates a new BriefPowerPort object
 This constructor will assign default values to properties that have it defined,
@@ -176,6 +176,11 @@ and a boolean to check if the value has been set.
 
 SetCable sets Cable field to given value.
 
+### HasCable
+
+`func (o *BriefPowerPort) HasCable() bool`
+
+HasCable returns a boolean if a field has been set.
 
 ### SetCableNil
 

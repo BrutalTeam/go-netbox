@@ -18,27 +18,27 @@ Name | Type | Description | Notes
 **Amperage** | Pointer to **int32** |  | [optional] 
 **MaxUtilization** | Pointer to **int32** | Maximum permissible draw (percentage) | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableBriefCable**](BriefCable.md) |  | [readonly] 
+**Cable** | Pointer to [**NullableBriefCable**](BriefCable.md) |  | [optional] [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
-**LinkPeersType** | **NullableString** | Return the type of the peer link terminations, or None. | [readonly] 
-**ConnectedEndpoints** | **[]interface{}** |  | [readonly] 
-**ConnectedEndpointsType** | **NullableString** |  | [readonly] 
+**LinkPeersType** | Pointer to **NullableString** | Return the type of the peer link terminations, or None. | [optional] [readonly] 
+**ConnectedEndpoints** | Pointer to **[]interface{}** |  | [optional] [readonly] 
+**ConnectedEndpointsType** | Pointer to **NullableString** |  | [optional] [readonly] 
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **Occupied** | **bool** |  | [readonly] 
 
 ## Methods
 
 ### NewPowerFeed
 
-`func NewPowerFeed(id int32, url string, display string, powerPanel BriefPowerPanel, name string, cable NullableBriefCable, cableEnd string, linkPeers []interface{}, linkPeersType NullableString, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *PowerFeed`
+`func NewPowerFeed(id int32, url string, display string, powerPanel BriefPowerPanel, name string, cableEnd string, linkPeers []interface{}, connectedEndpointsReachable bool, occupied bool, ) *PowerFeed`
 
 NewPowerFeed instantiates a new PowerFeed object
 This constructor will assign default values to properties that have it defined,
@@ -407,6 +407,11 @@ and a boolean to check if the value has been set.
 
 SetCable sets Cable field to given value.
 
+### HasCable
+
+`func (o *PowerFeed) HasCable() bool`
+
+HasCable returns a boolean if a field has been set.
 
 ### SetCableNil
 
@@ -477,6 +482,11 @@ and a boolean to check if the value has been set.
 
 SetLinkPeersType sets LinkPeersType field to given value.
 
+### HasLinkPeersType
+
+`func (o *PowerFeed) HasLinkPeersType() bool`
+
+HasLinkPeersType returns a boolean if a field has been set.
 
 ### SetLinkPeersTypeNil
 
@@ -507,6 +517,11 @@ and a boolean to check if the value has been set.
 
 SetConnectedEndpoints sets ConnectedEndpoints field to given value.
 
+### HasConnectedEndpoints
+
+`func (o *PowerFeed) HasConnectedEndpoints() bool`
+
+HasConnectedEndpoints returns a boolean if a field has been set.
 
 ### SetConnectedEndpointsNil
 
@@ -537,6 +552,11 @@ and a boolean to check if the value has been set.
 
 SetConnectedEndpointsType sets ConnectedEndpointsType field to given value.
 
+### HasConnectedEndpointsType
+
+`func (o *PowerFeed) HasConnectedEndpointsType() bool`
+
+HasConnectedEndpointsType returns a boolean if a field has been set.
 
 ### SetConnectedEndpointsTypeNil
 
@@ -722,6 +742,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *PowerFeed) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -752,6 +777,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *PowerFeed) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

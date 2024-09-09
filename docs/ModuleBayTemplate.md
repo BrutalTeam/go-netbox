@@ -12,14 +12,14 @@ Name | Type | Description | Notes
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Position** | Pointer to **string** | Identifier to reference when renaming installed components | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewModuleBayTemplate
 
-`func NewModuleBayTemplate(id int32, url string, display string, deviceType BriefDeviceType, name string, created NullableTime, lastUpdated NullableTime, ) *ModuleBayTemplate`
+`func NewModuleBayTemplate(id int32, url string, display string, deviceType BriefDeviceType, name string, ) *ModuleBayTemplate`
 
 NewModuleBayTemplate instantiates a new ModuleBayTemplate object
 This constructor will assign default values to properties that have it defined,
@@ -228,6 +228,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *ModuleBayTemplate) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -258,6 +263,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *ModuleBayTemplate) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

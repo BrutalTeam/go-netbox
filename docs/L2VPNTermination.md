@@ -10,17 +10,17 @@ Name | Type | Description | Notes
 **L2vpn** | [**BriefL2VPN**](BriefL2VPN.md) |  | 
 **AssignedObjectType** | **string** |  | 
 **AssignedObjectId** | **int64** |  | 
-**AssignedObject** | **interface{}** |  | [readonly] 
+**AssignedObject** | Pointer to **interface{}** |  | [optional] [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewL2VPNTermination
 
-`func NewL2VPNTermination(id int32, url string, display string, l2vpn BriefL2VPN, assignedObjectType string, assignedObjectId int64, assignedObject interface{}, created NullableTime, lastUpdated NullableTime, ) *L2VPNTermination`
+`func NewL2VPNTermination(id int32, url string, display string, l2vpn BriefL2VPN, assignedObjectType string, assignedObjectId int64, ) *L2VPNTermination`
 
 NewL2VPNTermination instantiates a new L2VPNTermination object
 This constructor will assign default values to properties that have it defined,
@@ -174,6 +174,11 @@ and a boolean to check if the value has been set.
 
 SetAssignedObject sets AssignedObject field to given value.
 
+### HasAssignedObject
+
+`func (o *L2VPNTermination) HasAssignedObject() bool`
+
+HasAssignedObject returns a boolean if a field has been set.
 
 ### SetAssignedObjectNil
 
@@ -254,6 +259,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *L2VPNTermination) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -284,6 +294,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *L2VPNTermination) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

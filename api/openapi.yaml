@@ -101547,10 +101547,8 @@ components:
           readOnly: true
       required:
       - asn
-      - created
       - display
       - id
-      - last_updated
       - provider_count
       - site_count
       - url
@@ -101616,11 +101614,9 @@ components:
           readOnly: true
       required:
       - asn_count
-      - created
       - display
       - end
       - id
-      - last_updated
       - name
       - rir
       - slug
@@ -101770,11 +101766,9 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - family
       - id
-      - last_updated
       - prefix
       - rir
       - url
@@ -101841,7 +101835,6 @@ components:
       required:
       - address
       - family
-      - vrf
     AvailablePrefix:
       type: object
       description: Representation of a prefix which does not exist in the database.
@@ -101860,7 +101853,6 @@ components:
       required:
       - family
       - prefix
-      - vrf
     AvailableVLAN:
       type: object
       description: Representation of a VLAN which does not exist in the database.
@@ -101874,7 +101866,6 @@ components:
           readOnly: true
           nullable: true
       required:
-      - group
       - vid
     Bookmark:
       type: object
@@ -101913,7 +101904,6 @@ components:
       - created
       - display
       - id
-      - object
       - object_id
       - object_type
       - url
@@ -102092,12 +102082,12 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
       required:
       - display
       - id
       - name
       - url
-      - virtualmachine_count
     BriefClusterGroup:
       type: object
       description: Adds support for custom fields and tags.
@@ -102582,18 +102572,18 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         virtualmachine_count:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
       required:
-      - device_count
       - display
       - id
       - name
       - slug
       - url
-      - virtualmachine_count
     BriefDeviceRoleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -102643,8 +102633,8 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
       required:
-      - device_count
       - display
       - id
       - manufacturer
@@ -102964,7 +102954,6 @@ components:
           title: ' occupied'
       required:
       - _occupied
-      - cable
       - device
       - display
       - id
@@ -103378,8 +103367,8 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
       required:
-      - devicetype_count
       - display
       - id
       - name
@@ -103511,18 +103500,18 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         virtualmachine_count:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
       required:
-      - device_count
       - display
       - id
       - name
       - slug
       - url
-      - virtualmachine_count
     BriefPlatformRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -103618,7 +103607,6 @@ components:
           title: ' occupied'
       required:
       - _occupied
-      - cable
       - device
       - display
       - id
@@ -103908,8 +103896,8 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
       required:
-      - device_count
       - display
       - id
       - name
@@ -105002,10 +104990,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - url
     CableRequest:
       type: object
@@ -105207,11 +105193,8 @@ components:
       required:
       - cable
       - cable_end
-      - created
       - display
       - id
-      - last_updated
-      - termination
       - termination_id
       - termination_type
       - url
@@ -105358,13 +105341,9 @@ components:
           nullable: true
       required:
       - cid
-      - created
       - display
       - id
-      - last_updated
       - provider
-      - termination_a
-      - termination_z
       - type
       - url
     CircuitCircuitTermination:
@@ -105420,8 +105399,6 @@ components:
       required:
       - display
       - id
-      - provider_network
-      - site
       - url
     CircuitCircuitTerminationRequest:
       type: object
@@ -105463,9 +105440,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - provider_network
-      - site
+      required: []
     CircuitRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -105646,15 +105621,11 @@ components:
           title: ' occupied'
       required:
       - _occupied
-      - cable
       - cable_end
       - circuit
-      - created
       - display
       - id
-      - last_updated
       - link_peers
-      - link_peers_type
       - term_side
       - url
     CircuitTerminationRequest:
@@ -105772,10 +105743,8 @@ components:
           readOnly: true
       required:
       - circuit_count
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - url
@@ -105895,20 +105864,18 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         virtualmachine_count:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
       required:
-      - created
-      - device_count
       - display
       - id
-      - last_updated
       - name
       - type
       - url
-      - virtualmachine_count
     ClusterGroup:
       type: object
       description: Adds support for custom fields and tags.
@@ -105956,10 +105923,8 @@ components:
           readOnly: true
       required:
       - cluster_count
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - url
@@ -106091,10 +106056,8 @@ components:
           readOnly: true
       required:
       - cluster_count
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - url
@@ -106233,14 +106196,11 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - data
       - data_file
       - data_path
-      - data_synced
       - display
       - id
-      - last_updated
       - name
       - url
     ConfigContextRequest:
@@ -106382,12 +106342,9 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - data_path
-      - data_synced
       - display
       - id
-      - last_updated
       - name
       - template_code
       - url
@@ -106620,18 +106577,12 @@ components:
           title: ' occupied'
       required:
       - _occupied
-      - cable
       - cable_end
-      - connected_endpoints
       - connected_endpoints_reachable
-      - connected_endpoints_type
-      - created
       - device
       - display
       - id
-      - last_updated
       - link_peers
-      - link_peers_type
       - name
       - url
     ConsolePortRequest:
@@ -106863,10 +106814,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - url
     ConsolePortTemplateRequest:
@@ -107145,18 +107094,12 @@ components:
           title: ' occupied'
       required:
       - _occupied
-      - cable
       - cable_end
-      - connected_endpoints
       - connected_endpoints_reachable
-      - connected_endpoints_type
-      - created
       - device
       - display
       - id
-      - last_updated
       - link_peers
-      - link_peers_type
       - name
       - url
     ConsoleServerPortRequest:
@@ -107388,10 +107331,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - url
     ConsoleServerPortTemplateRequest:
@@ -107534,10 +107475,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - url
     ContactAssignment:
@@ -107616,10 +107555,8 @@ components:
           nullable: true
       required:
       - contact
-      - created
       - display
       - id
-      - last_updated
       - object
       - object_id
       - object_type
@@ -107724,10 +107661,8 @@ components:
       required:
       - _depth
       - contact_count
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - url
@@ -107846,10 +107781,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - url
@@ -108109,11 +108042,9 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - data_type
       - display
       - id
-      - last_updated
       - name
       - object_types
       - type
@@ -108187,11 +108118,9 @@ components:
           nullable: true
       required:
       - choices_count
-      - created
       - display
       - extra_choices
       - id
-      - last_updated
       - name
       - url
     CustomFieldChoiceSetRequest:
@@ -108504,10 +108433,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - link_text
       - link_url
       - name
@@ -108762,11 +108689,9 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
       - display
       - file_count
       - id
-      - last_updated
       - name
       - source_url
       - status
@@ -109090,7 +109015,6 @@ components:
       required:
       - console_port_count
       - console_server_port_count
-      - created
       - device_bay_count
       - device_type
       - display
@@ -109098,12 +109022,9 @@ components:
       - id
       - interface_count
       - inventory_item_count
-      - last_updated
       - module_bay_count
-      - parent_device
       - power_outlet_count
       - power_port_count
-      - primary_ip
       - rear_port_count
       - role
       - site
@@ -109156,11 +109077,9 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - device
       - display
       - id
-      - last_updated
       - name
       - url
     DeviceBayRequest:
@@ -109236,11 +109155,9 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - device_type
       - display
       - id
-      - last_updated
       - name
       - url
     DeviceBayTemplateRequest:
@@ -109324,20 +109241,18 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         virtualmachine_count:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
       required:
-      - created
-      - device_count
       - display
       - id
-      - last_updated
       - name
       - slug
       - url
-      - virtualmachine_count
     DeviceRoleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -109548,6 +109463,7 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         console_port_template_count:
           type: integer
           readOnly: true
@@ -109581,15 +109497,12 @@ components:
       required:
       - console_port_template_count
       - console_server_port_template_count
-      - created
       - device_bay_template_count
-      - device_count
       - display
       - front_port_template_count
       - id
       - interface_template_count
       - inventory_item_template_count
-      - last_updated
       - manufacturer
       - model
       - module_bay_template_count
@@ -109993,10 +109906,8 @@ components:
           type: integer
           readOnly: true
       required:
-      - config_context
       - console_port_count
       - console_server_port_count
-      - created
       - device_bay_count
       - device_type
       - display
@@ -110004,12 +109915,9 @@ components:
       - id
       - interface_count
       - inventory_item_count
-      - last_updated
       - module_bay_count
-      - parent_device
       - power_outlet_count
       - power_port_count
-      - primary_ip
       - rear_port_count
       - role
       - site
@@ -110294,10 +110202,8 @@ components:
       - action_object
       - action_object_type
       - action_type
-      - created
       - display
       - id
-      - last_updated
       - name
       - object_types
       - url
@@ -110440,13 +110346,10 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - data_file
       - data_path
-      - data_synced
       - display
       - id
-      - last_updated
       - name
       - object_types
       - template_code
@@ -110579,12 +110482,10 @@ components:
             $ref: '#/components/schemas/BriefIPAddress'
           readOnly: true
       required:
-      - created
       - display
       - group_id
       - id
       - ip_addresses
-      - last_updated
       - protocol
       - url
     FHRPGroupAssignment:
@@ -110628,14 +110529,11 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - group
       - id
-      - interface
       - interface_id
       - interface_type
-      - last_updated
       - priority
       - url
     FHRPGroupAssignmentRequest:
@@ -111007,15 +110905,11 @@ components:
           title: ' occupied'
       required:
       - _occupied
-      - cable
       - cable_end
-      - created
       - device
       - display
       - id
-      - last_updated
       - link_peers
-      - link_peers_type
       - name
       - rear_port
       - type
@@ -111516,10 +111410,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - rear_port
       - type
@@ -111724,7 +111616,6 @@ components:
           nullable: true
           readOnly: true
       required:
-      - object
       - object_id
       - object_type
     GenericObjectRequest:
@@ -111876,10 +111767,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - url
       - version
@@ -112178,12 +112067,10 @@ components:
           nullable: true
       required:
       - authentication_method
-      - created
       - display
       - encryption_algorithm
       - group
       - id
-      - last_updated
       - name
       - url
     IKEProposalRequest:
@@ -112515,12 +112402,9 @@ components:
           nullable: true
       required:
       - address
-      - assigned_object
-      - created
       - display
       - family
       - id
-      - last_updated
       - nat_outside
       - url
     IPAddressRequest:
@@ -112714,12 +112598,10 @@ components:
           type: boolean
           description: Treat as fully utilized
       required:
-      - created
       - display
       - end_address
       - family
       - id
-      - last_updated
       - size
       - start_address
       - url
@@ -112924,10 +112806,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - url
     IPSecPolicyRequest:
@@ -113092,12 +112972,10 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
       - ike_policy
       - ipsec_policy
-      - last_updated
       - mode
       - name
       - url
@@ -113264,11 +113142,9 @@ components:
           nullable: true
       required:
       - authentication_algorithm
-      - created
       - display
       - encryption_algorithm
       - id
-      - last_updated
       - name
       - url
     IPSecProposalRequest:
@@ -113404,16 +113280,13 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
       - image
       - image_height
       - image_width
-      - last_updated
       - object_id
       - object_type
-      - parent
       - url
     ImageAttachmentRequest:
       type: object
@@ -115059,25 +114932,17 @@ components:
           title: ' occupied'
       required:
       - _occupied
-      - cable
       - cable_end
-      - connected_endpoints
       - connected_endpoints_reachable
-      - connected_endpoints_type
       - count_fhrp_groups
       - count_ipaddresses
-      - created
       - device
       - display
       - id
-      - l2vpn_termination
-      - last_updated
       - link_peers
-      - link_peers_type
       - name
       - type
       - url
-      - wireless_link
     InterfaceRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -116903,10 +116768,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - type
       - url
@@ -117473,12 +117336,9 @@ components:
           title: ' depth'
       required:
       - _depth
-      - component
-      - created
       - device
       - display
       - id
-      - last_updated
       - name
       - url
     InventoryItemRequest:
@@ -117594,11 +117454,9 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
       - display
       - id
       - inventoryitem_count
-      - last_updated
       - name
       - slug
       - url
@@ -117707,12 +117565,9 @@ components:
           title: ' depth'
       required:
       - _depth
-      - component
-      - created
       - device_type
       - display
       - id
-      - last_updated
       - name
       - url
     InventoryItemTemplateRequest:
@@ -117940,14 +117795,11 @@ components:
           readOnly: true
           nullable: true
       required:
-      - assigned_object
       - assigned_object_id
       - assigned_object_type
       - comments
-      - created
       - display
       - id
-      - last_updated
       - url
     JournalEntryRequest:
       type: object
@@ -118111,10 +117963,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - url
@@ -118247,14 +118097,11 @@ components:
           readOnly: true
           nullable: true
       required:
-      - assigned_object
       - assigned_object_id
       - assigned_object_type
-      - created
       - display
       - id
       - l2vpn
-      - last_updated
       - url
     L2VPNTerminationRequest:
       type: object
@@ -118372,17 +118219,15 @@ components:
           type: integer
           readOnly: true
           default: 0
+          nullable: true
         _depth:
           type: integer
           readOnly: true
           title: ' depth'
       required:
       - _depth
-      - created
-      - device_count
       - display
       - id
-      - last_updated
       - name
       - rack_count
       - site
@@ -118492,6 +118337,7 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         inventoryitem_count:
           type: integer
           format: int64
@@ -118501,12 +118347,9 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
-      - devicetype_count
       - display
       - id
       - inventoryitem_count
-      - last_updated
       - name
       - platform_count
       - slug
@@ -118622,11 +118465,9 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - device
       - display
       - id
-      - last_updated
       - module_bay
       - module_type
       - url
@@ -118682,11 +118523,9 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - device
       - display
       - id
-      - last_updated
       - name
       - url
     ModuleBayNestedModule:
@@ -118812,11 +118651,9 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - device_type
       - display
       - id
-      - last_updated
       - name
       - url
     ModuleBayTemplateRequest:
@@ -118985,10 +118822,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - manufacturer
       - model
       - url
@@ -120011,13 +119846,10 @@ components:
           nullable: true
       required:
       - action
-      - changed_object
       - changed_object_id
       - changed_object_type
       - display
       - id
-      - postchange_data
-      - prechange_data
       - request_id
       - time
       - url
@@ -131635,20 +131467,18 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         virtualmachine_count:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
       required:
-      - created
-      - device_count
       - display
       - id
-      - last_updated
       - name
       - slug
       - url
-      - virtualmachine_count
     PlatformRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -131859,17 +131689,11 @@ components:
           title: ' occupied'
       required:
       - _occupied
-      - cable
       - cable_end
-      - connected_endpoints
       - connected_endpoints_reachable
-      - connected_endpoints_type
-      - created
       - display
       - id
-      - last_updated
       - link_peers
-      - link_peers_type
       - name
       - power_panel
       - url
@@ -132471,18 +132295,12 @@ components:
           title: ' occupied'
       required:
       - _occupied
-      - cable
       - cable_end
-      - connected_endpoints
       - connected_endpoints_reachable
-      - connected_endpoints_type
-      - created
       - device
       - display
       - id
-      - last_updated
       - link_peers
-      - link_peers_type
       - name
       - url
     PowerOutletRequest:
@@ -133300,10 +133118,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - url
     PowerOutletTemplateRequest:
@@ -133697,10 +133513,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - powerfeed_count
       - site
@@ -134254,18 +134068,12 @@ components:
           title: ' occupied'
       required:
       - _occupied
-      - cable
       - cable_end
-      - connected_endpoints
       - connected_endpoints_reachable
-      - connected_endpoints_type
-      - created
       - device
       - display
       - id
-      - last_updated
       - link_peers
-      - link_peers_type
       - name
       - url
     PowerPortRequest:
@@ -135111,10 +134919,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - url
     PowerPortTemplateRequest:
@@ -135591,11 +135397,9 @@ components:
       required:
       - _depth
       - children
-      - created
       - display
       - family
       - id
-      - last_updated
       - prefix
       - url
     PrefixRequest:
@@ -135719,10 +135523,8 @@ components:
           readOnly: true
       required:
       - circuit_count
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - url
@@ -135774,10 +135576,8 @@ components:
           nullable: true
       required:
       - account
-      - created
       - display
       - id
-      - last_updated
       - provider
       - url
     ProviderAccountRequest:
@@ -135855,10 +135655,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - provider
       - url
@@ -135978,10 +135776,8 @@ components:
           readOnly: true
       required:
       - aggregate_count
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - url
@@ -136272,16 +136068,14 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         powerfeed_count:
           type: integer
           format: int64
           readOnly: true
       required:
-      - created
-      - device_count
       - display
       - id
-      - last_updated
       - name
       - powerfeed_count
       - site
@@ -136522,11 +136316,9 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - created
       - description
       - display
       - id
-      - last_updated
       - rack
       - units
       - url
@@ -136617,10 +136409,8 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - rack_count
       - slug
@@ -136986,15 +136776,11 @@ components:
           title: ' occupied'
       required:
       - _occupied
-      - cable
       - cable_end
-      - created
       - device
       - display
       - id
-      - last_updated
       - link_peers
-      - link_peers_type
       - name
       - type
       - url
@@ -137439,10 +137225,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - type
       - url
@@ -137684,10 +137468,8 @@ components:
           title: ' depth'
       required:
       - _depth
-      - created
       - display
       - id
-      - last_updated
       - name
       - site_count
       - slug
@@ -137776,10 +137558,8 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - prefix_count
       - slug
@@ -137860,10 +137640,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - url
     RouteTargetRequest:
@@ -137947,10 +137725,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - object_types
       - parameters
@@ -138034,7 +137810,6 @@ components:
           type: boolean
           readOnly: true
       required:
-      - description
       - display
       - id
       - is_executable
@@ -138042,7 +137817,6 @@ components:
       - name
       - result
       - url
-      - vars
     Service:
       type: object
       description: Adds support for custom fields and tags.
@@ -138123,10 +137897,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - ports
       - url
@@ -138252,10 +138024,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - ports
       - url
@@ -138431,6 +138201,7 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         prefix_count:
           type: integer
           format: int64
@@ -138443,23 +138214,20 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         vlan_count:
           type: integer
           format: int64
           readOnly: true
       required:
       - circuit_count
-      - created
-      - device_count
       - display
       - id
-      - last_updated
       - name
       - prefix_count
       - rack_count
       - slug
       - url
-      - virtualmachine_count
       - vlan_count
     SiteGroup:
       type: object
@@ -138516,10 +138284,8 @@ components:
           title: ' depth'
       required:
       - _depth
-      - created
       - display
       - id
-      - last_updated
       - name
       - site_count
       - slug
@@ -138701,10 +138467,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - tagged_items
@@ -138795,6 +138559,7 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         ipaddress_count:
           type: integer
           format: int64
@@ -138815,6 +138580,7 @@ components:
           type: integer
           format: int64
           readOnly: true
+          nullable: true
         vlan_count:
           type: integer
           format: int64
@@ -138830,19 +138596,15 @@ components:
       required:
       - circuit_count
       - cluster_count
-      - created
-      - device_count
       - display
       - id
       - ipaddress_count
-      - last_updated
       - name
       - prefix_count
       - rack_count
       - site_count
       - slug
       - url
-      - virtualmachine_count
       - vlan_count
       - vrf_count
     TenantGroup:
@@ -138900,10 +138662,8 @@ components:
           title: ' depth'
       required:
       - _depth
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - tenant_count
@@ -139232,11 +138992,9 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
       - display
       - encapsulation
       - id
-      - last_updated
       - name
       - status
       - terminations_count
@@ -139287,10 +139045,8 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - tunnel_count
@@ -139460,13 +139216,9 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - role
-      - termination
-      - termination_id
       - termination_type
       - tunnel
       - url
@@ -139509,7 +139261,6 @@ components:
           additionalProperties: {}
       required:
       - role
-      - termination_id
       - termination_type
       - tunnel
     User:
@@ -139724,11 +139475,8 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
       - display
       - id
-      - l2vpn_termination
-      - last_updated
       - name
       - prefix_count
       - url
@@ -139803,12 +139551,9 @@ components:
           type: string
           readOnly: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
-      - scope
       - slug
       - url
       - utilization
@@ -140019,11 +139764,8 @@ components:
       required:
       - count_fhrp_groups
       - count_ipaddresses
-      - created
       - display
       - id
-      - l2vpn_termination
-      - last_updated
       - name
       - url
       - virtual_machine
@@ -140164,11 +139906,9 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
       - display
       - id
       - ipaddress_count
-      - last_updated
       - name
       - prefix_count
       - url
@@ -140271,10 +140011,8 @@ components:
             $ref: '#/components/schemas/NestedDevice'
           readOnly: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - member_count
       - members
       - name
@@ -140397,14 +140135,11 @@ components:
           format: int64
           readOnly: true
       required:
-      - created
       - device
       - display
       - id
       - interface_count
-      - last_updated
       - name
-      - primary_ip
       - status
       - url
     VirtualDeviceContextRequest:
@@ -140507,10 +140242,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - size
       - url
@@ -140690,14 +140423,10 @@ components:
           type: integer
           readOnly: true
       required:
-      - config_context
-      - created
       - display
       - id
       - interface_count
-      - last_updated
       - name
-      - primary_ip
       - url
       - virtual_disk_count
     VirtualMachineWithConfigContextRequest:
@@ -140897,10 +140626,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - name
       - payload_url
       - url
@@ -141114,10 +140841,8 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
-      - last_updated
       - ssid
       - url
     WirelessLANGroup:
@@ -141175,10 +140900,8 @@ components:
           title: ' depth'
       required:
       - _depth
-      - created
       - display
       - id
-      - last_updated
       - name
       - slug
       - url
@@ -141417,12 +141140,10 @@ components:
           readOnly: true
           nullable: true
       required:
-      - created
       - display
       - id
       - interface_a
       - interface_b
-      - last_updated
       - url
     WirelessLinkRequest:
       type: object
@@ -142280,7 +142001,6 @@ components:
           additionalProperties: {}
       required:
       - name
-      - parent
       - slug
     WritableCustomFieldChoiceSetRequest:
       type: object
@@ -145732,7 +145452,6 @@ components:
           additionalProperties: {}
       required:
       - name
-      - parent
       - site
       - slug
     WritableModuleRequest:
@@ -147995,7 +147714,6 @@ components:
           additionalProperties: {}
       required:
       - name
-      - parent
       - slug
     WritableServiceRequest:
       type: object
@@ -148123,7 +147841,6 @@ components:
           additionalProperties: {}
       required:
       - name
-      - parent
       - slug
     WritableSiteRequest:
       type: object
@@ -148357,7 +148074,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - termination_id
       - termination_type
       - tunnel
     WritableVLANRequest:
@@ -148703,7 +148419,6 @@ components:
           additionalProperties: {}
       required:
       - name
-      - parent
       - slug
     WritableWirelessLANRequest:
       type: object

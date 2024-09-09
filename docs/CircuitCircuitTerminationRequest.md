@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Site** | [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | 
-**ProviderNetwork** | [**NullableBriefProviderNetworkRequest**](BriefProviderNetworkRequest.md) |  | 
+**Site** | Pointer to [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
+**ProviderNetwork** | Pointer to [**NullableBriefProviderNetworkRequest**](BriefProviderNetworkRequest.md) |  | [optional] 
 **PortSpeed** | Pointer to **NullableInt32** | Physical circuit speed | [optional] 
 **UpstreamSpeed** | Pointer to **NullableInt32** | Upstream speed, if different from port speed | [optional] 
 **XconnectId** | Pointer to **string** | ID of the local cross-connect | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewCircuitCircuitTerminationRequest
 
-`func NewCircuitCircuitTerminationRequest(site NullableBriefSiteRequest, providerNetwork NullableBriefProviderNetworkRequest, ) *CircuitCircuitTerminationRequest`
+`func NewCircuitCircuitTerminationRequest() *CircuitCircuitTerminationRequest`
 
 NewCircuitCircuitTerminationRequest instantiates a new CircuitCircuitTerminationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetSite sets Site field to given value.
 
+### HasSite
+
+`func (o *CircuitCircuitTerminationRequest) HasSite() bool`
+
+HasSite returns a boolean if a field has been set.
 
 ### SetSiteNil
 
@@ -79,6 +84,11 @@ and a boolean to check if the value has been set.
 
 SetProviderNetwork sets ProviderNetwork field to given value.
 
+### HasProviderNetwork
+
+`func (o *CircuitCircuitTerminationRequest) HasProviderNetwork() bool`
+
+HasProviderNetwork returns a boolean if a field has been set.
 
 ### SetProviderNetworkNil
 

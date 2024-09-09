@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
-**DevicetypeCount** | **int64** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**DevicetypeCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 **InventoryitemCount** | **int64** |  | [readonly] 
 **PlatformCount** | **int64** |  | [readonly] 
 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewManufacturer
 
-`func NewManufacturer(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, devicetypeCount int64, inventoryitemCount int64, platformCount int64, ) *Manufacturer`
+`func NewManufacturer(id int32, url string, display string, name string, slug string, inventoryitemCount int64, platformCount int64, ) *Manufacturer`
 
 NewManufacturer instantiates a new Manufacturer object
 This constructor will assign default values to properties that have it defined,
@@ -231,6 +231,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Manufacturer) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -261,6 +266,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *Manufacturer) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 
@@ -291,7 +301,22 @@ and a boolean to check if the value has been set.
 
 SetDevicetypeCount sets DevicetypeCount field to given value.
 
+### HasDevicetypeCount
 
+`func (o *Manufacturer) HasDevicetypeCount() bool`
+
+HasDevicetypeCount returns a boolean if a field has been set.
+
+### SetDevicetypeCountNil
+
+`func (o *Manufacturer) SetDevicetypeCountNil(b bool)`
+
+ SetDevicetypeCountNil sets the value for DevicetypeCount to be an explicit nil
+
+### UnsetDevicetypeCount
+`func (o *Manufacturer) UnsetDevicetypeCount()`
+
+UnsetDevicetypeCount ensures that no value is present for DevicetypeCount, not even an explicit nil
 ### GetInventoryitemCount
 
 `func (o *Manufacturer) GetInventoryitemCount() int64`

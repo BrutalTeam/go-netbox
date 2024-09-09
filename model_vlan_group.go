@@ -28,7 +28,7 @@ type VLANGroup struct {
 	Slug      string         `json:"slug"`
 	ScopeType NullableString `json:"scope_type,omitempty"`
 	ScopeId   NullableInt32  `json:"scope_id,omitempty"`
-	Scope     interface{}    `json:"scope"`
+	Scope     interface{}    `json:"scope,omitempty"`
 	// Lowest permissible ID of a child VLAN
 	MinVid *int32 `json:"min_vid,omitempty"`
 	// Highest permissible ID of a child VLAN
@@ -36,8 +36,8 @@ type VLANGroup struct {
 	Description          *string                `json:"description,omitempty"`
 	Tags                 []NestedTag            `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	Created              NullableTime           `json:"created"`
-	LastUpdated          NullableTime           `json:"last_updated"`
+	Created              NullableTime           `json:"created,omitempty"`
+	LastUpdated          NullableTime           `json:"last_updated,omitempty"`
 	VlanCount            int64                  `json:"vlan_count"`
 	Utilization          string                 `json:"utilization"`
 	AdditionalProperties map[string]interface{}
@@ -49,16 +49,13 @@ type _VLANGroup VLANGroup
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVLANGroup(id int32, url string, display string, name string, slug string, scope interface{}, created NullableTime, lastUpdated NullableTime, vlanCount int64, utilization string) *VLANGroup {
+func NewVLANGroup(id int32, url string, display string, name string, slug string, vlanCount int64, utilization string) *VLANGroup {
 	this := VLANGroup{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
 	this.Slug = slug
-	this.Scope = scope
-	this.Created = created
-	this.LastUpdated = lastUpdated
 	this.VlanCount = vlanCount
 	this.Utilization = utilization
 	return &this
@@ -278,18 +275,16 @@ func (o *VLANGroup) UnsetScopeId() {
 	o.ScopeId.Unset()
 }
 
-// GetScope returns the Scope field value
-// If the value is explicit nil, the zero value for interface{} will be returned
+// GetScope returns the Scope field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VLANGroup) GetScope() interface{} {
 	if o == nil {
 		var ret interface{}
 		return ret
 	}
-
 	return o.Scope
 }
 
-// GetScopeOk returns a tuple with the Scope field value
+// GetScopeOk returns a tuple with the Scope field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VLANGroup) GetScopeOk() (*interface{}, bool) {
@@ -299,7 +294,16 @@ func (o *VLANGroup) GetScopeOk() (*interface{}, bool) {
 	return &o.Scope, true
 }
 
-// SetScope sets field value
+// HasScope returns a boolean if a field has been set.
+func (o *VLANGroup) HasScope() bool {
+	if o != nil && !IsNil(o.Scope) {
+		return true
+	}
+
+	return false
+}
+
+// SetScope gets a reference to the given interface{} and assigns it to the Scope field.
 func (o *VLANGroup) SetScope(v interface{}) {
 	o.Scope = v
 }
@@ -464,18 +468,16 @@ func (o *VLANGroup) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
-// GetCreated returns the Created field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VLANGroup) GetCreated() time.Time {
-	if o == nil || o.Created.Get() == nil {
+	if o == nil || IsNil(o.Created.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.Created.Get()
 }
 
-// GetCreatedOk returns a tuple with the Created field value
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VLANGroup) GetCreatedOk() (*time.Time, bool) {
@@ -485,23 +487,40 @@ func (o *VLANGroup) GetCreatedOk() (*time.Time, bool) {
 	return o.Created.Get(), o.Created.IsSet()
 }
 
-// SetCreated sets field value
+// HasCreated returns a boolean if a field has been set.
+func (o *VLANGroup) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
 func (o *VLANGroup) SetCreated(v time.Time) {
 	o.Created.Set(&v)
 }
 
-// GetLastUpdated returns the LastUpdated field value
-// If the value is explicit nil, the zero value for time.Time will be returned
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *VLANGroup) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *VLANGroup) UnsetCreated() {
+	o.Created.Unset()
+}
+
+// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VLANGroup) GetLastUpdated() time.Time {
-	if o == nil || o.LastUpdated.Get() == nil {
+	if o == nil || IsNil(o.LastUpdated.Get()) {
 		var ret time.Time
 		return ret
 	}
-
 	return *o.LastUpdated.Get()
 }
 
-// GetLastUpdatedOk returns a tuple with the LastUpdated field value
+// GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VLANGroup) GetLastUpdatedOk() (*time.Time, bool) {
@@ -511,9 +530,28 @@ func (o *VLANGroup) GetLastUpdatedOk() (*time.Time, bool) {
 	return o.LastUpdated.Get(), o.LastUpdated.IsSet()
 }
 
-// SetLastUpdated sets field value
+// HasLastUpdated returns a boolean if a field has been set.
+func (o *VLANGroup) HasLastUpdated() bool {
+	if o != nil && o.LastUpdated.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLastUpdated gets a reference to the given NullableTime and assigns it to the LastUpdated field.
 func (o *VLANGroup) SetLastUpdated(v time.Time) {
 	o.LastUpdated.Set(&v)
+}
+
+// SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+func (o *VLANGroup) SetLastUpdatedNil() {
+	o.LastUpdated.Set(nil)
+}
+
+// UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+func (o *VLANGroup) UnsetLastUpdated() {
+	o.LastUpdated.Unset()
 }
 
 // GetVlanCount returns the VlanCount field value
@@ -603,8 +641,12 @@ func (o VLANGroup) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
-	toSerialize["created"] = o.Created.Get()
-	toSerialize["last_updated"] = o.LastUpdated.Get()
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
+	if o.LastUpdated.IsSet() {
+		toSerialize["last_updated"] = o.LastUpdated.Get()
+	}
 	toSerialize["vlan_count"] = o.VlanCount
 	toSerialize["utilization"] = o.Utilization
 
@@ -625,9 +667,6 @@ func (o *VLANGroup) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"scope",
-		"created",
-		"last_updated",
 		"vlan_count",
 		"utilization",
 	}

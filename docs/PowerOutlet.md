@@ -16,24 +16,24 @@ Name | Type | Description | Notes
 **FeedLeg** | Pointer to [**NullablePowerOutletFeedLeg**](PowerOutletFeedLeg.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableBriefCable**](BriefCable.md) |  | [readonly] 
+**Cable** | Pointer to [**NullableBriefCable**](BriefCable.md) |  | [optional] [readonly] 
 **CableEnd** | **string** |  | [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
-**LinkPeersType** | **NullableString** | Return the type of the peer link terminations, or None. | [readonly] 
-**ConnectedEndpoints** | **[]interface{}** |  | [readonly] 
-**ConnectedEndpointsType** | **NullableString** |  | [readonly] 
+**LinkPeersType** | Pointer to **NullableString** | Return the type of the peer link terminations, or None. | [optional] [readonly] 
+**ConnectedEndpoints** | Pointer to **[]interface{}** |  | [optional] [readonly] 
+**ConnectedEndpointsType** | Pointer to **NullableString** |  | [optional] [readonly] 
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **Occupied** | **bool** |  | [readonly] 
 
 ## Methods
 
 ### NewPowerOutlet
 
-`func NewPowerOutlet(id int32, url string, display string, device BriefDevice, name string, cable NullableBriefCable, cableEnd string, linkPeers []interface{}, linkPeersType NullableString, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, occupied bool, ) *PowerOutlet`
+`func NewPowerOutlet(id int32, url string, display string, device BriefDevice, name string, cableEnd string, linkPeers []interface{}, connectedEndpointsReachable bool, occupied bool, ) *PowerOutlet`
 
 NewPowerOutlet instantiates a new PowerOutlet object
 This constructor will assign default values to properties that have it defined,
@@ -382,6 +382,11 @@ and a boolean to check if the value has been set.
 
 SetCable sets Cable field to given value.
 
+### HasCable
+
+`func (o *PowerOutlet) HasCable() bool`
+
+HasCable returns a boolean if a field has been set.
 
 ### SetCableNil
 
@@ -452,6 +457,11 @@ and a boolean to check if the value has been set.
 
 SetLinkPeersType sets LinkPeersType field to given value.
 
+### HasLinkPeersType
+
+`func (o *PowerOutlet) HasLinkPeersType() bool`
+
+HasLinkPeersType returns a boolean if a field has been set.
 
 ### SetLinkPeersTypeNil
 
@@ -482,6 +492,11 @@ and a boolean to check if the value has been set.
 
 SetConnectedEndpoints sets ConnectedEndpoints field to given value.
 
+### HasConnectedEndpoints
+
+`func (o *PowerOutlet) HasConnectedEndpoints() bool`
+
+HasConnectedEndpoints returns a boolean if a field has been set.
 
 ### SetConnectedEndpointsNil
 
@@ -512,6 +527,11 @@ and a boolean to check if the value has been set.
 
 SetConnectedEndpointsType sets ConnectedEndpointsType field to given value.
 
+### HasConnectedEndpointsType
+
+`func (o *PowerOutlet) HasConnectedEndpointsType() bool`
+
+HasConnectedEndpointsType returns a boolean if a field has been set.
 
 ### SetConnectedEndpointsTypeNil
 
@@ -612,6 +632,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *PowerOutlet) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -642,6 +667,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *PowerOutlet) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

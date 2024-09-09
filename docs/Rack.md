@@ -32,16 +32,16 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
-**DeviceCount** | **int64** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**DeviceCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 **PowerfeedCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewRack
 
-`func NewRack(id int32, url string, display string, name string, site BriefSite, created NullableTime, lastUpdated NullableTime, deviceCount int64, powerfeedCount int64, ) *Rack`
+`func NewRack(id int32, url string, display string, name string, site BriefSite, powerfeedCount int64, ) *Rack`
 
 NewRack instantiates a new Rack object
 This constructor will assign default values to properties that have it defined,
@@ -880,6 +880,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Rack) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -910,6 +915,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *Rack) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 
@@ -940,7 +950,22 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
 
+`func (o *Rack) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
+
+### SetDeviceCountNil
+
+`func (o *Rack) SetDeviceCountNil(b bool)`
+
+ SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
+
+### UnsetDeviceCount
+`func (o *Rack) UnsetDeviceCount()`
+
+UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
 ### GetPowerfeedCount
 
 `func (o *Rack) GetPowerfeedCount() int64`

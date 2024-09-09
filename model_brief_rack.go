@@ -20,12 +20,12 @@ var _ MappedNullable = &BriefRack{}
 
 // BriefRack Adds support for custom fields and tags.
 type BriefRack struct {
-	Id                   int32   `json:"id"`
-	Url                  string  `json:"url"`
-	Display              string  `json:"display"`
-	Name                 string  `json:"name"`
-	Description          *string `json:"description,omitempty"`
-	DeviceCount          int64   `json:"device_count"`
+	Id                   int32         `json:"id"`
+	Url                  string        `json:"url"`
+	Display              string        `json:"display"`
+	Name                 string        `json:"name"`
+	Description          *string       `json:"description,omitempty"`
+	DeviceCount          NullableInt64 `json:"device_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -35,13 +35,12 @@ type _BriefRack BriefRack
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefRack(id int32, url string, display string, name string, deviceCount int64) *BriefRack {
+func NewBriefRack(id int32, url string, display string, name string) *BriefRack {
 	this := BriefRack{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Name = name
-	this.DeviceCount = deviceCount
 	return &this
 }
 
@@ -181,28 +180,47 @@ func (o *BriefRack) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetDeviceCount returns the DeviceCount field value
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BriefRack) GetDeviceCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount.Get()) {
 		var ret int64
 		return ret
 	}
-
-	return o.DeviceCount
+	return *o.DeviceCount.Get()
 }
 
-// GetDeviceCountOk returns a tuple with the DeviceCount field value
+// GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BriefRack) GetDeviceCountOk() (*int64, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.DeviceCount, true
+	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
 }
 
-// SetDeviceCount sets field value
+// HasDeviceCount returns a boolean if a field has been set.
+func (o *BriefRack) HasDeviceCount() bool {
+	if o != nil && o.DeviceCount.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDeviceCount gets a reference to the given NullableInt64 and assigns it to the DeviceCount field.
 func (o *BriefRack) SetDeviceCount(v int64) {
-	o.DeviceCount = v
+	o.DeviceCount.Set(&v)
+}
+
+// SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
+func (o *BriefRack) SetDeviceCountNil() {
+	o.DeviceCount.Set(nil)
+}
+
+// UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
+func (o *BriefRack) UnsetDeviceCount() {
+	o.DeviceCount.Unset()
 }
 
 func (o BriefRack) MarshalJSON() ([]byte, error) {
@@ -222,7 +240,9 @@ func (o BriefRack) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	toSerialize["device_count"] = o.DeviceCount
+	if o.DeviceCount.IsSet() {
+		toSerialize["device_count"] = o.DeviceCount.Get()
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -240,7 +260,6 @@ func (o *BriefRack) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"name",
-		"device_count",
 	}
 
 	allProperties := make(map[string]interface{})

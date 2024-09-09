@@ -24,20 +24,20 @@ Name | Type | Description | Notes
 **Asns** | Pointer to [**[]ASN**](ASN.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **CircuitCount** | **int64** |  | [readonly] 
-**DeviceCount** | **int64** |  | [readonly] 
+**DeviceCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 **PrefixCount** | **int64** |  | [readonly] 
 **RackCount** | **int64** |  | [readonly] 
-**VirtualmachineCount** | **int64** |  | [readonly] 
+**VirtualmachineCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 **VlanCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewSite
 
-`func NewSite(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int64, deviceCount int64, prefixCount int64, rackCount int64, virtualmachineCount int64, vlanCount int64, ) *Site`
+`func NewSite(id int32, url string, display string, name string, slug string, circuitCount int64, prefixCount int64, rackCount int64, vlanCount int64, ) *Site`
 
 NewSite instantiates a new Site object
 This constructor will assign default values to properties that have it defined,
@@ -606,6 +606,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Site) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -636,6 +641,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *Site) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 
@@ -686,7 +696,22 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
 
+`func (o *Site) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
+
+### SetDeviceCountNil
+
+`func (o *Site) SetDeviceCountNil(b bool)`
+
+ SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
+
+### UnsetDeviceCount
+`func (o *Site) UnsetDeviceCount()`
+
+UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
 ### GetPrefixCount
 
 `func (o *Site) GetPrefixCount() int64`
@@ -746,7 +771,22 @@ and a boolean to check if the value has been set.
 
 SetVirtualmachineCount sets VirtualmachineCount field to given value.
 
+### HasVirtualmachineCount
 
+`func (o *Site) HasVirtualmachineCount() bool`
+
+HasVirtualmachineCount returns a boolean if a field has been set.
+
+### SetVirtualmachineCountNil
+
+`func (o *Site) SetVirtualmachineCountNil(b bool)`
+
+ SetVirtualmachineCountNil sets the value for VirtualmachineCount to be an explicit nil
+
+### UnsetVirtualmachineCount
+`func (o *Site) UnsetVirtualmachineCount()`
+
+UnsetVirtualmachineCount ensures that no value is present for VirtualmachineCount, not even an explicit nil
 ### GetVlanCount
 
 `func (o *Site) GetVlanCount() int64`

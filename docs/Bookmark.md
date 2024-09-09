@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **ObjectType** | **string** |  | 
 **ObjectId** | **int64** |  | 
-**Object** | **interface{}** |  | [readonly] 
+**Object** | Pointer to **interface{}** |  | [optional] [readonly] 
 **User** | [**BriefUser**](BriefUser.md) |  | 
 **Created** | **time.Time** |  | [readonly] 
 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewBookmark
 
-`func NewBookmark(id int32, url string, display string, objectType string, objectId int64, object interface{}, user BriefUser, created time.Time, ) *Bookmark`
+`func NewBookmark(id int32, url string, display string, objectType string, objectId int64, user BriefUser, created time.Time, ) *Bookmark`
 
 NewBookmark instantiates a new Bookmark object
 This constructor will assign default values to properties that have it defined,
@@ -151,6 +151,11 @@ and a boolean to check if the value has been set.
 
 SetObject sets Object field to given value.
 
+### HasObject
+
+`func (o *Bookmark) HasObject() bool`
+
+HasObject returns a boolean if a field has been set.
 
 ### SetObjectNil
 

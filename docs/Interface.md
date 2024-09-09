@@ -35,21 +35,21 @@ Name | Type | Description | Notes
 **UntaggedVlan** | Pointer to [**NullableBriefVLAN**](BriefVLAN.md) |  | [optional] 
 **TaggedVlans** | Pointer to [**[]VLAN**](VLAN.md) |  | [optional] 
 **MarkConnected** | Pointer to **bool** | Treat as if a cable is connected | [optional] 
-**Cable** | [**NullableBriefCable**](BriefCable.md) |  | [readonly] 
+**Cable** | Pointer to [**NullableBriefCable**](BriefCable.md) |  | [optional] [readonly] 
 **CableEnd** | **string** |  | [readonly] 
-**WirelessLink** | [**NullableNestedWirelessLink**](NestedWirelessLink.md) |  | [readonly] 
+**WirelessLink** | Pointer to [**NullableNestedWirelessLink**](NestedWirelessLink.md) |  | [optional] [readonly] 
 **LinkPeers** | **[]interface{}** |  | [readonly] 
-**LinkPeersType** | **NullableString** | Return the type of the peer link terminations, or None. | [readonly] 
+**LinkPeersType** | Pointer to **NullableString** | Return the type of the peer link terminations, or None. | [optional] [readonly] 
 **WirelessLans** | Pointer to [**[]WirelessLAN**](WirelessLAN.md) |  | [optional] 
 **Vrf** | Pointer to [**NullableBriefVRF**](BriefVRF.md) |  | [optional] 
-**L2vpnTermination** | [**NullableBriefL2VPNTermination**](BriefL2VPNTermination.md) |  | [readonly] 
-**ConnectedEndpoints** | **[]interface{}** |  | [readonly] 
-**ConnectedEndpointsType** | **NullableString** |  | [readonly] 
+**L2vpnTermination** | Pointer to [**NullableBriefL2VPNTermination**](BriefL2VPNTermination.md) |  | [optional] [readonly] 
+**ConnectedEndpoints** | Pointer to **[]interface{}** |  | [optional] [readonly] 
+**ConnectedEndpointsType** | Pointer to **NullableString** |  | [optional] [readonly] 
 **ConnectedEndpointsReachable** | **bool** |  | [readonly] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **CountIpaddresses** | **int32** |  | [readonly] 
 **CountFhrpGroups** | **int32** |  | [readonly] 
 **Occupied** | **bool** |  | [readonly] 
@@ -58,7 +58,7 @@ Name | Type | Description | Notes
 
 ### NewInterface
 
-`func NewInterface(id int32, url string, display string, device BriefDevice, name string, type_ InterfaceType, cable NullableBriefCable, cableEnd string, wirelessLink NullableNestedWirelessLink, linkPeers []interface{}, linkPeersType NullableString, l2vpnTermination NullableBriefL2VPNTermination, connectedEndpoints []interface{}, connectedEndpointsType NullableString, connectedEndpointsReachable bool, created NullableTime, lastUpdated NullableTime, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
+`func NewInterface(id int32, url string, display string, device BriefDevice, name string, type_ InterfaceType, cableEnd string, linkPeers []interface{}, connectedEndpointsReachable bool, countIpaddresses int32, countFhrpGroups int32, occupied bool, ) *Interface`
 
 NewInterface instantiates a new Interface object
 This constructor will assign default values to properties that have it defined,
@@ -967,6 +967,11 @@ and a boolean to check if the value has been set.
 
 SetCable sets Cable field to given value.
 
+### HasCable
+
+`func (o *Interface) HasCable() bool`
+
+HasCable returns a boolean if a field has been set.
 
 ### SetCableNil
 
@@ -1017,6 +1022,11 @@ and a boolean to check if the value has been set.
 
 SetWirelessLink sets WirelessLink field to given value.
 
+### HasWirelessLink
+
+`func (o *Interface) HasWirelessLink() bool`
+
+HasWirelessLink returns a boolean if a field has been set.
 
 ### SetWirelessLinkNil
 
@@ -1067,6 +1077,11 @@ and a boolean to check if the value has been set.
 
 SetLinkPeersType sets LinkPeersType field to given value.
 
+### HasLinkPeersType
+
+`func (o *Interface) HasLinkPeersType() bool`
+
+HasLinkPeersType returns a boolean if a field has been set.
 
 ### SetLinkPeersTypeNil
 
@@ -1157,6 +1172,11 @@ and a boolean to check if the value has been set.
 
 SetL2vpnTermination sets L2vpnTermination field to given value.
 
+### HasL2vpnTermination
+
+`func (o *Interface) HasL2vpnTermination() bool`
+
+HasL2vpnTermination returns a boolean if a field has been set.
 
 ### SetL2vpnTerminationNil
 
@@ -1187,6 +1207,11 @@ and a boolean to check if the value has been set.
 
 SetConnectedEndpoints sets ConnectedEndpoints field to given value.
 
+### HasConnectedEndpoints
+
+`func (o *Interface) HasConnectedEndpoints() bool`
+
+HasConnectedEndpoints returns a boolean if a field has been set.
 
 ### SetConnectedEndpointsNil
 
@@ -1217,6 +1242,11 @@ and a boolean to check if the value has been set.
 
 SetConnectedEndpointsType sets ConnectedEndpointsType field to given value.
 
+### HasConnectedEndpointsType
+
+`func (o *Interface) HasConnectedEndpointsType() bool`
+
+HasConnectedEndpointsType returns a boolean if a field has been set.
 
 ### SetConnectedEndpointsTypeNil
 
@@ -1317,6 +1347,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Interface) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -1347,6 +1382,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *Interface) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

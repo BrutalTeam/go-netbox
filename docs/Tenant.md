@@ -14,15 +14,15 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **CircuitCount** | **int64** |  | [readonly] 
-**DeviceCount** | **int64** |  | [readonly] 
+**DeviceCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 **IpaddressCount** | **int64** |  | [readonly] 
 **PrefixCount** | **int64** |  | [readonly] 
 **RackCount** | **int64** |  | [readonly] 
 **SiteCount** | **int64** |  | [readonly] 
-**VirtualmachineCount** | **int64** |  | [readonly] 
+**VirtualmachineCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
 **VlanCount** | **int64** |  | [readonly] 
 **VrfCount** | **int64** |  | [readonly] 
 **ClusterCount** | **int64** |  | [readonly] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewTenant
 
-`func NewTenant(id int32, url string, display string, name string, slug string, created NullableTime, lastUpdated NullableTime, circuitCount int64, deviceCount int64, ipaddressCount int64, prefixCount int64, rackCount int64, siteCount int64, virtualmachineCount int64, vlanCount int64, vrfCount int64, clusterCount int64, ) *Tenant`
+`func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, prefixCount int64, rackCount int64, siteCount int64, vlanCount int64, vrfCount int64, clusterCount int64, ) *Tenant`
 
 NewTenant instantiates a new Tenant object
 This constructor will assign default values to properties that have it defined,
@@ -300,6 +300,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *Tenant) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -330,6 +335,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *Tenant) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 
@@ -380,7 +390,22 @@ and a boolean to check if the value has been set.
 
 SetDeviceCount sets DeviceCount field to given value.
 
+### HasDeviceCount
 
+`func (o *Tenant) HasDeviceCount() bool`
+
+HasDeviceCount returns a boolean if a field has been set.
+
+### SetDeviceCountNil
+
+`func (o *Tenant) SetDeviceCountNil(b bool)`
+
+ SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
+
+### UnsetDeviceCount
+`func (o *Tenant) UnsetDeviceCount()`
+
+UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
 ### GetIpaddressCount
 
 `func (o *Tenant) GetIpaddressCount() int64`
@@ -480,7 +505,22 @@ and a boolean to check if the value has been set.
 
 SetVirtualmachineCount sets VirtualmachineCount field to given value.
 
+### HasVirtualmachineCount
 
+`func (o *Tenant) HasVirtualmachineCount() bool`
+
+HasVirtualmachineCount returns a boolean if a field has been set.
+
+### SetVirtualmachineCountNil
+
+`func (o *Tenant) SetVirtualmachineCountNil(b bool)`
+
+ SetVirtualmachineCountNil sets the value for VirtualmachineCount to be an explicit nil
+
+### UnsetVirtualmachineCount
+`func (o *Tenant) UnsetVirtualmachineCount()`
+
+UnsetVirtualmachineCount ensures that no value is present for VirtualmachineCount, not even an explicit nil
 ### GetVlanCount
 
 `func (o *Tenant) GetVlanCount() int64`

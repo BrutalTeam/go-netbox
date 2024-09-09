@@ -21,10 +21,10 @@ Name | Type | Description | Notes
 **Face** | Pointer to [**DeviceFace**](DeviceFace.md) |  | [optional] 
 **Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
-**ParentDevice** | [**NullableNestedDevice**](NestedDevice.md) |  | [readonly] 
+**ParentDevice** | Pointer to [**NullableNestedDevice**](NestedDevice.md) |  | [optional] [readonly] 
 **Status** | Pointer to [**DeviceStatus**](DeviceStatus.md) |  | [optional] 
 **Airflow** | Pointer to [**DeviceAirflow**](DeviceAirflow.md) |  | [optional] 
-**PrimaryIp** | [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [readonly] 
+**PrimaryIp** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] [readonly] 
 **PrimaryIp4** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
 **PrimaryIp6** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
 **OobIp** | Pointer to [**NullableBriefIPAddress**](BriefIPAddress.md) |  | [optional] 
@@ -35,12 +35,12 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **ConfigTemplate** | Pointer to [**NullableBriefConfigTemplate**](BriefConfigTemplate.md) |  | [optional] 
-**ConfigContext** | **interface{}** |  | [readonly] 
+**ConfigContext** | Pointer to **interface{}** |  | [optional] [readonly] 
 **LocalContextData** | Pointer to **interface{}** | Local config context data takes precedence over source contexts in the final rendered config context | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**Created** | **NullableTime** |  | [readonly] 
-**LastUpdated** | **NullableTime** |  | [readonly] 
+**Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
+**LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **ConsolePortCount** | **int32** |  | [readonly] 
 **ConsoleServerPortCount** | **int32** |  | [readonly] 
 **PowerPortCount** | **int32** |  | [readonly] 
@@ -56,7 +56,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceWithConfigContext
 
-`func NewDeviceWithConfigContext(id int32, url string, display string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, parentDevice NullableNestedDevice, primaryIp NullableBriefIPAddress, configContext interface{}, created NullableTime, lastUpdated NullableTime, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *DeviceWithConfigContext`
+`func NewDeviceWithConfigContext(id int32, url string, display string, deviceType BriefDeviceType, role BriefDeviceRole, site BriefSite, consolePortCount int32, consoleServerPortCount int32, powerPortCount int32, powerOutletCount int32, interfaceCount int32, frontPortCount int32, rearPortCount int32, deviceBayCount int32, moduleBayCount int32, inventoryItemCount int32, ) *DeviceWithConfigContext`
 
 NewDeviceWithConfigContext instantiates a new DeviceWithConfigContext object
 This constructor will assign default values to properties that have it defined,
@@ -575,6 +575,11 @@ and a boolean to check if the value has been set.
 
 SetParentDevice sets ParentDevice field to given value.
 
+### HasParentDevice
+
+`func (o *DeviceWithConfigContext) HasParentDevice() bool`
+
+HasParentDevice returns a boolean if a field has been set.
 
 ### SetParentDeviceNil
 
@@ -655,6 +660,11 @@ and a boolean to check if the value has been set.
 
 SetPrimaryIp sets PrimaryIp field to given value.
 
+### HasPrimaryIp
+
+`func (o *DeviceWithConfigContext) HasPrimaryIp() bool`
+
+HasPrimaryIp returns a boolean if a field has been set.
 
 ### SetPrimaryIpNil
 
@@ -1015,6 +1025,11 @@ and a boolean to check if the value has been set.
 
 SetConfigContext sets ConfigContext field to given value.
 
+### HasConfigContext
+
+`func (o *DeviceWithConfigContext) HasConfigContext() bool`
+
+HasConfigContext returns a boolean if a field has been set.
 
 ### SetConfigContextNil
 
@@ -1130,6 +1145,11 @@ and a boolean to check if the value has been set.
 
 SetCreated sets Created field to given value.
 
+### HasCreated
+
+`func (o *DeviceWithConfigContext) HasCreated() bool`
+
+HasCreated returns a boolean if a field has been set.
 
 ### SetCreatedNil
 
@@ -1160,6 +1180,11 @@ and a boolean to check if the value has been set.
 
 SetLastUpdated sets LastUpdated field to given value.
 
+### HasLastUpdated
+
+`func (o *DeviceWithConfigContext) HasLastUpdated() bool`
+
+HasLastUpdated returns a boolean if a field has been set.
 
 ### SetLastUpdatedNil
 

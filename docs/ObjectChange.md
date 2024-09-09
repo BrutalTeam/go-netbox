@@ -14,15 +14,15 @@ Name | Type | Description | Notes
 **Action** | [**ObjectChangeAction**](ObjectChangeAction.md) |  | 
 **ChangedObjectType** | **string** |  | [readonly] 
 **ChangedObjectId** | **int64** |  | 
-**ChangedObject** | **interface{}** |  | [readonly] 
-**PrechangeData** | **interface{}** |  | [readonly] 
-**PostchangeData** | **interface{}** |  | [readonly] 
+**ChangedObject** | Pointer to **interface{}** |  | [optional] [readonly] 
+**PrechangeData** | Pointer to **interface{}** |  | [optional] [readonly] 
+**PostchangeData** | Pointer to **interface{}** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewObjectChange
 
-`func NewObjectChange(id int32, url string, display string, time time.Time, user BriefUser, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, changedObject interface{}, prechangeData interface{}, postchangeData interface{}, ) *ObjectChange`
+`func NewObjectChange(id int32, url string, display string, time time.Time, user BriefUser, userName string, requestId string, action ObjectChangeAction, changedObjectType string, changedObjectId int64, ) *ObjectChange`
 
 NewObjectChange instantiates a new ObjectChange object
 This constructor will assign default values to properties that have it defined,
@@ -256,6 +256,11 @@ and a boolean to check if the value has been set.
 
 SetChangedObject sets ChangedObject field to given value.
 
+### HasChangedObject
+
+`func (o *ObjectChange) HasChangedObject() bool`
+
+HasChangedObject returns a boolean if a field has been set.
 
 ### SetChangedObjectNil
 
@@ -286,6 +291,11 @@ and a boolean to check if the value has been set.
 
 SetPrechangeData sets PrechangeData field to given value.
 
+### HasPrechangeData
+
+`func (o *ObjectChange) HasPrechangeData() bool`
+
+HasPrechangeData returns a boolean if a field has been set.
 
 ### SetPrechangeDataNil
 
@@ -316,6 +326,11 @@ and a boolean to check if the value has been set.
 
 SetPostchangeData sets PostchangeData field to given value.
 
+### HasPostchangeData
+
+`func (o *ObjectChange) HasPostchangeData() bool`
+
+HasPostchangeData returns a boolean if a field has been set.
 
 ### SetPostchangeDataNil
 

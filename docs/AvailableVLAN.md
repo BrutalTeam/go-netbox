@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Vid** | **int32** |  | [readonly] 
-**Group** | [**NullableBriefVLANGroup**](BriefVLANGroup.md) |  | [readonly] 
+**Group** | Pointer to [**NullableBriefVLANGroup**](BriefVLANGroup.md) |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewAvailableVLAN
 
-`func NewAvailableVLAN(vid int32, group NullableBriefVLANGroup, ) *AvailableVLAN`
+`func NewAvailableVLAN(vid int32, ) *AvailableVLAN`
 
 NewAvailableVLAN instantiates a new AvailableVLAN object
 This constructor will assign default values to properties that have it defined,
@@ -65,6 +65,11 @@ and a boolean to check if the value has been set.
 
 SetGroup sets Group field to given value.
 
+### HasGroup
+
+`func (o *AvailableVLAN) HasGroup() bool`
+
+HasGroup returns a boolean if a field has been set.
 
 ### SetGroupNil
 

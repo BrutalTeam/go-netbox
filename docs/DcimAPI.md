@@ -16104,7 +16104,7 @@ import (
 )
 
 func main() {
-	writableLocationRequest := *openapiclient.NewWritableLocationRequest("Name_example", "Slug_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"), NullableInt32(123)) // WritableLocationRequest | 
+	writableLocationRequest := *openapiclient.NewWritableLocationRequest("Name_example", "Slug_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example")) // WritableLocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -16666,7 +16666,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this location.
-	writableLocationRequest := *openapiclient.NewWritableLocationRequest("Name_example", "Slug_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"), NullableInt32(123)) // WritableLocationRequest | 
+	writableLocationRequest := *openapiclient.NewWritableLocationRequest("Name_example", "Slug_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example")) // WritableLocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -30916,7 +30916,7 @@ import (
 )
 
 func main() {
-	writableRegionRequest := *openapiclient.NewWritableRegionRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableRegionRequest | 
+	writableRegionRequest := *openapiclient.NewWritableRegionRequest("Name_example", "Slug_example") // WritableRegionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -31412,7 +31412,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this region.
-	writableRegionRequest := *openapiclient.NewWritableRegionRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableRegionRequest | 
+	writableRegionRequest := *openapiclient.NewWritableRegionRequest("Name_example", "Slug_example") // WritableRegionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -31679,7 +31679,7 @@ import (
 )
 
 func main() {
-	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableSiteGroupRequest | 
+	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest("Name_example", "Slug_example") // WritableSiteGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -32175,7 +32175,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this site group.
-	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest("Name_example", "Slug_example", NullableInt32(123)) // WritableSiteGroupRequest | 
+	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest("Name_example", "Slug_example") // WritableSiteGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
