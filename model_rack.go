@@ -1298,7 +1298,7 @@ func (o *Rack) UnmarshalJSON(data []byte) (err error) {
 		"site",
 		"created",
 		"last_updated",
-		"device_count",
+		//"device_count",
 		"powerfeed_count",
 	}
 

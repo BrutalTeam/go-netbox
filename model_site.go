@@ -1040,7 +1040,7 @@ func (o *Site) UnmarshalJSON(data []byte) (err error) {
 		"created",
 		"last_updated",
 		"circuit_count",
-		"device_count",
+		//"device_count",
 		"prefix_count",
 		"rack_count",
 		"virtualmachine_count",

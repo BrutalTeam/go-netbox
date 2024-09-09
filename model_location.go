@@ -650,7 +650,7 @@ func (o *Location) UnmarshalJSON(data []byte) (err error) {
 		"created",
 		"last_updated",
 		"rack_count",
-		"device_count",
+		//"device_count",
 		"_depth",
 	}
 

@@ -1214,7 +1214,7 @@ func (o *DeviceType) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"device_count",
+		//"device_count",
 		"console_port_template_count",
 		"console_server_port_template_count",
 		"power_port_template_count",

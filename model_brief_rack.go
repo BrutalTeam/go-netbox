@@ -239,7 +239,7 @@ func (o *BriefRack) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"name",
-		"device_count",
+		//"device_count",
 	}
 
 	allProperties := make(map[string]interface{})

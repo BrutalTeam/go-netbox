@@ -547,7 +547,7 @@ func (o *DeviceRole) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"created",
 		"last_updated",
-		"device_count",
+		//"device_count",
 		"virtualmachine_count",
 	}
 

@@ -294,7 +294,7 @@ func (o *BriefPlatform) UnmarshalJSON(data []byte) (err error) {
 		"display",
 		"name",
 		"slug",
-		"device_count",
+		//"device_count",
 		"virtualmachine_count",
 	}
 

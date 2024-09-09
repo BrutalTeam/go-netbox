@@ -640,7 +640,7 @@ func (o *Cluster) UnmarshalJSON(data []byte) (err error) {
 		"type",
 		"created",
 		"last_updated",
-		"device_count",
+		//"device_count",
 		"virtualmachine_count",
 	}
 

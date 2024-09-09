@@ -295,7 +295,7 @@ func (o *BriefDeviceType) UnmarshalJSON(data []byte) (err error) {
 		"manufacturer",
 		"model",
 		"slug",
-		"device_count",
+		//"device_count",
 	}
 
 	allProperties := make(map[string]interface{})
