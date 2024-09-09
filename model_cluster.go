@@ -36,7 +36,7 @@ type Cluster struct {
 	CustomFields         map[string]interface{}    `json:"custom_fields,omitempty"`
 	Created              NullableTime              `json:"created"`
 	LastUpdated          NullableTime              `json:"last_updated"`
-	DeviceCount          int64                     `json:"device_count"`
+	DeviceCount          NullableInt64   `json:"device_count,omitempty"`
 	VirtualmachineCount  int64                     `json:"virtualmachine_count"`
 	AdditionalProperties map[string]interface{}
 }

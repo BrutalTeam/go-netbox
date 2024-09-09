@@ -38,7 +38,7 @@ type Location struct {
 	Created              NullableTime           `json:"created"`
 	LastUpdated          NullableTime           `json:"last_updated"`
 	RackCount            int32                  `json:"rack_count"`
-	DeviceCount          int32                  `json:"device_count"`
+	DeviceCount          NullableInt64   `json:"device_count,omitempty"`
 	Depth                int32                  `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }

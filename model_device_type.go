@@ -47,7 +47,7 @@ type DeviceType struct {
 	CustomFields                   map[string]interface{}          `json:"custom_fields,omitempty"`
 	Created                        NullableTime                    `json:"created"`
 	LastUpdated                    NullableTime                    `json:"last_updated"`
-	DeviceCount                    int64                           `json:"device_count"`
+	DeviceCount          NullableInt64   `json:"device_count,omitempty"`
 	ConsolePortTemplateCount       int32                           `json:"console_port_template_count"`
 	ConsoleServerPortTemplateCount int32                           `json:"console_server_port_template_count"`
 	PowerPortTemplateCount         int32                           `json:"power_port_template_count"`

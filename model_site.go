@@ -50,7 +50,7 @@ type Site struct {
 	Created              NullableTime           `json:"created"`
 	LastUpdated          NullableTime           `json:"last_updated"`
 	CircuitCount         int64                  `json:"circuit_count"`
-	DeviceCount          int64                  `json:"device_count"`
+	DeviceCount          NullableInt64   `json:"device_count,omitempty"`
 	PrefixCount          int64                  `json:"prefix_count"`
 	RackCount            int64                  `json:"rack_count"`
 	VirtualmachineCount  int64                  `json:"virtualmachine_count"`

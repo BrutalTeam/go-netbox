@@ -25,7 +25,7 @@ type BriefRack struct {
 	Display              string  `json:"display"`
 	Name                 string  `json:"name"`
 	Description          *string `json:"description,omitempty"`
-	DeviceCount          int64   `json:"device_count"`
+	DeviceCount          NullableInt64   `json:"device_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 

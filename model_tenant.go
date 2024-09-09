@@ -34,7 +34,7 @@ type Tenant struct {
 	Created              NullableTime             `json:"created"`
 	LastUpdated          NullableTime             `json:"last_updated"`
 	CircuitCount         int64                    `json:"circuit_count"`
-	DeviceCount          int64                    `json:"device_count"`
+	DeviceCount          NullableInt64   `json:"device_count,omitempty"`
 	IpaddressCount       int64                    `json:"ipaddress_count"`
 	PrefixCount          int64                    `json:"prefix_count"`
 	RackCount            int64                    `json:"rack_count"`

@@ -26,7 +26,7 @@ type BriefPlatform struct {
 	Name                 string  `json:"name"`
 	Slug                 string  `json:"slug"`
 	Description          *string `json:"description,omitempty"`
-	DeviceCount          int64   `json:"device_count"`
+	DeviceCount          NullableInt64   `json:"device_count,omitempty"`
 	VirtualmachineCount  int64   `json:"virtualmachine_count"`
 	AdditionalProperties map[string]interface{}
 }

@@ -59,7 +59,7 @@ type Rack struct {
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Created              NullableTime           `json:"created"`
 	LastUpdated          NullableTime           `json:"last_updated"`
-	DeviceCount          int64                  `json:"device_count"`
+	DeviceCount          NullableInt64   `json:"device_count,omitempty"`
 	PowerfeedCount       int64                  `json:"powerfeed_count"`
 	AdditionalProperties map[string]interface{}
 }
