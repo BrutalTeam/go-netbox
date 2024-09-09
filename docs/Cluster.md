@@ -19,8 +19,8 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**DeviceCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
-**VirtualmachineCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
+**DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
+**VirtualmachineCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -466,16 +466,6 @@ SetDeviceCount sets DeviceCount field to given value.
 
 HasDeviceCount returns a boolean if a field has been set.
 
-### SetDeviceCountNil
-
-`func (o *Cluster) SetDeviceCountNil(b bool)`
-
- SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
-
-### UnsetDeviceCount
-`func (o *Cluster) UnsetDeviceCount()`
-
-UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
 ### GetVirtualmachineCount
 
 `func (o *Cluster) GetVirtualmachineCount() int64`
@@ -501,16 +491,6 @@ SetVirtualmachineCount sets VirtualmachineCount field to given value.
 
 HasVirtualmachineCount returns a boolean if a field has been set.
 
-### SetVirtualmachineCountNil
-
-`func (o *Cluster) SetVirtualmachineCountNil(b bool)`
-
- SetVirtualmachineCountNil sets the value for VirtualmachineCount to be an explicit nil
-
-### UnsetVirtualmachineCount
-`func (o *Cluster) UnsetVirtualmachineCount()`
-
-UnsetVirtualmachineCount ensures that no value is present for VirtualmachineCount, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

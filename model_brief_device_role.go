@@ -20,14 +20,14 @@ var _ MappedNullable = &BriefDeviceRole{}
 
 // BriefDeviceRole Adds support for custom fields and tags.
 type BriefDeviceRole struct {
-	Id                   int32         `json:"id"`
-	Url                  string        `json:"url"`
-	Display              string        `json:"display"`
-	Name                 string        `json:"name"`
-	Slug                 string        `json:"slug"`
-	Description          *string       `json:"description,omitempty"`
-	DeviceCount          NullableInt64 `json:"device_count,omitempty"`
-	VirtualmachineCount  NullableInt64 `json:"virtualmachine_count,omitempty"`
+	Id                   int32   `json:"id"`
+	Url                  string  `json:"url"`
+	Display              string  `json:"display"`
+	Name                 string  `json:"name"`
+	Slug                 string  `json:"slug"`
+	Description          *string `json:"description,omitempty"`
+	DeviceCount          *int64  `json:"device_count,omitempty"`
+	VirtualmachineCount  *int64  `json:"virtualmachine_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -207,90 +207,68 @@ func (o *BriefDeviceRole) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
 func (o *BriefDeviceRole) GetDeviceCount() int64 {
-	if o == nil || IsNil(o.DeviceCount.Get()) {
+	if o == nil || IsNil(o.DeviceCount) {
 		var ret int64
 		return ret
 	}
-	return *o.DeviceCount.Get()
+	return *o.DeviceCount
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BriefDeviceRole) GetDeviceCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		return nil, false
 	}
-	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
+	return o.DeviceCount, true
 }
 
 // HasDeviceCount returns a boolean if a field has been set.
 func (o *BriefDeviceRole) HasDeviceCount() bool {
-	if o != nil && o.DeviceCount.IsSet() {
+	if o != nil && !IsNil(o.DeviceCount) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeviceCount gets a reference to the given NullableInt64 and assigns it to the DeviceCount field.
+// SetDeviceCount gets a reference to the given int64 and assigns it to the DeviceCount field.
 func (o *BriefDeviceRole) SetDeviceCount(v int64) {
-	o.DeviceCount.Set(&v)
+	o.DeviceCount = &v
 }
 
-// SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
-func (o *BriefDeviceRole) SetDeviceCountNil() {
-	o.DeviceCount.Set(nil)
-}
-
-// UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
-func (o *BriefDeviceRole) UnsetDeviceCount() {
-	o.DeviceCount.Unset()
-}
-
-// GetVirtualmachineCount returns the VirtualmachineCount field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetVirtualmachineCount returns the VirtualmachineCount field value if set, zero value otherwise.
 func (o *BriefDeviceRole) GetVirtualmachineCount() int64 {
-	if o == nil || IsNil(o.VirtualmachineCount.Get()) {
+	if o == nil || IsNil(o.VirtualmachineCount) {
 		var ret int64
 		return ret
 	}
-	return *o.VirtualmachineCount.Get()
+	return *o.VirtualmachineCount
 }
 
 // GetVirtualmachineCountOk returns a tuple with the VirtualmachineCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BriefDeviceRole) GetVirtualmachineCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VirtualmachineCount) {
 		return nil, false
 	}
-	return o.VirtualmachineCount.Get(), o.VirtualmachineCount.IsSet()
+	return o.VirtualmachineCount, true
 }
 
 // HasVirtualmachineCount returns a boolean if a field has been set.
 func (o *BriefDeviceRole) HasVirtualmachineCount() bool {
-	if o != nil && o.VirtualmachineCount.IsSet() {
+	if o != nil && !IsNil(o.VirtualmachineCount) {
 		return true
 	}
 
 	return false
 }
 
-// SetVirtualmachineCount gets a reference to the given NullableInt64 and assigns it to the VirtualmachineCount field.
+// SetVirtualmachineCount gets a reference to the given int64 and assigns it to the VirtualmachineCount field.
 func (o *BriefDeviceRole) SetVirtualmachineCount(v int64) {
-	o.VirtualmachineCount.Set(&v)
-}
-
-// SetVirtualmachineCountNil sets the value for VirtualmachineCount to be an explicit nil
-func (o *BriefDeviceRole) SetVirtualmachineCountNil() {
-	o.VirtualmachineCount.Set(nil)
-}
-
-// UnsetVirtualmachineCount ensures that no value is present for VirtualmachineCount, not even an explicit nil
-func (o *BriefDeviceRole) UnsetVirtualmachineCount() {
-	o.VirtualmachineCount.Unset()
+	o.VirtualmachineCount = &v
 }
 
 func (o BriefDeviceRole) MarshalJSON() ([]byte, error) {
@@ -311,11 +289,11 @@ func (o BriefDeviceRole) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
-	if o.DeviceCount.IsSet() {
-		toSerialize["device_count"] = o.DeviceCount.Get()
+	if !IsNil(o.DeviceCount) {
+		toSerialize["device_count"] = o.DeviceCount
 	}
-	if o.VirtualmachineCount.IsSet() {
-		toSerialize["virtualmachine_count"] = o.VirtualmachineCount.Get()
+	if !IsNil(o.VirtualmachineCount) {
+		toSerialize["virtualmachine_count"] = o.VirtualmachineCount
 	}
 
 	for key, value := range o.AdditionalProperties {

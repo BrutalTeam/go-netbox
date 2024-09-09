@@ -23,9 +23,6 @@ if 'components' in data and 'schemas' in data['components']:
             nullable_types = [
                 'parent_device',
                 'primary_ip',
-                'virtualmachine_count',
-                'devicetype_count',
-                'device_count',
             ]
 
             for ntype in nullable_types:
@@ -44,14 +41,22 @@ if 'components' in data and 'schemas' in data['components']:
                     if schema['properties'][ntype]['format'] == 'binary':
                         schema['properties'][ntype].pop('nullable')
 
+            # Fix non-required fields
+            non_required_types = [
+                'virtualmachine_count',
+                'devicetype_count',
+                'device_count',
+                'nat_outside',
+            ]
+
             # remove non-required fields
             if 'required' in schema:
                 # foreach all properties
                 for name, prop in schema['properties'].items():
                     # if schema says it's required
                     if name in schema['required']:
-                        # if it's nullable
-                        if prop.get('nullable') == True:
+                        # if it's nullable or in non_required_types
+                        if prop.get('nullable') == True or name in non_required_types:
                             # remove from required, because netbox may not send it
                             schema['required'].remove(name)
 

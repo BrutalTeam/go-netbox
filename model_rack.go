@@ -59,7 +59,7 @@ type Rack struct {
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated,omitempty"`
-	DeviceCount          NullableInt64          `json:"device_count,omitempty"`
+	DeviceCount          *int64                 `json:"device_count,omitempty"`
 	PowerfeedCount       int64                  `json:"powerfeed_count"`
 	AdditionalProperties map[string]interface{}
 }
@@ -1174,47 +1174,36 @@ func (o *Rack) UnsetLastUpdated() {
 	o.LastUpdated.Unset()
 }
 
-// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
 func (o *Rack) GetDeviceCount() int64 {
-	if o == nil || IsNil(o.DeviceCount.Get()) {
+	if o == nil || IsNil(o.DeviceCount) {
 		var ret int64
 		return ret
 	}
-	return *o.DeviceCount.Get()
+	return *o.DeviceCount
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Rack) GetDeviceCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		return nil, false
 	}
-	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
+	return o.DeviceCount, true
 }
 
 // HasDeviceCount returns a boolean if a field has been set.
 func (o *Rack) HasDeviceCount() bool {
-	if o != nil && o.DeviceCount.IsSet() {
+	if o != nil && !IsNil(o.DeviceCount) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeviceCount gets a reference to the given NullableInt64 and assigns it to the DeviceCount field.
+// SetDeviceCount gets a reference to the given int64 and assigns it to the DeviceCount field.
 func (o *Rack) SetDeviceCount(v int64) {
-	o.DeviceCount.Set(&v)
-}
-
-// SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
-func (o *Rack) SetDeviceCountNil() {
-	o.DeviceCount.Set(nil)
-}
-
-// UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
-func (o *Rack) UnsetDeviceCount() {
-	o.DeviceCount.Unset()
+	o.DeviceCount = &v
 }
 
 // GetPowerfeedCount returns the PowerfeedCount field value
@@ -1331,8 +1320,8 @@ func (o Rack) ToMap() (map[string]interface{}, error) {
 	if o.LastUpdated.IsSet() {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
-	if o.DeviceCount.IsSet() {
-		toSerialize["device_count"] = o.DeviceCount.Get()
+	if !IsNil(o.DeviceCount) {
+		toSerialize["device_count"] = o.DeviceCount
 	}
 	toSerialize["powerfeed_count"] = o.PowerfeedCount
 

@@ -47,7 +47,7 @@ type DeviceType struct {
 	CustomFields                   map[string]interface{}          `json:"custom_fields,omitempty"`
 	Created                        NullableTime                    `json:"created,omitempty"`
 	LastUpdated                    NullableTime                    `json:"last_updated,omitempty"`
-	DeviceCount                    NullableInt64                   `json:"device_count,omitempty"`
+	DeviceCount                    *int64                          `json:"device_count,omitempty"`
 	ConsolePortTemplateCount       int32                           `json:"console_port_template_count"`
 	ConsoleServerPortTemplateCount int32                           `json:"console_server_port_template_count"`
 	PowerPortTemplateCount         int32                           `json:"power_port_template_count"`
@@ -887,47 +887,36 @@ func (o *DeviceType) UnsetLastUpdated() {
 	o.LastUpdated.Unset()
 }
 
-// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
 func (o *DeviceType) GetDeviceCount() int64 {
-	if o == nil || IsNil(o.DeviceCount.Get()) {
+	if o == nil || IsNil(o.DeviceCount) {
 		var ret int64
 		return ret
 	}
-	return *o.DeviceCount.Get()
+	return *o.DeviceCount
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DeviceType) GetDeviceCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		return nil, false
 	}
-	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
+	return o.DeviceCount, true
 }
 
 // HasDeviceCount returns a boolean if a field has been set.
 func (o *DeviceType) HasDeviceCount() bool {
-	if o != nil && o.DeviceCount.IsSet() {
+	if o != nil && !IsNil(o.DeviceCount) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeviceCount gets a reference to the given NullableInt64 and assigns it to the DeviceCount field.
+// SetDeviceCount gets a reference to the given int64 and assigns it to the DeviceCount field.
 func (o *DeviceType) SetDeviceCount(v int64) {
-	o.DeviceCount.Set(&v)
-}
-
-// SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
-func (o *DeviceType) SetDeviceCountNil() {
-	o.DeviceCount.Set(nil)
-}
-
-// UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
-func (o *DeviceType) UnsetDeviceCount() {
-	o.DeviceCount.Unset()
+	o.DeviceCount = &v
 }
 
 // GetConsolePortTemplateCount returns the ConsolePortTemplateCount field value
@@ -1237,8 +1226,8 @@ func (o DeviceType) ToMap() (map[string]interface{}, error) {
 	if o.LastUpdated.IsSet() {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
-	if o.DeviceCount.IsSet() {
-		toSerialize["device_count"] = o.DeviceCount.Get()
+	if !IsNil(o.DeviceCount) {
+		toSerialize["device_count"] = o.DeviceCount
 	}
 	toSerialize["console_port_template_count"] = o.ConsolePortTemplateCount
 	toSerialize["console_server_port_template_count"] = o.ConsoleServerPortTemplateCount

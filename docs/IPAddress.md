@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **AssignedObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **AssignedObject** | Pointer to **interface{}** |  | [optional] [readonly] 
 **NatInside** | Pointer to [**NullableNestedIPAddress**](NestedIPAddress.md) |  | [optional] 
-**NatOutside** | [**[]NestedIPAddress**](NestedIPAddress.md) |  | [readonly] 
+**NatOutside** | Pointer to [**[]NestedIPAddress**](NestedIPAddress.md) |  | [optional] [readonly] 
 **DnsName** | Pointer to **string** | Hostname or FQDN (not case-sensitive) | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 
 ### NewIPAddress
 
-`func NewIPAddress(id int32, url string, display string, family AggregateFamily, address string, natOutside []NestedIPAddress, ) *IPAddress`
+`func NewIPAddress(id int32, url string, display string, family AggregateFamily, address string, ) *IPAddress`
 
 NewIPAddress instantiates a new IPAddress object
 This constructor will assign default values to properties that have it defined,
@@ -424,6 +424,11 @@ and a boolean to check if the value has been set.
 
 SetNatOutside sets NatOutside field to given value.
 
+### HasNatOutside
+
+`func (o *IPAddress) HasNatOutside() bool`
+
+HasNatOutside returns a boolean if a field has been set.
 
 ### GetDnsName
 

@@ -102082,7 +102082,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
       required:
       - display
       - id
@@ -102572,12 +102571,10 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         virtualmachine_count:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
       required:
       - display
       - id
@@ -102633,7 +102630,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
       required:
       - display
       - id
@@ -103367,7 +103363,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
       required:
       - display
       - id
@@ -103500,12 +103495,10 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         virtualmachine_count:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
       required:
       - display
       - id
@@ -103896,7 +103889,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
       required:
       - display
       - id
@@ -105864,12 +105856,10 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         virtualmachine_count:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
       required:
       - display
       - id
@@ -109241,12 +109231,10 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         virtualmachine_count:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
       required:
       - display
       - id
@@ -109463,7 +109451,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         console_port_template_count:
           type: integer
           readOnly: true
@@ -112405,7 +112392,6 @@ components:
       - display
       - family
       - id
-      - nat_outside
       - url
     IPAddressRequest:
       type: object
@@ -118219,7 +118205,6 @@ components:
           type: integer
           readOnly: true
           default: 0
-          nullable: true
         _depth:
           type: integer
           readOnly: true
@@ -118337,7 +118322,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         inventoryitem_count:
           type: integer
           format: int64
@@ -131467,12 +131451,10 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         virtualmachine_count:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
       required:
       - display
       - id
@@ -136068,7 +136050,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         powerfeed_count:
           type: integer
           format: int64
@@ -138201,7 +138182,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         prefix_count:
           type: integer
           format: int64
@@ -138214,7 +138194,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         vlan_count:
           type: integer
           format: int64
@@ -138559,7 +138538,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         ipaddress_count:
           type: integer
           format: int64
@@ -138580,7 +138558,6 @@ components:
           type: integer
           format: int64
           readOnly: true
-          nullable: true
         vlan_count:
           type: integer
           format: int64

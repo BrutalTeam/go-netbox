@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**DeviceCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
+**DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
 **PowerfeedCount** | **int64** |  | [readonly] 
 
 ## Methods
@@ -956,16 +956,6 @@ SetDeviceCount sets DeviceCount field to given value.
 
 HasDeviceCount returns a boolean if a field has been set.
 
-### SetDeviceCountNil
-
-`func (o *Rack) SetDeviceCountNil(b bool)`
-
- SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
-
-### UnsetDeviceCount
-`func (o *Rack) UnsetDeviceCount()`
-
-UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
 ### GetPowerfeedCount
 
 `func (o *Rack) GetPowerfeedCount() int64`

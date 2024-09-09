@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**DeviceCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
+**DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
 **ConsolePortTemplateCount** | **int32** |  | [readonly] 
 **ConsoleServerPortTemplateCount** | **int32** |  | [readonly] 
 **PowerPortTemplateCount** | **int32** |  | [readonly] 
@@ -718,16 +718,6 @@ SetDeviceCount sets DeviceCount field to given value.
 
 HasDeviceCount returns a boolean if a field has been set.
 
-### SetDeviceCountNil
-
-`func (o *DeviceType) SetDeviceCountNil(b bool)`
-
- SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
-
-### UnsetDeviceCount
-`func (o *DeviceType) UnsetDeviceCount()`
-
-UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
 ### GetConsolePortTemplateCount
 
 `func (o *DeviceType) GetConsolePortTemplateCount() int32`

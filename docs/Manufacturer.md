@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**DevicetypeCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
+**DevicetypeCount** | Pointer to **int64** |  | [optional] [readonly] 
 **InventoryitemCount** | **int64** |  | [readonly] 
 **PlatformCount** | **int64** |  | [readonly] 
 
@@ -307,16 +307,6 @@ SetDevicetypeCount sets DevicetypeCount field to given value.
 
 HasDevicetypeCount returns a boolean if a field has been set.
 
-### SetDevicetypeCountNil
-
-`func (o *Manufacturer) SetDevicetypeCountNil(b bool)`
-
- SetDevicetypeCountNil sets the value for DevicetypeCount to be an explicit nil
-
-### UnsetDevicetypeCount
-`func (o *Manufacturer) UnsetDevicetypeCount()`
-
-UnsetDevicetypeCount ensures that no value is present for DevicetypeCount, not even an explicit nil
 ### GetInventoryitemCount
 
 `func (o *Manufacturer) GetInventoryitemCount() int64`

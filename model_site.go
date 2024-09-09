@@ -50,10 +50,10 @@ type Site struct {
 	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated,omitempty"`
 	CircuitCount         int64                  `json:"circuit_count"`
-	DeviceCount          NullableInt64          `json:"device_count,omitempty"`
+	DeviceCount          *int64                 `json:"device_count,omitempty"`
 	PrefixCount          int64                  `json:"prefix_count"`
 	RackCount            int64                  `json:"rack_count"`
-	VirtualmachineCount  NullableInt64          `json:"virtualmachine_count,omitempty"`
+	VirtualmachineCount  *int64                 `json:"virtualmachine_count,omitempty"`
 	VlanCount            int64                  `json:"vlan_count"`
 	AdditionalProperties map[string]interface{}
 }
@@ -862,47 +862,36 @@ func (o *Site) SetCircuitCount(v int64) {
 	o.CircuitCount = v
 }
 
-// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
 func (o *Site) GetDeviceCount() int64 {
-	if o == nil || IsNil(o.DeviceCount.Get()) {
+	if o == nil || IsNil(o.DeviceCount) {
 		var ret int64
 		return ret
 	}
-	return *o.DeviceCount.Get()
+	return *o.DeviceCount
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Site) GetDeviceCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		return nil, false
 	}
-	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
+	return o.DeviceCount, true
 }
 
 // HasDeviceCount returns a boolean if a field has been set.
 func (o *Site) HasDeviceCount() bool {
-	if o != nil && o.DeviceCount.IsSet() {
+	if o != nil && !IsNil(o.DeviceCount) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeviceCount gets a reference to the given NullableInt64 and assigns it to the DeviceCount field.
+// SetDeviceCount gets a reference to the given int64 and assigns it to the DeviceCount field.
 func (o *Site) SetDeviceCount(v int64) {
-	o.DeviceCount.Set(&v)
-}
-
-// SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
-func (o *Site) SetDeviceCountNil() {
-	o.DeviceCount.Set(nil)
-}
-
-// UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
-func (o *Site) UnsetDeviceCount() {
-	o.DeviceCount.Unset()
+	o.DeviceCount = &v
 }
 
 // GetPrefixCount returns the PrefixCount field value
@@ -953,47 +942,36 @@ func (o *Site) SetRackCount(v int64) {
 	o.RackCount = v
 }
 
-// GetVirtualmachineCount returns the VirtualmachineCount field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetVirtualmachineCount returns the VirtualmachineCount field value if set, zero value otherwise.
 func (o *Site) GetVirtualmachineCount() int64 {
-	if o == nil || IsNil(o.VirtualmachineCount.Get()) {
+	if o == nil || IsNil(o.VirtualmachineCount) {
 		var ret int64
 		return ret
 	}
-	return *o.VirtualmachineCount.Get()
+	return *o.VirtualmachineCount
 }
 
 // GetVirtualmachineCountOk returns a tuple with the VirtualmachineCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Site) GetVirtualmachineCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VirtualmachineCount) {
 		return nil, false
 	}
-	return o.VirtualmachineCount.Get(), o.VirtualmachineCount.IsSet()
+	return o.VirtualmachineCount, true
 }
 
 // HasVirtualmachineCount returns a boolean if a field has been set.
 func (o *Site) HasVirtualmachineCount() bool {
-	if o != nil && o.VirtualmachineCount.IsSet() {
+	if o != nil && !IsNil(o.VirtualmachineCount) {
 		return true
 	}
 
 	return false
 }
 
-// SetVirtualmachineCount gets a reference to the given NullableInt64 and assigns it to the VirtualmachineCount field.
+// SetVirtualmachineCount gets a reference to the given int64 and assigns it to the VirtualmachineCount field.
 func (o *Site) SetVirtualmachineCount(v int64) {
-	o.VirtualmachineCount.Set(&v)
-}
-
-// SetVirtualmachineCountNil sets the value for VirtualmachineCount to be an explicit nil
-func (o *Site) SetVirtualmachineCountNil() {
-	o.VirtualmachineCount.Set(nil)
-}
-
-// UnsetVirtualmachineCount ensures that no value is present for VirtualmachineCount, not even an explicit nil
-func (o *Site) UnsetVirtualmachineCount() {
-	o.VirtualmachineCount.Unset()
+	o.VirtualmachineCount = &v
 }
 
 // GetVlanCount returns the VlanCount field value
@@ -1087,13 +1065,13 @@ func (o Site) ToMap() (map[string]interface{}, error) {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
 	toSerialize["circuit_count"] = o.CircuitCount
-	if o.DeviceCount.IsSet() {
-		toSerialize["device_count"] = o.DeviceCount.Get()
+	if !IsNil(o.DeviceCount) {
+		toSerialize["device_count"] = o.DeviceCount
 	}
 	toSerialize["prefix_count"] = o.PrefixCount
 	toSerialize["rack_count"] = o.RackCount
-	if o.VirtualmachineCount.IsSet() {
-		toSerialize["virtualmachine_count"] = o.VirtualmachineCount.Get()
+	if !IsNil(o.VirtualmachineCount) {
+		toSerialize["virtualmachine_count"] = o.VirtualmachineCount
 	}
 	toSerialize["vlan_count"] = o.VlanCount
 

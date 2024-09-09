@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Slug** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**DevicetypeCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
+**DevicetypeCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -181,16 +181,6 @@ SetDevicetypeCount sets DevicetypeCount field to given value.
 
 HasDevicetypeCount returns a boolean if a field has been set.
 
-### SetDevicetypeCountNil
-
-`func (o *BriefManufacturer) SetDevicetypeCountNil(b bool)`
-
- SetDevicetypeCountNil sets the value for DevicetypeCount to be an explicit nil
-
-### UnsetDevicetypeCount
-`func (o *BriefManufacturer) UnsetDevicetypeCount()`
-
-UnsetDevicetypeCount ensures that no value is present for DevicetypeCount, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

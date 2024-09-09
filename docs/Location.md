@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **RackCount** | **int32** |  | [readonly] [default to 0]
-**DeviceCount** | Pointer to **NullableInt32** |  | [optional] [readonly] [default to 0]
+**DeviceCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
@@ -472,16 +472,6 @@ SetDeviceCount sets DeviceCount field to given value.
 
 HasDeviceCount returns a boolean if a field has been set.
 
-### SetDeviceCountNil
-
-`func (o *Location) SetDeviceCountNil(b bool)`
-
- SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
-
-### UnsetDeviceCount
-`func (o *Location) UnsetDeviceCount()`
-
-UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
 ### GetDepth
 
 `func (o *Location) GetDepth() int32`

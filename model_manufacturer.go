@@ -31,7 +31,7 @@ type Manufacturer struct {
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated,omitempty"`
-	DevicetypeCount      NullableInt64          `json:"devicetype_count,omitempty"`
+	DevicetypeCount      *int64                 `json:"devicetype_count,omitempty"`
 	InventoryitemCount   int64                  `json:"inventoryitem_count"`
 	PlatformCount        int64                  `json:"platform_count"`
 	AdditionalProperties map[string]interface{}
@@ -365,47 +365,36 @@ func (o *Manufacturer) UnsetLastUpdated() {
 	o.LastUpdated.Unset()
 }
 
-// GetDevicetypeCount returns the DevicetypeCount field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDevicetypeCount returns the DevicetypeCount field value if set, zero value otherwise.
 func (o *Manufacturer) GetDevicetypeCount() int64 {
-	if o == nil || IsNil(o.DevicetypeCount.Get()) {
+	if o == nil || IsNil(o.DevicetypeCount) {
 		var ret int64
 		return ret
 	}
-	return *o.DevicetypeCount.Get()
+	return *o.DevicetypeCount
 }
 
 // GetDevicetypeCountOk returns a tuple with the DevicetypeCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Manufacturer) GetDevicetypeCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DevicetypeCount) {
 		return nil, false
 	}
-	return o.DevicetypeCount.Get(), o.DevicetypeCount.IsSet()
+	return o.DevicetypeCount, true
 }
 
 // HasDevicetypeCount returns a boolean if a field has been set.
 func (o *Manufacturer) HasDevicetypeCount() bool {
-	if o != nil && o.DevicetypeCount.IsSet() {
+	if o != nil && !IsNil(o.DevicetypeCount) {
 		return true
 	}
 
 	return false
 }
 
-// SetDevicetypeCount gets a reference to the given NullableInt64 and assigns it to the DevicetypeCount field.
+// SetDevicetypeCount gets a reference to the given int64 and assigns it to the DevicetypeCount field.
 func (o *Manufacturer) SetDevicetypeCount(v int64) {
-	o.DevicetypeCount.Set(&v)
-}
-
-// SetDevicetypeCountNil sets the value for DevicetypeCount to be an explicit nil
-func (o *Manufacturer) SetDevicetypeCountNil() {
-	o.DevicetypeCount.Set(nil)
-}
-
-// UnsetDevicetypeCount ensures that no value is present for DevicetypeCount, not even an explicit nil
-func (o *Manufacturer) UnsetDevicetypeCount() {
-	o.DevicetypeCount.Unset()
+	o.DevicetypeCount = &v
 }
 
 // GetInventoryitemCount returns the InventoryitemCount field value
@@ -486,8 +475,8 @@ func (o Manufacturer) ToMap() (map[string]interface{}, error) {
 	if o.LastUpdated.IsSet() {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
-	if o.DevicetypeCount.IsSet() {
-		toSerialize["devicetype_count"] = o.DevicetypeCount.Get()
+	if !IsNil(o.DevicetypeCount) {
+		toSerialize["devicetype_count"] = o.DevicetypeCount
 	}
 	toSerialize["inventoryitem_count"] = o.InventoryitemCount
 	toSerialize["platform_count"] = o.PlatformCount

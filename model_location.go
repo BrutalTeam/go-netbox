@@ -38,7 +38,7 @@ type Location struct {
 	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated,omitempty"`
 	RackCount            int32                  `json:"rack_count"`
-	DeviceCount          NullableInt32          `json:"device_count,omitempty"`
+	DeviceCount          *int32                 `json:"device_count,omitempty"`
 	Depth                int32                  `json:"_depth"`
 	AdditionalProperties map[string]interface{}
 }
@@ -570,47 +570,36 @@ func (o *Location) SetRackCount(v int32) {
 	o.RackCount = v
 }
 
-// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetDeviceCount returns the DeviceCount field value if set, zero value otherwise.
 func (o *Location) GetDeviceCount() int32 {
-	if o == nil || IsNil(o.DeviceCount.Get()) {
+	if o == nil || IsNil(o.DeviceCount) {
 		var ret int32
 		return ret
 	}
-	return *o.DeviceCount.Get()
+	return *o.DeviceCount
 }
 
 // GetDeviceCountOk returns a tuple with the DeviceCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Location) GetDeviceCountOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.DeviceCount) {
 		return nil, false
 	}
-	return o.DeviceCount.Get(), o.DeviceCount.IsSet()
+	return o.DeviceCount, true
 }
 
 // HasDeviceCount returns a boolean if a field has been set.
 func (o *Location) HasDeviceCount() bool {
-	if o != nil && o.DeviceCount.IsSet() {
+	if o != nil && !IsNil(o.DeviceCount) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeviceCount gets a reference to the given NullableInt32 and assigns it to the DeviceCount field.
+// SetDeviceCount gets a reference to the given int32 and assigns it to the DeviceCount field.
 func (o *Location) SetDeviceCount(v int32) {
-	o.DeviceCount.Set(&v)
-}
-
-// SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
-func (o *Location) SetDeviceCountNil() {
-	o.DeviceCount.Set(nil)
-}
-
-// UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
-func (o *Location) UnsetDeviceCount() {
-	o.DeviceCount.Unset()
+	o.DeviceCount = &v
 }
 
 // GetDepth returns the Depth field value
@@ -681,8 +670,8 @@ func (o Location) ToMap() (map[string]interface{}, error) {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
 	toSerialize["rack_count"] = o.RackCount
-	if o.DeviceCount.IsSet() {
-		toSerialize["device_count"] = o.DeviceCount.Get()
+	if !IsNil(o.DeviceCount) {
+		toSerialize["device_count"] = o.DeviceCount
 	}
 	toSerialize["_depth"] = o.Depth
 

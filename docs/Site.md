@@ -27,10 +27,10 @@ Name | Type | Description | Notes
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **CircuitCount** | **int64** |  | [readonly] 
-**DeviceCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
+**DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
 **PrefixCount** | **int64** |  | [readonly] 
 **RackCount** | **int64** |  | [readonly] 
-**VirtualmachineCount** | Pointer to **NullableInt64** |  | [optional] [readonly] 
+**VirtualmachineCount** | Pointer to **int64** |  | [optional] [readonly] 
 **VlanCount** | **int64** |  | [readonly] 
 
 ## Methods
@@ -702,16 +702,6 @@ SetDeviceCount sets DeviceCount field to given value.
 
 HasDeviceCount returns a boolean if a field has been set.
 
-### SetDeviceCountNil
-
-`func (o *Site) SetDeviceCountNil(b bool)`
-
- SetDeviceCountNil sets the value for DeviceCount to be an explicit nil
-
-### UnsetDeviceCount
-`func (o *Site) UnsetDeviceCount()`
-
-UnsetDeviceCount ensures that no value is present for DeviceCount, not even an explicit nil
 ### GetPrefixCount
 
 `func (o *Site) GetPrefixCount() int64`
@@ -777,16 +767,6 @@ SetVirtualmachineCount sets VirtualmachineCount field to given value.
 
 HasVirtualmachineCount returns a boolean if a field has been set.
 
-### SetVirtualmachineCountNil
-
-`func (o *Site) SetVirtualmachineCountNil(b bool)`
-
- SetVirtualmachineCountNil sets the value for VirtualmachineCount to be an explicit nil
-
-### UnsetVirtualmachineCount
-`func (o *Site) UnsetVirtualmachineCount()`
-
-UnsetVirtualmachineCount ensures that no value is present for VirtualmachineCount, not even an explicit nil
 ### GetVlanCount
 
 `func (o *Site) GetVlanCount() int64`
