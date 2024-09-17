@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **PayloadUrl** | **string** | This URL will be called using the HTTP method defined when the webhook is called. Jinja2 template processing is supported with the same context as the request body. | 
 **HttpMethod** | Pointer to [**PatchedWebhookRequestHttpMethod**](PatchedWebhookRequestHttpMethod.md) |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewWebhookRequest
 
-`func NewWebhookRequest(name string, payloadUrl string, ) *WebhookRequest`
+`func NewWebhookRequest(payloadUrl string, ) *WebhookRequest`
 
 NewWebhookRequest instantiates a new WebhookRequest object
 This constructor will assign default values to properties that have it defined,
@@ -55,6 +55,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *WebhookRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

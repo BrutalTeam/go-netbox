@@ -13,7 +13,7 @@ if 'components' in data and 'schemas' in data['components']:
     for name, schema in data['components']['schemas'].items():
         if 'properties' in schema:
             # Remove "null" item from nullable enums
-            for name, prop in schema['properties'].items():
+            for prop_name, prop in schema['properties'].items():
                 if 'enum' in prop and None in prop['enum']:
                     prop['enum'].remove(None)
                 if 'properties' in prop and 'value' in prop['properties'] and 'enum' in prop['properties']['value'] and None in prop['properties']['value']['enum']:
@@ -54,6 +54,11 @@ if 'components' in data and 'schemas' in data['components']:
                 'vrf_count',
                 'nat_outside',
             ]
+
+            # if name ends with "Request"
+            if name.endswith('Request'):
+                non_required_types.append('name')
+                non_required_types.append('slug')
 
             # remove non-required fields
             if 'required' in schema:

@@ -12,7 +12,6 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the WritableVirtualMachineWithConfigContextRequest type satisfies the MappedNullable interface at compile time
@@ -20,7 +19,7 @@ var _ MappedNullable = &WritableVirtualMachineWithConfigContextRequest{}
 
 // WritableVirtualMachineWithConfigContextRequest Adds support for custom fields and tags.
 type WritableVirtualMachineWithConfigContextRequest struct {
-	Name           string                             `json:"name"`
+	Name           *string                            `json:"name,omitempty"`
 	Status         *ModuleStatusValue                 `json:"status,omitempty"`
 	Site           NullableBriefSiteRequest           `json:"site,omitempty"`
 	Cluster        NullableBriefClusterRequest        `json:"cluster,omitempty"`
@@ -49,9 +48,8 @@ type _WritableVirtualMachineWithConfigContextRequest WritableVirtualMachineWithC
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableVirtualMachineWithConfigContextRequest(name string) *WritableVirtualMachineWithConfigContextRequest {
+func NewWritableVirtualMachineWithConfigContextRequest() *WritableVirtualMachineWithConfigContextRequest {
 	this := WritableVirtualMachineWithConfigContextRequest{}
-	this.Name = name
 	return &this
 }
 
@@ -63,28 +61,36 @@ func NewWritableVirtualMachineWithConfigContextRequestWithDefaults() *WritableVi
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritableVirtualMachineWithConfigContextRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableVirtualMachineWithConfigContextRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritableVirtualMachineWithConfigContextRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritableVirtualMachineWithConfigContextRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
@@ -806,7 +812,9 @@ func (o WritableVirtualMachineWithConfigContextRequest) MarshalJSON() ([]byte, e
 
 func (o WritableVirtualMachineWithConfigContextRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
 	}
@@ -870,27 +878,6 @@ func (o WritableVirtualMachineWithConfigContextRequest) ToMap() (map[string]inte
 }
 
 func (o *WritableVirtualMachineWithConfigContextRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varWritableVirtualMachineWithConfigContextRequest := _WritableVirtualMachineWithConfigContextRequest{}
 
 	err = json.Unmarshal(data, &varWritableVirtualMachineWithConfigContextRequest)

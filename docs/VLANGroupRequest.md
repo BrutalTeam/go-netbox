@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Slug** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Slug** | Pointer to **string** |  | [optional] 
 **ScopeType** | Pointer to **NullableString** |  | [optional] 
 **ScopeId** | Pointer to **NullableInt32** |  | [optional] 
 **MinVid** | Pointer to **int32** | Lowest permissible ID of a child VLAN | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewVLANGroupRequest
 
-`func NewVLANGroupRequest(name string, slug string, ) *VLANGroupRequest`
+`func NewVLANGroupRequest() *VLANGroupRequest`
 
 NewVLANGroupRequest instantiates a new VLANGroupRequest object
 This constructor will assign default values to properties that have it defined,
@@ -52,6 +52,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *VLANGroupRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSlug
 
@@ -72,6 +77,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *VLANGroupRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetScopeType
 

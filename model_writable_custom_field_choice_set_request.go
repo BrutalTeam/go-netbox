@@ -20,7 +20,7 @@ var _ MappedNullable = &WritableCustomFieldChoiceSetRequest{}
 
 // WritableCustomFieldChoiceSetRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type WritableCustomFieldChoiceSetRequest struct {
-	Name         string                                                 `json:"name"`
+	Name         *string                                                `json:"name,omitempty"`
 	Description  *string                                                `json:"description,omitempty"`
 	BaseChoices  *PatchedWritableCustomFieldChoiceSetRequestBaseChoices `json:"base_choices,omitempty"`
 	ExtraChoices [][]interface{}                                        `json:"extra_choices"`
@@ -35,9 +35,8 @@ type _WritableCustomFieldChoiceSetRequest WritableCustomFieldChoiceSetRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableCustomFieldChoiceSetRequest(name string, extraChoices [][]interface{}) *WritableCustomFieldChoiceSetRequest {
+func NewWritableCustomFieldChoiceSetRequest(extraChoices [][]interface{}) *WritableCustomFieldChoiceSetRequest {
 	this := WritableCustomFieldChoiceSetRequest{}
-	this.Name = name
 	this.ExtraChoices = extraChoices
 	return &this
 }
@@ -50,28 +49,36 @@ func NewWritableCustomFieldChoiceSetRequestWithDefaults() *WritableCustomFieldCh
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritableCustomFieldChoiceSetRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableCustomFieldChoiceSetRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritableCustomFieldChoiceSetRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritableCustomFieldChoiceSetRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -204,7 +211,9 @@ func (o WritableCustomFieldChoiceSetRequest) MarshalJSON() ([]byte, error) {
 
 func (o WritableCustomFieldChoiceSetRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -228,7 +237,6 @@ func (o *WritableCustomFieldChoiceSetRequest) UnmarshalJSON(data []byte) (err er
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"name",
 		"extra_choices",
 	}
 

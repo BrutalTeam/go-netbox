@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectTypes** | **[]string** |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **LinkText** | **string** | Jinja2 template code for link text | 
 **LinkUrl** | **string** | Jinja2 template code for link URL | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewCustomLinkRequest
 
-`func NewCustomLinkRequest(objectTypes []string, name string, linkText string, linkUrl string, ) *CustomLinkRequest`
+`func NewCustomLinkRequest(objectTypes []string, linkText string, linkUrl string, ) *CustomLinkRequest`
 
 NewCustomLinkRequest instantiates a new CustomLinkRequest object
 This constructor will assign default values to properties that have it defined,
@@ -72,6 +72,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *CustomLinkRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetEnabled
 

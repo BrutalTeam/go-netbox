@@ -12,7 +12,6 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the DeviceRoleRequest type satisfies the MappedNullable interface at compile time
@@ -20,8 +19,8 @@ var _ MappedNullable = &DeviceRoleRequest{}
 
 // DeviceRoleRequest Adds support for custom fields and tags.
 type DeviceRoleRequest struct {
-	Name  string  `json:"name"`
-	Slug  string  `json:"slug"`
+	Name  *string `json:"name,omitempty"`
+	Slug  *string `json:"slug,omitempty"`
 	Color *string `json:"color,omitempty"`
 	// Virtual machines may be assigned to this role
 	VmRole               *bool                              `json:"vm_role,omitempty"`
@@ -38,10 +37,8 @@ type _DeviceRoleRequest DeviceRoleRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeviceRoleRequest(name string, slug string) *DeviceRoleRequest {
+func NewDeviceRoleRequest() *DeviceRoleRequest {
 	this := DeviceRoleRequest{}
-	this.Name = name
-	this.Slug = slug
 	return &this
 }
 
@@ -53,52 +50,68 @@ func NewDeviceRoleRequestWithDefaults() *DeviceRoleRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *DeviceRoleRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceRoleRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *DeviceRoleRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *DeviceRoleRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetSlug returns the Slug field value
+// GetSlug returns the Slug field value if set, zero value otherwise.
 func (o *DeviceRoleRequest) GetSlug() string {
-	if o == nil {
+	if o == nil || IsNil(o.Slug) {
 		var ret string
 		return ret
 	}
-
-	return o.Slug
+	return *o.Slug
 }
 
-// GetSlugOk returns a tuple with the Slug field value
+// GetSlugOk returns a tuple with the Slug field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceRoleRequest) GetSlugOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Slug) {
 		return nil, false
 	}
-	return &o.Slug, true
+	return o.Slug, true
 }
 
-// SetSlug sets field value
+// HasSlug returns a boolean if a field has been set.
+func (o *DeviceRoleRequest) HasSlug() bool {
+	if o != nil && !IsNil(o.Slug) {
+		return true
+	}
+
+	return false
+}
+
+// SetSlug gets a reference to the given string and assigns it to the Slug field.
 func (o *DeviceRoleRequest) SetSlug(v string) {
-	o.Slug = v
+	o.Slug = &v
 }
 
 // GetColor returns the Color field value if set, zero value otherwise.
@@ -314,8 +327,12 @@ func (o DeviceRoleRequest) MarshalJSON() ([]byte, error) {
 
 func (o DeviceRoleRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
-	toSerialize["slug"] = o.Slug
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Slug) {
+		toSerialize["slug"] = o.Slug
+	}
 	if !IsNil(o.Color) {
 		toSerialize["color"] = o.Color
 	}
@@ -343,28 +360,6 @@ func (o DeviceRoleRequest) ToMap() (map[string]interface{}, error) {
 }
 
 func (o *DeviceRoleRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"slug",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varDeviceRoleRequest := _DeviceRoleRequest{}
 
 	err = json.Unmarshal(data, &varDeviceRoleRequest)

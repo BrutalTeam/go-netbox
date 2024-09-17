@@ -22,7 +22,7 @@ var _ MappedNullable = &BriefVLANRequest{}
 type BriefVLANRequest struct {
 	// Numeric VLAN ID (1-4094)
 	Vid                  int32   `json:"vid"`
-	Name                 string  `json:"name"`
+	Name                 *string `json:"name,omitempty"`
 	Description          *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -33,10 +33,9 @@ type _BriefVLANRequest BriefVLANRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefVLANRequest(vid int32, name string) *BriefVLANRequest {
+func NewBriefVLANRequest(vid int32) *BriefVLANRequest {
 	this := BriefVLANRequest{}
 	this.Vid = vid
-	this.Name = name
 	return &this
 }
 
@@ -72,28 +71,36 @@ func (o *BriefVLANRequest) SetVid(v int32) {
 	o.Vid = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *BriefVLANRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefVLANRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *BriefVLANRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BriefVLANRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -139,7 +146,9 @@ func (o BriefVLANRequest) MarshalJSON() ([]byte, error) {
 func (o BriefVLANRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["vid"] = o.Vid
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -157,7 +166,6 @@ func (o *BriefVLANRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"vid",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

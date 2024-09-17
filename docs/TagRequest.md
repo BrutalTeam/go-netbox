@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Slug** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Slug** | Pointer to **string** |  | [optional] 
 **Color** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **ObjectTypes** | Pointer to **[]string** |  | [optional] 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewTagRequest
 
-`func NewTagRequest(name string, slug string, ) *TagRequest`
+`func NewTagRequest() *TagRequest`
 
 NewTagRequest instantiates a new TagRequest object
 This constructor will assign default values to properties that have it defined,
@@ -48,6 +48,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *TagRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSlug
 
@@ -68,6 +73,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *TagRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetColor
 

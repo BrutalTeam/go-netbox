@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectTypes** | **[]string** |  | 
-**Name** | **string** |  | 
-**Slug** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Slug** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **User** | Pointer to **NullableInt32** |  | [optional] 
 **Weight** | Pointer to **int32** |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewSavedFilterRequest
 
-`func NewSavedFilterRequest(objectTypes []string, name string, slug string, parameters interface{}, ) *SavedFilterRequest`
+`func NewSavedFilterRequest(objectTypes []string, parameters interface{}, ) *SavedFilterRequest`
 
 NewSavedFilterRequest instantiates a new SavedFilterRequest object
 This constructor will assign default values to properties that have it defined,
@@ -72,6 +72,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *SavedFilterRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSlug
 
@@ -92,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *SavedFilterRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **BaseChoices** | Pointer to [**CustomFieldChoiceSetBaseChoicesValue**](CustomFieldChoiceSetBaseChoicesValue.md) |  | [optional] 
 **ExtraChoices** | **[][]interface{}** |  | 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewCustomFieldChoiceSetRequest
 
-`func NewCustomFieldChoiceSetRequest(name string, extraChoices [][]interface{}, ) *CustomFieldChoiceSetRequest`
+`func NewCustomFieldChoiceSetRequest(extraChoices [][]interface{}, ) *CustomFieldChoiceSetRequest`
 
 NewCustomFieldChoiceSetRequest instantiates a new CustomFieldChoiceSetRequest object
 This constructor will assign default values to properties that have it defined,
@@ -48,6 +48,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *CustomFieldChoiceSetRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

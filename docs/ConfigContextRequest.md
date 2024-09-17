@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Weight** | Pointer to **int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **IsActive** | Pointer to **bool** |  | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewConfigContextRequest
 
-`func NewConfigContextRequest(name string, data interface{}, ) *ConfigContextRequest`
+`func NewConfigContextRequest(data interface{}, ) *ConfigContextRequest`
 
 NewConfigContextRequest instantiates a new ConfigContextRequest object
 This constructor will assign default values to properties that have it defined,
@@ -62,6 +62,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ConfigContextRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetWeight
 

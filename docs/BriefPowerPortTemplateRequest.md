@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
+**Name** | Pointer to **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBriefPowerPortTemplateRequest
 
-`func NewBriefPowerPortTemplateRequest(name string, ) *BriefPowerPortTemplateRequest`
+`func NewBriefPowerPortTemplateRequest() *BriefPowerPortTemplateRequest`
 
 NewBriefPowerPortTemplateRequest instantiates a new BriefPowerPortTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *BriefPowerPortTemplateRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -958,7 +958,7 @@ import (
 )
 
 func main() {
-	circuitTypeRequest := []openapiclient.CircuitTypeRequest{*openapiclient.NewCircuitTypeRequest("Name_example", "Slug_example")} // []CircuitTypeRequest | 
+	circuitTypeRequest := []openapiclient.CircuitTypeRequest{*openapiclient.NewCircuitTypeRequest()} // []CircuitTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1022,7 +1022,7 @@ import (
 )
 
 func main() {
-	circuitTypeRequest := []openapiclient.CircuitTypeRequest{*openapiclient.NewCircuitTypeRequest("Name_example", "Slug_example")} // []CircuitTypeRequest | 
+	circuitTypeRequest := []openapiclient.CircuitTypeRequest{*openapiclient.NewCircuitTypeRequest()} // []CircuitTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1088,7 +1088,7 @@ import (
 )
 
 func main() {
-	circuitTypeRequest := []openapiclient.CircuitTypeRequest{*openapiclient.NewCircuitTypeRequest("Name_example", "Slug_example")} // []CircuitTypeRequest | 
+	circuitTypeRequest := []openapiclient.CircuitTypeRequest{*openapiclient.NewCircuitTypeRequest()} // []CircuitTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1154,7 +1154,7 @@ import (
 )
 
 func main() {
-	circuitTypeRequest := *openapiclient.NewCircuitTypeRequest("Name_example", "Slug_example") // CircuitTypeRequest | 
+	circuitTypeRequest := *openapiclient.NewCircuitTypeRequest() // CircuitTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1644,7 +1644,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this circuit type.
-	circuitTypeRequest := *openapiclient.NewCircuitTypeRequest("Name_example", "Slug_example") // CircuitTypeRequest | 
+	circuitTypeRequest := *openapiclient.NewCircuitTypeRequest() // CircuitTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1715,7 +1715,7 @@ import (
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest(), *openapiclient.NewBriefCircuitTypeRequest())} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1779,7 +1779,7 @@ import (
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest(), *openapiclient.NewBriefCircuitTypeRequest())} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1845,7 +1845,7 @@ import (
 )
 
 func main() {
-	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example"))} // []CircuitRequest | 
+	circuitRequest := []openapiclient.CircuitRequest{*openapiclient.NewCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest(), *openapiclient.NewBriefCircuitTypeRequest())} // []CircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1911,7 +1911,7 @@ import (
 )
 
 func main() {
-	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example")) // WritableCircuitRequest | 
+	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest(), *openapiclient.NewBriefCircuitTypeRequest()) // WritableCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2491,7 +2491,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this circuit.
-	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), *openapiclient.NewBriefCircuitTypeRequest("Name_example", "Slug_example")) // WritableCircuitRequest | 
+	writableCircuitRequest := *openapiclient.NewWritableCircuitRequest("Cid_example", *openapiclient.NewBriefProviderRequest(), *openapiclient.NewBriefCircuitTypeRequest()) // WritableCircuitRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2562,7 +2562,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest(), "Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2626,7 +2626,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest(), "Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2692,7 +2692,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example")} // []ProviderAccountRequest | 
+	providerAccountRequest := []openapiclient.ProviderAccountRequest{*openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest(), "Account_example")} // []ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2758,7 +2758,7 @@ import (
 )
 
 func main() {
-	providerAccountRequest := *openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example") // ProviderAccountRequest | 
+	providerAccountRequest := *openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest(), "Account_example") // ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3234,7 +3234,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider account.
-	providerAccountRequest := *openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Account_example") // ProviderAccountRequest | 
+	providerAccountRequest := *openapiclient.NewProviderAccountRequest(*openapiclient.NewBriefProviderRequest(), "Account_example") // ProviderAccountRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3305,7 +3305,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest())} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3369,7 +3369,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest())} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3435,7 +3435,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example")} // []ProviderNetworkRequest | 
+	providerNetworkRequest := []openapiclient.ProviderNetworkRequest{*openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest())} // []ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3501,7 +3501,7 @@ import (
 )
 
 func main() {
-	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example") // ProviderNetworkRequest | 
+	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest()) // ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3977,7 +3977,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider network.
-	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest("Name_example", "Slug_example"), "Name_example") // ProviderNetworkRequest | 
+	providerNetworkRequest := *openapiclient.NewProviderNetworkRequest(*openapiclient.NewBriefProviderRequest()) // ProviderNetworkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4048,7 +4048,7 @@ import (
 )
 
 func main() {
-	providerRequest := []openapiclient.ProviderRequest{*openapiclient.NewProviderRequest("Name_example", "Slug_example")} // []ProviderRequest | 
+	providerRequest := []openapiclient.ProviderRequest{*openapiclient.NewProviderRequest()} // []ProviderRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4112,7 +4112,7 @@ import (
 )
 
 func main() {
-	providerRequest := []openapiclient.ProviderRequest{*openapiclient.NewProviderRequest("Name_example", "Slug_example")} // []ProviderRequest | 
+	providerRequest := []openapiclient.ProviderRequest{*openapiclient.NewProviderRequest()} // []ProviderRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4178,7 +4178,7 @@ import (
 )
 
 func main() {
-	providerRequest := []openapiclient.ProviderRequest{*openapiclient.NewProviderRequest("Name_example", "Slug_example")} // []ProviderRequest | 
+	providerRequest := []openapiclient.ProviderRequest{*openapiclient.NewProviderRequest()} // []ProviderRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4244,7 +4244,7 @@ import (
 )
 
 func main() {
-	providerRequest := *openapiclient.NewProviderRequest("Name_example", "Slug_example") // ProviderRequest | 
+	providerRequest := *openapiclient.NewProviderRequest() // ProviderRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4756,7 +4756,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this provider.
-	providerRequest := *openapiclient.NewProviderRequest("Name_example", "Slug_example") // ProviderRequest | 
+	providerRequest := *openapiclient.NewProviderRequest() // ProviderRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

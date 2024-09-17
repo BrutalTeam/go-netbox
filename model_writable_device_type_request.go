@@ -24,7 +24,7 @@ type WritableDeviceTypeRequest struct {
 	Manufacturer    BriefManufacturerRequest     `json:"manufacturer"`
 	DefaultPlatform NullableBriefPlatformRequest `json:"default_platform,omitempty"`
 	Model           string                       `json:"model"`
-	Slug            string                       `json:"slug"`
+	Slug            *string                      `json:"slug,omitempty"`
 	// Discrete part number (optional)
 	PartNumber *string  `json:"part_number,omitempty"`
 	UHeight    *float64 `json:"u_height,omitempty"`
@@ -51,11 +51,10 @@ type _WritableDeviceTypeRequest WritableDeviceTypeRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableDeviceTypeRequest(manufacturer BriefManufacturerRequest, model string, slug string) *WritableDeviceTypeRequest {
+func NewWritableDeviceTypeRequest(manufacturer BriefManufacturerRequest, model string) *WritableDeviceTypeRequest {
 	this := WritableDeviceTypeRequest{}
 	this.Manufacturer = manufacturer
 	this.Model = model
-	this.Slug = slug
 	var uHeight float64 = 1.0
 	this.UHeight = &uHeight
 	return &this
@@ -162,28 +161,36 @@ func (o *WritableDeviceTypeRequest) SetModel(v string) {
 	o.Model = v
 }
 
-// GetSlug returns the Slug field value
+// GetSlug returns the Slug field value if set, zero value otherwise.
 func (o *WritableDeviceTypeRequest) GetSlug() string {
-	if o == nil {
+	if o == nil || IsNil(o.Slug) {
 		var ret string
 		return ret
 	}
-
-	return o.Slug
+	return *o.Slug
 }
 
-// GetSlugOk returns a tuple with the Slug field value
+// GetSlugOk returns a tuple with the Slug field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableDeviceTypeRequest) GetSlugOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Slug) {
 		return nil, false
 	}
-	return &o.Slug, true
+	return o.Slug, true
 }
 
-// SetSlug sets field value
+// HasSlug returns a boolean if a field has been set.
+func (o *WritableDeviceTypeRequest) HasSlug() bool {
+	if o != nil && !IsNil(o.Slug) {
+		return true
+	}
+
+	return false
+}
+
+// SetSlug gets a reference to the given string and assigns it to the Slug field.
 func (o *WritableDeviceTypeRequest) SetSlug(v string) {
-	o.Slug = v
+	o.Slug = &v
 }
 
 // GetPartNumber returns the PartNumber field value if set, zero value otherwise.
@@ -660,7 +667,9 @@ func (o WritableDeviceTypeRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["default_platform"] = o.DefaultPlatform.Get()
 	}
 	toSerialize["model"] = o.Model
-	toSerialize["slug"] = o.Slug
+	if !IsNil(o.Slug) {
+		toSerialize["slug"] = o.Slug
+	}
 	if !IsNil(o.PartNumber) {
 		toSerialize["part_number"] = o.PartNumber
 	}
@@ -718,7 +727,6 @@ func (o *WritableDeviceTypeRequest) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"manufacturer",
 		"model",
-		"slug",
 	}
 
 	allProperties := make(map[string]interface{})

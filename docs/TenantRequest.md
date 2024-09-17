@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Slug** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Slug** | Pointer to **string** |  | [optional] 
 **Group** | Pointer to [**NullableBriefTenantGroupRequest**](BriefTenantGroupRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewTenantRequest
 
-`func NewTenantRequest(name string, slug string, ) *TenantRequest`
+`func NewTenantRequest() *TenantRequest`
 
 NewTenantRequest instantiates a new TenantRequest object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *TenantRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSlug
 
@@ -70,6 +75,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *TenantRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetGroup
 

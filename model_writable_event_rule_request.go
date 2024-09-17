@@ -21,7 +21,7 @@ var _ MappedNullable = &WritableEventRuleRequest{}
 // WritableEventRuleRequest Adds support for custom fields and tags.
 type WritableEventRuleRequest struct {
 	ObjectTypes []string `json:"object_types"`
-	Name        string   `json:"name"`
+	Name        *string  `json:"name,omitempty"`
 	// Triggers when a matching object is created.
 	TypeCreate *bool `json:"type_create,omitempty"`
 	// Triggers when a matching object is updated.
@@ -50,10 +50,9 @@ type _WritableEventRuleRequest WritableEventRuleRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableEventRuleRequest(objectTypes []string, name string, actionObjectType string) *WritableEventRuleRequest {
+func NewWritableEventRuleRequest(objectTypes []string, actionObjectType string) *WritableEventRuleRequest {
 	this := WritableEventRuleRequest{}
 	this.ObjectTypes = objectTypes
-	this.Name = name
 	this.ActionObjectType = actionObjectType
 	return &this
 }
@@ -90,28 +89,36 @@ func (o *WritableEventRuleRequest) SetObjectTypes(v []string) {
 	o.ObjectTypes = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritableEventRuleRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableEventRuleRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritableEventRuleRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritableEventRuleRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetTypeCreate returns the TypeCreate field value if set, zero value otherwise.
@@ -545,7 +552,9 @@ func (o WritableEventRuleRequest) MarshalJSON() ([]byte, error) {
 func (o WritableEventRuleRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["object_types"] = o.ObjectTypes
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.TypeCreate) {
 		toSerialize["type_create"] = o.TypeCreate
 	}
@@ -597,7 +606,6 @@ func (o *WritableEventRuleRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"object_types",
-		"name",
 		"action_object_type",
 	}
 

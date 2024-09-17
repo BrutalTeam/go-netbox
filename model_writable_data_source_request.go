@@ -20,7 +20,7 @@ var _ MappedNullable = &WritableDataSourceRequest{}
 
 // WritableDataSourceRequest Adds support for custom fields and tags.
 type WritableDataSourceRequest struct {
-	Name        string      `json:"name"`
+	Name        *string     `json:"name,omitempty"`
 	Type        string      `json:"type"`
 	SourceUrl   string      `json:"source_url"`
 	Enabled     *bool       `json:"enabled,omitempty"`
@@ -39,9 +39,8 @@ type _WritableDataSourceRequest WritableDataSourceRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableDataSourceRequest(name string, type_ string, sourceUrl string) *WritableDataSourceRequest {
+func NewWritableDataSourceRequest(type_ string, sourceUrl string) *WritableDataSourceRequest {
 	this := WritableDataSourceRequest{}
-	this.Name = name
 	this.Type = type_
 	this.SourceUrl = sourceUrl
 	return &this
@@ -55,28 +54,36 @@ func NewWritableDataSourceRequestWithDefaults() *WritableDataSourceRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritableDataSourceRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableDataSourceRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritableDataSourceRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritableDataSourceRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetType returns the Type field value
@@ -330,7 +337,9 @@ func (o WritableDataSourceRequest) MarshalJSON() ([]byte, error) {
 
 func (o WritableDataSourceRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	toSerialize["type"] = o.Type
 	toSerialize["source_url"] = o.SourceUrl
 	if !IsNil(o.Enabled) {
@@ -364,7 +373,6 @@ func (o *WritableDataSourceRequest) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"name",
 		"type",
 		"source_url",
 	}

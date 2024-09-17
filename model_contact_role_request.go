@@ -12,7 +12,6 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ContactRoleRequest type satisfies the MappedNullable interface at compile time
@@ -20,8 +19,8 @@ var _ MappedNullable = &ContactRoleRequest{}
 
 // ContactRoleRequest Adds support for custom fields and tags.
 type ContactRoleRequest struct {
-	Name                 string                 `json:"name"`
-	Slug                 string                 `json:"slug"`
+	Name                 *string                `json:"name,omitempty"`
+	Slug                 *string                `json:"slug,omitempty"`
 	Description          *string                `json:"description,omitempty"`
 	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
@@ -34,10 +33,8 @@ type _ContactRoleRequest ContactRoleRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewContactRoleRequest(name string, slug string) *ContactRoleRequest {
+func NewContactRoleRequest() *ContactRoleRequest {
 	this := ContactRoleRequest{}
-	this.Name = name
-	this.Slug = slug
 	return &this
 }
 
@@ -49,52 +46,68 @@ func NewContactRoleRequestWithDefaults() *ContactRoleRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *ContactRoleRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContactRoleRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *ContactRoleRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ContactRoleRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetSlug returns the Slug field value
+// GetSlug returns the Slug field value if set, zero value otherwise.
 func (o *ContactRoleRequest) GetSlug() string {
-	if o == nil {
+	if o == nil || IsNil(o.Slug) {
 		var ret string
 		return ret
 	}
-
-	return o.Slug
+	return *o.Slug
 }
 
-// GetSlugOk returns a tuple with the Slug field value
+// GetSlugOk returns a tuple with the Slug field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ContactRoleRequest) GetSlugOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Slug) {
 		return nil, false
 	}
-	return &o.Slug, true
+	return o.Slug, true
 }
 
-// SetSlug sets field value
+// HasSlug returns a boolean if a field has been set.
+func (o *ContactRoleRequest) HasSlug() bool {
+	if o != nil && !IsNil(o.Slug) {
+		return true
+	}
+
+	return false
+}
+
+// SetSlug gets a reference to the given string and assigns it to the Slug field.
 func (o *ContactRoleRequest) SetSlug(v string) {
-	o.Slug = v
+	o.Slug = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -203,8 +216,12 @@ func (o ContactRoleRequest) MarshalJSON() ([]byte, error) {
 
 func (o ContactRoleRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
-	toSerialize["slug"] = o.Slug
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Slug) {
+		toSerialize["slug"] = o.Slug
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -223,28 +240,6 @@ func (o ContactRoleRequest) ToMap() (map[string]interface{}, error) {
 }
 
 func (o *ContactRoleRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"slug",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varContactRoleRequest := _ContactRoleRequest{}
 
 	err = json.Unmarshal(data, &varContactRoleRequest)

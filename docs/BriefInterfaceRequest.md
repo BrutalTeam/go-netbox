@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBriefInterfaceRequest
 
-`func NewBriefInterfaceRequest(device BriefDeviceRequest, name string, ) *BriefInterfaceRequest`
+`func NewBriefInterfaceRequest(device BriefDeviceRequest, ) *BriefInterfaceRequest`
 
 NewBriefInterfaceRequest instantiates a new BriefInterfaceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -66,6 +66,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *BriefInterfaceRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

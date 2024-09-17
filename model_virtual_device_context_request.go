@@ -20,7 +20,7 @@ var _ MappedNullable = &VirtualDeviceContextRequest{}
 
 // VirtualDeviceContextRequest Adds support for custom fields and tags.
 type VirtualDeviceContextRequest struct {
-	Name                 string                                           `json:"name"`
+	Name                 *string                                          `json:"name,omitempty"`
 	Device               BriefDeviceRequest                               `json:"device"`
 	Identifier           NullableInt32                                    `json:"identifier,omitempty"`
 	Tenant               NullableBriefTenantRequest                       `json:"tenant,omitempty"`
@@ -40,9 +40,8 @@ type _VirtualDeviceContextRequest VirtualDeviceContextRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualDeviceContextRequest(name string, device BriefDeviceRequest, status PatchedWritableVirtualDeviceContextRequestStatus) *VirtualDeviceContextRequest {
+func NewVirtualDeviceContextRequest(device BriefDeviceRequest, status PatchedWritableVirtualDeviceContextRequestStatus) *VirtualDeviceContextRequest {
 	this := VirtualDeviceContextRequest{}
-	this.Name = name
 	this.Device = device
 	this.Status = status
 	return &this
@@ -56,28 +55,36 @@ func NewVirtualDeviceContextRequestWithDefaults() *VirtualDeviceContextRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *VirtualDeviceContextRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualDeviceContextRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *VirtualDeviceContextRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *VirtualDeviceContextRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetDevice returns the Device field value
@@ -438,7 +445,9 @@ func (o VirtualDeviceContextRequest) MarshalJSON() ([]byte, error) {
 
 func (o VirtualDeviceContextRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	toSerialize["device"] = o.Device
 	if o.Identifier.IsSet() {
 		toSerialize["identifier"] = o.Identifier.Get()
@@ -478,7 +487,6 @@ func (o *VirtualDeviceContextRequest) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"name",
 		"device",
 		"status",
 	}

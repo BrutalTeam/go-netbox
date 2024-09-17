@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Slug** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Slug** | Pointer to **string** |  | [optional] 
 **Parent** | Pointer to [**NullableNestedTenantGroupRequest**](NestedTenantGroupRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewTenantGroupRequest
 
-`func NewTenantGroupRequest(name string, slug string, ) *TenantGroupRequest`
+`func NewTenantGroupRequest() *TenantGroupRequest`
 
 NewTenantGroupRequest instantiates a new TenantGroupRequest object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *TenantGroupRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSlug
 
@@ -69,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *TenantGroupRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetParent
 

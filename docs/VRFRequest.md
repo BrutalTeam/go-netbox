@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Rd** | Pointer to **NullableString** | Unique route distinguisher (as defined in RFC 4364) | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **EnforceUnique** | Pointer to **bool** | Prevent duplicate prefixes/IP addresses within this VRF | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewVRFRequest
 
-`func NewVRFRequest(name string, ) *VRFRequest`
+`func NewVRFRequest() *VRFRequest`
 
 NewVRFRequest instantiates a new VRFRequest object
 This constructor will assign default values to properties that have it defined,
@@ -53,6 +53,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *VRFRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetRd
 

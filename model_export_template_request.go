@@ -21,7 +21,7 @@ var _ MappedNullable = &ExportTemplateRequest{}
 // ExportTemplateRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type ExportTemplateRequest struct {
 	ObjectTypes []string `json:"object_types"`
-	Name        string   `json:"name"`
+	Name        *string  `json:"name,omitempty"`
 	Description *string  `json:"description,omitempty"`
 	// Jinja2 template code. The list of objects being exported is passed as a context variable named <code>queryset</code>.
 	TemplateCode string `json:"template_code"`
@@ -41,10 +41,9 @@ type _ExportTemplateRequest ExportTemplateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExportTemplateRequest(objectTypes []string, name string, templateCode string) *ExportTemplateRequest {
+func NewExportTemplateRequest(objectTypes []string, templateCode string) *ExportTemplateRequest {
 	this := ExportTemplateRequest{}
 	this.ObjectTypes = objectTypes
-	this.Name = name
 	this.TemplateCode = templateCode
 	return &this
 }
@@ -81,28 +80,36 @@ func (o *ExportTemplateRequest) SetObjectTypes(v []string) {
 	o.ObjectTypes = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *ExportTemplateRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExportTemplateRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *ExportTemplateRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ExportTemplateRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -300,7 +307,9 @@ func (o ExportTemplateRequest) MarshalJSON() ([]byte, error) {
 func (o ExportTemplateRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["object_types"] = o.ObjectTypes
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -331,7 +340,6 @@ func (o *ExportTemplateRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"object_types",
-		"name",
 		"template_code",
 	}
 

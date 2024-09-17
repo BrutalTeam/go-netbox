@@ -12,7 +12,6 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the NestedModuleBayRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +20,7 @@ var _ MappedNullable = &NestedModuleBayRequest{}
 // NestedModuleBayRequest Represents an object related through a ForeignKey field. On write, it accepts a primary key (PK) value or a dictionary of attributes which can be used to uniquely identify the related object. This class should be subclassed to return a full representation of the related object on read.
 type NestedModuleBayRequest struct {
 	InstalledModule      NullableModuleBayNestedModuleRequest `json:"installed_module,omitempty"`
-	Name                 string                               `json:"name"`
+	Name                 *string                              `json:"name,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -31,9 +30,8 @@ type _NestedModuleBayRequest NestedModuleBayRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedModuleBayRequest(name string) *NestedModuleBayRequest {
+func NewNestedModuleBayRequest() *NestedModuleBayRequest {
 	this := NestedModuleBayRequest{}
-	this.Name = name
 	return &this
 }
 
@@ -88,28 +86,36 @@ func (o *NestedModuleBayRequest) UnsetInstalledModule() {
 	o.InstalledModule.Unset()
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *NestedModuleBayRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *NestedModuleBayRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *NestedModuleBayRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *NestedModuleBayRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 func (o NestedModuleBayRequest) MarshalJSON() ([]byte, error) {
@@ -125,7 +131,9 @@ func (o NestedModuleBayRequest) ToMap() (map[string]interface{}, error) {
 	if o.InstalledModule.IsSet() {
 		toSerialize["installed_module"] = o.InstalledModule.Get()
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -135,27 +143,6 @@ func (o NestedModuleBayRequest) ToMap() (map[string]interface{}, error) {
 }
 
 func (o *NestedModuleBayRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varNestedModuleBayRequest := _NestedModuleBayRequest{}
 
 	err = json.Unmarshal(data, &varNestedModuleBayRequest)

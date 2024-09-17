@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Slug** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Slug** | Pointer to **string** |  | [optional] 
 **Color** | Pointer to **string** |  | [optional] 
 **VmRole** | Pointer to **bool** | Virtual machines may be assigned to this role | [optional] 
 **ConfigTemplate** | Pointer to [**NullableBriefConfigTemplateRequest**](BriefConfigTemplateRequest.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceRoleRequest
 
-`func NewDeviceRoleRequest(name string, slug string, ) *DeviceRoleRequest`
+`func NewDeviceRoleRequest() *DeviceRoleRequest`
 
 NewDeviceRoleRequest instantiates a new DeviceRoleRequest object
 This constructor will assign default values to properties that have it defined,
@@ -51,6 +51,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *DeviceRoleRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSlug
 
@@ -71,6 +76,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *DeviceRoleRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetColor
 

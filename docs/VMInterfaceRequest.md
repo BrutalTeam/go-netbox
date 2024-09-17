@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **VirtualMachine** | [**BriefVirtualMachineRequest**](BriefVirtualMachineRequest.md) |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **Parent** | Pointer to [**NullableNestedVMInterfaceRequest**](NestedVMInterfaceRequest.md) |  | [optional] 
 **Bridge** | Pointer to [**NullableNestedVMInterfaceRequest**](NestedVMInterfaceRequest.md) |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewVMInterfaceRequest
 
-`func NewVMInterfaceRequest(virtualMachine BriefVirtualMachineRequest, name string, ) *VMInterfaceRequest`
+`func NewVMInterfaceRequest(virtualMachine BriefVirtualMachineRequest, ) *VMInterfaceRequest`
 
 NewVMInterfaceRequest instantiates a new VMInterfaceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -77,6 +77,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *VMInterfaceRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetEnabled
 

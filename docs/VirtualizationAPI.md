@@ -83,7 +83,7 @@ import (
 )
 
 func main() {
-	clusterGroupRequest := []openapiclient.ClusterGroupRequest{*openapiclient.NewClusterGroupRequest("Name_example", "Slug_example")} // []ClusterGroupRequest | 
+	clusterGroupRequest := []openapiclient.ClusterGroupRequest{*openapiclient.NewClusterGroupRequest()} // []ClusterGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -147,7 +147,7 @@ import (
 )
 
 func main() {
-	clusterGroupRequest := []openapiclient.ClusterGroupRequest{*openapiclient.NewClusterGroupRequest("Name_example", "Slug_example")} // []ClusterGroupRequest | 
+	clusterGroupRequest := []openapiclient.ClusterGroupRequest{*openapiclient.NewClusterGroupRequest()} // []ClusterGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -213,7 +213,7 @@ import (
 )
 
 func main() {
-	clusterGroupRequest := []openapiclient.ClusterGroupRequest{*openapiclient.NewClusterGroupRequest("Name_example", "Slug_example")} // []ClusterGroupRequest | 
+	clusterGroupRequest := []openapiclient.ClusterGroupRequest{*openapiclient.NewClusterGroupRequest()} // []ClusterGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -279,7 +279,7 @@ import (
 )
 
 func main() {
-	clusterGroupRequest := *openapiclient.NewClusterGroupRequest("Name_example", "Slug_example") // ClusterGroupRequest | 
+	clusterGroupRequest := *openapiclient.NewClusterGroupRequest() // ClusterGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -759,7 +759,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this cluster group.
-	clusterGroupRequest := *openapiclient.NewClusterGroupRequest("Name_example", "Slug_example") // ClusterGroupRequest | 
+	clusterGroupRequest := *openapiclient.NewClusterGroupRequest() // ClusterGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -830,7 +830,7 @@ import (
 )
 
 func main() {
-	clusterTypeRequest := []openapiclient.ClusterTypeRequest{*openapiclient.NewClusterTypeRequest("Name_example", "Slug_example")} // []ClusterTypeRequest | 
+	clusterTypeRequest := []openapiclient.ClusterTypeRequest{*openapiclient.NewClusterTypeRequest()} // []ClusterTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -894,7 +894,7 @@ import (
 )
 
 func main() {
-	clusterTypeRequest := []openapiclient.ClusterTypeRequest{*openapiclient.NewClusterTypeRequest("Name_example", "Slug_example")} // []ClusterTypeRequest | 
+	clusterTypeRequest := []openapiclient.ClusterTypeRequest{*openapiclient.NewClusterTypeRequest()} // []ClusterTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -960,7 +960,7 @@ import (
 )
 
 func main() {
-	clusterTypeRequest := []openapiclient.ClusterTypeRequest{*openapiclient.NewClusterTypeRequest("Name_example", "Slug_example")} // []ClusterTypeRequest | 
+	clusterTypeRequest := []openapiclient.ClusterTypeRequest{*openapiclient.NewClusterTypeRequest()} // []ClusterTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1026,7 +1026,7 @@ import (
 )
 
 func main() {
-	clusterTypeRequest := *openapiclient.NewClusterTypeRequest("Name_example", "Slug_example") // ClusterTypeRequest | 
+	clusterTypeRequest := *openapiclient.NewClusterTypeRequest() // ClusterTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1494,7 +1494,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this cluster type.
-	clusterTypeRequest := *openapiclient.NewClusterTypeRequest("Name_example", "Slug_example") // ClusterTypeRequest | 
+	clusterTypeRequest := *openapiclient.NewClusterTypeRequest() // ClusterTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1565,7 +1565,7 @@ import (
 )
 
 func main() {
-	clusterRequest := []openapiclient.ClusterRequest{*openapiclient.NewClusterRequest("Name_example", *openapiclient.NewBriefClusterTypeRequest("Name_example", "Slug_example"))} // []ClusterRequest | 
+	clusterRequest := []openapiclient.ClusterRequest{*openapiclient.NewClusterRequest(*openapiclient.NewBriefClusterTypeRequest())} // []ClusterRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1629,7 +1629,7 @@ import (
 )
 
 func main() {
-	clusterRequest := []openapiclient.ClusterRequest{*openapiclient.NewClusterRequest("Name_example", *openapiclient.NewBriefClusterTypeRequest("Name_example", "Slug_example"))} // []ClusterRequest | 
+	clusterRequest := []openapiclient.ClusterRequest{*openapiclient.NewClusterRequest(*openapiclient.NewBriefClusterTypeRequest())} // []ClusterRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1695,7 +1695,7 @@ import (
 )
 
 func main() {
-	clusterRequest := []openapiclient.ClusterRequest{*openapiclient.NewClusterRequest("Name_example", *openapiclient.NewBriefClusterTypeRequest("Name_example", "Slug_example"))} // []ClusterRequest | 
+	clusterRequest := []openapiclient.ClusterRequest{*openapiclient.NewClusterRequest(*openapiclient.NewBriefClusterTypeRequest())} // []ClusterRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1761,7 +1761,7 @@ import (
 )
 
 func main() {
-	writableClusterRequest := *openapiclient.NewWritableClusterRequest("Name_example", *openapiclient.NewBriefClusterTypeRequest("Name_example", "Slug_example")) // WritableClusterRequest | 
+	writableClusterRequest := *openapiclient.NewWritableClusterRequest(*openapiclient.NewBriefClusterTypeRequest()) // WritableClusterRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2279,7 +2279,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this cluster.
-	writableClusterRequest := *openapiclient.NewWritableClusterRequest("Name_example", *openapiclient.NewBriefClusterTypeRequest("Name_example", "Slug_example")) // WritableClusterRequest | 
+	writableClusterRequest := *openapiclient.NewWritableClusterRequest(*openapiclient.NewBriefClusterTypeRequest()) // WritableClusterRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2350,7 +2350,7 @@ import (
 )
 
 func main() {
-	vMInterfaceRequest := []openapiclient.VMInterfaceRequest{*openapiclient.NewVMInterfaceRequest(*openapiclient.NewBriefVirtualMachineRequest("Name_example"), "Name_example")} // []VMInterfaceRequest | 
+	vMInterfaceRequest := []openapiclient.VMInterfaceRequest{*openapiclient.NewVMInterfaceRequest(*openapiclient.NewBriefVirtualMachineRequest())} // []VMInterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2414,7 +2414,7 @@ import (
 )
 
 func main() {
-	vMInterfaceRequest := []openapiclient.VMInterfaceRequest{*openapiclient.NewVMInterfaceRequest(*openapiclient.NewBriefVirtualMachineRequest("Name_example"), "Name_example")} // []VMInterfaceRequest | 
+	vMInterfaceRequest := []openapiclient.VMInterfaceRequest{*openapiclient.NewVMInterfaceRequest(*openapiclient.NewBriefVirtualMachineRequest())} // []VMInterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2480,7 +2480,7 @@ import (
 )
 
 func main() {
-	vMInterfaceRequest := []openapiclient.VMInterfaceRequest{*openapiclient.NewVMInterfaceRequest(*openapiclient.NewBriefVirtualMachineRequest("Name_example"), "Name_example")} // []VMInterfaceRequest | 
+	vMInterfaceRequest := []openapiclient.VMInterfaceRequest{*openapiclient.NewVMInterfaceRequest(*openapiclient.NewBriefVirtualMachineRequest())} // []VMInterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2546,7 +2546,7 @@ import (
 )
 
 func main() {
-	writableVMInterfaceRequest := *openapiclient.NewWritableVMInterfaceRequest(*openapiclient.NewBriefVirtualMachineRequest("Name_example"), "Name_example") // WritableVMInterfaceRequest | 
+	writableVMInterfaceRequest := *openapiclient.NewWritableVMInterfaceRequest(*openapiclient.NewBriefVirtualMachineRequest()) // WritableVMInterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3076,7 +3076,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this interface.
-	writableVMInterfaceRequest := *openapiclient.NewWritableVMInterfaceRequest(*openapiclient.NewBriefVirtualMachineRequest("Name_example"), "Name_example") // WritableVMInterfaceRequest | 
+	writableVMInterfaceRequest := *openapiclient.NewWritableVMInterfaceRequest(*openapiclient.NewBriefVirtualMachineRequest()) // WritableVMInterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3147,7 +3147,7 @@ import (
 )
 
 func main() {
-	virtualDiskRequest := []openapiclient.VirtualDiskRequest{*openapiclient.NewVirtualDiskRequest(*openapiclient.NewBriefVirtualMachineRequest("Name_example"), "Name_example", int32(123))} // []VirtualDiskRequest | 
+	virtualDiskRequest := []openapiclient.VirtualDiskRequest{*openapiclient.NewVirtualDiskRequest(*openapiclient.NewBriefVirtualMachineRequest(), int32(123))} // []VirtualDiskRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3211,7 +3211,7 @@ import (
 )
 
 func main() {
-	virtualDiskRequest := []openapiclient.VirtualDiskRequest{*openapiclient.NewVirtualDiskRequest(*openapiclient.NewBriefVirtualMachineRequest("Name_example"), "Name_example", int32(123))} // []VirtualDiskRequest | 
+	virtualDiskRequest := []openapiclient.VirtualDiskRequest{*openapiclient.NewVirtualDiskRequest(*openapiclient.NewBriefVirtualMachineRequest(), int32(123))} // []VirtualDiskRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3277,7 +3277,7 @@ import (
 )
 
 func main() {
-	virtualDiskRequest := []openapiclient.VirtualDiskRequest{*openapiclient.NewVirtualDiskRequest(*openapiclient.NewBriefVirtualMachineRequest("Name_example"), "Name_example", int32(123))} // []VirtualDiskRequest | 
+	virtualDiskRequest := []openapiclient.VirtualDiskRequest{*openapiclient.NewVirtualDiskRequest(*openapiclient.NewBriefVirtualMachineRequest(), int32(123))} // []VirtualDiskRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3343,7 +3343,7 @@ import (
 )
 
 func main() {
-	virtualDiskRequest := *openapiclient.NewVirtualDiskRequest(*openapiclient.NewBriefVirtualMachineRequest("Name_example"), "Name_example", int32(123)) // VirtualDiskRequest | 
+	virtualDiskRequest := *openapiclient.NewVirtualDiskRequest(*openapiclient.NewBriefVirtualMachineRequest(), int32(123)) // VirtualDiskRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3811,7 +3811,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this virtual disk.
-	virtualDiskRequest := *openapiclient.NewVirtualDiskRequest(*openapiclient.NewBriefVirtualMachineRequest("Name_example"), "Name_example", int32(123)) // VirtualDiskRequest | 
+	virtualDiskRequest := *openapiclient.NewVirtualDiskRequest(*openapiclient.NewBriefVirtualMachineRequest(), int32(123)) // VirtualDiskRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3882,7 +3882,7 @@ import (
 )
 
 func main() {
-	virtualMachineWithConfigContextRequest := []openapiclient.VirtualMachineWithConfigContextRequest{*openapiclient.NewVirtualMachineWithConfigContextRequest("Name_example")} // []VirtualMachineWithConfigContextRequest | 
+	virtualMachineWithConfigContextRequest := []openapiclient.VirtualMachineWithConfigContextRequest{*openapiclient.NewVirtualMachineWithConfigContextRequest()} // []VirtualMachineWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3946,7 +3946,7 @@ import (
 )
 
 func main() {
-	virtualMachineWithConfigContextRequest := []openapiclient.VirtualMachineWithConfigContextRequest{*openapiclient.NewVirtualMachineWithConfigContextRequest("Name_example")} // []VirtualMachineWithConfigContextRequest | 
+	virtualMachineWithConfigContextRequest := []openapiclient.VirtualMachineWithConfigContextRequest{*openapiclient.NewVirtualMachineWithConfigContextRequest()} // []VirtualMachineWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4012,7 +4012,7 @@ import (
 )
 
 func main() {
-	virtualMachineWithConfigContextRequest := []openapiclient.VirtualMachineWithConfigContextRequest{*openapiclient.NewVirtualMachineWithConfigContextRequest("Name_example")} // []VirtualMachineWithConfigContextRequest | 
+	virtualMachineWithConfigContextRequest := []openapiclient.VirtualMachineWithConfigContextRequest{*openapiclient.NewVirtualMachineWithConfigContextRequest()} // []VirtualMachineWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4078,7 +4078,7 @@ import (
 )
 
 func main() {
-	writableVirtualMachineWithConfigContextRequest := *openapiclient.NewWritableVirtualMachineWithConfigContextRequest("Name_example") // WritableVirtualMachineWithConfigContextRequest | 
+	writableVirtualMachineWithConfigContextRequest := *openapiclient.NewWritableVirtualMachineWithConfigContextRequest() // WritableVirtualMachineWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4664,7 +4664,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this virtual machine.
-	writableVirtualMachineWithConfigContextRequest := *openapiclient.NewWritableVirtualMachineWithConfigContextRequest("Name_example") // WritableVirtualMachineWithConfigContextRequest | 
+	writableVirtualMachineWithConfigContextRequest := *openapiclient.NewWritableVirtualMachineWithConfigContextRequest() // WritableVirtualMachineWithConfigContextRequest | 
 	format := openapiclient.dcim_devices_render_config_create_format_parameter("json") // DcimDevicesRenderConfigCreateFormatParameter |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -4808,7 +4808,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this virtual machine.
-	writableVirtualMachineWithConfigContextRequest := *openapiclient.NewWritableVirtualMachineWithConfigContextRequest("Name_example") // WritableVirtualMachineWithConfigContextRequest | 
+	writableVirtualMachineWithConfigContextRequest := *openapiclient.NewWritableVirtualMachineWithConfigContextRequest() // WritableVirtualMachineWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

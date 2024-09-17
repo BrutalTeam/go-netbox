@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Slug** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Slug** | Pointer to **string** |  | [optional] 
 **Rir** | [**BriefRIRRequest**](BriefRIRRequest.md) |  | 
 **Start** | **int64** |  | 
 **End** | **int64** |  | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewASNRangeRequest
 
-`func NewASNRangeRequest(name string, slug string, rir BriefRIRRequest, start int64, end int64, ) *ASNRangeRequest`
+`func NewASNRangeRequest(rir BriefRIRRequest, start int64, end int64, ) *ASNRangeRequest`
 
 NewASNRangeRequest instantiates a new ASNRangeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -52,6 +52,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ASNRangeRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSlug
 
@@ -72,6 +77,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *ASNRangeRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetRir
 

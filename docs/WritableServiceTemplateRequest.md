@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Protocol** | [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | 
 **Ports** | **[]int32** |  | 
 **Description** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewWritableServiceTemplateRequest
 
-`func NewWritableServiceTemplateRequest(name string, protocol PatchedWritableServiceRequestProtocol, ports []int32, ) *WritableServiceTemplateRequest`
+`func NewWritableServiceTemplateRequest(protocol PatchedWritableServiceRequestProtocol, ports []int32, ) *WritableServiceTemplateRequest`
 
 NewWritableServiceTemplateRequest instantiates a new WritableServiceTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *WritableServiceTemplateRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetProtocol
 

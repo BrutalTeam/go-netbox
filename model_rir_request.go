@@ -12,7 +12,6 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the RIRRequest type satisfies the MappedNullable interface at compile time
@@ -20,8 +19,8 @@ var _ MappedNullable = &RIRRequest{}
 
 // RIRRequest Adds support for custom fields and tags.
 type RIRRequest struct {
-	Name string `json:"name"`
-	Slug string `json:"slug"`
+	Name *string `json:"name,omitempty"`
+	Slug *string `json:"slug,omitempty"`
 	// IP space managed by this RIR is considered private
 	IsPrivate            *bool                  `json:"is_private,omitempty"`
 	Description          *string                `json:"description,omitempty"`
@@ -36,10 +35,8 @@ type _RIRRequest RIRRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRIRRequest(name string, slug string) *RIRRequest {
+func NewRIRRequest() *RIRRequest {
 	this := RIRRequest{}
-	this.Name = name
-	this.Slug = slug
 	return &this
 }
 
@@ -51,52 +48,68 @@ func NewRIRRequestWithDefaults() *RIRRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *RIRRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RIRRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *RIRRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *RIRRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetSlug returns the Slug field value
+// GetSlug returns the Slug field value if set, zero value otherwise.
 func (o *RIRRequest) GetSlug() string {
-	if o == nil {
+	if o == nil || IsNil(o.Slug) {
 		var ret string
 		return ret
 	}
-
-	return o.Slug
+	return *o.Slug
 }
 
-// GetSlugOk returns a tuple with the Slug field value
+// GetSlugOk returns a tuple with the Slug field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RIRRequest) GetSlugOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Slug) {
 		return nil, false
 	}
-	return &o.Slug, true
+	return o.Slug, true
 }
 
-// SetSlug sets field value
+// HasSlug returns a boolean if a field has been set.
+func (o *RIRRequest) HasSlug() bool {
+	if o != nil && !IsNil(o.Slug) {
+		return true
+	}
+
+	return false
+}
+
+// SetSlug gets a reference to the given string and assigns it to the Slug field.
 func (o *RIRRequest) SetSlug(v string) {
-	o.Slug = v
+	o.Slug = &v
 }
 
 // GetIsPrivate returns the IsPrivate field value if set, zero value otherwise.
@@ -237,8 +250,12 @@ func (o RIRRequest) MarshalJSON() ([]byte, error) {
 
 func (o RIRRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
-	toSerialize["slug"] = o.Slug
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Slug) {
+		toSerialize["slug"] = o.Slug
+	}
 	if !IsNil(o.IsPrivate) {
 		toSerialize["is_private"] = o.IsPrivate
 	}
@@ -260,28 +277,6 @@ func (o RIRRequest) ToMap() (map[string]interface{}, error) {
 }
 
 func (o *RIRRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-		"slug",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varRIRRequest := _RIRRequest{}
 
 	err = json.Unmarshal(data, &varRIRRequest)

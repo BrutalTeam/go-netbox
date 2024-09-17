@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Domain** | Pointer to **string** |  | [optional] 
 **Master** | Pointer to [**NullableNestedDeviceRequest**](NestedDeviceRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualChassisRequest
 
-`func NewVirtualChassisRequest(name string, ) *VirtualChassisRequest`
+`func NewVirtualChassisRequest() *VirtualChassisRequest`
 
 NewVirtualChassisRequest instantiates a new VirtualChassisRequest object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *VirtualChassisRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDomain
 

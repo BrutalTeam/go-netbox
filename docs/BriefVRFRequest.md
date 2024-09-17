@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Rd** | Pointer to **NullableString** | Unique route distinguisher (as defined in RFC 4364) | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewBriefVRFRequest
 
-`func NewBriefVRFRequest(name string, ) *BriefVRFRequest`
+`func NewBriefVRFRequest() *BriefVRFRequest`
 
 NewBriefVRFRequest instantiates a new BriefVRFRequest object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *BriefVRFRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetRd
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **InstalledDevice** | Pointer to [**NullableBriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceBayRequest
 
-`func NewDeviceBayRequest(device BriefDeviceRequest, name string, ) *DeviceBayRequest`
+`func NewDeviceBayRequest(device BriefDeviceRequest, ) *DeviceBayRequest`
 
 NewDeviceBayRequest instantiates a new DeviceBayRequest object
 This constructor will assign default values to properties that have it defined,
@@ -70,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *DeviceBayRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetLabel
 

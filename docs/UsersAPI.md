@@ -127,7 +127,7 @@ import (
 )
 
 func main() {
-	groupRequest := []openapiclient.GroupRequest{*openapiclient.NewGroupRequest("Name_example")} // []GroupRequest | 
+	groupRequest := []openapiclient.GroupRequest{*openapiclient.NewGroupRequest()} // []GroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -191,7 +191,7 @@ import (
 )
 
 func main() {
-	groupRequest := []openapiclient.GroupRequest{*openapiclient.NewGroupRequest("Name_example")} // []GroupRequest | 
+	groupRequest := []openapiclient.GroupRequest{*openapiclient.NewGroupRequest()} // []GroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -257,7 +257,7 @@ import (
 )
 
 func main() {
-	groupRequest := []openapiclient.GroupRequest{*openapiclient.NewGroupRequest("Name_example")} // []GroupRequest | 
+	groupRequest := []openapiclient.GroupRequest{*openapiclient.NewGroupRequest()} // []GroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -323,7 +323,7 @@ import (
 )
 
 func main() {
-	groupRequest := *openapiclient.NewGroupRequest("Name_example") // GroupRequest | 
+	groupRequest := *openapiclient.NewGroupRequest() // GroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -738,7 +738,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this group.
-	groupRequest := *openapiclient.NewGroupRequest("Name_example") // GroupRequest | 
+	groupRequest := *openapiclient.NewGroupRequest() // GroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -809,7 +809,7 @@ import (
 )
 
 func main() {
-	objectPermissionRequest := []openapiclient.ObjectPermissionRequest{*openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"})} // []ObjectPermissionRequest | 
+	objectPermissionRequest := []openapiclient.ObjectPermissionRequest{*openapiclient.NewObjectPermissionRequest([]string{"ObjectTypes_example"}, []string{"Actions_example"})} // []ObjectPermissionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -873,7 +873,7 @@ import (
 )
 
 func main() {
-	objectPermissionRequest := []openapiclient.ObjectPermissionRequest{*openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"})} // []ObjectPermissionRequest | 
+	objectPermissionRequest := []openapiclient.ObjectPermissionRequest{*openapiclient.NewObjectPermissionRequest([]string{"ObjectTypes_example"}, []string{"Actions_example"})} // []ObjectPermissionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -939,7 +939,7 @@ import (
 )
 
 func main() {
-	objectPermissionRequest := []openapiclient.ObjectPermissionRequest{*openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"})} // []ObjectPermissionRequest | 
+	objectPermissionRequest := []openapiclient.ObjectPermissionRequest{*openapiclient.NewObjectPermissionRequest([]string{"ObjectTypes_example"}, []string{"Actions_example"})} // []ObjectPermissionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1005,7 +1005,7 @@ import (
 )
 
 func main() {
-	objectPermissionRequest := *openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"}) // ObjectPermissionRequest | 
+	objectPermissionRequest := *openapiclient.NewObjectPermissionRequest([]string{"ObjectTypes_example"}, []string{"Actions_example"}) // ObjectPermissionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1466,7 +1466,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this permission.
-	objectPermissionRequest := *openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"}) // ObjectPermissionRequest | 
+	objectPermissionRequest := *openapiclient.NewObjectPermissionRequest([]string{"ObjectTypes_example"}, []string{"Actions_example"}) // ObjectPermissionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

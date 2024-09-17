@@ -21,7 +21,7 @@ var _ MappedNullable = &CustomLinkRequest{}
 // CustomLinkRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type CustomLinkRequest struct {
 	ObjectTypes []string `json:"object_types"`
-	Name        string   `json:"name"`
+	Name        *string  `json:"name,omitempty"`
 	Enabled     *bool    `json:"enabled,omitempty"`
 	// Jinja2 template code for link text
 	LinkText string `json:"link_text"`
@@ -42,10 +42,9 @@ type _CustomLinkRequest CustomLinkRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomLinkRequest(objectTypes []string, name string, linkText string, linkUrl string) *CustomLinkRequest {
+func NewCustomLinkRequest(objectTypes []string, linkText string, linkUrl string) *CustomLinkRequest {
 	this := CustomLinkRequest{}
 	this.ObjectTypes = objectTypes
-	this.Name = name
 	this.LinkText = linkText
 	this.LinkUrl = linkUrl
 	return &this
@@ -83,28 +82,36 @@ func (o *CustomLinkRequest) SetObjectTypes(v []string) {
 	o.ObjectTypes = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *CustomLinkRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomLinkRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *CustomLinkRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *CustomLinkRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -326,7 +333,9 @@ func (o CustomLinkRequest) MarshalJSON() ([]byte, error) {
 func (o CustomLinkRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["object_types"] = o.ObjectTypes
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
@@ -358,7 +367,6 @@ func (o *CustomLinkRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"object_types",
-		"name",
 		"link_text",
 		"link_url",
 	}

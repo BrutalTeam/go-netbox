@@ -835,7 +835,7 @@ import (
 )
 
 func main() {
-	configContextRequest := []openapiclient.ConfigContextRequest{*openapiclient.NewConfigContextRequest("Name_example", interface{}(123))} // []ConfigContextRequest | 
+	configContextRequest := []openapiclient.ConfigContextRequest{*openapiclient.NewConfigContextRequest(interface{}(123))} // []ConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -899,7 +899,7 @@ import (
 )
 
 func main() {
-	configContextRequest := []openapiclient.ConfigContextRequest{*openapiclient.NewConfigContextRequest("Name_example", interface{}(123))} // []ConfigContextRequest | 
+	configContextRequest := []openapiclient.ConfigContextRequest{*openapiclient.NewConfigContextRequest(interface{}(123))} // []ConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -965,7 +965,7 @@ import (
 )
 
 func main() {
-	configContextRequest := []openapiclient.ConfigContextRequest{*openapiclient.NewConfigContextRequest("Name_example", interface{}(123))} // []ConfigContextRequest | 
+	configContextRequest := []openapiclient.ConfigContextRequest{*openapiclient.NewConfigContextRequest(interface{}(123))} // []ConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1031,7 +1031,7 @@ import (
 )
 
 func main() {
-	configContextRequest := *openapiclient.NewConfigContextRequest("Name_example", interface{}(123)) // ConfigContextRequest | 
+	configContextRequest := *openapiclient.NewConfigContextRequest(interface{}(123)) // ConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1617,7 +1617,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this config context.
-	configContextRequest := *openapiclient.NewConfigContextRequest("Name_example", interface{}(123)) // ConfigContextRequest | 
+	configContextRequest := *openapiclient.NewConfigContextRequest(interface{}(123)) // ConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1689,7 +1689,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this config context.
-	configContextRequest := *openapiclient.NewConfigContextRequest("Name_example", interface{}(123)) // ConfigContextRequest | 
+	configContextRequest := *openapiclient.NewConfigContextRequest(interface{}(123)) // ConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1760,7 +1760,7 @@ import (
 )
 
 func main() {
-	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example")} // []ConfigTemplateRequest | 
+	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("TemplateCode_example")} // []ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1824,7 +1824,7 @@ import (
 )
 
 func main() {
-	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example")} // []ConfigTemplateRequest | 
+	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("TemplateCode_example")} // []ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1890,7 +1890,7 @@ import (
 )
 
 func main() {
-	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example")} // []ConfigTemplateRequest | 
+	configTemplateRequest := []openapiclient.ConfigTemplateRequest{*openapiclient.NewConfigTemplateRequest("TemplateCode_example")} // []ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1956,7 +1956,7 @@ import (
 )
 
 func main() {
-	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example") // ConfigTemplateRequest | 
+	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("TemplateCode_example") // ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2356,7 +2356,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this config template.
-	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example") // ConfigTemplateRequest | 
+	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("TemplateCode_example") // ConfigTemplateRequest | 
 	format := openapiclient.dcim_devices_render_config_create_format_parameter("json") // DcimDevicesRenderConfigCreateFormatParameter |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -2500,7 +2500,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this config template.
-	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example") // ConfigTemplateRequest | 
+	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("TemplateCode_example") // ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2572,7 +2572,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this config template.
-	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("Name_example", "TemplateCode_example") // ConfigTemplateRequest | 
+	configTemplateRequest := *openapiclient.NewConfigTemplateRequest("TemplateCode_example") // ConfigTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2643,7 +2643,7 @@ import (
 )
 
 func main() {
-	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest("Name_example", [][]interface{}{[]interface{}{nil}})} // []CustomFieldChoiceSetRequest | 
+	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest([][]interface{}{[]interface{}{nil}})} // []CustomFieldChoiceSetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2707,7 +2707,7 @@ import (
 )
 
 func main() {
-	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest("Name_example", [][]interface{}{[]interface{}{nil}})} // []CustomFieldChoiceSetRequest | 
+	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest([][]interface{}{[]interface{}{nil}})} // []CustomFieldChoiceSetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2773,7 +2773,7 @@ import (
 )
 
 func main() {
-	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest("Name_example", [][]interface{}{[]interface{}{nil}})} // []CustomFieldChoiceSetRequest | 
+	customFieldChoiceSetRequest := []openapiclient.CustomFieldChoiceSetRequest{*openapiclient.NewCustomFieldChoiceSetRequest([][]interface{}{[]interface{}{nil}})} // []CustomFieldChoiceSetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2909,7 +2909,7 @@ import (
 )
 
 func main() {
-	writableCustomFieldChoiceSetRequest := *openapiclient.NewWritableCustomFieldChoiceSetRequest("Name_example", [][]interface{}{[]interface{}{nil}}) // WritableCustomFieldChoiceSetRequest | 
+	writableCustomFieldChoiceSetRequest := *openapiclient.NewWritableCustomFieldChoiceSetRequest([][]interface{}{[]interface{}{nil}}) // WritableCustomFieldChoiceSetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3359,7 +3359,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this custom field choice set.
-	writableCustomFieldChoiceSetRequest := *openapiclient.NewWritableCustomFieldChoiceSetRequest("Name_example", [][]interface{}{[]interface{}{nil}}) // WritableCustomFieldChoiceSetRequest | 
+	writableCustomFieldChoiceSetRequest := *openapiclient.NewWritableCustomFieldChoiceSetRequest([][]interface{}{[]interface{}{nil}}) // WritableCustomFieldChoiceSetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3430,7 +3430,7 @@ import (
 )
 
 func main() {
-	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []CustomFieldRequest | 
+	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"))} // []CustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3494,7 +3494,7 @@ import (
 )
 
 func main() {
-	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []CustomFieldRequest | 
+	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"))} // []CustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3560,7 +3560,7 @@ import (
 )
 
 func main() {
-	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []CustomFieldRequest | 
+	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"))} // []CustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3626,7 +3626,7 @@ import (
 )
 
 func main() {
-	writableCustomFieldRequest := *openapiclient.NewWritableCustomFieldRequest([]string{"ObjectTypes_example"}, "Name_example") // WritableCustomFieldRequest | 
+	writableCustomFieldRequest := *openapiclient.NewWritableCustomFieldRequest([]string{"ObjectTypes_example"}) // WritableCustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4250,7 +4250,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this custom field.
-	writableCustomFieldRequest := *openapiclient.NewWritableCustomFieldRequest([]string{"ObjectTypes_example"}, "Name_example") // WritableCustomFieldRequest | 
+	writableCustomFieldRequest := *openapiclient.NewWritableCustomFieldRequest([]string{"ObjectTypes_example"}) // WritableCustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4321,7 +4321,7 @@ import (
 )
 
 func main() {
-	customLinkRequest := []openapiclient.CustomLinkRequest{*openapiclient.NewCustomLinkRequest([]string{"ObjectTypes_example"}, "Name_example", "LinkText_example", "LinkUrl_example")} // []CustomLinkRequest | 
+	customLinkRequest := []openapiclient.CustomLinkRequest{*openapiclient.NewCustomLinkRequest([]string{"ObjectTypes_example"}, "LinkText_example", "LinkUrl_example")} // []CustomLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4385,7 +4385,7 @@ import (
 )
 
 func main() {
-	customLinkRequest := []openapiclient.CustomLinkRequest{*openapiclient.NewCustomLinkRequest([]string{"ObjectTypes_example"}, "Name_example", "LinkText_example", "LinkUrl_example")} // []CustomLinkRequest | 
+	customLinkRequest := []openapiclient.CustomLinkRequest{*openapiclient.NewCustomLinkRequest([]string{"ObjectTypes_example"}, "LinkText_example", "LinkUrl_example")} // []CustomLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4451,7 +4451,7 @@ import (
 )
 
 func main() {
-	customLinkRequest := []openapiclient.CustomLinkRequest{*openapiclient.NewCustomLinkRequest([]string{"ObjectTypes_example"}, "Name_example", "LinkText_example", "LinkUrl_example")} // []CustomLinkRequest | 
+	customLinkRequest := []openapiclient.CustomLinkRequest{*openapiclient.NewCustomLinkRequest([]string{"ObjectTypes_example"}, "LinkText_example", "LinkUrl_example")} // []CustomLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4517,7 +4517,7 @@ import (
 )
 
 func main() {
-	customLinkRequest := *openapiclient.NewCustomLinkRequest([]string{"ObjectTypes_example"}, "Name_example", "LinkText_example", "LinkUrl_example") // CustomLinkRequest | 
+	customLinkRequest := *openapiclient.NewCustomLinkRequest([]string{"ObjectTypes_example"}, "LinkText_example", "LinkUrl_example") // CustomLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5045,7 +5045,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this custom link.
-	customLinkRequest := *openapiclient.NewCustomLinkRequest([]string{"ObjectTypes_example"}, "Name_example", "LinkText_example", "LinkUrl_example") // CustomLinkRequest | 
+	customLinkRequest := *openapiclient.NewCustomLinkRequest([]string{"ObjectTypes_example"}, "LinkText_example", "LinkUrl_example") // CustomLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5368,7 +5368,7 @@ import (
 )
 
 func main() {
-	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
+	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5432,7 +5432,7 @@ import (
 )
 
 func main() {
-	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
+	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5498,7 +5498,7 @@ import (
 )
 
 func main() {
-	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
+	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5564,7 +5564,7 @@ import (
 )
 
 func main() {
-	writableEventRuleRequest := *openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", "ActionObjectType_example") // WritableEventRuleRequest | 
+	writableEventRuleRequest := *openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "ActionObjectType_example") // WritableEventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6068,7 +6068,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this event rule.
-	writableEventRuleRequest := *openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", "ActionObjectType_example") // WritableEventRuleRequest | 
+	writableEventRuleRequest := *openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "ActionObjectType_example") // WritableEventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6139,7 +6139,7 @@ import (
 )
 
 func main() {
-	exportTemplateRequest := []openapiclient.ExportTemplateRequest{*openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "Name_example", "TemplateCode_example")} // []ExportTemplateRequest | 
+	exportTemplateRequest := []openapiclient.ExportTemplateRequest{*openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "TemplateCode_example")} // []ExportTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6203,7 +6203,7 @@ import (
 )
 
 func main() {
-	exportTemplateRequest := []openapiclient.ExportTemplateRequest{*openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "Name_example", "TemplateCode_example")} // []ExportTemplateRequest | 
+	exportTemplateRequest := []openapiclient.ExportTemplateRequest{*openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "TemplateCode_example")} // []ExportTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6269,7 +6269,7 @@ import (
 )
 
 func main() {
-	exportTemplateRequest := []openapiclient.ExportTemplateRequest{*openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "Name_example", "TemplateCode_example")} // []ExportTemplateRequest | 
+	exportTemplateRequest := []openapiclient.ExportTemplateRequest{*openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "TemplateCode_example")} // []ExportTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6335,7 +6335,7 @@ import (
 )
 
 func main() {
-	exportTemplateRequest := *openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "Name_example", "TemplateCode_example") // ExportTemplateRequest | 
+	exportTemplateRequest := *openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "TemplateCode_example") // ExportTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6871,7 +6871,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this export template.
-	exportTemplateRequest := *openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "Name_example", "TemplateCode_example") // ExportTemplateRequest | 
+	exportTemplateRequest := *openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "TemplateCode_example") // ExportTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6943,7 +6943,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this export template.
-	exportTemplateRequest := *openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "Name_example", "TemplateCode_example") // ExportTemplateRequest | 
+	exportTemplateRequest := *openapiclient.NewExportTemplateRequest([]string{"ObjectTypes_example"}, "TemplateCode_example") // ExportTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8851,7 +8851,7 @@ import (
 )
 
 func main() {
-	savedFilterRequest := []openapiclient.SavedFilterRequest{*openapiclient.NewSavedFilterRequest([]string{"ObjectTypes_example"}, "Name_example", "Slug_example", interface{}(123))} // []SavedFilterRequest | 
+	savedFilterRequest := []openapiclient.SavedFilterRequest{*openapiclient.NewSavedFilterRequest([]string{"ObjectTypes_example"}, interface{}(123))} // []SavedFilterRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8915,7 +8915,7 @@ import (
 )
 
 func main() {
-	savedFilterRequest := []openapiclient.SavedFilterRequest{*openapiclient.NewSavedFilterRequest([]string{"ObjectTypes_example"}, "Name_example", "Slug_example", interface{}(123))} // []SavedFilterRequest | 
+	savedFilterRequest := []openapiclient.SavedFilterRequest{*openapiclient.NewSavedFilterRequest([]string{"ObjectTypes_example"}, interface{}(123))} // []SavedFilterRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8981,7 +8981,7 @@ import (
 )
 
 func main() {
-	savedFilterRequest := []openapiclient.SavedFilterRequest{*openapiclient.NewSavedFilterRequest([]string{"ObjectTypes_example"}, "Name_example", "Slug_example", interface{}(123))} // []SavedFilterRequest | 
+	savedFilterRequest := []openapiclient.SavedFilterRequest{*openapiclient.NewSavedFilterRequest([]string{"ObjectTypes_example"}, interface{}(123))} // []SavedFilterRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9047,7 +9047,7 @@ import (
 )
 
 func main() {
-	savedFilterRequest := *openapiclient.NewSavedFilterRequest([]string{"ObjectTypes_example"}, "Name_example", "Slug_example", interface{}(123)) // SavedFilterRequest | 
+	savedFilterRequest := *openapiclient.NewSavedFilterRequest([]string{"ObjectTypes_example"}, interface{}(123)) // SavedFilterRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9563,7 +9563,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this saved filter.
-	savedFilterRequest := *openapiclient.NewSavedFilterRequest([]string{"ObjectTypes_example"}, "Name_example", "Slug_example", interface{}(123)) // SavedFilterRequest | 
+	savedFilterRequest := *openapiclient.NewSavedFilterRequest([]string{"ObjectTypes_example"}, interface{}(123)) // SavedFilterRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10087,7 +10087,7 @@ import (
 )
 
 func main() {
-	tagRequest := []openapiclient.TagRequest{*openapiclient.NewTagRequest("Name_example", "Slug_example")} // []TagRequest | 
+	tagRequest := []openapiclient.TagRequest{*openapiclient.NewTagRequest()} // []TagRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10151,7 +10151,7 @@ import (
 )
 
 func main() {
-	tagRequest := []openapiclient.TagRequest{*openapiclient.NewTagRequest("Name_example", "Slug_example")} // []TagRequest | 
+	tagRequest := []openapiclient.TagRequest{*openapiclient.NewTagRequest()} // []TagRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10217,7 +10217,7 @@ import (
 )
 
 func main() {
-	tagRequest := []openapiclient.TagRequest{*openapiclient.NewTagRequest("Name_example", "Slug_example")} // []TagRequest | 
+	tagRequest := []openapiclient.TagRequest{*openapiclient.NewTagRequest()} // []TagRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10283,7 +10283,7 @@ import (
 )
 
 func main() {
-	tagRequest := *openapiclient.NewTagRequest("Name_example", "Slug_example") // TagRequest | 
+	tagRequest := *openapiclient.NewTagRequest() // TagRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10779,7 +10779,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this tag.
-	tagRequest := *openapiclient.NewTagRequest("Name_example", "Slug_example") // TagRequest | 
+	tagRequest := *openapiclient.NewTagRequest() // TagRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10850,7 +10850,7 @@ import (
 )
 
 func main() {
-	webhookRequest := []openapiclient.WebhookRequest{*openapiclient.NewWebhookRequest("Name_example", "PayloadUrl_example")} // []WebhookRequest | 
+	webhookRequest := []openapiclient.WebhookRequest{*openapiclient.NewWebhookRequest("PayloadUrl_example")} // []WebhookRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10914,7 +10914,7 @@ import (
 )
 
 func main() {
-	webhookRequest := []openapiclient.WebhookRequest{*openapiclient.NewWebhookRequest("Name_example", "PayloadUrl_example")} // []WebhookRequest | 
+	webhookRequest := []openapiclient.WebhookRequest{*openapiclient.NewWebhookRequest("PayloadUrl_example")} // []WebhookRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10980,7 +10980,7 @@ import (
 )
 
 func main() {
-	webhookRequest := []openapiclient.WebhookRequest{*openapiclient.NewWebhookRequest("Name_example", "PayloadUrl_example")} // []WebhookRequest | 
+	webhookRequest := []openapiclient.WebhookRequest{*openapiclient.NewWebhookRequest("PayloadUrl_example")} // []WebhookRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11046,7 +11046,7 @@ import (
 )
 
 func main() {
-	webhookRequest := *openapiclient.NewWebhookRequest("Name_example", "PayloadUrl_example") // WebhookRequest | 
+	webhookRequest := *openapiclient.NewWebhookRequest("PayloadUrl_example") // WebhookRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11566,7 +11566,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this webhook.
-	webhookRequest := *openapiclient.NewWebhookRequest("Name_example", "PayloadUrl_example") // WebhookRequest | 
+	webhookRequest := *openapiclient.NewWebhookRequest("PayloadUrl_example") // WebhookRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

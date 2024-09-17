@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectTypes** | **[]string** |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **TemplateCode** | **string** | Jinja2 template code. The list of objects being exported is passed as a context variable named &lt;code&gt;queryset&lt;/code&gt;. | 
 **MimeType** | Pointer to **string** | Defaults to &lt;code&gt;text/plain; charset&#x3D;utf-8&lt;/code&gt; | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewExportTemplateRequest
 
-`func NewExportTemplateRequest(objectTypes []string, name string, templateCode string, ) *ExportTemplateRequest`
+`func NewExportTemplateRequest(objectTypes []string, templateCode string, ) *ExportTemplateRequest`
 
 NewExportTemplateRequest instantiates a new ExportTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,6 +71,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ExportTemplateRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

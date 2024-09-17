@@ -12,7 +12,6 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the ConsoleServerPortTemplateRequest type satisfies the MappedNullable interface at compile time
@@ -23,7 +22,7 @@ type ConsoleServerPortTemplateRequest struct {
 	DeviceType NullableBriefDeviceTypeRequest `json:"device_type,omitempty"`
 	ModuleType NullableBriefModuleTypeRequest `json:"module_type,omitempty"`
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
-	Name string `json:"name"`
+	Name *string `json:"name,omitempty"`
 	// Physical label
 	Label                *string               `json:"label,omitempty"`
 	Type                 *ConsolePortTypeValue `json:"type,omitempty"`
@@ -37,9 +36,8 @@ type _ConsoleServerPortTemplateRequest ConsoleServerPortTemplateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConsoleServerPortTemplateRequest(name string) *ConsoleServerPortTemplateRequest {
+func NewConsoleServerPortTemplateRequest() *ConsoleServerPortTemplateRequest {
 	this := ConsoleServerPortTemplateRequest{}
-	this.Name = name
 	return &this
 }
 
@@ -137,28 +135,36 @@ func (o *ConsoleServerPortTemplateRequest) UnsetModuleType() {
 	o.ModuleType.Unset()
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *ConsoleServerPortTemplateRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConsoleServerPortTemplateRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *ConsoleServerPortTemplateRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ConsoleServerPortTemplateRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
@@ -273,7 +279,9 @@ func (o ConsoleServerPortTemplateRequest) ToMap() (map[string]interface{}, error
 	if o.ModuleType.IsSet() {
 		toSerialize["module_type"] = o.ModuleType.Get()
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
@@ -292,27 +300,6 @@ func (o ConsoleServerPortTemplateRequest) ToMap() (map[string]interface{}, error
 }
 
 func (o *ConsoleServerPortTemplateRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varConsoleServerPortTemplateRequest := _ConsoleServerPortTemplateRequest{}
 
 	err = json.Unmarshal(data, &varConsoleServerPortTemplateRequest)

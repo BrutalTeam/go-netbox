@@ -21,7 +21,7 @@ var _ MappedNullable = &WritableVMInterfaceRequest{}
 // WritableVMInterfaceRequest Adds support for custom fields and tags.
 type WritableVMInterfaceRequest struct {
 	VirtualMachine       BriefVirtualMachineRequest           `json:"virtual_machine"`
-	Name                 string                               `json:"name"`
+	Name                 *string                              `json:"name,omitempty"`
 	Enabled              *bool                                `json:"enabled,omitempty"`
 	Parent               NullableInt32                        `json:"parent,omitempty"`
 	Bridge               NullableInt32                        `json:"bridge,omitempty"`
@@ -43,10 +43,9 @@ type _WritableVMInterfaceRequest WritableVMInterfaceRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableVMInterfaceRequest(virtualMachine BriefVirtualMachineRequest, name string) *WritableVMInterfaceRequest {
+func NewWritableVMInterfaceRequest(virtualMachine BriefVirtualMachineRequest) *WritableVMInterfaceRequest {
 	this := WritableVMInterfaceRequest{}
 	this.VirtualMachine = virtualMachine
-	this.Name = name
 	return &this
 }
 
@@ -82,28 +81,36 @@ func (o *WritableVMInterfaceRequest) SetVirtualMachine(v BriefVirtualMachineRequ
 	o.VirtualMachine = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritableVMInterfaceRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableVMInterfaceRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritableVMInterfaceRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritableVMInterfaceRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
@@ -567,7 +574,9 @@ func (o WritableVMInterfaceRequest) MarshalJSON() ([]byte, error) {
 func (o WritableVMInterfaceRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["virtual_machine"] = o.VirtualMachine
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
@@ -618,7 +627,6 @@ func (o *WritableVMInterfaceRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"virtual_machine",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

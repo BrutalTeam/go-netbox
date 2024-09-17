@@ -101661,9 +101661,7 @@ components:
           additionalProperties: {}
       required:
       - end
-      - name
       - rir
-      - slug
       - start
     ASNRequest:
       type: object
@@ -102053,9 +102051,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefCluster:
       type: object
       description: Adds support for custom fields and tags.
@@ -102135,9 +102131,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefClusterRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -102149,8 +102143,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefClusterType:
       type: object
       description: Adds support for custom fields and tags.
@@ -102201,9 +102194,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefConfigTemplate:
       type: object
       description: 'Introduces support for Tag assignment. Adds `tags` serialization,
@@ -102246,8 +102237,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefContact:
       type: object
       description: Adds support for custom fields and tags.
@@ -102329,9 +102319,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefContactRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -102343,8 +102331,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefContactRole:
       type: object
       description: Adds support for custom fields and tags.
@@ -102391,9 +102378,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefCustomFieldChoiceSet:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -102440,8 +102425,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefDataFile:
       type: object
       description: Adds support for custom fields and tags.
@@ -102501,8 +102485,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefDevice:
       type: object
       description: Adds support for custom fields and tags.
@@ -102593,9 +102576,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefDeviceType:
       type: object
       description: Adds support for custom fields and tags.
@@ -102654,7 +102635,6 @@ components:
       required:
       - manufacturer
       - model
-      - slug
     BriefFHRPGroup:
       type: object
       description: Adds support for custom fields and tags.
@@ -102780,8 +102760,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefIPAddress:
       type: object
       description: Adds support for custom fields and tags.
@@ -102873,8 +102852,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefIPSecProfile:
       type: object
       description: Adds support for custom fields and tags.
@@ -102911,8 +102889,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefInterface:
       type: object
       description: Adds support for custom fields and tags.
@@ -102966,7 +102943,6 @@ components:
           maxLength: 200
       required:
       - device
-      - name
     BriefInventoryItemRole:
       type: object
       description: Adds support for custom fields and tags.
@@ -103018,9 +102994,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefJob:
       type: object
       properties:
@@ -103240,9 +103214,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefL2VPNTermination:
       type: object
       description: Adds support for custom fields and tags.
@@ -103328,9 +103300,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefManufacturer:
       type: object
       description: Adds support for custom fields and tags.
@@ -103381,9 +103351,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefModule:
       type: object
       description: Adds support for custom fields and tags.
@@ -103517,9 +103485,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefPowerPanel:
       type: object
       description: Adds support for custom fields and tags.
@@ -103561,8 +103527,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefPowerPort:
       type: object
       description: Adds support for custom fields and tags.
@@ -103616,7 +103581,6 @@ components:
           maxLength: 200
       required:
       - device
-      - name
     BriefPowerPortTemplate:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -103663,8 +103627,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefProvider:
       type: object
       description: Adds support for custom fields and tags.
@@ -103785,8 +103748,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefProviderRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -103804,9 +103766,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefRIR:
       type: object
       description: Adds support for custom fields and tags.
@@ -103858,9 +103818,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefRack:
       type: object
       description: Adds support for custom fields and tags.
@@ -103901,8 +103859,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefRackRole:
       type: object
       description: Adds support for custom fields and tags.
@@ -103954,9 +103911,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefRearPortTemplate:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -104003,8 +103958,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefRegion:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -104060,9 +104014,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefRole:
       type: object
       description: Adds support for custom fields and tags.
@@ -104117,9 +104069,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefSite:
       type: object
       description: Adds support for custom fields and tags.
@@ -104206,9 +104156,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefSiteRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -104226,9 +104174,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefTenant:
       type: object
       description: Adds support for custom fields and tags.
@@ -104315,9 +104261,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefTenantRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -104334,9 +104278,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefTunnel:
       type: object
       description: Adds support for custom fields and tags.
@@ -104413,9 +104355,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefTunnelRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -104427,8 +104367,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefUser:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -104555,9 +104494,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     BriefVLANRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -104576,7 +104513,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - name
       - vid
     BriefVRF:
       type: object
@@ -104630,8 +104566,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefVirtualChassis:
       type: object
       description: Adds support for custom fields and tags.
@@ -104680,8 +104615,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefVirtualMachine:
       type: object
       description: Adds support for custom fields and tags.
@@ -104718,8 +104652,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     BriefWirelessLANGroup:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -104776,9 +104709,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
-      - slug
+      required: []
     Cable:
       type: object
       description: Adds support for custom fields and tags.
@@ -105757,9 +105688,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     Cluster:
       type: object
       description: Adds support for custom fields and tags.
@@ -105930,9 +105859,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     ClusterRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -105986,7 +105913,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - type
     ClusterType:
       type: object
@@ -106062,9 +105988,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     ConfigContext:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -106259,7 +106183,6 @@ components:
         data: {}
       required:
       - data
-      - name
     ConfigTemplate:
       type: object
       description: 'Introduces support for Tag assignment. Adds `tags` serialization,
@@ -106356,7 +106279,6 @@ components:
           items:
             $ref: '#/components/schemas/NestedTagRequest'
       required:
-      - name
       - template_code
     ConsolePort:
       type: object
@@ -106673,7 +106595,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
     ConsolePortTemplate:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -106873,8 +106794,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     ConsoleServerPort:
       type: object
       description: Adds support for custom fields and tags.
@@ -107190,7 +107110,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
     ConsoleServerPortTemplate:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -107390,8 +107309,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     Contact:
       type: object
       description: Adds support for custom fields and tags.
@@ -107671,9 +107589,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     ContactRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -107715,8 +107631,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
+      required: []
     ContactRole:
       type: object
       description: Adds support for custom fields and tags.
@@ -107787,9 +107702,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     CustomField:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -108139,7 +108052,6 @@ components:
           description: Choices are automatically ordered alphabetically
       required:
       - extra_choices
-      - name
     CustomFieldRequest:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -108302,7 +108214,6 @@ components:
         comments:
           type: string
       required:
-      - name
       - object_types
       - type
     CustomLink:
@@ -108509,7 +108420,6 @@ components:
       required:
       - link_text
       - link_url
-      - name
       - object_types
     Dashboard:
       type: object
@@ -108717,7 +108627,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - source_url
       - type
     Device:
@@ -109090,7 +108999,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
     DeviceBayTemplate:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -109162,7 +109070,6 @@ components:
           maxLength: 200
       required:
       - device_type
-      - name
     DeviceRole:
       type: object
       description: Adds support for custom fields and tags.
@@ -109264,9 +109171,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     DeviceType:
       type: object
       description: Adds support for custom fields and tags.
@@ -109606,7 +109511,6 @@ components:
       required:
       - manufacturer
       - model
-      - slug
     DeviceWithConfigContext:
       type: object
       description: Adds support for custom fields and tags.
@@ -110250,7 +110154,6 @@ components:
       required:
       - action_object_type
       - action_type
-      - name
       - object_types
     ExportTemplate:
       type: object
@@ -110366,7 +110269,6 @@ components:
         data_source:
           $ref: '#/components/schemas/BriefDataSourceRequest'
       required:
-      - name
       - object_types
       - template_code
     FHRPGroup:
@@ -110935,8 +110837,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     FrontPortRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -111126,7 +111027,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
       - rear_port
       - type
     FrontPortTemplate:
@@ -111575,7 +111475,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - name
       - rear_port
       - type
     GenericObject:
@@ -111659,8 +111558,7 @@ components:
           type: array
           items:
             type: integer
-      required:
-      - name
+      required: []
     IKEPolicy:
       type: object
       description: Adds support for custom fields and tags.
@@ -111793,7 +111691,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - version
     IKEProposal:
       type: object
@@ -112213,7 +112110,6 @@ components:
       - authentication_method
       - encryption_algorithm
       - group
-      - name
     IPAddress:
       type: object
       description: Adds support for custom fields and tags.
@@ -112883,8 +112779,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
+      required: []
     IPSecProfile:
       type: object
       description: Adds support for custom fields and tags.
@@ -112990,7 +112885,6 @@ components:
       - ike_policy
       - ipsec_policy
       - mode
-      - name
     IPSecProposal:
       type: object
       description: Adds support for custom fields and tags.
@@ -113203,7 +113097,6 @@ components:
       required:
       - authentication_algorithm
       - encryption_algorithm
-      - name
     ImageAttachment:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -116085,7 +115978,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
       - type
     InterfaceTemplate:
       type: object
@@ -117220,7 +117112,6 @@ components:
           x-spec-enum-id: d2772dbea88b0fb1
           nullable: true
       required:
-      - name
       - type
     InventoryItem:
       type: object
@@ -117377,7 +117268,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
     InventoryItemRole:
       type: object
       description: Adds support for custom fields and tags.
@@ -117462,9 +117352,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     InventoryItemTemplate:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -117592,7 +117480,6 @@ components:
           nullable: true
       required:
       - device_type
-      - name
     Job:
       type: object
       properties:
@@ -118024,9 +117911,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     L2VPNTermination:
       type: object
       description: Adds support for custom fields and tags.
@@ -118262,9 +118147,7 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - site
-      - slug
     Manufacturer:
       type: object
       description: Adds support for custom fields and tags.
@@ -118349,9 +118232,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     Module:
       type: object
       description: Adds support for custom fields and tags.
@@ -118576,7 +118457,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
     ModuleBayTemplate:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -118656,7 +118536,6 @@ components:
           maxLength: 200
       required:
       - device_type
-      - name
     ModuleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -118910,9 +118789,7 @@ components:
           minLength: 1
           maxLength: 100
           pattern: ^[-a-zA-Z0-9_]+$
-      required:
-      - name
-      - slug
+      required: []
     NestedDevice:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119087,8 +118964,7 @@ components:
         cable:
           type: integer
           nullable: true
-      required:
-      - name
+      required: []
     NestedInterfaceTemplate:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119135,8 +119011,7 @@ components:
           description: '{module} is accepted as a substitution for the module bay
             position when attached to a module type.'
           maxLength: 64
-      required:
-      - name
+      required: []
     NestedLocation:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119194,9 +119069,7 @@ components:
           minLength: 1
           maxLength: 100
           pattern: ^[-a-zA-Z0-9_]+$
-      required:
-      - name
-      - slug
+      required: []
     NestedModuleBay:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119247,8 +119120,7 @@ components:
           type: string
           minLength: 1
           maxLength: 64
-      required:
-      - name
+      required: []
     NestedProviderAccount:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119338,9 +119210,7 @@ components:
           minLength: 1
           maxLength: 100
           pattern: ^[-a-zA-Z0-9_]+$
-      required:
-      - name
-      - slug
+      required: []
     NestedSiteGroup:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119398,9 +119268,7 @@ components:
           minLength: 1
           maxLength: 100
           pattern: ^[-a-zA-Z0-9_]+$
-      required:
-      - name
-      - slug
+      required: []
     NestedTag:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119462,9 +119330,7 @@ components:
           minLength: 1
           pattern: ^[0-9a-f]{6}$
           maxLength: 6
-      required:
-      - name
-      - slug
+      required: []
     NestedTenantGroup:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119522,9 +119388,7 @@ components:
           minLength: 1
           maxLength: 100
           pattern: ^[-a-zA-Z0-9_]+$
-      required:
-      - name
-      - slug
+      required: []
     NestedUser:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119603,8 +119467,7 @@ components:
           type: string
           minLength: 1
           maxLength: 64
-      required:
-      - name
+      required: []
     NestedVirtualMachine:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119647,8 +119510,7 @@ components:
           type: string
           minLength: 1
           maxLength: 64
-      required:
-      - name
+      required: []
     NestedWirelessLANGroup:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119706,9 +119568,7 @@ components:
           minLength: 1
           maxLength: 100
           pattern: ^[-a-zA-Z0-9_]+$
-      required:
-      - name
-      - slug
+      required: []
     NestedWirelessLink:
       type: object
       description: 'Represents an object related through a ForeignKey field. On write,
@@ -119922,7 +119782,6 @@ components:
             type: integer
       required:
       - actions
-      - name
       - object_types
     ObjectType:
       type: object
@@ -131480,9 +131339,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     PowerFeed:
       type: object
       description: Adds support for custom fields and tags.
@@ -131756,7 +131613,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - power_panel
     PowerOutlet:
       type: object
@@ -132617,7 +132473,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
     PowerOutletTemplate:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -133431,8 +133286,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     PowerPanel:
       type: object
       description: Adds support for custom fields and tags.
@@ -133516,7 +133370,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - site
     PowerPort:
       type: object
@@ -134405,7 +134258,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
     PowerPortTemplate:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -135247,8 +135099,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     Prefix:
       type: object
       description: Adds support for custom fields and tags.
@@ -135656,7 +135507,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - provider
     ProviderRequest:
       type: object
@@ -135692,9 +135542,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     RIR:
       type: object
       description: Adds support for custom fields and tags.
@@ -135778,9 +135626,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     Rack:
       type: object
       description: Adds support for custom fields and tags.
@@ -136232,7 +136078,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - site
     RackReservation:
       type: object
@@ -136412,9 +136257,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     RackUnit:
       type: object
       description: A rack unit is an abstraction formed by the set (rack, position,
@@ -136939,7 +136782,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
       - type
     RearPortTemplate:
       type: object
@@ -137380,7 +137222,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - name
       - type
     Region:
       type: object
@@ -137469,9 +137310,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     Role:
       type: object
       description: Adds support for custom fields and tags.
@@ -137558,9 +137397,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     RouteTarget:
       type: object
       description: Adds support for custom fields and tags.
@@ -137635,8 +137472,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
+      required: []
     SavedFilter:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -137734,10 +137570,8 @@ components:
           type: boolean
         parameters: {}
       required:
-      - name
       - object_types
       - parameters
-      - slug
     Script:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -137920,7 +137754,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - ports
     ServiceTemplate:
       type: object
@@ -138035,7 +137868,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - ports
     Site:
       type: object
@@ -138278,9 +138110,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     SiteRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -138375,9 +138205,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     Tag:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -138462,9 +138290,7 @@ components:
           type: array
           items:
             type: string
-      required:
-      - name
-      - slug
+      required: []
     Tenant:
       type: object
       description: Adds support for custom fields and tags.
@@ -138649,9 +138475,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     TenantRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -138681,9 +138505,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     Token:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -139028,9 +138850,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     TunnelRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -139098,7 +138918,6 @@ components:
           additionalProperties: {}
       required:
       - encapsulation
-      - name
       - status
     TunnelTermination:
       type: object
@@ -139551,9 +139370,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     VLANRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -139609,7 +139426,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - vid
     VMInterface:
       type: object
@@ -139786,7 +139602,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - virtual_machine
     VRF:
       type: object
@@ -139905,8 +139720,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
+      required: []
     VirtualChassis:
       type: object
       description: Adds support for custom fields and tags.
@@ -139995,8 +139809,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
+      required: []
     VirtualDeviceContext:
       type: object
       description: Adds support for custom fields and tags.
@@ -140146,7 +139959,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
       - status
     VirtualDisk:
       type: object
@@ -140225,7 +140037,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - size
       - virtual_machine
     VirtualMachineWithConfigContext:
@@ -140480,8 +140291,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
+      required: []
     Webhook:
       type: object
       description: Adds support for custom fields and tags.
@@ -140660,7 +140470,6 @@ components:
           items:
             $ref: '#/components/schemas/NestedTagRequest'
       required:
-      - name
       - payload_url
     WirelessLAN:
       type: object
@@ -140884,9 +140693,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     WirelessLANRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -141482,7 +141289,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - type
     WritableConsolePortRequest:
       type: object
@@ -141602,7 +141408,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
     WritableConsolePortTemplateRequest:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -141680,8 +141485,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     WritableConsoleServerPortRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -141800,7 +141604,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
     WritableConsoleServerPortTemplateRequest:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -141878,8 +141681,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     WritableContactAssignmentRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -141950,9 +141752,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     WritableCustomFieldChoiceSetRequest:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -141995,7 +141795,6 @@ components:
           description: Choices are automatically ordered alphabetically
       required:
       - extra_choices
-      - name
     WritableCustomFieldRequest:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -142172,7 +141971,6 @@ components:
         comments:
           type: string
       required:
-      - name
       - object_types
     WritableDataSourceRequest:
       type: object
@@ -142207,7 +142005,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - source_url
       - type
     WritableDeviceTypeRequest:
@@ -142332,7 +142129,6 @@ components:
       required:
       - manufacturer
       - model
-      - slug
     WritableDeviceWithConfigContextRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -142582,7 +142378,6 @@ components:
             $ref: '#/components/schemas/NestedTagRequest'
       required:
       - action_object_type
-      - name
       - object_types
     WritableFrontPortRequest:
       type: object
@@ -142773,7 +142568,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
       - rear_port
       - type
     WritableFrontPortTemplateRequest:
@@ -142960,7 +142754,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - name
       - rear_port
       - type
     WritableIKEPolicyRequest:
@@ -143011,8 +142804,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
+      required: []
     WritableIKEProposalRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -143184,7 +142976,6 @@ components:
       - authentication_method
       - encryption_algorithm
       - group
-      - name
     WritableIPAddressRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -143445,8 +143236,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
+      required: []
     WritableIPSecProfileRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -143484,7 +143274,6 @@ components:
       - ike_policy
       - ipsec_policy
       - mode
-      - name
     WritableIPSecProposalRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -143568,8 +143357,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
+      required: []
     WritableInterfaceRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -144743,7 +144531,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
       - type
     WritableInterfaceTemplateRequest:
       type: object
@@ -145216,7 +145003,6 @@ components:
           x-spec-enum-id: d2772dbea88b0fb1
           title: Wireless role
       required:
-      - name
       - type
     WritableJournalEntryRequest:
       type: object
@@ -145344,8 +145130,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
-      - slug
       - type
     WritableLocationRequest:
       type: object
@@ -145402,9 +145186,7 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - site
-      - slug
     WritableModuleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -145603,7 +145385,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - power_panel
     WritablePowerOutletRequest:
       type: object
@@ -145953,7 +145734,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
     WritablePowerOutletTemplateRequest:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -146294,8 +146074,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     WritablePowerPortRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -146657,7 +146436,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
     WritablePowerPortTemplateRequest:
       type: object
       description: 'Extends the built-in ModelSerializer to enforce calling full_clean()
@@ -147011,8 +146789,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - name
+      required: []
     WritablePrefixRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -147264,7 +147041,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - site
     WritableRearPortRequest:
       type: object
@@ -147452,7 +147228,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
       - type
     WritableRearPortTemplateRequest:
       type: object
@@ -147635,7 +147410,6 @@ components:
           type: string
           maxLength: 200
       required:
-      - name
       - type
     WritableRegionRequest:
       type: object
@@ -147663,9 +147437,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     WritableServiceRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -147718,7 +147490,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - ports
       - protocol
     WritableServiceTemplateRequest:
@@ -147761,7 +147532,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - ports
       - protocol
     WritableSiteGroupRequest:
@@ -147790,9 +147560,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     WritableSiteRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -147887,9 +147655,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     WritableTenantGroupRequest:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -147916,9 +147682,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     WritableTunnelRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -147986,7 +147750,6 @@ components:
           additionalProperties: {}
       required:
       - encapsulation
-      - name
     WritableTunnelTerminationRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -148085,7 +147848,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - vid
     WritableVMInterfaceRequest:
       type: object
@@ -148155,7 +147917,6 @@ components:
           type: object
           additionalProperties: {}
       required:
-      - name
       - virtual_machine
     WritableVirtualChassisRequest:
       type: object
@@ -148183,8 +147944,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
+      required: []
     WritableVirtualDeviceContextRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -148238,7 +147998,6 @@ components:
           additionalProperties: {}
       required:
       - device
-      - name
       - status
     WritableVirtualMachineWithConfigContextRequest:
       type: object
@@ -148340,8 +148099,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
+      required: []
     WritableWirelessLANGroupRequest:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -148368,9 +148126,7 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
-      required:
-      - name
-      - slug
+      required: []
     WritableWirelessLANRequest:
       type: object
       description: Adds support for custom fields and tags.

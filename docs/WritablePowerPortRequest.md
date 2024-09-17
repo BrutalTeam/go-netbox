@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
 **Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**PatchedWritablePowerPortRequestType**](PatchedWritablePowerPortRequestType.md) |  | [optional] 
 **MaximumDraw** | Pointer to **NullableInt32** | Maximum power draw (watts) | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritablePowerPortRequest
 
-`func NewWritablePowerPortRequest(device BriefDeviceRequest, name string, ) *WritablePowerPortRequest`
+`func NewWritablePowerPortRequest(device BriefDeviceRequest, ) *WritablePowerPortRequest`
 
 NewWritablePowerPortRequest instantiates a new WritablePowerPortRequest object
 This constructor will assign default values to properties that have it defined,
@@ -109,6 +109,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *WritablePowerPortRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetLabel
 

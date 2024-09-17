@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DeviceType** | [**BriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
-**Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
+**Name** | Pointer to **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Role** | Pointer to [**NullableBriefInventoryItemRoleRequest**](BriefInventoryItemRoleRequest.md) |  | [optional] 
 **Manufacturer** | Pointer to [**NullableBriefManufacturerRequest**](BriefManufacturerRequest.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewInventoryItemTemplateRequest
 
-`func NewInventoryItemTemplateRequest(deviceType BriefDeviceTypeRequest, name string, ) *InventoryItemTemplateRequest`
+`func NewInventoryItemTemplateRequest(deviceType BriefDeviceTypeRequest, ) *InventoryItemTemplateRequest`
 
 NewInventoryItemTemplateRequest instantiates a new InventoryItemTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -108,6 +108,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *InventoryItemTemplateRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetLabel
 

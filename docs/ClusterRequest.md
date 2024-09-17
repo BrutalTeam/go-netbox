@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Type** | [**BriefClusterTypeRequest**](BriefClusterTypeRequest.md) |  | 
 **Group** | Pointer to [**NullableBriefClusterGroupRequest**](BriefClusterGroupRequest.md) |  | [optional] 
 **Status** | Pointer to [**ClusterStatusValue**](ClusterStatusValue.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewClusterRequest
 
-`func NewClusterRequest(name string, type_ BriefClusterTypeRequest, ) *ClusterRequest`
+`func NewClusterRequest(type_ BriefClusterTypeRequest, ) *ClusterRequest`
 
 NewClusterRequest instantiates a new ClusterRequest object
 This constructor will assign default values to properties that have it defined,
@@ -53,6 +53,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ClusterRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetType
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
 **Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**FrontPortTypeValue**](FrontPortTypeValue.md) |  | 
 **Color** | Pointer to **string** |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewFrontPortRequest
 
-`func NewFrontPortRequest(device BriefDeviceRequest, name string, type_ FrontPortTypeValue, rearPort FrontPortRearPortRequest, ) *FrontPortRequest`
+`func NewFrontPortRequest(device BriefDeviceRequest, type_ FrontPortTypeValue, rearPort FrontPortRearPortRequest, ) *FrontPortRequest`
 
 NewFrontPortRequest instantiates a new FrontPortRequest object
 This constructor will assign default values to properties that have it defined,
@@ -110,6 +110,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *FrontPortRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetLabel
 

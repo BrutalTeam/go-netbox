@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Manufacturer** | [**BriefManufacturerRequest**](BriefManufacturerRequest.md) |  | 
 **Model** | **string** |  | 
-**Slug** | **string** |  | 
+**Slug** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBriefDeviceTypeRequest
 
-`func NewBriefDeviceTypeRequest(manufacturer BriefManufacturerRequest, model string, slug string, ) *BriefDeviceTypeRequest`
+`func NewBriefDeviceTypeRequest(manufacturer BriefManufacturerRequest, model string, ) *BriefDeviceTypeRequest`
 
 NewBriefDeviceTypeRequest instantiates a new BriefDeviceTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -87,6 +87,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *BriefDeviceTypeRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetDescription
 

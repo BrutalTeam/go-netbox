@@ -21,7 +21,7 @@ var _ MappedNullable = &ProviderNetworkRequest{}
 // ProviderNetworkRequest Adds support for custom fields and tags.
 type ProviderNetworkRequest struct {
 	Provider             BriefProviderRequest   `json:"provider"`
-	Name                 string                 `json:"name"`
+	Name                 *string                `json:"name,omitempty"`
 	ServiceId            *string                `json:"service_id,omitempty"`
 	Description          *string                `json:"description,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
@@ -36,10 +36,9 @@ type _ProviderNetworkRequest ProviderNetworkRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewProviderNetworkRequest(provider BriefProviderRequest, name string) *ProviderNetworkRequest {
+func NewProviderNetworkRequest(provider BriefProviderRequest) *ProviderNetworkRequest {
 	this := ProviderNetworkRequest{}
 	this.Provider = provider
-	this.Name = name
 	return &this
 }
 
@@ -75,28 +74,36 @@ func (o *ProviderNetworkRequest) SetProvider(v BriefProviderRequest) {
 	o.Provider = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *ProviderNetworkRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ProviderNetworkRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *ProviderNetworkRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ProviderNetworkRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetServiceId returns the ServiceId field value if set, zero value otherwise.
@@ -270,7 +277,9 @@ func (o ProviderNetworkRequest) MarshalJSON() ([]byte, error) {
 func (o ProviderNetworkRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["provider"] = o.Provider
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.ServiceId) {
 		toSerialize["service_id"] = o.ServiceId
 	}
@@ -300,7 +309,6 @@ func (o *ProviderNetworkRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"provider",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

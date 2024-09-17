@@ -21,7 +21,7 @@ var _ MappedNullable = &VirtualDiskRequest{}
 // VirtualDiskRequest Adds support for custom fields and tags.
 type VirtualDiskRequest struct {
 	VirtualMachine       BriefVirtualMachineRequest `json:"virtual_machine"`
-	Name                 string                     `json:"name"`
+	Name                 *string                    `json:"name,omitempty"`
 	Description          *string                    `json:"description,omitempty"`
 	Size                 int32                      `json:"size"`
 	Tags                 []NestedTagRequest         `json:"tags,omitempty"`
@@ -35,10 +35,9 @@ type _VirtualDiskRequest VirtualDiskRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVirtualDiskRequest(virtualMachine BriefVirtualMachineRequest, name string, size int32) *VirtualDiskRequest {
+func NewVirtualDiskRequest(virtualMachine BriefVirtualMachineRequest, size int32) *VirtualDiskRequest {
 	this := VirtualDiskRequest{}
 	this.VirtualMachine = virtualMachine
-	this.Name = name
 	this.Size = size
 	return &this
 }
@@ -75,28 +74,36 @@ func (o *VirtualDiskRequest) SetVirtualMachine(v BriefVirtualMachineRequest) {
 	o.VirtualMachine = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *VirtualDiskRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VirtualDiskRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *VirtualDiskRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *VirtualDiskRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -230,7 +237,9 @@ func (o VirtualDiskRequest) MarshalJSON() ([]byte, error) {
 func (o VirtualDiskRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["virtual_machine"] = o.VirtualMachine
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -255,7 +264,6 @@ func (o *VirtualDiskRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"virtual_machine",
-		"name",
 		"size",
 	}
 

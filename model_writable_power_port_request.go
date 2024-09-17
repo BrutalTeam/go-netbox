@@ -22,7 +22,7 @@ var _ MappedNullable = &WritablePowerPortRequest{}
 type WritablePowerPortRequest struct {
 	Device BriefDeviceRequest         `json:"device"`
 	Module NullableBriefModuleRequest `json:"module,omitempty"`
-	Name   string                     `json:"name"`
+	Name   *string                    `json:"name,omitempty"`
 	// Physical label
 	Label *string                              `json:"label,omitempty"`
 	Type  *PatchedWritablePowerPortRequestType `json:"type,omitempty"`
@@ -44,10 +44,9 @@ type _WritablePowerPortRequest WritablePowerPortRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritablePowerPortRequest(device BriefDeviceRequest, name string) *WritablePowerPortRequest {
+func NewWritablePowerPortRequest(device BriefDeviceRequest) *WritablePowerPortRequest {
 	this := WritablePowerPortRequest{}
 	this.Device = device
-	this.Name = name
 	return &this
 }
 
@@ -126,28 +125,36 @@ func (o *WritablePowerPortRequest) UnsetModule() {
 	o.Module.Unset()
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritablePowerPortRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritablePowerPortRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritablePowerPortRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritablePowerPortRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
@@ -442,7 +449,9 @@ func (o WritablePowerPortRequest) ToMap() (map[string]interface{}, error) {
 	if o.Module.IsSet() {
 		toSerialize["module"] = o.Module.Get()
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
@@ -481,7 +490,6 @@ func (o *WritablePowerPortRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"device",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

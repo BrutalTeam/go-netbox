@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
 **Vdcs** | Pointer to **[]int32** |  | [optional] 
 **Module** | Pointer to [**NullableBriefModuleRequest**](BriefModuleRequest.md) |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | [**InterfaceTypeValue**](InterfaceTypeValue.md) |  | 
 **Enabled** | Pointer to **bool** |  | [optional] 
@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 
 ### NewWritableInterfaceRequest
 
-`func NewWritableInterfaceRequest(device BriefDeviceRequest, name string, type_ InterfaceTypeValue, ) *WritableInterfaceRequest`
+`func NewWritableInterfaceRequest(device BriefDeviceRequest, type_ InterfaceTypeValue, ) *WritableInterfaceRequest`
 
 NewWritableInterfaceRequest instantiates a new WritableInterfaceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -155,6 +155,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *WritableInterfaceRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetLabel
 

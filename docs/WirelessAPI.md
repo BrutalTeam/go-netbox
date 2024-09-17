@@ -55,7 +55,7 @@ import (
 )
 
 func main() {
-	wirelessLANGroupRequest := []openapiclient.WirelessLANGroupRequest{*openapiclient.NewWirelessLANGroupRequest("Name_example", "Slug_example")} // []WirelessLANGroupRequest | 
+	wirelessLANGroupRequest := []openapiclient.WirelessLANGroupRequest{*openapiclient.NewWirelessLANGroupRequest()} // []WirelessLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -119,7 +119,7 @@ import (
 )
 
 func main() {
-	wirelessLANGroupRequest := []openapiclient.WirelessLANGroupRequest{*openapiclient.NewWirelessLANGroupRequest("Name_example", "Slug_example")} // []WirelessLANGroupRequest | 
+	wirelessLANGroupRequest := []openapiclient.WirelessLANGroupRequest{*openapiclient.NewWirelessLANGroupRequest()} // []WirelessLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -185,7 +185,7 @@ import (
 )
 
 func main() {
-	wirelessLANGroupRequest := []openapiclient.WirelessLANGroupRequest{*openapiclient.NewWirelessLANGroupRequest("Name_example", "Slug_example")} // []WirelessLANGroupRequest | 
+	wirelessLANGroupRequest := []openapiclient.WirelessLANGroupRequest{*openapiclient.NewWirelessLANGroupRequest()} // []WirelessLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -251,7 +251,7 @@ import (
 )
 
 func main() {
-	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest("Name_example", "Slug_example") // WritableWirelessLANGroupRequest | 
+	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest() // WritableWirelessLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -735,7 +735,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this wireless LAN group.
-	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest("Name_example", "Slug_example") // WritableWirelessLANGroupRequest | 
+	writableWirelessLANGroupRequest := *openapiclient.NewWritableWirelessLANGroupRequest() // WritableWirelessLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1585,7 +1585,7 @@ import (
 )
 
 func main() {
-	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"))} // []WirelessLinkRequest | 
+	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest()), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest()))} // []WirelessLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1649,7 +1649,7 @@ import (
 )
 
 func main() {
-	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"))} // []WirelessLinkRequest | 
+	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest()), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest()))} // []WirelessLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1715,7 +1715,7 @@ import (
 )
 
 func main() {
-	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"))} // []WirelessLinkRequest | 
+	wirelessLinkRequest := []openapiclient.WirelessLinkRequest{*openapiclient.NewWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest()), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest()))} // []WirelessLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1781,7 +1781,7 @@ import (
 )
 
 func main() {
-	writableWirelessLinkRequest := *openapiclient.NewWritableWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")) // WritableWirelessLinkRequest | 
+	writableWirelessLinkRequest := *openapiclient.NewWritableWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest()), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest())) // WritableWirelessLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2285,7 +2285,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this wireless link.
-	writableWirelessLinkRequest := *openapiclient.NewWritableWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example"), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")) // WritableWirelessLinkRequest | 
+	writableWirelessLinkRequest := *openapiclient.NewWritableWirelessLinkRequest(*openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest()), *openapiclient.NewBriefInterfaceRequest(*openapiclient.NewBriefDeviceRequest())) // WritableWirelessLinkRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

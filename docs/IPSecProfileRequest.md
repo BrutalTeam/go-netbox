@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Mode** | [**IPSecProfileModeValue**](IPSecProfileModeValue.md) |  | 
 **IkePolicy** | [**BriefIKEPolicyRequest**](BriefIKEPolicyRequest.md) |  | 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewIPSecProfileRequest
 
-`func NewIPSecProfileRequest(name string, mode IPSecProfileModeValue, ikePolicy BriefIKEPolicyRequest, ipsecPolicy BriefIPSecPolicyRequest, ) *IPSecProfileRequest`
+`func NewIPSecProfileRequest(mode IPSecProfileModeValue, ikePolicy BriefIKEPolicyRequest, ipsecPolicy BriefIPSecPolicyRequest, ) *IPSecProfileRequest`
 
 NewIPSecProfileRequest instantiates a new IPSecProfileRequest object
 This constructor will assign default values to properties that have it defined,
@@ -51,6 +51,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *IPSecProfileRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

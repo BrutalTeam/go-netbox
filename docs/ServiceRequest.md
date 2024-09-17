@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Device** | Pointer to [**NullableBriefDeviceRequest**](BriefDeviceRequest.md) |  | [optional] 
 **VirtualMachine** | Pointer to [**NullableBriefVirtualMachineRequest**](BriefVirtualMachineRequest.md) |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Protocol** | Pointer to [**PatchedWritableServiceRequestProtocol**](PatchedWritableServiceRequestProtocol.md) |  | [optional] 
 **Ports** | **[]int32** |  | 
 **Ipaddresses** | Pointer to **[]int32** |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewServiceRequest
 
-`func NewServiceRequest(name string, ports []int32, ) *ServiceRequest`
+`func NewServiceRequest(ports []int32, ) *ServiceRequest`
 
 NewServiceRequest instantiates a new ServiceRequest object
 This constructor will assign default values to properties that have it defined,
@@ -123,6 +123,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ServiceRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetProtocol
 

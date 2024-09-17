@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **VirtualMachine** | [**BriefVirtualMachineRequest**](BriefVirtualMachineRequest.md) |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Size** | **int32** |  | 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualDiskRequest
 
-`func NewVirtualDiskRequest(virtualMachine BriefVirtualMachineRequest, name string, size int32, ) *VirtualDiskRequest`
+`func NewVirtualDiskRequest(virtualMachine BriefVirtualMachineRequest, size int32, ) *VirtualDiskRequest`
 
 NewVirtualDiskRequest instantiates a new VirtualDiskRequest object
 This constructor will assign default values to properties that have it defined,
@@ -69,6 +69,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *VirtualDiskRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

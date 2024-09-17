@@ -299,7 +299,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest(openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -363,7 +363,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest(openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -429,7 +429,7 @@ import (
 )
 
 func main() {
-	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest("Name_example", openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
+	dataSourceRequest := []openapiclient.DataSourceRequest{*openapiclient.NewDataSourceRequest(openapiclient.DataSource_type_value("local"), "SourceUrl_example")} // []DataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -495,7 +495,7 @@ import (
 )
 
 func main() {
-	writableDataSourceRequest := *openapiclient.NewWritableDataSourceRequest("Name_example", "Type_example", "SourceUrl_example") // WritableDataSourceRequest | 
+	writableDataSourceRequest := *openapiclient.NewWritableDataSourceRequest("Type_example", "SourceUrl_example") // WritableDataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -987,7 +987,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this data source.
-	writableDataSourceRequest := *openapiclient.NewWritableDataSourceRequest("Name_example", "Type_example", "SourceUrl_example") // WritableDataSourceRequest | 
+	writableDataSourceRequest := *openapiclient.NewWritableDataSourceRequest("Type_example", "SourceUrl_example") // WritableDataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1059,7 +1059,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this data source.
-	writableDataSourceRequest := *openapiclient.NewWritableDataSourceRequest("Name_example", "Type_example", "SourceUrl_example") // WritableDataSourceRequest | 
+	writableDataSourceRequest := *openapiclient.NewWritableDataSourceRequest("Type_example", "SourceUrl_example") // WritableDataSourceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

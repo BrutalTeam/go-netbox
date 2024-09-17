@@ -20,7 +20,7 @@ var _ MappedNullable = &WebhookRequest{}
 
 // WebhookRequest Adds support for custom fields and tags.
 type WebhookRequest struct {
-	Name        string  `json:"name"`
+	Name        *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
 	// This URL will be called using the HTTP method defined when the webhook is called. Jinja2 template processing is supported with the same context as the request body.
 	PayloadUrl string                           `json:"payload_url"`
@@ -48,9 +48,8 @@ type _WebhookRequest WebhookRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebhookRequest(name string, payloadUrl string) *WebhookRequest {
+func NewWebhookRequest(payloadUrl string) *WebhookRequest {
 	this := WebhookRequest{}
-	this.Name = name
 	this.PayloadUrl = payloadUrl
 	return &this
 }
@@ -63,28 +62,36 @@ func NewWebhookRequestWithDefaults() *WebhookRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WebhookRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WebhookRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WebhookRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WebhookRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -452,7 +459,9 @@ func (o WebhookRequest) MarshalJSON() ([]byte, error) {
 
 func (o WebhookRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -497,7 +506,6 @@ func (o *WebhookRequest) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"name",
 		"payload_url",
 	}
 

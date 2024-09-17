@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ObjectTypes** | **[]string** |  | 
 **Type** | [**CustomFieldTypeValue**](CustomFieldTypeValue.md) |  | 
 **RelatedObjectType** | Pointer to **NullableString** |  | [optional] 
-**Name** | **string** | Internal field name | 
+**Name** | Pointer to **string** | Internal field name | [optional] 
 **Label** | Pointer to **string** | Name of the field as displayed to users (if not provided, &#39;the field&#39;s name will be used) | [optional] 
 **GroupName** | Pointer to **string** | Custom fields within the same group will be displayed together | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 
 ### NewCustomFieldRequest
 
-`func NewCustomFieldRequest(objectTypes []string, type_ CustomFieldTypeValue, name string, ) *CustomFieldRequest`
+`func NewCustomFieldRequest(objectTypes []string, type_ CustomFieldTypeValue, ) *CustomFieldRequest`
 
 NewCustomFieldRequest instantiates a new CustomFieldRequest object
 This constructor will assign default values to properties that have it defined,
@@ -138,6 +138,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *CustomFieldRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetLabel
 

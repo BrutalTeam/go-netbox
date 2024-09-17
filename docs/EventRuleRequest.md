@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ObjectTypes** | **[]string** |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **TypeCreate** | Pointer to **bool** | Triggers when a matching object is created. | [optional] 
 **TypeUpdate** | Pointer to **bool** | Triggers when a matching object is updated. | [optional] 
 **TypeDelete** | Pointer to **bool** | Triggers when a matching object is deleted. | [optional] 
@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 
 ### NewEventRuleRequest
 
-`func NewEventRuleRequest(objectTypes []string, name string, actionType EventRuleActionTypeValue, actionObjectType string, ) *EventRuleRequest`
+`func NewEventRuleRequest(objectTypes []string, actionType EventRuleActionTypeValue, actionObjectType string, ) *EventRuleRequest`
 
 NewEventRuleRequest instantiates a new EventRuleRequest object
 This constructor will assign default values to properties that have it defined,
@@ -78,6 +78,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *EventRuleRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetTypeCreate
 

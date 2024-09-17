@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Proposals** | Pointer to **[]int32** |  | [optional] 
 **PfsGroup** | Pointer to [**NullablePatchedWritableIPSecPolicyRequestPfsGroup**](PatchedWritableIPSecPolicyRequestPfsGroup.md) |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewWritableIPSecPolicyRequest
 
-`func NewWritableIPSecPolicyRequest(name string, ) *WritableIPSecPolicyRequest`
+`func NewWritableIPSecPolicyRequest() *WritableIPSecPolicyRequest`
 
 NewWritableIPSecPolicyRequest instantiates a new WritableIPSecPolicyRequest object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *WritableIPSecPolicyRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

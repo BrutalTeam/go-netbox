@@ -12,7 +12,6 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the BriefRearPortTemplateRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +20,7 @@ var _ MappedNullable = &BriefRearPortTemplateRequest{}
 // BriefRearPortTemplateRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type BriefRearPortTemplateRequest struct {
 	// {module} is accepted as a substitution for the module bay position when attached to a module type.
-	Name                 string  `json:"name"`
+	Name                 *string `json:"name,omitempty"`
 	Description          *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -32,9 +31,8 @@ type _BriefRearPortTemplateRequest BriefRearPortTemplateRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefRearPortTemplateRequest(name string) *BriefRearPortTemplateRequest {
+func NewBriefRearPortTemplateRequest() *BriefRearPortTemplateRequest {
 	this := BriefRearPortTemplateRequest{}
-	this.Name = name
 	return &this
 }
 
@@ -46,28 +44,36 @@ func NewBriefRearPortTemplateRequestWithDefaults() *BriefRearPortTemplateRequest
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *BriefRearPortTemplateRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefRearPortTemplateRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *BriefRearPortTemplateRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BriefRearPortTemplateRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -112,7 +118,9 @@ func (o BriefRearPortTemplateRequest) MarshalJSON() ([]byte, error) {
 
 func (o BriefRearPortTemplateRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -125,27 +133,6 @@ func (o BriefRearPortTemplateRequest) ToMap() (map[string]interface{}, error) {
 }
 
 func (o *BriefRearPortTemplateRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varBriefRearPortTemplateRequest := _BriefRearPortTemplateRequest{}
 
 	err = json.Unmarshal(data, &varBriefRearPortTemplateRequest)

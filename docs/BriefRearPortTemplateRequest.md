@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
+**Name** | Pointer to **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBriefRearPortTemplateRequest
 
-`func NewBriefRearPortTemplateRequest(name string, ) *BriefRearPortTemplateRequest`
+`func NewBriefRearPortTemplateRequest() *BriefRearPortTemplateRequest`
 
 NewBriefRearPortTemplateRequest instantiates a new BriefRearPortTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *BriefRearPortTemplateRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

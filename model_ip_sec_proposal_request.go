@@ -20,7 +20,7 @@ var _ MappedNullable = &IPSecProposalRequest{}
 
 // IPSecProposalRequest Adds support for custom fields and tags.
 type IPSecProposalRequest struct {
-	Name                    string                                  `json:"name"`
+	Name                    *string                                 `json:"name,omitempty"`
 	Description             *string                                 `json:"description,omitempty"`
 	EncryptionAlgorithm     IKEProposalEncryptionAlgorithmValue     `json:"encryption_algorithm"`
 	AuthenticationAlgorithm IKEProposalAuthenticationAlgorithmValue `json:"authentication_algorithm"`
@@ -40,9 +40,8 @@ type _IPSecProposalRequest IPSecProposalRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIPSecProposalRequest(name string, encryptionAlgorithm IKEProposalEncryptionAlgorithmValue, authenticationAlgorithm IKEProposalAuthenticationAlgorithmValue) *IPSecProposalRequest {
+func NewIPSecProposalRequest(encryptionAlgorithm IKEProposalEncryptionAlgorithmValue, authenticationAlgorithm IKEProposalAuthenticationAlgorithmValue) *IPSecProposalRequest {
 	this := IPSecProposalRequest{}
-	this.Name = name
 	this.EncryptionAlgorithm = encryptionAlgorithm
 	this.AuthenticationAlgorithm = authenticationAlgorithm
 	return &this
@@ -56,28 +55,36 @@ func NewIPSecProposalRequestWithDefaults() *IPSecProposalRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *IPSecProposalRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IPSecProposalRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *IPSecProposalRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *IPSecProposalRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -352,7 +359,9 @@ func (o IPSecProposalRequest) MarshalJSON() ([]byte, error) {
 
 func (o IPSecProposalRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -386,7 +395,6 @@ func (o *IPSecProposalRequest) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"name",
 		"encryption_algorithm",
 		"authentication_algorithm",
 	}

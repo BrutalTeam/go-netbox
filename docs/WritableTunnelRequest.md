@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**PatchedWritableTunnelRequestStatus**](PatchedWritableTunnelRequestStatus.md) |  | [optional] 
 **Group** | Pointer to [**NullableBriefTunnelGroupRequest**](BriefTunnelGroupRequest.md) |  | [optional] 
 **Encapsulation** | [**PatchedWritableTunnelRequestEncapsulation**](PatchedWritableTunnelRequestEncapsulation.md) |  | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritableTunnelRequest
 
-`func NewWritableTunnelRequest(name string, encapsulation PatchedWritableTunnelRequestEncapsulation, ) *WritableTunnelRequest`
+`func NewWritableTunnelRequest(encapsulation PatchedWritableTunnelRequestEncapsulation, ) *WritableTunnelRequest`
 
 NewWritableTunnelRequest instantiates a new WritableTunnelRequest object
 This constructor will assign default values to properties that have it defined,
@@ -54,6 +54,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *WritableTunnelRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetStatus
 

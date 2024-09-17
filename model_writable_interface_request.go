@@ -23,7 +23,7 @@ type WritableInterfaceRequest struct {
 	Device BriefDeviceRequest         `json:"device"`
 	Vdcs   []int32                    `json:"vdcs,omitempty"`
 	Module NullableBriefModuleRequest `json:"module,omitempty"`
-	Name   string                     `json:"name"`
+	Name   *string                    `json:"name,omitempty"`
 	// Physical label
 	Label      *string                        `json:"label,omitempty"`
 	Type       InterfaceTypeValue             `json:"type"`
@@ -66,10 +66,9 @@ type _WritableInterfaceRequest WritableInterfaceRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableInterfaceRequest(device BriefDeviceRequest, name string, type_ InterfaceTypeValue) *WritableInterfaceRequest {
+func NewWritableInterfaceRequest(device BriefDeviceRequest, type_ InterfaceTypeValue) *WritableInterfaceRequest {
 	this := WritableInterfaceRequest{}
 	this.Device = device
-	this.Name = name
 	this.Type = type_
 	return &this
 }
@@ -181,28 +180,36 @@ func (o *WritableInterfaceRequest) UnsetModule() {
 	o.Module.Unset()
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritableInterfaceRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableInterfaceRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritableInterfaceRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritableInterfaceRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
@@ -1253,7 +1260,9 @@ func (o WritableInterfaceRequest) ToMap() (map[string]interface{}, error) {
 	if o.Module.IsSet() {
 		toSerialize["module"] = o.Module.Get()
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
@@ -1350,7 +1359,6 @@ func (o *WritableInterfaceRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"device",
-		"name",
 		"type",
 	}
 

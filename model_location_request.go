@@ -20,8 +20,8 @@ var _ MappedNullable = &LocationRequest{}
 
 // LocationRequest Extends PrimaryModelSerializer to include MPTT support.
 type LocationRequest struct {
-	Name   string                        `json:"name"`
-	Slug   string                        `json:"slug"`
+	Name   *string                       `json:"name,omitempty"`
+	Slug   *string                       `json:"slug,omitempty"`
 	Site   BriefSiteRequest              `json:"site"`
 	Parent NullableNestedLocationRequest `json:"parent,omitempty"`
 	Status *LocationStatusValue          `json:"status,omitempty"`
@@ -40,10 +40,8 @@ type _LocationRequest LocationRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLocationRequest(name string, slug string, site BriefSiteRequest) *LocationRequest {
+func NewLocationRequest(site BriefSiteRequest) *LocationRequest {
 	this := LocationRequest{}
-	this.Name = name
-	this.Slug = slug
 	this.Site = site
 	return &this
 }
@@ -56,52 +54,68 @@ func NewLocationRequestWithDefaults() *LocationRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *LocationRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *LocationRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *LocationRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
-// GetSlug returns the Slug field value
+// GetSlug returns the Slug field value if set, zero value otherwise.
 func (o *LocationRequest) GetSlug() string {
-	if o == nil {
+	if o == nil || IsNil(o.Slug) {
 		var ret string
 		return ret
 	}
-
-	return o.Slug
+	return *o.Slug
 }
 
-// GetSlugOk returns a tuple with the Slug field value
+// GetSlugOk returns a tuple with the Slug field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LocationRequest) GetSlugOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Slug) {
 		return nil, false
 	}
-	return &o.Slug, true
+	return o.Slug, true
 }
 
-// SetSlug sets field value
+// HasSlug returns a boolean if a field has been set.
+func (o *LocationRequest) HasSlug() bool {
+	if o != nil && !IsNil(o.Slug) {
+		return true
+	}
+
+	return false
+}
+
+// SetSlug gets a reference to the given string and assigns it to the Slug field.
 func (o *LocationRequest) SetSlug(v string) {
-	o.Slug = v
+	o.Slug = &v
 }
 
 // GetSite returns the Site field value
@@ -384,8 +398,12 @@ func (o LocationRequest) MarshalJSON() ([]byte, error) {
 
 func (o LocationRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
-	toSerialize["slug"] = o.Slug
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
+	if !IsNil(o.Slug) {
+		toSerialize["slug"] = o.Slug
+	}
 	toSerialize["site"] = o.Site
 	if o.Parent.IsSet() {
 		toSerialize["parent"] = o.Parent.Get()
@@ -421,8 +439,6 @@ func (o *LocationRequest) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"name",
-		"slug",
 		"site",
 	}
 

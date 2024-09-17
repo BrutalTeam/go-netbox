@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
-**Slug** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Slug** | Pointer to **string** |  | [optional] 
 **Site** | [**BriefSiteRequest**](BriefSiteRequest.md) |  | 
 **Parent** | Pointer to **NullableInt32** |  | [optional] 
 **Status** | Pointer to [**LocationStatusValue**](LocationStatusValue.md) |  | [optional] 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewWritableLocationRequest
 
-`func NewWritableLocationRequest(name string, slug string, site BriefSiteRequest, ) *WritableLocationRequest`
+`func NewWritableLocationRequest(site BriefSiteRequest, ) *WritableLocationRequest`
 
 NewWritableLocationRequest instantiates a new WritableLocationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -53,6 +53,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *WritableLocationRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSlug
 
@@ -73,6 +78,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *WritableLocationRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetSite
 

@@ -20,7 +20,7 @@ var _ MappedNullable = &WritableIPSecProfileRequest{}
 
 // WritableIPSecProfileRequest Adds support for custom fields and tags.
 type WritableIPSecProfileRequest struct {
-	Name                 string                  `json:"name"`
+	Name                 *string                 `json:"name,omitempty"`
 	Description          *string                 `json:"description,omitempty"`
 	Mode                 IPSecProfileModeValue   `json:"mode"`
 	IkePolicy            BriefIKEPolicyRequest   `json:"ike_policy"`
@@ -37,9 +37,8 @@ type _WritableIPSecProfileRequest WritableIPSecProfileRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableIPSecProfileRequest(name string, mode IPSecProfileModeValue, ikePolicy BriefIKEPolicyRequest, ipsecPolicy BriefIPSecPolicyRequest) *WritableIPSecProfileRequest {
+func NewWritableIPSecProfileRequest(mode IPSecProfileModeValue, ikePolicy BriefIKEPolicyRequest, ipsecPolicy BriefIPSecPolicyRequest) *WritableIPSecProfileRequest {
 	this := WritableIPSecProfileRequest{}
-	this.Name = name
 	this.Mode = mode
 	this.IkePolicy = ikePolicy
 	this.IpsecPolicy = ipsecPolicy
@@ -54,28 +53,36 @@ func NewWritableIPSecProfileRequestWithDefaults() *WritableIPSecProfileRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritableIPSecProfileRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableIPSecProfileRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritableIPSecProfileRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritableIPSecProfileRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -288,7 +295,9 @@ func (o WritableIPSecProfileRequest) MarshalJSON() ([]byte, error) {
 
 func (o WritableIPSecProfileRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -317,7 +326,6 @@ func (o *WritableIPSecProfileRequest) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"name",
 		"mode",
 		"ike_policy",
 		"ipsec_policy",

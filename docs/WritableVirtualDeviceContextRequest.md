@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Device** | [**BriefDeviceRequest**](BriefDeviceRequest.md) |  | 
 **Identifier** | Pointer to **NullableInt32** |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritableVirtualDeviceContextRequest
 
-`func NewWritableVirtualDeviceContextRequest(name string, device BriefDeviceRequest, status PatchedWritableVirtualDeviceContextRequestStatus, ) *WritableVirtualDeviceContextRequest`
+`func NewWritableVirtualDeviceContextRequest(device BriefDeviceRequest, status PatchedWritableVirtualDeviceContextRequestStatus, ) *WritableVirtualDeviceContextRequest`
 
 NewWritableVirtualDeviceContextRequest instantiates a new WritableVirtualDeviceContextRequest object
 This constructor will assign default values to properties that have it defined,
@@ -54,6 +54,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *WritableVirtualDeviceContextRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDevice
 

@@ -21,7 +21,7 @@ var _ MappedNullable = &DeviceBayRequest{}
 // DeviceBayRequest Adds support for custom fields and tags.
 type DeviceBayRequest struct {
 	Device BriefDeviceRequest `json:"device"`
-	Name   string             `json:"name"`
+	Name   *string            `json:"name,omitempty"`
 	// Physical label
 	Label                *string                    `json:"label,omitempty"`
 	Description          *string                    `json:"description,omitempty"`
@@ -37,10 +37,9 @@ type _DeviceBayRequest DeviceBayRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeviceBayRequest(device BriefDeviceRequest, name string) *DeviceBayRequest {
+func NewDeviceBayRequest(device BriefDeviceRequest) *DeviceBayRequest {
 	this := DeviceBayRequest{}
 	this.Device = device
-	this.Name = name
 	return &this
 }
 
@@ -76,28 +75,36 @@ func (o *DeviceBayRequest) SetDevice(v BriefDeviceRequest) {
 	o.Device = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *DeviceBayRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeviceBayRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *DeviceBayRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *DeviceBayRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
@@ -282,7 +289,9 @@ func (o DeviceBayRequest) MarshalJSON() ([]byte, error) {
 func (o DeviceBayRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["device"] = o.Device
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
@@ -312,7 +321,6 @@ func (o *DeviceBayRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"device",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

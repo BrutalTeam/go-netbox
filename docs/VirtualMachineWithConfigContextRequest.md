@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**ModuleStatusValue**](ModuleStatusValue.md) |  | [optional] 
 **Site** | Pointer to [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
 **Cluster** | Pointer to [**NullableBriefClusterRequest**](BriefClusterRequest.md) |  | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 
 ### NewVirtualMachineWithConfigContextRequest
 
-`func NewVirtualMachineWithConfigContextRequest(name string, ) *VirtualMachineWithConfigContextRequest`
+`func NewVirtualMachineWithConfigContextRequest() *VirtualMachineWithConfigContextRequest`
 
 NewVirtualMachineWithConfigContextRequest instantiates a new VirtualMachineWithConfigContextRequest object
 This constructor will assign default values to properties that have it defined,
@@ -62,6 +62,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *VirtualMachineWithConfigContextRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetStatus
 

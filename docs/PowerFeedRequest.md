@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PowerPanel** | [**BriefPowerPanelRequest**](BriefPowerPanelRequest.md) |  | 
 **Rack** | Pointer to [**NullableBriefRackRequest**](BriefRackRequest.md) |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**PatchedWritablePowerFeedRequestStatus**](PatchedWritablePowerFeedRequestStatus.md) |  | [optional] 
 **Type** | Pointer to [**PatchedWritablePowerFeedRequestType**](PatchedWritablePowerFeedRequestType.md) |  | [optional] 
 **Supply** | Pointer to [**PatchedWritablePowerFeedRequestSupply**](PatchedWritablePowerFeedRequestSupply.md) |  | [optional] 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewPowerFeedRequest
 
-`func NewPowerFeedRequest(powerPanel BriefPowerPanelRequest, name string, ) *PowerFeedRequest`
+`func NewPowerFeedRequest(powerPanel BriefPowerPanelRequest, ) *PowerFeedRequest`
 
 NewPowerFeedRequest instantiates a new PowerFeedRequest object
 This constructor will assign default values to properties that have it defined,
@@ -114,6 +114,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *PowerFeedRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetStatus
 

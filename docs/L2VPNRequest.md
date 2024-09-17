@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Identifier** | Pointer to **NullableInt64** |  | [optional] 
-**Name** | **string** |  | 
-**Slug** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
+**Slug** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to [**BriefL2VPNTypeValue**](BriefL2VPNTypeValue.md) |  | [optional] 
 **ImportTargets** | Pointer to **[]int32** |  | [optional] 
 **ExportTargets** | Pointer to **[]int32** |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewL2VPNRequest
 
-`func NewL2VPNRequest(name string, slug string, ) *L2VPNRequest`
+`func NewL2VPNRequest() *L2VPNRequest`
 
 NewL2VPNRequest instantiates a new L2VPNRequest object
 This constructor will assign default values to properties that have it defined,
@@ -89,6 +89,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *L2VPNRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSlug
 
@@ -109,6 +114,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *L2VPNRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetType
 

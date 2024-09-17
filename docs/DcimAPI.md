@@ -1972,7 +1972,7 @@ import (
 )
 
 func main() {
-	consolePortTemplateRequest := []openapiclient.ConsolePortTemplateRequest{*openapiclient.NewConsolePortTemplateRequest("Name_example")} // []ConsolePortTemplateRequest | 
+	consolePortTemplateRequest := []openapiclient.ConsolePortTemplateRequest{*openapiclient.NewConsolePortTemplateRequest()} // []ConsolePortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2036,7 +2036,7 @@ import (
 )
 
 func main() {
-	consolePortTemplateRequest := []openapiclient.ConsolePortTemplateRequest{*openapiclient.NewConsolePortTemplateRequest("Name_example")} // []ConsolePortTemplateRequest | 
+	consolePortTemplateRequest := []openapiclient.ConsolePortTemplateRequest{*openapiclient.NewConsolePortTemplateRequest()} // []ConsolePortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2102,7 +2102,7 @@ import (
 )
 
 func main() {
-	consolePortTemplateRequest := []openapiclient.ConsolePortTemplateRequest{*openapiclient.NewConsolePortTemplateRequest("Name_example")} // []ConsolePortTemplateRequest | 
+	consolePortTemplateRequest := []openapiclient.ConsolePortTemplateRequest{*openapiclient.NewConsolePortTemplateRequest()} // []ConsolePortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2168,7 +2168,7 @@ import (
 )
 
 func main() {
-	writableConsolePortTemplateRequest := *openapiclient.NewWritableConsolePortTemplateRequest("Name_example") // WritableConsolePortTemplateRequest | 
+	writableConsolePortTemplateRequest := *openapiclient.NewWritableConsolePortTemplateRequest() // WritableConsolePortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2652,7 +2652,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this console port template.
-	writableConsolePortTemplateRequest := *openapiclient.NewWritableConsolePortTemplateRequest("Name_example") // WritableConsolePortTemplateRequest | 
+	writableConsolePortTemplateRequest := *openapiclient.NewWritableConsolePortTemplateRequest() // WritableConsolePortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2723,7 +2723,7 @@ import (
 )
 
 func main() {
-	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []ConsolePortRequest | 
+	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewBriefDeviceRequest())} // []ConsolePortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2787,7 +2787,7 @@ import (
 )
 
 func main() {
-	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []ConsolePortRequest | 
+	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewBriefDeviceRequest())} // []ConsolePortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2853,7 +2853,7 @@ import (
 )
 
 func main() {
-	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []ConsolePortRequest | 
+	consolePortRequest := []openapiclient.ConsolePortRequest{*openapiclient.NewConsolePortRequest(*openapiclient.NewBriefDeviceRequest())} // []ConsolePortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2919,7 +2919,7 @@ import (
 )
 
 func main() {
-	writableConsolePortRequest := *openapiclient.NewWritableConsolePortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // WritableConsolePortRequest | 
+	writableConsolePortRequest := *openapiclient.NewWritableConsolePortRequest(*openapiclient.NewBriefDeviceRequest()) // WritableConsolePortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3561,7 +3561,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this console port.
-	writableConsolePortRequest := *openapiclient.NewWritableConsolePortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // WritableConsolePortRequest | 
+	writableConsolePortRequest := *openapiclient.NewWritableConsolePortRequest(*openapiclient.NewBriefDeviceRequest()) // WritableConsolePortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3632,7 +3632,7 @@ import (
 )
 
 func main() {
-	consoleServerPortTemplateRequest := []openapiclient.ConsoleServerPortTemplateRequest{*openapiclient.NewConsoleServerPortTemplateRequest("Name_example")} // []ConsoleServerPortTemplateRequest | 
+	consoleServerPortTemplateRequest := []openapiclient.ConsoleServerPortTemplateRequest{*openapiclient.NewConsoleServerPortTemplateRequest()} // []ConsoleServerPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3696,7 +3696,7 @@ import (
 )
 
 func main() {
-	consoleServerPortTemplateRequest := []openapiclient.ConsoleServerPortTemplateRequest{*openapiclient.NewConsoleServerPortTemplateRequest("Name_example")} // []ConsoleServerPortTemplateRequest | 
+	consoleServerPortTemplateRequest := []openapiclient.ConsoleServerPortTemplateRequest{*openapiclient.NewConsoleServerPortTemplateRequest()} // []ConsoleServerPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3762,7 +3762,7 @@ import (
 )
 
 func main() {
-	consoleServerPortTemplateRequest := []openapiclient.ConsoleServerPortTemplateRequest{*openapiclient.NewConsoleServerPortTemplateRequest("Name_example")} // []ConsoleServerPortTemplateRequest | 
+	consoleServerPortTemplateRequest := []openapiclient.ConsoleServerPortTemplateRequest{*openapiclient.NewConsoleServerPortTemplateRequest()} // []ConsoleServerPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3828,7 +3828,7 @@ import (
 )
 
 func main() {
-	writableConsoleServerPortTemplateRequest := *openapiclient.NewWritableConsoleServerPortTemplateRequest("Name_example") // WritableConsoleServerPortTemplateRequest | 
+	writableConsoleServerPortTemplateRequest := *openapiclient.NewWritableConsoleServerPortTemplateRequest() // WritableConsoleServerPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4312,7 +4312,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this console server port template.
-	writableConsoleServerPortTemplateRequest := *openapiclient.NewWritableConsoleServerPortTemplateRequest("Name_example") // WritableConsoleServerPortTemplateRequest | 
+	writableConsoleServerPortTemplateRequest := *openapiclient.NewWritableConsoleServerPortTemplateRequest() // WritableConsoleServerPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4383,7 +4383,7 @@ import (
 )
 
 func main() {
-	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []ConsoleServerPortRequest | 
+	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewBriefDeviceRequest())} // []ConsoleServerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4447,7 +4447,7 @@ import (
 )
 
 func main() {
-	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []ConsoleServerPortRequest | 
+	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewBriefDeviceRequest())} // []ConsoleServerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4513,7 +4513,7 @@ import (
 )
 
 func main() {
-	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []ConsoleServerPortRequest | 
+	consoleServerPortRequest := []openapiclient.ConsoleServerPortRequest{*openapiclient.NewConsoleServerPortRequest(*openapiclient.NewBriefDeviceRequest())} // []ConsoleServerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4579,7 +4579,7 @@ import (
 )
 
 func main() {
-	writableConsoleServerPortRequest := *openapiclient.NewWritableConsoleServerPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // WritableConsoleServerPortRequest | 
+	writableConsoleServerPortRequest := *openapiclient.NewWritableConsoleServerPortRequest(*openapiclient.NewBriefDeviceRequest()) // WritableConsoleServerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5221,7 +5221,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this console server port.
-	writableConsoleServerPortRequest := *openapiclient.NewWritableConsoleServerPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // WritableConsoleServerPortRequest | 
+	writableConsoleServerPortRequest := *openapiclient.NewWritableConsoleServerPortRequest(*openapiclient.NewBriefDeviceRequest()) // WritableConsoleServerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5292,7 +5292,7 @@ import (
 )
 
 func main() {
-	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []DeviceBayTemplateRequest | 
+	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []DeviceBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5356,7 +5356,7 @@ import (
 )
 
 func main() {
-	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []DeviceBayTemplateRequest | 
+	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []DeviceBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5422,7 +5422,7 @@ import (
 )
 
 func main() {
-	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []DeviceBayTemplateRequest | 
+	deviceBayTemplateRequest := []openapiclient.DeviceBayTemplateRequest{*openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []DeviceBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5488,7 +5488,7 @@ import (
 )
 
 func main() {
-	deviceBayTemplateRequest := *openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // DeviceBayTemplateRequest | 
+	deviceBayTemplateRequest := *openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")) // DeviceBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5960,7 +5960,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device bay template.
-	deviceBayTemplateRequest := *openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // DeviceBayTemplateRequest | 
+	deviceBayTemplateRequest := *openapiclient.NewDeviceBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")) // DeviceBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6031,7 +6031,7 @@ import (
 )
 
 func main() {
-	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []DeviceBayRequest | 
+	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewBriefDeviceRequest())} // []DeviceBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6095,7 +6095,7 @@ import (
 )
 
 func main() {
-	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []DeviceBayRequest | 
+	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewBriefDeviceRequest())} // []DeviceBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6161,7 +6161,7 @@ import (
 )
 
 func main() {
-	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []DeviceBayRequest | 
+	deviceBayRequest := []openapiclient.DeviceBayRequest{*openapiclient.NewDeviceBayRequest(*openapiclient.NewBriefDeviceRequest())} // []DeviceBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6227,7 +6227,7 @@ import (
 )
 
 func main() {
-	deviceBayRequest := *openapiclient.NewDeviceBayRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // DeviceBayRequest | 
+	deviceBayRequest := *openapiclient.NewDeviceBayRequest(*openapiclient.NewBriefDeviceRequest()) // DeviceBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6779,7 +6779,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device bay.
-	deviceBayRequest := *openapiclient.NewDeviceBayRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // DeviceBayRequest | 
+	deviceBayRequest := *openapiclient.NewDeviceBayRequest(*openapiclient.NewBriefDeviceRequest()) // DeviceBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6850,7 +6850,7 @@ import (
 )
 
 func main() {
-	deviceRoleRequest := []openapiclient.DeviceRoleRequest{*openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example")} // []DeviceRoleRequest | 
+	deviceRoleRequest := []openapiclient.DeviceRoleRequest{*openapiclient.NewDeviceRoleRequest()} // []DeviceRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6914,7 +6914,7 @@ import (
 )
 
 func main() {
-	deviceRoleRequest := []openapiclient.DeviceRoleRequest{*openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example")} // []DeviceRoleRequest | 
+	deviceRoleRequest := []openapiclient.DeviceRoleRequest{*openapiclient.NewDeviceRoleRequest()} // []DeviceRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6980,7 +6980,7 @@ import (
 )
 
 func main() {
-	deviceRoleRequest := []openapiclient.DeviceRoleRequest{*openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example")} // []DeviceRoleRequest | 
+	deviceRoleRequest := []openapiclient.DeviceRoleRequest{*openapiclient.NewDeviceRoleRequest()} // []DeviceRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7046,7 +7046,7 @@ import (
 )
 
 func main() {
-	deviceRoleRequest := *openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example") // DeviceRoleRequest | 
+	deviceRoleRequest := *openapiclient.NewDeviceRoleRequest() // DeviceRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7542,7 +7542,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device role.
-	deviceRoleRequest := *openapiclient.NewDeviceRoleRequest("Name_example", "Slug_example") // DeviceRoleRequest | 
+	deviceRoleRequest := *openapiclient.NewDeviceRoleRequest() // DeviceRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7613,7 +7613,7 @@ import (
 )
 
 func main() {
-	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example")} // []DeviceTypeRequest | 
+	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")} // []DeviceTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7677,7 +7677,7 @@ import (
 )
 
 func main() {
-	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example")} // []DeviceTypeRequest | 
+	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")} // []DeviceTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7743,7 +7743,7 @@ import (
 )
 
 func main() {
-	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example")} // []DeviceTypeRequest | 
+	deviceTypeRequest := []openapiclient.DeviceTypeRequest{*openapiclient.NewDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")} // []DeviceTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7809,7 +7809,7 @@ import (
 )
 
 func main() {
-	writableDeviceTypeRequest := *openapiclient.NewWritableDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example") // WritableDeviceTypeRequest | 
+	writableDeviceTypeRequest := *openapiclient.NewWritableDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example") // WritableDeviceTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8521,7 +8521,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device type.
-	writableDeviceTypeRequest := *openapiclient.NewWritableDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example") // WritableDeviceTypeRequest | 
+	writableDeviceTypeRequest := *openapiclient.NewWritableDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example") // WritableDeviceTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8592,7 +8592,7 @@ import (
 )
 
 func main() {
-	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewBriefDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"))} // []DeviceWithConfigContextRequest | 
+	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"), *openapiclient.NewBriefDeviceRoleRequest(), *openapiclient.NewBriefSiteRequest())} // []DeviceWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8656,7 +8656,7 @@ import (
 )
 
 func main() {
-	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewBriefDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"))} // []DeviceWithConfigContextRequest | 
+	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"), *openapiclient.NewBriefDeviceRoleRequest(), *openapiclient.NewBriefSiteRequest())} // []DeviceWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8722,7 +8722,7 @@ import (
 )
 
 func main() {
-	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewBriefDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"))} // []DeviceWithConfigContextRequest | 
+	deviceWithConfigContextRequest := []openapiclient.DeviceWithConfigContextRequest{*openapiclient.NewDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"), *openapiclient.NewBriefDeviceRoleRequest(), *openapiclient.NewBriefSiteRequest())} // []DeviceWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8788,7 +8788,7 @@ import (
 )
 
 func main() {
-	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewBriefDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"), openapiclient.Rack_face_1("front")) // WritableDeviceWithConfigContextRequest | 
+	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"), *openapiclient.NewBriefDeviceRoleRequest(), *openapiclient.NewBriefSiteRequest(), openapiclient.Rack_face_1("front")) // WritableDeviceWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9614,7 +9614,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device.
-	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewBriefDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"), openapiclient.Rack_face_1("front")) // WritableDeviceWithConfigContextRequest | 
+	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"), *openapiclient.NewBriefDeviceRoleRequest(), *openapiclient.NewBriefSiteRequest(), openapiclient.Rack_face_1("front")) // WritableDeviceWithConfigContextRequest | 
 	format := openapiclient.dcim_devices_render_config_create_format_parameter("json") // DcimDevicesRenderConfigCreateFormatParameter |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
@@ -9758,7 +9758,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this device.
-	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), *openapiclient.NewBriefDeviceRoleRequest("Name_example", "Slug_example"), *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"), openapiclient.Rack_face_1("front")) // WritableDeviceWithConfigContextRequest | 
+	writableDeviceWithConfigContextRequest := *openapiclient.NewWritableDeviceWithConfigContextRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"), *openapiclient.NewBriefDeviceRoleRequest(), *openapiclient.NewBriefSiteRequest(), openapiclient.Rack_face_1("front")) // WritableDeviceWithConfigContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9829,7 +9829,7 @@ import (
 )
 
 func main() {
-	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewBriefRearPortTemplateRequest("Name_example"))} // []FrontPortTemplateRequest | 
+	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest(openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewBriefRearPortTemplateRequest())} // []FrontPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9893,7 +9893,7 @@ import (
 )
 
 func main() {
-	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewBriefRearPortTemplateRequest("Name_example"))} // []FrontPortTemplateRequest | 
+	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest(openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewBriefRearPortTemplateRequest())} // []FrontPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9959,7 +9959,7 @@ import (
 )
 
 func main() {
-	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewBriefRearPortTemplateRequest("Name_example"))} // []FrontPortTemplateRequest | 
+	frontPortTemplateRequest := []openapiclient.FrontPortTemplateRequest{*openapiclient.NewFrontPortTemplateRequest(openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewBriefRearPortTemplateRequest())} // []FrontPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10025,7 +10025,7 @@ import (
 )
 
 func main() {
-	writableFrontPortTemplateRequest := *openapiclient.NewWritableFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewBriefRearPortTemplateRequest("Name_example")) // WritableFrontPortTemplateRequest | 
+	writableFrontPortTemplateRequest := *openapiclient.NewWritableFrontPortTemplateRequest(openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewBriefRearPortTemplateRequest()) // WritableFrontPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10549,7 +10549,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this front port template.
-	writableFrontPortTemplateRequest := *openapiclient.NewWritableFrontPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewBriefRearPortTemplateRequest("Name_example")) // WritableFrontPortTemplateRequest | 
+	writableFrontPortTemplateRequest := *openapiclient.NewWritableFrontPortTemplateRequest(openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewBriefRearPortTemplateRequest()) // WritableFrontPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10620,7 +10620,7 @@ import (
 )
 
 func main() {
-	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest("Name_example"))} // []FrontPortRequest | 
+	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest())} // []FrontPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10684,7 +10684,7 @@ import (
 )
 
 func main() {
-	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest("Name_example"))} // []FrontPortRequest | 
+	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest())} // []FrontPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10750,7 +10750,7 @@ import (
 )
 
 func main() {
-	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest("Name_example"))} // []FrontPortRequest | 
+	frontPortRequest := []openapiclient.FrontPortRequest{*openapiclient.NewFrontPortRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.FrontPort_type_value("8p8c"), *openapiclient.NewFrontPortRearPortRequest())} // []FrontPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10816,7 +10816,7 @@ import (
 )
 
 func main() {
-	writableFrontPortRequest := *openapiclient.NewWritableFrontPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), int32(123)) // WritableFrontPortRequest | 
+	writableFrontPortRequest := *openapiclient.NewWritableFrontPortRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.FrontPort_type_value("8p8c"), int32(123)) // WritableFrontPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11492,7 +11492,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this front port.
-	writableFrontPortRequest := *openapiclient.NewWritableFrontPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"), int32(123)) // WritableFrontPortRequest | 
+	writableFrontPortRequest := *openapiclient.NewWritableFrontPortRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.FrontPort_type_value("8p8c"), int32(123)) // WritableFrontPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11563,7 +11563,7 @@ import (
 )
 
 func main() {
-	interfaceTemplateRequest := []openapiclient.InterfaceTemplateRequest{*openapiclient.NewInterfaceTemplateRequest("Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceTemplateRequest | 
+	interfaceTemplateRequest := []openapiclient.InterfaceTemplateRequest{*openapiclient.NewInterfaceTemplateRequest(openapiclient.Interface_type_value("virtual"))} // []InterfaceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11627,7 +11627,7 @@ import (
 )
 
 func main() {
-	interfaceTemplateRequest := []openapiclient.InterfaceTemplateRequest{*openapiclient.NewInterfaceTemplateRequest("Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceTemplateRequest | 
+	interfaceTemplateRequest := []openapiclient.InterfaceTemplateRequest{*openapiclient.NewInterfaceTemplateRequest(openapiclient.Interface_type_value("virtual"))} // []InterfaceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11693,7 +11693,7 @@ import (
 )
 
 func main() {
-	interfaceTemplateRequest := []openapiclient.InterfaceTemplateRequest{*openapiclient.NewInterfaceTemplateRequest("Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceTemplateRequest | 
+	interfaceTemplateRequest := []openapiclient.InterfaceTemplateRequest{*openapiclient.NewInterfaceTemplateRequest(openapiclient.Interface_type_value("virtual"))} // []InterfaceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11759,7 +11759,7 @@ import (
 )
 
 func main() {
-	writableInterfaceTemplateRequest := *openapiclient.NewWritableInterfaceTemplateRequest("Name_example", openapiclient.Interface_type_value("virtual")) // WritableInterfaceTemplateRequest | 
+	writableInterfaceTemplateRequest := *openapiclient.NewWritableInterfaceTemplateRequest(openapiclient.Interface_type_value("virtual")) // WritableInterfaceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12263,7 +12263,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this interface template.
-	writableInterfaceTemplateRequest := *openapiclient.NewWritableInterfaceTemplateRequest("Name_example", openapiclient.Interface_type_value("virtual")) // WritableInterfaceTemplateRequest | 
+	writableInterfaceTemplateRequest := *openapiclient.NewWritableInterfaceTemplateRequest(openapiclient.Interface_type_value("virtual")) // WritableInterfaceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12334,7 +12334,7 @@ import (
 )
 
 func main() {
-	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
+	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12398,7 +12398,7 @@ import (
 )
 
 func main() {
-	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
+	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12464,7 +12464,7 @@ import (
 )
 
 func main() {
-	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
+	interfaceRequest := []openapiclient.InterfaceRequest{*openapiclient.NewInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.Interface_type_value("virtual"))} // []InterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12530,7 +12530,7 @@ import (
 )
 
 func main() {
-	writableInterfaceRequest := *openapiclient.NewWritableInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")) // WritableInterfaceRequest | 
+	writableInterfaceRequest := *openapiclient.NewWritableInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.Interface_type_value("virtual")) // WritableInterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -13364,7 +13364,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this interface.
-	writableInterfaceRequest := *openapiclient.NewWritableInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.Interface_type_value("virtual")) // WritableInterfaceRequest | 
+	writableInterfaceRequest := *openapiclient.NewWritableInterfaceRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.Interface_type_value("virtual")) // WritableInterfaceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -13435,7 +13435,7 @@ import (
 )
 
 func main() {
-	inventoryItemRoleRequest := []openapiclient.InventoryItemRoleRequest{*openapiclient.NewInventoryItemRoleRequest("Name_example", "Slug_example")} // []InventoryItemRoleRequest | 
+	inventoryItemRoleRequest := []openapiclient.InventoryItemRoleRequest{*openapiclient.NewInventoryItemRoleRequest()} // []InventoryItemRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -13499,7 +13499,7 @@ import (
 )
 
 func main() {
-	inventoryItemRoleRequest := []openapiclient.InventoryItemRoleRequest{*openapiclient.NewInventoryItemRoleRequest("Name_example", "Slug_example")} // []InventoryItemRoleRequest | 
+	inventoryItemRoleRequest := []openapiclient.InventoryItemRoleRequest{*openapiclient.NewInventoryItemRoleRequest()} // []InventoryItemRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -13565,7 +13565,7 @@ import (
 )
 
 func main() {
-	inventoryItemRoleRequest := []openapiclient.InventoryItemRoleRequest{*openapiclient.NewInventoryItemRoleRequest("Name_example", "Slug_example")} // []InventoryItemRoleRequest | 
+	inventoryItemRoleRequest := []openapiclient.InventoryItemRoleRequest{*openapiclient.NewInventoryItemRoleRequest()} // []InventoryItemRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -13631,7 +13631,7 @@ import (
 )
 
 func main() {
-	inventoryItemRoleRequest := *openapiclient.NewInventoryItemRoleRequest("Name_example", "Slug_example") // InventoryItemRoleRequest | 
+	inventoryItemRoleRequest := *openapiclient.NewInventoryItemRoleRequest() // InventoryItemRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -14121,7 +14121,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this inventory item role.
-	inventoryItemRoleRequest := *openapiclient.NewInventoryItemRoleRequest("Name_example", "Slug_example") // InventoryItemRoleRequest | 
+	inventoryItemRoleRequest := *openapiclient.NewInventoryItemRoleRequest() // InventoryItemRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -14192,7 +14192,7 @@ import (
 )
 
 func main() {
-	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []InventoryItemTemplateRequest | 
+	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []InventoryItemTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -14256,7 +14256,7 @@ import (
 )
 
 func main() {
-	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []InventoryItemTemplateRequest | 
+	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []InventoryItemTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -14322,7 +14322,7 @@ import (
 )
 
 func main() {
-	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []InventoryItemTemplateRequest | 
+	inventoryItemTemplateRequest := []openapiclient.InventoryItemTemplateRequest{*openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []InventoryItemTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -14388,7 +14388,7 @@ import (
 )
 
 func main() {
-	inventoryItemTemplateRequest := *openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // InventoryItemTemplateRequest | 
+	inventoryItemTemplateRequest := *openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")) // InventoryItemTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -14920,7 +14920,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this inventory item template.
-	inventoryItemTemplateRequest := *openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // InventoryItemTemplateRequest | 
+	inventoryItemTemplateRequest := *openapiclient.NewInventoryItemTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")) // InventoryItemTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -14991,7 +14991,7 @@ import (
 )
 
 func main() {
-	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []InventoryItemRequest | 
+	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewBriefDeviceRequest())} // []InventoryItemRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -15055,7 +15055,7 @@ import (
 )
 
 func main() {
-	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []InventoryItemRequest | 
+	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewBriefDeviceRequest())} // []InventoryItemRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -15121,7 +15121,7 @@ import (
 )
 
 func main() {
-	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []InventoryItemRequest | 
+	inventoryItemRequest := []openapiclient.InventoryItemRequest{*openapiclient.NewInventoryItemRequest(*openapiclient.NewBriefDeviceRequest())} // []InventoryItemRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -15187,7 +15187,7 @@ import (
 )
 
 func main() {
-	inventoryItemRequest := *openapiclient.NewInventoryItemRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // InventoryItemRequest | 
+	inventoryItemRequest := *openapiclient.NewInventoryItemRequest(*openapiclient.NewBriefDeviceRequest()) // InventoryItemRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -15837,7 +15837,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this inventory item.
-	inventoryItemRequest := *openapiclient.NewInventoryItemRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // InventoryItemRequest | 
+	inventoryItemRequest := *openapiclient.NewInventoryItemRequest(*openapiclient.NewBriefDeviceRequest()) // InventoryItemRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -15908,7 +15908,7 @@ import (
 )
 
 func main() {
-	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest("Name_example", "Slug_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"))} // []LocationRequest | 
+	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest(*openapiclient.NewBriefSiteRequest())} // []LocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -15972,7 +15972,7 @@ import (
 )
 
 func main() {
-	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest("Name_example", "Slug_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"))} // []LocationRequest | 
+	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest(*openapiclient.NewBriefSiteRequest())} // []LocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -16038,7 +16038,7 @@ import (
 )
 
 func main() {
-	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest("Name_example", "Slug_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"))} // []LocationRequest | 
+	locationRequest := []openapiclient.LocationRequest{*openapiclient.NewLocationRequest(*openapiclient.NewBriefSiteRequest())} // []LocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -16104,7 +16104,7 @@ import (
 )
 
 func main() {
-	writableLocationRequest := *openapiclient.NewWritableLocationRequest("Name_example", "Slug_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example")) // WritableLocationRequest | 
+	writableLocationRequest := *openapiclient.NewWritableLocationRequest(*openapiclient.NewBriefSiteRequest()) // WritableLocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -16666,7 +16666,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this location.
-	writableLocationRequest := *openapiclient.NewWritableLocationRequest("Name_example", "Slug_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example")) // WritableLocationRequest | 
+	writableLocationRequest := *openapiclient.NewWritableLocationRequest(*openapiclient.NewBriefSiteRequest()) // WritableLocationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -16737,7 +16737,7 @@ import (
 )
 
 func main() {
-	manufacturerRequest := []openapiclient.ManufacturerRequest{*openapiclient.NewManufacturerRequest("Name_example", "Slug_example")} // []ManufacturerRequest | 
+	manufacturerRequest := []openapiclient.ManufacturerRequest{*openapiclient.NewManufacturerRequest()} // []ManufacturerRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -16801,7 +16801,7 @@ import (
 )
 
 func main() {
-	manufacturerRequest := []openapiclient.ManufacturerRequest{*openapiclient.NewManufacturerRequest("Name_example", "Slug_example")} // []ManufacturerRequest | 
+	manufacturerRequest := []openapiclient.ManufacturerRequest{*openapiclient.NewManufacturerRequest()} // []ManufacturerRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -16867,7 +16867,7 @@ import (
 )
 
 func main() {
-	manufacturerRequest := []openapiclient.ManufacturerRequest{*openapiclient.NewManufacturerRequest("Name_example", "Slug_example")} // []ManufacturerRequest | 
+	manufacturerRequest := []openapiclient.ManufacturerRequest{*openapiclient.NewManufacturerRequest()} // []ManufacturerRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -16933,7 +16933,7 @@ import (
 )
 
 func main() {
-	manufacturerRequest := *openapiclient.NewManufacturerRequest("Name_example", "Slug_example") // ManufacturerRequest | 
+	manufacturerRequest := *openapiclient.NewManufacturerRequest() // ManufacturerRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -17413,7 +17413,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this manufacturer.
-	manufacturerRequest := *openapiclient.NewManufacturerRequest("Name_example", "Slug_example") // ManufacturerRequest | 
+	manufacturerRequest := *openapiclient.NewManufacturerRequest() // ManufacturerRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -17484,7 +17484,7 @@ import (
 )
 
 func main() {
-	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []ModuleBayTemplateRequest | 
+	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []ModuleBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -17548,7 +17548,7 @@ import (
 )
 
 func main() {
-	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []ModuleBayTemplateRequest | 
+	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []ModuleBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -17614,7 +17614,7 @@ import (
 )
 
 func main() {
-	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example")} // []ModuleBayTemplateRequest | 
+	moduleBayTemplateRequest := []openapiclient.ModuleBayTemplateRequest{*openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []ModuleBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -17680,7 +17680,7 @@ import (
 )
 
 func main() {
-	moduleBayTemplateRequest := *openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // ModuleBayTemplateRequest | 
+	moduleBayTemplateRequest := *openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")) // ModuleBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -18174,7 +18174,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this module bay template.
-	moduleBayTemplateRequest := *openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example", "Slug_example"), "Name_example") // ModuleBayTemplateRequest | 
+	moduleBayTemplateRequest := *openapiclient.NewModuleBayTemplateRequest(*openapiclient.NewBriefDeviceTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")) // ModuleBayTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -18245,7 +18245,7 @@ import (
 )
 
 func main() {
-	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []ModuleBayRequest | 
+	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewBriefDeviceRequest())} // []ModuleBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -18309,7 +18309,7 @@ import (
 )
 
 func main() {
-	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []ModuleBayRequest | 
+	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewBriefDeviceRequest())} // []ModuleBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -18375,7 +18375,7 @@ import (
 )
 
 func main() {
-	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []ModuleBayRequest | 
+	moduleBayRequest := []openapiclient.ModuleBayRequest{*openapiclient.NewModuleBayRequest(*openapiclient.NewBriefDeviceRequest())} // []ModuleBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -18441,7 +18441,7 @@ import (
 )
 
 func main() {
-	moduleBayRequest := *openapiclient.NewModuleBayRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // ModuleBayRequest | 
+	moduleBayRequest := *openapiclient.NewModuleBayRequest(*openapiclient.NewBriefDeviceRequest()) // ModuleBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19011,7 +19011,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this module bay.
-	moduleBayRequest := *openapiclient.NewModuleBayRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // ModuleBayRequest | 
+	moduleBayRequest := *openapiclient.NewModuleBayRequest(*openapiclient.NewBriefDeviceRequest()) // ModuleBayRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19082,7 +19082,7 @@ import (
 )
 
 func main() {
-	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example")} // []ModuleTypeRequest | 
+	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")} // []ModuleTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19146,7 +19146,7 @@ import (
 )
 
 func main() {
-	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example")} // []ModuleTypeRequest | 
+	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")} // []ModuleTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19212,7 +19212,7 @@ import (
 )
 
 func main() {
-	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example")} // []ModuleTypeRequest | 
+	moduleTypeRequest := []openapiclient.ModuleTypeRequest{*openapiclient.NewModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")} // []ModuleTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19278,7 +19278,7 @@ import (
 )
 
 func main() {
-	writableModuleTypeRequest := *openapiclient.NewWritableModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example") // WritableModuleTypeRequest | 
+	writableModuleTypeRequest := *openapiclient.NewWritableModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example") // WritableModuleTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19784,7 +19784,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this module type.
-	writableModuleTypeRequest := *openapiclient.NewWritableModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example") // WritableModuleTypeRequest | 
+	writableModuleTypeRequest := *openapiclient.NewWritableModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example") // WritableModuleTypeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19855,7 +19855,7 @@ import (
 )
 
 func main() {
-	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewBriefDeviceRequest(), *openapiclient.NewNestedModuleBayRequest("Name_example"), *openapiclient.NewBriefModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example"))} // []ModuleRequest | 
+	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewBriefDeviceRequest(), *openapiclient.NewNestedModuleBayRequest(), *openapiclient.NewBriefModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []ModuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19919,7 +19919,7 @@ import (
 )
 
 func main() {
-	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewBriefDeviceRequest(), *openapiclient.NewNestedModuleBayRequest("Name_example"), *openapiclient.NewBriefModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example"))} // []ModuleRequest | 
+	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewBriefDeviceRequest(), *openapiclient.NewNestedModuleBayRequest(), *openapiclient.NewBriefModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []ModuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -19985,7 +19985,7 @@ import (
 )
 
 func main() {
-	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewBriefDeviceRequest(), *openapiclient.NewNestedModuleBayRequest("Name_example"), *openapiclient.NewBriefModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example"))} // []ModuleRequest | 
+	moduleRequest := []openapiclient.ModuleRequest{*openapiclient.NewModuleRequest(*openapiclient.NewBriefDeviceRequest(), *openapiclient.NewNestedModuleBayRequest(), *openapiclient.NewBriefModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example"))} // []ModuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -20051,7 +20051,7 @@ import (
 )
 
 func main() {
-	writableModuleRequest := *openapiclient.NewWritableModuleRequest(*openapiclient.NewBriefDeviceRequest(), int32(123), *openapiclient.NewBriefModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example")) // WritableModuleRequest | 
+	writableModuleRequest := *openapiclient.NewWritableModuleRequest(*openapiclient.NewBriefDeviceRequest(), int32(123), *openapiclient.NewBriefModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")) // WritableModuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -20547,7 +20547,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this module.
-	writableModuleRequest := *openapiclient.NewWritableModuleRequest(*openapiclient.NewBriefDeviceRequest(), int32(123), *openapiclient.NewBriefModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest("Name_example", "Slug_example"), "Model_example")) // WritableModuleRequest | 
+	writableModuleRequest := *openapiclient.NewWritableModuleRequest(*openapiclient.NewBriefDeviceRequest(), int32(123), *openapiclient.NewBriefModuleTypeRequest(*openapiclient.NewBriefManufacturerRequest(), "Model_example")) // WritableModuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -20618,7 +20618,7 @@ import (
 )
 
 func main() {
-	platformRequest := []openapiclient.PlatformRequest{*openapiclient.NewPlatformRequest("Name_example", "Slug_example")} // []PlatformRequest | 
+	platformRequest := []openapiclient.PlatformRequest{*openapiclient.NewPlatformRequest()} // []PlatformRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -20682,7 +20682,7 @@ import (
 )
 
 func main() {
-	platformRequest := []openapiclient.PlatformRequest{*openapiclient.NewPlatformRequest("Name_example", "Slug_example")} // []PlatformRequest | 
+	platformRequest := []openapiclient.PlatformRequest{*openapiclient.NewPlatformRequest()} // []PlatformRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -20748,7 +20748,7 @@ import (
 )
 
 func main() {
-	platformRequest := []openapiclient.PlatformRequest{*openapiclient.NewPlatformRequest("Name_example", "Slug_example")} // []PlatformRequest | 
+	platformRequest := []openapiclient.PlatformRequest{*openapiclient.NewPlatformRequest()} // []PlatformRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -20814,7 +20814,7 @@ import (
 )
 
 func main() {
-	platformRequest := *openapiclient.NewPlatformRequest("Name_example", "Slug_example") // PlatformRequest | 
+	platformRequest := *openapiclient.NewPlatformRequest() // PlatformRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -21296,7 +21296,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this platform.
-	platformRequest := *openapiclient.NewPlatformRequest("Name_example", "Slug_example") // PlatformRequest | 
+	platformRequest := *openapiclient.NewPlatformRequest() // PlatformRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -21367,7 +21367,7 @@ import (
 )
 
 func main() {
-	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewBriefPowerPanelRequest("Name_example"), "Name_example")} // []PowerFeedRequest | 
+	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewBriefPowerPanelRequest())} // []PowerFeedRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -21431,7 +21431,7 @@ import (
 )
 
 func main() {
-	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewBriefPowerPanelRequest("Name_example"), "Name_example")} // []PowerFeedRequest | 
+	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewBriefPowerPanelRequest())} // []PowerFeedRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -21497,7 +21497,7 @@ import (
 )
 
 func main() {
-	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewBriefPowerPanelRequest("Name_example"), "Name_example")} // []PowerFeedRequest | 
+	powerFeedRequest := []openapiclient.PowerFeedRequest{*openapiclient.NewPowerFeedRequest(*openapiclient.NewBriefPowerPanelRequest())} // []PowerFeedRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -21563,7 +21563,7 @@ import (
 )
 
 func main() {
-	writablePowerFeedRequest := *openapiclient.NewWritablePowerFeedRequest(*openapiclient.NewBriefPowerPanelRequest("Name_example"), "Name_example") // WritablePowerFeedRequest | 
+	writablePowerFeedRequest := *openapiclient.NewWritablePowerFeedRequest(*openapiclient.NewBriefPowerPanelRequest()) // WritablePowerFeedRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -22215,7 +22215,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this power feed.
-	writablePowerFeedRequest := *openapiclient.NewWritablePowerFeedRequest(*openapiclient.NewBriefPowerPanelRequest("Name_example"), "Name_example") // WritablePowerFeedRequest | 
+	writablePowerFeedRequest := *openapiclient.NewWritablePowerFeedRequest(*openapiclient.NewBriefPowerPanelRequest()) // WritablePowerFeedRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -22286,7 +22286,7 @@ import (
 )
 
 func main() {
-	powerOutletTemplateRequest := []openapiclient.PowerOutletTemplateRequest{*openapiclient.NewPowerOutletTemplateRequest("Name_example")} // []PowerOutletTemplateRequest | 
+	powerOutletTemplateRequest := []openapiclient.PowerOutletTemplateRequest{*openapiclient.NewPowerOutletTemplateRequest()} // []PowerOutletTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -22350,7 +22350,7 @@ import (
 )
 
 func main() {
-	powerOutletTemplateRequest := []openapiclient.PowerOutletTemplateRequest{*openapiclient.NewPowerOutletTemplateRequest("Name_example")} // []PowerOutletTemplateRequest | 
+	powerOutletTemplateRequest := []openapiclient.PowerOutletTemplateRequest{*openapiclient.NewPowerOutletTemplateRequest()} // []PowerOutletTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -22416,7 +22416,7 @@ import (
 )
 
 func main() {
-	powerOutletTemplateRequest := []openapiclient.PowerOutletTemplateRequest{*openapiclient.NewPowerOutletTemplateRequest("Name_example")} // []PowerOutletTemplateRequest | 
+	powerOutletTemplateRequest := []openapiclient.PowerOutletTemplateRequest{*openapiclient.NewPowerOutletTemplateRequest()} // []PowerOutletTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -22482,7 +22482,7 @@ import (
 )
 
 func main() {
-	writablePowerOutletTemplateRequest := *openapiclient.NewWritablePowerOutletTemplateRequest("Name_example") // WritablePowerOutletTemplateRequest | 
+	writablePowerOutletTemplateRequest := *openapiclient.NewWritablePowerOutletTemplateRequest() // WritablePowerOutletTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -22974,7 +22974,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this power outlet template.
-	writablePowerOutletTemplateRequest := *openapiclient.NewWritablePowerOutletTemplateRequest("Name_example") // WritablePowerOutletTemplateRequest | 
+	writablePowerOutletTemplateRequest := *openapiclient.NewWritablePowerOutletTemplateRequest() // WritablePowerOutletTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -23045,7 +23045,7 @@ import (
 )
 
 func main() {
-	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []PowerOutletRequest | 
+	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewBriefDeviceRequest())} // []PowerOutletRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -23109,7 +23109,7 @@ import (
 )
 
 func main() {
-	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []PowerOutletRequest | 
+	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewBriefDeviceRequest())} // []PowerOutletRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -23175,7 +23175,7 @@ import (
 )
 
 func main() {
-	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []PowerOutletRequest | 
+	powerOutletRequest := []openapiclient.PowerOutletRequest{*openapiclient.NewPowerOutletRequest(*openapiclient.NewBriefDeviceRequest())} // []PowerOutletRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -23241,7 +23241,7 @@ import (
 )
 
 func main() {
-	writablePowerOutletRequest := *openapiclient.NewWritablePowerOutletRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // WritablePowerOutletRequest | 
+	writablePowerOutletRequest := *openapiclient.NewWritablePowerOutletRequest(*openapiclient.NewBriefDeviceRequest()) // WritablePowerOutletRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -23887,7 +23887,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this power outlet.
-	writablePowerOutletRequest := *openapiclient.NewWritablePowerOutletRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // WritablePowerOutletRequest | 
+	writablePowerOutletRequest := *openapiclient.NewWritablePowerOutletRequest(*openapiclient.NewBriefDeviceRequest()) // WritablePowerOutletRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -23958,7 +23958,7 @@ import (
 )
 
 func main() {
-	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest(*openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"), "Name_example")} // []PowerPanelRequest | 
+	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest(*openapiclient.NewBriefSiteRequest())} // []PowerPanelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24022,7 +24022,7 @@ import (
 )
 
 func main() {
-	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest(*openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"), "Name_example")} // []PowerPanelRequest | 
+	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest(*openapiclient.NewBriefSiteRequest())} // []PowerPanelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24088,7 +24088,7 @@ import (
 )
 
 func main() {
-	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest(*openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"), "Name_example")} // []PowerPanelRequest | 
+	powerPanelRequest := []openapiclient.PowerPanelRequest{*openapiclient.NewPowerPanelRequest(*openapiclient.NewBriefSiteRequest())} // []PowerPanelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24154,7 +24154,7 @@ import (
 )
 
 func main() {
-	powerPanelRequest := *openapiclient.NewPowerPanelRequest(*openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"), "Name_example") // PowerPanelRequest | 
+	powerPanelRequest := *openapiclient.NewPowerPanelRequest(*openapiclient.NewBriefSiteRequest()) // PowerPanelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24640,7 +24640,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this power panel.
-	powerPanelRequest := *openapiclient.NewPowerPanelRequest(*openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"), "Name_example") // PowerPanelRequest | 
+	powerPanelRequest := *openapiclient.NewPowerPanelRequest(*openapiclient.NewBriefSiteRequest()) // PowerPanelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24711,7 +24711,7 @@ import (
 )
 
 func main() {
-	powerPortTemplateRequest := []openapiclient.PowerPortTemplateRequest{*openapiclient.NewPowerPortTemplateRequest("Name_example")} // []PowerPortTemplateRequest | 
+	powerPortTemplateRequest := []openapiclient.PowerPortTemplateRequest{*openapiclient.NewPowerPortTemplateRequest()} // []PowerPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24775,7 +24775,7 @@ import (
 )
 
 func main() {
-	powerPortTemplateRequest := []openapiclient.PowerPortTemplateRequest{*openapiclient.NewPowerPortTemplateRequest("Name_example")} // []PowerPortTemplateRequest | 
+	powerPortTemplateRequest := []openapiclient.PowerPortTemplateRequest{*openapiclient.NewPowerPortTemplateRequest()} // []PowerPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24841,7 +24841,7 @@ import (
 )
 
 func main() {
-	powerPortTemplateRequest := []openapiclient.PowerPortTemplateRequest{*openapiclient.NewPowerPortTemplateRequest("Name_example")} // []PowerPortTemplateRequest | 
+	powerPortTemplateRequest := []openapiclient.PowerPortTemplateRequest{*openapiclient.NewPowerPortTemplateRequest()} // []PowerPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -24907,7 +24907,7 @@ import (
 )
 
 func main() {
-	writablePowerPortTemplateRequest := *openapiclient.NewWritablePowerPortTemplateRequest("Name_example") // WritablePowerPortTemplateRequest | 
+	writablePowerPortTemplateRequest := *openapiclient.NewWritablePowerPortTemplateRequest() // WritablePowerPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -25419,7 +25419,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this power port template.
-	writablePowerPortTemplateRequest := *openapiclient.NewWritablePowerPortTemplateRequest("Name_example") // WritablePowerPortTemplateRequest | 
+	writablePowerPortTemplateRequest := *openapiclient.NewWritablePowerPortTemplateRequest() // WritablePowerPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -25490,7 +25490,7 @@ import (
 )
 
 func main() {
-	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []PowerPortRequest | 
+	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewBriefDeviceRequest())} // []PowerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -25554,7 +25554,7 @@ import (
 )
 
 func main() {
-	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []PowerPortRequest | 
+	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewBriefDeviceRequest())} // []PowerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -25620,7 +25620,7 @@ import (
 )
 
 func main() {
-	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example")} // []PowerPortRequest | 
+	powerPortRequest := []openapiclient.PowerPortRequest{*openapiclient.NewPowerPortRequest(*openapiclient.NewBriefDeviceRequest())} // []PowerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -25686,7 +25686,7 @@ import (
 )
 
 func main() {
-	writablePowerPortRequest := *openapiclient.NewWritablePowerPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // WritablePowerPortRequest | 
+	writablePowerPortRequest := *openapiclient.NewWritablePowerPortRequest(*openapiclient.NewBriefDeviceRequest()) // WritablePowerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -26352,7 +26352,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this power port.
-	writablePowerPortRequest := *openapiclient.NewWritablePowerPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example") // WritablePowerPortRequest | 
+	writablePowerPortRequest := *openapiclient.NewWritablePowerPortRequest(*openapiclient.NewBriefDeviceRequest()) // WritablePowerPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -26423,7 +26423,7 @@ import (
 )
 
 func main() {
-	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewBriefRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewBriefUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
+	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewBriefRackRequest(), []int32{int32(123)}, *openapiclient.NewBriefUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -26487,7 +26487,7 @@ import (
 )
 
 func main() {
-	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewBriefRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewBriefUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
+	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewBriefRackRequest(), []int32{int32(123)}, *openapiclient.NewBriefUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -26553,7 +26553,7 @@ import (
 )
 
 func main() {
-	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewBriefRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewBriefUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
+	rackReservationRequest := []openapiclient.RackReservationRequest{*openapiclient.NewRackReservationRequest(*openapiclient.NewBriefRackRequest(), []int32{int32(123)}, *openapiclient.NewBriefUserRequest("Username_example"), "Description_example")} // []RackReservationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -26619,7 +26619,7 @@ import (
 )
 
 func main() {
-	rackReservationRequest := *openapiclient.NewRackReservationRequest(*openapiclient.NewBriefRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewBriefUserRequest("Username_example"), "Description_example") // RackReservationRequest | 
+	rackReservationRequest := *openapiclient.NewRackReservationRequest(*openapiclient.NewBriefRackRequest(), []int32{int32(123)}, *openapiclient.NewBriefUserRequest("Username_example"), "Description_example") // RackReservationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27105,7 +27105,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this rack reservation.
-	rackReservationRequest := *openapiclient.NewRackReservationRequest(*openapiclient.NewBriefRackRequest("Name_example"), []int32{int32(123)}, *openapiclient.NewBriefUserRequest("Username_example"), "Description_example") // RackReservationRequest | 
+	rackReservationRequest := *openapiclient.NewRackReservationRequest(*openapiclient.NewBriefRackRequest(), []int32{int32(123)}, *openapiclient.NewBriefUserRequest("Username_example"), "Description_example") // RackReservationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27176,7 +27176,7 @@ import (
 )
 
 func main() {
-	rackRoleRequest := []openapiclient.RackRoleRequest{*openapiclient.NewRackRoleRequest("Name_example", "Slug_example")} // []RackRoleRequest | 
+	rackRoleRequest := []openapiclient.RackRoleRequest{*openapiclient.NewRackRoleRequest()} // []RackRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27240,7 +27240,7 @@ import (
 )
 
 func main() {
-	rackRoleRequest := []openapiclient.RackRoleRequest{*openapiclient.NewRackRoleRequest("Name_example", "Slug_example")} // []RackRoleRequest | 
+	rackRoleRequest := []openapiclient.RackRoleRequest{*openapiclient.NewRackRoleRequest()} // []RackRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27306,7 +27306,7 @@ import (
 )
 
 func main() {
-	rackRoleRequest := []openapiclient.RackRoleRequest{*openapiclient.NewRackRoleRequest("Name_example", "Slug_example")} // []RackRoleRequest | 
+	rackRoleRequest := []openapiclient.RackRoleRequest{*openapiclient.NewRackRoleRequest()} // []RackRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27372,7 +27372,7 @@ import (
 )
 
 func main() {
-	rackRoleRequest := *openapiclient.NewRackRoleRequest("Name_example", "Slug_example") // RackRoleRequest | 
+	rackRoleRequest := *openapiclient.NewRackRoleRequest() // RackRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27862,7 +27862,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this rack role.
-	rackRoleRequest := *openapiclient.NewRackRoleRequest("Name_example", "Slug_example") // RackRoleRequest | 
+	rackRoleRequest := *openapiclient.NewRackRoleRequest() // RackRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27933,7 +27933,7 @@ import (
 )
 
 func main() {
-	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest("Name_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"))} // []RackRequest | 
+	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest(*openapiclient.NewBriefSiteRequest())} // []RackRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -27997,7 +27997,7 @@ import (
 )
 
 func main() {
-	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest("Name_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"))} // []RackRequest | 
+	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest(*openapiclient.NewBriefSiteRequest())} // []RackRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -28063,7 +28063,7 @@ import (
 )
 
 func main() {
-	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest("Name_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example"))} // []RackRequest | 
+	rackRequest := []openapiclient.RackRequest{*openapiclient.NewRackRequest(*openapiclient.NewBriefSiteRequest())} // []RackRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -28129,7 +28129,7 @@ import (
 )
 
 func main() {
-	writableRackRequest := *openapiclient.NewWritableRackRequest("Name_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example")) // WritableRackRequest | 
+	writableRackRequest := *openapiclient.NewWritableRackRequest(*openapiclient.NewBriefSiteRequest()) // WritableRackRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -28923,7 +28923,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this rack.
-	writableRackRequest := *openapiclient.NewWritableRackRequest("Name_example", *openapiclient.NewBriefSiteRequest("Name_example", "Slug_example")) // WritableRackRequest | 
+	writableRackRequest := *openapiclient.NewWritableRackRequest(*openapiclient.NewBriefSiteRequest()) // WritableRackRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -28994,7 +28994,7 @@ import (
 )
 
 func main() {
-	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortTemplateRequest | 
+	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest(openapiclient.FrontPort_type_value("8p8c"))} // []RearPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29058,7 +29058,7 @@ import (
 )
 
 func main() {
-	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortTemplateRequest | 
+	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest(openapiclient.FrontPort_type_value("8p8c"))} // []RearPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29124,7 +29124,7 @@ import (
 )
 
 func main() {
-	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortTemplateRequest | 
+	rearPortTemplateRequest := []openapiclient.RearPortTemplateRequest{*openapiclient.NewRearPortTemplateRequest(openapiclient.FrontPort_type_value("8p8c"))} // []RearPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29190,7 +29190,7 @@ import (
 )
 
 func main() {
-	writableRearPortTemplateRequest := *openapiclient.NewWritableRearPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortTemplateRequest | 
+	writableRearPortTemplateRequest := *openapiclient.NewWritableRearPortTemplateRequest(openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29710,7 +29710,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this rear port template.
-	writableRearPortTemplateRequest := *openapiclient.NewWritableRearPortTemplateRequest("Name_example", openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortTemplateRequest | 
+	writableRearPortTemplateRequest := *openapiclient.NewWritableRearPortTemplateRequest(openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29781,7 +29781,7 @@ import (
 )
 
 func main() {
-	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
+	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29845,7 +29845,7 @@ import (
 )
 
 func main() {
-	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
+	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29911,7 +29911,7 @@ import (
 )
 
 func main() {
-	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
+	rearPortRequest := []openapiclient.RearPortRequest{*openapiclient.NewRearPortRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.FrontPort_type_value("8p8c"))} // []RearPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -29977,7 +29977,7 @@ import (
 )
 
 func main() {
-	writableRearPortRequest := *openapiclient.NewWritableRearPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortRequest | 
+	writableRearPortRequest := *openapiclient.NewWritableRearPortRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -30649,7 +30649,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this rear port.
-	writableRearPortRequest := *openapiclient.NewWritableRearPortRequest(*openapiclient.NewBriefDeviceRequest(), "Name_example", openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortRequest | 
+	writableRearPortRequest := *openapiclient.NewWritableRearPortRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.FrontPort_type_value("8p8c")) // WritableRearPortRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -30720,7 +30720,7 @@ import (
 )
 
 func main() {
-	regionRequest := []openapiclient.RegionRequest{*openapiclient.NewRegionRequest("Name_example", "Slug_example")} // []RegionRequest | 
+	regionRequest := []openapiclient.RegionRequest{*openapiclient.NewRegionRequest()} // []RegionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -30784,7 +30784,7 @@ import (
 )
 
 func main() {
-	regionRequest := []openapiclient.RegionRequest{*openapiclient.NewRegionRequest("Name_example", "Slug_example")} // []RegionRequest | 
+	regionRequest := []openapiclient.RegionRequest{*openapiclient.NewRegionRequest()} // []RegionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -30850,7 +30850,7 @@ import (
 )
 
 func main() {
-	regionRequest := []openapiclient.RegionRequest{*openapiclient.NewRegionRequest("Name_example", "Slug_example")} // []RegionRequest | 
+	regionRequest := []openapiclient.RegionRequest{*openapiclient.NewRegionRequest()} // []RegionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -30916,7 +30916,7 @@ import (
 )
 
 func main() {
-	writableRegionRequest := *openapiclient.NewWritableRegionRequest("Name_example", "Slug_example") // WritableRegionRequest | 
+	writableRegionRequest := *openapiclient.NewWritableRegionRequest() // WritableRegionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -31412,7 +31412,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this region.
-	writableRegionRequest := *openapiclient.NewWritableRegionRequest("Name_example", "Slug_example") // WritableRegionRequest | 
+	writableRegionRequest := *openapiclient.NewWritableRegionRequest() // WritableRegionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -31483,7 +31483,7 @@ import (
 )
 
 func main() {
-	siteGroupRequest := []openapiclient.SiteGroupRequest{*openapiclient.NewSiteGroupRequest("Name_example", "Slug_example")} // []SiteGroupRequest | 
+	siteGroupRequest := []openapiclient.SiteGroupRequest{*openapiclient.NewSiteGroupRequest()} // []SiteGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -31547,7 +31547,7 @@ import (
 )
 
 func main() {
-	siteGroupRequest := []openapiclient.SiteGroupRequest{*openapiclient.NewSiteGroupRequest("Name_example", "Slug_example")} // []SiteGroupRequest | 
+	siteGroupRequest := []openapiclient.SiteGroupRequest{*openapiclient.NewSiteGroupRequest()} // []SiteGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -31613,7 +31613,7 @@ import (
 )
 
 func main() {
-	siteGroupRequest := []openapiclient.SiteGroupRequest{*openapiclient.NewSiteGroupRequest("Name_example", "Slug_example")} // []SiteGroupRequest | 
+	siteGroupRequest := []openapiclient.SiteGroupRequest{*openapiclient.NewSiteGroupRequest()} // []SiteGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -31679,7 +31679,7 @@ import (
 )
 
 func main() {
-	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest("Name_example", "Slug_example") // WritableSiteGroupRequest | 
+	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest() // WritableSiteGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -32175,7 +32175,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this site group.
-	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest("Name_example", "Slug_example") // WritableSiteGroupRequest | 
+	writableSiteGroupRequest := *openapiclient.NewWritableSiteGroupRequest() // WritableSiteGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -32246,7 +32246,7 @@ import (
 )
 
 func main() {
-	siteRequest := []openapiclient.SiteRequest{*openapiclient.NewSiteRequest("Name_example", "Slug_example")} // []SiteRequest | 
+	siteRequest := []openapiclient.SiteRequest{*openapiclient.NewSiteRequest()} // []SiteRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -32310,7 +32310,7 @@ import (
 )
 
 func main() {
-	siteRequest := []openapiclient.SiteRequest{*openapiclient.NewSiteRequest("Name_example", "Slug_example")} // []SiteRequest | 
+	siteRequest := []openapiclient.SiteRequest{*openapiclient.NewSiteRequest()} // []SiteRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -32376,7 +32376,7 @@ import (
 )
 
 func main() {
-	siteRequest := []openapiclient.SiteRequest{*openapiclient.NewSiteRequest("Name_example", "Slug_example")} // []SiteRequest | 
+	siteRequest := []openapiclient.SiteRequest{*openapiclient.NewSiteRequest()} // []SiteRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -32442,7 +32442,7 @@ import (
 )
 
 func main() {
-	writableSiteRequest := *openapiclient.NewWritableSiteRequest("Name_example", "Slug_example") // WritableSiteRequest | 
+	writableSiteRequest := *openapiclient.NewWritableSiteRequest() // WritableSiteRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33036,7 +33036,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this site.
-	writableSiteRequest := *openapiclient.NewWritableSiteRequest("Name_example", "Slug_example") // WritableSiteRequest | 
+	writableSiteRequest := *openapiclient.NewWritableSiteRequest() // WritableSiteRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33107,7 +33107,7 @@ import (
 )
 
 func main() {
-	virtualChassisRequest := []openapiclient.VirtualChassisRequest{*openapiclient.NewVirtualChassisRequest("Name_example")} // []VirtualChassisRequest | 
+	virtualChassisRequest := []openapiclient.VirtualChassisRequest{*openapiclient.NewVirtualChassisRequest()} // []VirtualChassisRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33171,7 +33171,7 @@ import (
 )
 
 func main() {
-	virtualChassisRequest := []openapiclient.VirtualChassisRequest{*openapiclient.NewVirtualChassisRequest("Name_example")} // []VirtualChassisRequest | 
+	virtualChassisRequest := []openapiclient.VirtualChassisRequest{*openapiclient.NewVirtualChassisRequest()} // []VirtualChassisRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33237,7 +33237,7 @@ import (
 )
 
 func main() {
-	virtualChassisRequest := []openapiclient.VirtualChassisRequest{*openapiclient.NewVirtualChassisRequest("Name_example")} // []VirtualChassisRequest | 
+	virtualChassisRequest := []openapiclient.VirtualChassisRequest{*openapiclient.NewVirtualChassisRequest()} // []VirtualChassisRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33303,7 +33303,7 @@ import (
 )
 
 func main() {
-	writableVirtualChassisRequest := *openapiclient.NewWritableVirtualChassisRequest("Name_example") // WritableVirtualChassisRequest | 
+	writableVirtualChassisRequest := *openapiclient.NewWritableVirtualChassisRequest() // WritableVirtualChassisRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33825,7 +33825,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this virtual chassis.
-	writableVirtualChassisRequest := *openapiclient.NewWritableVirtualChassisRequest("Name_example") // WritableVirtualChassisRequest | 
+	writableVirtualChassisRequest := *openapiclient.NewWritableVirtualChassisRequest() // WritableVirtualChassisRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33896,7 +33896,7 @@ import (
 )
 
 func main() {
-	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest("Name_example", *openapiclient.NewBriefDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
+	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -33960,7 +33960,7 @@ import (
 )
 
 func main() {
-	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest("Name_example", *openapiclient.NewBriefDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
+	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34026,7 +34026,7 @@ import (
 )
 
 func main() {
-	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest("Name_example", *openapiclient.NewBriefDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
+	virtualDeviceContextRequest := []openapiclient.VirtualDeviceContextRequest{*openapiclient.NewVirtualDeviceContextRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active"))} // []VirtualDeviceContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34092,7 +34092,7 @@ import (
 )
 
 func main() {
-	writableVirtualDeviceContextRequest := *openapiclient.NewWritableVirtualDeviceContextRequest("Name_example", *openapiclient.NewBriefDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active")) // WritableVirtualDeviceContextRequest | 
+	writableVirtualDeviceContextRequest := *openapiclient.NewWritableVirtualDeviceContextRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active")) // WritableVirtualDeviceContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -34594,7 +34594,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this virtual device context.
-	writableVirtualDeviceContextRequest := *openapiclient.NewWritableVirtualDeviceContextRequest("Name_example", *openapiclient.NewBriefDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active")) // WritableVirtualDeviceContextRequest | 
+	writableVirtualDeviceContextRequest := *openapiclient.NewWritableVirtualDeviceContextRequest(*openapiclient.NewBriefDeviceRequest(), openapiclient.PatchedWritableVirtualDeviceContextRequest_status("active")) // WritableVirtualDeviceContextRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

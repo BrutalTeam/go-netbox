@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Vid** | **int32** | Numeric VLAN ID (1-4094) | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBriefVLANRequest
 
-`func NewBriefVLANRequest(vid int32, name string, ) *BriefVLANRequest`
+`func NewBriefVLANRequest(vid int32, ) *BriefVLANRequest`
 
 NewBriefVLANRequest instantiates a new BriefVLANRequest object
 This constructor will assign default values to properties that have it defined,
@@ -66,6 +66,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *BriefVLANRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

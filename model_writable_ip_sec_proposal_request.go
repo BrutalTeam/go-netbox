@@ -12,7 +12,6 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the WritableIPSecProposalRequest type satisfies the MappedNullable interface at compile time
@@ -20,7 +19,7 @@ var _ MappedNullable = &WritableIPSecProposalRequest{}
 
 // WritableIPSecProposalRequest Adds support for custom fields and tags.
 type WritableIPSecProposalRequest struct {
-	Name                    string          `json:"name"`
+	Name                    *string         `json:"name,omitempty"`
 	Description             *string         `json:"description,omitempty"`
 	EncryptionAlgorithm     *Encryption     `json:"encryption_algorithm,omitempty"`
 	AuthenticationAlgorithm *Authentication `json:"authentication_algorithm,omitempty"`
@@ -40,9 +39,8 @@ type _WritableIPSecProposalRequest WritableIPSecProposalRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableIPSecProposalRequest(name string) *WritableIPSecProposalRequest {
+func NewWritableIPSecProposalRequest() *WritableIPSecProposalRequest {
 	this := WritableIPSecProposalRequest{}
-	this.Name = name
 	return &this
 }
 
@@ -54,28 +52,36 @@ func NewWritableIPSecProposalRequestWithDefaults() *WritableIPSecProposalRequest
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritableIPSecProposalRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableIPSecProposalRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritableIPSecProposalRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritableIPSecProposalRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -366,7 +372,9 @@ func (o WritableIPSecProposalRequest) MarshalJSON() ([]byte, error) {
 
 func (o WritableIPSecProposalRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -400,27 +408,6 @@ func (o WritableIPSecProposalRequest) ToMap() (map[string]interface{}, error) {
 }
 
 func (o *WritableIPSecProposalRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varWritableIPSecProposalRequest := _WritableIPSecProposalRequest{}
 
 	err = json.Unmarshal(data, &varWritableIPSecProposalRequest)

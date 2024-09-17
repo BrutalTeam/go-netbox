@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **FacilityId** | Pointer to **NullableString** |  | [optional] 
 **Site** | [**BriefSiteRequest**](BriefSiteRequest.md) |  | 
 **Location** | Pointer to [**NullableBriefLocationRequest**](BriefLocationRequest.md) |  | [optional] 
@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 
 ### NewRackRequest
 
-`func NewRackRequest(name string, site BriefSiteRequest, ) *RackRequest`
+`func NewRackRequest(site BriefSiteRequest, ) *RackRequest`
 
 NewRackRequest instantiates a new RackRequest object
 This constructor will assign default values to properties that have it defined,
@@ -68,6 +68,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *RackRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetFacilityId
 

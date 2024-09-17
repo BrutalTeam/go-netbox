@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Manufacturer** | [**BriefManufacturerRequest**](BriefManufacturerRequest.md) |  | 
 **DefaultPlatform** | Pointer to [**NullableBriefPlatformRequest**](BriefPlatformRequest.md) |  | [optional] 
 **Model** | **string** |  | 
-**Slug** | **string** |  | 
+**Slug** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** | Discrete part number (optional) | [optional] 
 **UHeight** | Pointer to **float64** |  | [optional] [default to 1.0]
 **ExcludeFromUtilization** | Pointer to **bool** | Devices of this type are excluded when calculating rack utilization. | [optional] 
@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 
 ### NewDeviceTypeRequest
 
-`func NewDeviceTypeRequest(manufacturer BriefManufacturerRequest, model string, slug string, ) *DeviceTypeRequest`
+`func NewDeviceTypeRequest(manufacturer BriefManufacturerRequest, model string, ) *DeviceTypeRequest`
 
 NewDeviceTypeRequest instantiates a new DeviceTypeRequest object
 This constructor will assign default values to properties that have it defined,
@@ -136,6 +136,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *DeviceTypeRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetPartNumber
 

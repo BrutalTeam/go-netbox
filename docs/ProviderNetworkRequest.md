@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Provider** | [**BriefProviderRequest**](BriefProviderRequest.md) |  | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **ServiceId** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewProviderNetworkRequest
 
-`func NewProviderNetworkRequest(provider BriefProviderRequest, name string, ) *ProviderNetworkRequest`
+`func NewProviderNetworkRequest(provider BriefProviderRequest, ) *ProviderNetworkRequest`
 
 NewProviderNetworkRequest instantiates a new ProviderNetworkRequest object
 This constructor will assign default values to properties that have it defined,
@@ -70,6 +70,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ProviderNetworkRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetServiceId
 

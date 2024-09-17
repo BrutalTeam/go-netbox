@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **EnvironmentParams** | Pointer to **interface{}** | Any &lt;a href&#x3D;\&quot;https://jinja.palletsprojects.com/en/3.1.x/api/#jinja2.Environment\&quot;&gt;additional parameters&lt;/a&gt; to pass when constructing the Jinja2 environment. | [optional] 
 **TemplateCode** | **string** | Jinja2 template code. | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewConfigTemplateRequest
 
-`func NewConfigTemplateRequest(name string, templateCode string, ) *ConfigTemplateRequest`
+`func NewConfigTemplateRequest(templateCode string, ) *ConfigTemplateRequest`
 
 NewConfigTemplateRequest instantiates a new ConfigTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ConfigTemplateRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDescription
 

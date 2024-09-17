@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DeviceType** | Pointer to [**NullableBriefDeviceTypeRequest**](BriefDeviceTypeRequest.md) |  | [optional] 
 **ModuleType** | Pointer to [**NullableBriefModuleTypeRequest**](BriefModuleTypeRequest.md) |  | [optional] 
-**Name** | **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | 
+**Name** | Pointer to **string** | {module} is accepted as a substitution for the module bay position when attached to a module type. | [optional] 
 **Label** | Pointer to **string** | Physical label | [optional] 
 **Type** | Pointer to [**PatchedWritablePowerOutletTemplateRequestType**](PatchedWritablePowerOutletTemplateRequestType.md) |  | [optional] 
 **PowerPort** | Pointer to [**NullableBriefPowerPortTemplateRequest**](BriefPowerPortTemplateRequest.md) |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewWritablePowerOutletTemplateRequest
 
-`func NewWritablePowerOutletTemplateRequest(name string, ) *WritablePowerOutletTemplateRequest`
+`func NewWritablePowerOutletTemplateRequest() *WritablePowerOutletTemplateRequest`
 
 NewWritablePowerOutletTemplateRequest instantiates a new WritablePowerOutletTemplateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -121,6 +121,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *WritablePowerOutletTemplateRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetLabel
 

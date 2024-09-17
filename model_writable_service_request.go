@@ -22,7 +22,7 @@ var _ MappedNullable = &WritableServiceRequest{}
 type WritableServiceRequest struct {
 	Device               NullableBriefDeviceRequest            `json:"device,omitempty"`
 	VirtualMachine       NullableBriefVirtualMachineRequest    `json:"virtual_machine,omitempty"`
-	Name                 string                                `json:"name"`
+	Name                 *string                               `json:"name,omitempty"`
 	Protocol             PatchedWritableServiceRequestProtocol `json:"protocol"`
 	Ports                []int32                               `json:"ports"`
 	Ipaddresses          []int32                               `json:"ipaddresses,omitempty"`
@@ -39,9 +39,8 @@ type _WritableServiceRequest WritableServiceRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableServiceRequest(name string, protocol PatchedWritableServiceRequestProtocol, ports []int32) *WritableServiceRequest {
+func NewWritableServiceRequest(protocol PatchedWritableServiceRequestProtocol, ports []int32) *WritableServiceRequest {
 	this := WritableServiceRequest{}
-	this.Name = name
 	this.Protocol = protocol
 	this.Ports = ports
 	return &this
@@ -141,28 +140,36 @@ func (o *WritableServiceRequest) UnsetVirtualMachine() {
 	o.VirtualMachine.Unset()
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritableServiceRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableServiceRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritableServiceRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritableServiceRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetProtocol returns the Protocol field value
@@ -389,7 +396,9 @@ func (o WritableServiceRequest) ToMap() (map[string]interface{}, error) {
 	if o.VirtualMachine.IsSet() {
 		toSerialize["virtual_machine"] = o.VirtualMachine.Get()
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	toSerialize["protocol"] = o.Protocol
 	toSerialize["ports"] = o.Ports
 	if !IsNil(o.Ipaddresses) {
@@ -420,7 +429,6 @@ func (o *WritableServiceRequest) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"name",
 		"protocol",
 		"ports",
 	}

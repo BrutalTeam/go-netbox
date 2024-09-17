@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Full name of the site | 
-**Slug** | **string** |  | 
+**Name** | Pointer to **string** | Full name of the site | [optional] 
+**Slug** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to [**LocationStatusValue**](LocationStatusValue.md) |  | [optional] 
 **Region** | Pointer to [**NullableBriefRegionRequest**](BriefRegionRequest.md) |  | [optional] 
 **Group** | Pointer to [**NullableBriefSiteGroupRequest**](BriefSiteGroupRequest.md) |  | [optional] 
@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 
 ### NewSiteRequest
 
-`func NewSiteRequest(name string, slug string, ) *SiteRequest`
+`func NewSiteRequest() *SiteRequest`
 
 NewSiteRequest instantiates a new SiteRequest object
 This constructor will assign default values to properties that have it defined,
@@ -60,6 +60,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *SiteRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSlug
 
@@ -80,6 +85,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *SiteRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetStatus
 

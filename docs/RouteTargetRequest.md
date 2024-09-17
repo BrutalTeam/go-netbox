@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Route target value (formatted in accordance with RFC 4360) | 
+**Name** | Pointer to **string** | Route target value (formatted in accordance with RFC 4360) | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewRouteTargetRequest
 
-`func NewRouteTargetRequest(name string, ) *RouteTargetRequest`
+`func NewRouteTargetRequest() *RouteTargetRequest`
 
 NewRouteTargetRequest instantiates a new RouteTargetRequest object
 This constructor will assign default values to properties that have it defined,
@@ -49,6 +49,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *RouteTargetRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetTenant
 

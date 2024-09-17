@@ -82,7 +82,7 @@ import (
 )
 
 func main() {
-	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest("Name_example"))} // []ContactAssignmentRequest | 
+	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest())} // []ContactAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -146,7 +146,7 @@ import (
 )
 
 func main() {
-	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest("Name_example"))} // []ContactAssignmentRequest | 
+	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest())} // []ContactAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -212,7 +212,7 @@ import (
 )
 
 func main() {
-	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest("Name_example"))} // []ContactAssignmentRequest | 
+	contactAssignmentRequest := []openapiclient.ContactAssignmentRequest{*openapiclient.NewContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest())} // []ContactAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -278,7 +278,7 @@ import (
 )
 
 func main() {
-	writableContactAssignmentRequest := *openapiclient.NewWritableContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest("Name_example")) // WritableContactAssignmentRequest | 
+	writableContactAssignmentRequest := *openapiclient.NewWritableContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest()) // WritableContactAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -726,7 +726,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this contact assignment.
-	writableContactAssignmentRequest := *openapiclient.NewWritableContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest("Name_example")) // WritableContactAssignmentRequest | 
+	writableContactAssignmentRequest := *openapiclient.NewWritableContactAssignmentRequest("ObjectType_example", int64(123), *openapiclient.NewBriefContactRequest()) // WritableContactAssignmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -797,7 +797,7 @@ import (
 )
 
 func main() {
-	contactGroupRequest := []openapiclient.ContactGroupRequest{*openapiclient.NewContactGroupRequest("Name_example", "Slug_example")} // []ContactGroupRequest | 
+	contactGroupRequest := []openapiclient.ContactGroupRequest{*openapiclient.NewContactGroupRequest()} // []ContactGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -861,7 +861,7 @@ import (
 )
 
 func main() {
-	contactGroupRequest := []openapiclient.ContactGroupRequest{*openapiclient.NewContactGroupRequest("Name_example", "Slug_example")} // []ContactGroupRequest | 
+	contactGroupRequest := []openapiclient.ContactGroupRequest{*openapiclient.NewContactGroupRequest()} // []ContactGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -927,7 +927,7 @@ import (
 )
 
 func main() {
-	contactGroupRequest := []openapiclient.ContactGroupRequest{*openapiclient.NewContactGroupRequest("Name_example", "Slug_example")} // []ContactGroupRequest | 
+	contactGroupRequest := []openapiclient.ContactGroupRequest{*openapiclient.NewContactGroupRequest()} // []ContactGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -993,7 +993,7 @@ import (
 )
 
 func main() {
-	writableContactGroupRequest := *openapiclient.NewWritableContactGroupRequest("Name_example", "Slug_example") // WritableContactGroupRequest | 
+	writableContactGroupRequest := *openapiclient.NewWritableContactGroupRequest() // WritableContactGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1477,7 +1477,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this contact group.
-	writableContactGroupRequest := *openapiclient.NewWritableContactGroupRequest("Name_example", "Slug_example") // WritableContactGroupRequest | 
+	writableContactGroupRequest := *openapiclient.NewWritableContactGroupRequest() // WritableContactGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1548,7 +1548,7 @@ import (
 )
 
 func main() {
-	contactRoleRequest := []openapiclient.ContactRoleRequest{*openapiclient.NewContactRoleRequest("Name_example", "Slug_example")} // []ContactRoleRequest | 
+	contactRoleRequest := []openapiclient.ContactRoleRequest{*openapiclient.NewContactRoleRequest()} // []ContactRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1612,7 +1612,7 @@ import (
 )
 
 func main() {
-	contactRoleRequest := []openapiclient.ContactRoleRequest{*openapiclient.NewContactRoleRequest("Name_example", "Slug_example")} // []ContactRoleRequest | 
+	contactRoleRequest := []openapiclient.ContactRoleRequest{*openapiclient.NewContactRoleRequest()} // []ContactRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1678,7 +1678,7 @@ import (
 )
 
 func main() {
-	contactRoleRequest := []openapiclient.ContactRoleRequest{*openapiclient.NewContactRoleRequest("Name_example", "Slug_example")} // []ContactRoleRequest | 
+	contactRoleRequest := []openapiclient.ContactRoleRequest{*openapiclient.NewContactRoleRequest()} // []ContactRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1744,7 +1744,7 @@ import (
 )
 
 func main() {
-	contactRoleRequest := *openapiclient.NewContactRoleRequest("Name_example", "Slug_example") // ContactRoleRequest | 
+	contactRoleRequest := *openapiclient.NewContactRoleRequest() // ContactRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2212,7 +2212,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this contact role.
-	contactRoleRequest := *openapiclient.NewContactRoleRequest("Name_example", "Slug_example") // ContactRoleRequest | 
+	contactRoleRequest := *openapiclient.NewContactRoleRequest() // ContactRoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2283,7 +2283,7 @@ import (
 )
 
 func main() {
-	contactRequest := []openapiclient.ContactRequest{*openapiclient.NewContactRequest("Name_example")} // []ContactRequest | 
+	contactRequest := []openapiclient.ContactRequest{*openapiclient.NewContactRequest()} // []ContactRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2347,7 +2347,7 @@ import (
 )
 
 func main() {
-	contactRequest := []openapiclient.ContactRequest{*openapiclient.NewContactRequest("Name_example")} // []ContactRequest | 
+	contactRequest := []openapiclient.ContactRequest{*openapiclient.NewContactRequest()} // []ContactRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2413,7 +2413,7 @@ import (
 )
 
 func main() {
-	contactRequest := []openapiclient.ContactRequest{*openapiclient.NewContactRequest("Name_example")} // []ContactRequest | 
+	contactRequest := []openapiclient.ContactRequest{*openapiclient.NewContactRequest()} // []ContactRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2479,7 +2479,7 @@ import (
 )
 
 func main() {
-	contactRequest := *openapiclient.NewContactRequest("Name_example") // ContactRequest | 
+	contactRequest := *openapiclient.NewContactRequest() // ContactRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3043,7 +3043,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this contact.
-	contactRequest := *openapiclient.NewContactRequest("Name_example") // ContactRequest | 
+	contactRequest := *openapiclient.NewContactRequest() // ContactRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3114,7 +3114,7 @@ import (
 )
 
 func main() {
-	tenantGroupRequest := []openapiclient.TenantGroupRequest{*openapiclient.NewTenantGroupRequest("Name_example", "Slug_example")} // []TenantGroupRequest | 
+	tenantGroupRequest := []openapiclient.TenantGroupRequest{*openapiclient.NewTenantGroupRequest()} // []TenantGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3178,7 +3178,7 @@ import (
 )
 
 func main() {
-	tenantGroupRequest := []openapiclient.TenantGroupRequest{*openapiclient.NewTenantGroupRequest("Name_example", "Slug_example")} // []TenantGroupRequest | 
+	tenantGroupRequest := []openapiclient.TenantGroupRequest{*openapiclient.NewTenantGroupRequest()} // []TenantGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3244,7 +3244,7 @@ import (
 )
 
 func main() {
-	tenantGroupRequest := []openapiclient.TenantGroupRequest{*openapiclient.NewTenantGroupRequest("Name_example", "Slug_example")} // []TenantGroupRequest | 
+	tenantGroupRequest := []openapiclient.TenantGroupRequest{*openapiclient.NewTenantGroupRequest()} // []TenantGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3310,7 +3310,7 @@ import (
 )
 
 func main() {
-	writableTenantGroupRequest := *openapiclient.NewWritableTenantGroupRequest("Name_example", "Slug_example") // WritableTenantGroupRequest | 
+	writableTenantGroupRequest := *openapiclient.NewWritableTenantGroupRequest() // WritableTenantGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3794,7 +3794,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this tenant group.
-	writableTenantGroupRequest := *openapiclient.NewWritableTenantGroupRequest("Name_example", "Slug_example") // WritableTenantGroupRequest | 
+	writableTenantGroupRequest := *openapiclient.NewWritableTenantGroupRequest() // WritableTenantGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3865,7 +3865,7 @@ import (
 )
 
 func main() {
-	tenantRequest := []openapiclient.TenantRequest{*openapiclient.NewTenantRequest("Name_example", "Slug_example")} // []TenantRequest | 
+	tenantRequest := []openapiclient.TenantRequest{*openapiclient.NewTenantRequest()} // []TenantRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3929,7 +3929,7 @@ import (
 )
 
 func main() {
-	tenantRequest := []openapiclient.TenantRequest{*openapiclient.NewTenantRequest("Name_example", "Slug_example")} // []TenantRequest | 
+	tenantRequest := []openapiclient.TenantRequest{*openapiclient.NewTenantRequest()} // []TenantRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3995,7 +3995,7 @@ import (
 )
 
 func main() {
-	tenantRequest := []openapiclient.TenantRequest{*openapiclient.NewTenantRequest("Name_example", "Slug_example")} // []TenantRequest | 
+	tenantRequest := []openapiclient.TenantRequest{*openapiclient.NewTenantRequest()} // []TenantRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4061,7 +4061,7 @@ import (
 )
 
 func main() {
-	tenantRequest := *openapiclient.NewTenantRequest("Name_example", "Slug_example") // TenantRequest | 
+	tenantRequest := *openapiclient.NewTenantRequest() // TenantRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4549,7 +4549,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this tenant.
-	tenantRequest := *openapiclient.NewTenantRequest("Name_example", "Slug_example") // TenantRequest | 
+	tenantRequest := *openapiclient.NewTenantRequest() // TenantRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

@@ -24,7 +24,7 @@ type WritableVLANRequest struct {
 	Group NullableBriefVLANGroupRequest `json:"group,omitempty"`
 	// Numeric VLAN ID (1-4094)
 	Vid                  int32                             `json:"vid"`
-	Name                 string                            `json:"name"`
+	Name                 *string                           `json:"name,omitempty"`
 	Tenant               NullableBriefTenantRequest        `json:"tenant,omitempty"`
 	Status               *PatchedWritableVLANRequestStatus `json:"status,omitempty"`
 	Role                 NullableBriefRoleRequest          `json:"role,omitempty"`
@@ -41,10 +41,9 @@ type _WritableVLANRequest WritableVLANRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableVLANRequest(vid int32, name string) *WritableVLANRequest {
+func NewWritableVLANRequest(vid int32) *WritableVLANRequest {
 	this := WritableVLANRequest{}
 	this.Vid = vid
-	this.Name = name
 	return &this
 }
 
@@ -166,28 +165,36 @@ func (o *WritableVLANRequest) SetVid(v int32) {
 	o.Vid = v
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritableVLANRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableVLANRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritableVLANRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritableVLANRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -453,7 +460,9 @@ func (o WritableVLANRequest) ToMap() (map[string]interface{}, error) {
 		toSerialize["group"] = o.Group.Get()
 	}
 	toSerialize["vid"] = o.Vid
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if o.Tenant.IsSet() {
 		toSerialize["tenant"] = o.Tenant.Get()
 	}
@@ -489,7 +498,6 @@ func (o *WritableVLANRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"vid",
-		"name",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Master** | Pointer to [**NullableNestedDeviceRequest**](NestedDeviceRequest.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewBriefVirtualChassisRequest
 
-`func NewBriefVirtualChassisRequest(name string, ) *BriefVirtualChassisRequest`
+`func NewBriefVirtualChassisRequest() *BriefVirtualChassisRequest`
 
 NewBriefVirtualChassisRequest instantiates a new BriefVirtualChassisRequest object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +46,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *BriefVirtualChassisRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetMaster
 

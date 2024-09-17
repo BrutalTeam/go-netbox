@@ -20,7 +20,7 @@ var _ MappedNullable = &IKEProposalRequest{}
 
 // IKEProposalRequest Adds support for custom fields and tags.
 type IKEProposalRequest struct {
-	Name                    string                                   `json:"name"`
+	Name                    *string                                  `json:"name,omitempty"`
 	Description             *string                                  `json:"description,omitempty"`
 	AuthenticationMethod    IKEProposalAuthenticationMethodValue     `json:"authentication_method"`
 	EncryptionAlgorithm     IKEProposalEncryptionAlgorithmValue      `json:"encryption_algorithm"`
@@ -40,9 +40,8 @@ type _IKEProposalRequest IKEProposalRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIKEProposalRequest(name string, authenticationMethod IKEProposalAuthenticationMethodValue, encryptionAlgorithm IKEProposalEncryptionAlgorithmValue, group IKEProposalGroupValue) *IKEProposalRequest {
+func NewIKEProposalRequest(authenticationMethod IKEProposalAuthenticationMethodValue, encryptionAlgorithm IKEProposalEncryptionAlgorithmValue, group IKEProposalGroupValue) *IKEProposalRequest {
 	this := IKEProposalRequest{}
-	this.Name = name
 	this.AuthenticationMethod = authenticationMethod
 	this.EncryptionAlgorithm = encryptionAlgorithm
 	this.Group = group
@@ -57,28 +56,36 @@ func NewIKEProposalRequestWithDefaults() *IKEProposalRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *IKEProposalRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IKEProposalRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *IKEProposalRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *IKEProposalRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -366,7 +373,9 @@ func (o IKEProposalRequest) MarshalJSON() ([]byte, error) {
 
 func (o IKEProposalRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -401,7 +410,6 @@ func (o *IKEProposalRequest) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"name",
 		"authentication_method",
 		"encryption_algorithm",
 		"group",

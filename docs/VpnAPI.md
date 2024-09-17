@@ -118,7 +118,7 @@ import (
 )
 
 func main() {
-	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1))} // []IKEPolicyRequest | 
+	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest(openapiclient.IKEPolicy_version_value(1))} // []IKEPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ import (
 )
 
 func main() {
-	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1))} // []IKEPolicyRequest | 
+	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest(openapiclient.IKEPolicy_version_value(1))} // []IKEPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -248,7 +248,7 @@ import (
 )
 
 func main() {
-	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest("Name_example", openapiclient.IKEPolicy_version_value(1))} // []IKEPolicyRequest | 
+	iKEPolicyRequest := []openapiclient.IKEPolicyRequest{*openapiclient.NewIKEPolicyRequest(openapiclient.IKEPolicy_version_value(1))} // []IKEPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -314,7 +314,7 @@ import (
 )
 
 func main() {
-	writableIKEPolicyRequest := *openapiclient.NewWritableIKEPolicyRequest("Name_example") // WritableIKEPolicyRequest | 
+	writableIKEPolicyRequest := *openapiclient.NewWritableIKEPolicyRequest() // WritableIKEPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -804,7 +804,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this IKE policy.
-	writableIKEPolicyRequest := *openapiclient.NewWritableIKEPolicyRequest("Name_example") // WritableIKEPolicyRequest | 
+	writableIKEPolicyRequest := *openapiclient.NewWritableIKEPolicyRequest() // WritableIKEPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -875,7 +875,7 @@ import (
 )
 
 func main() {
-	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
+	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest(openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -939,7 +939,7 @@ import (
 )
 
 func main() {
-	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
+	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest(openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1005,7 +1005,7 @@ import (
 )
 
 func main() {
-	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
+	iKEProposalRequest := []openapiclient.IKEProposalRequest{*openapiclient.NewIKEProposalRequest(openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_group_value(1))} // []IKEProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1071,7 +1071,7 @@ import (
 )
 
 func main() {
-	writableIKEProposalRequest := *openapiclient.NewWritableIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.PatchedWritableIKEProposalRequest_group(1)) // WritableIKEProposalRequest | 
+	writableIKEProposalRequest := *openapiclient.NewWritableIKEProposalRequest(openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.PatchedWritableIKEProposalRequest_group(1)) // WritableIKEProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1555,7 +1555,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this IKE proposal.
-	writableIKEProposalRequest := *openapiclient.NewWritableIKEProposalRequest("Name_example", openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.PatchedWritableIKEProposalRequest_group(1)) // WritableIKEProposalRequest | 
+	writableIKEProposalRequest := *openapiclient.NewWritableIKEProposalRequest(openapiclient.IKEProposal_authentication_method_value("preshared-keys"), openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.PatchedWritableIKEProposalRequest_group(1)) // WritableIKEProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1626,7 +1626,7 @@ import (
 )
 
 func main() {
-	iPSecPolicyRequest := []openapiclient.IPSecPolicyRequest{*openapiclient.NewIPSecPolicyRequest("Name_example")} // []IPSecPolicyRequest | 
+	iPSecPolicyRequest := []openapiclient.IPSecPolicyRequest{*openapiclient.NewIPSecPolicyRequest()} // []IPSecPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1690,7 +1690,7 @@ import (
 )
 
 func main() {
-	iPSecPolicyRequest := []openapiclient.IPSecPolicyRequest{*openapiclient.NewIPSecPolicyRequest("Name_example")} // []IPSecPolicyRequest | 
+	iPSecPolicyRequest := []openapiclient.IPSecPolicyRequest{*openapiclient.NewIPSecPolicyRequest()} // []IPSecPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1756,7 +1756,7 @@ import (
 )
 
 func main() {
-	iPSecPolicyRequest := []openapiclient.IPSecPolicyRequest{*openapiclient.NewIPSecPolicyRequest("Name_example")} // []IPSecPolicyRequest | 
+	iPSecPolicyRequest := []openapiclient.IPSecPolicyRequest{*openapiclient.NewIPSecPolicyRequest()} // []IPSecPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1822,7 +1822,7 @@ import (
 )
 
 func main() {
-	writableIPSecPolicyRequest := *openapiclient.NewWritableIPSecPolicyRequest("Name_example") // WritableIPSecPolicyRequest | 
+	writableIPSecPolicyRequest := *openapiclient.NewWritableIPSecPolicyRequest() // WritableIPSecPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2288,7 +2288,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this IPSec policy.
-	writableIPSecPolicyRequest := *openapiclient.NewWritableIPSecPolicyRequest("Name_example") // WritableIPSecPolicyRequest | 
+	writableIPSecPolicyRequest := *openapiclient.NewWritableIPSecPolicyRequest() // WritableIPSecPolicyRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2359,7 +2359,7 @@ import (
 )
 
 func main() {
-	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest(openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest(), *openapiclient.NewBriefIPSecPolicyRequest())} // []IPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2423,7 +2423,7 @@ import (
 )
 
 func main() {
-	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest(openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest(), *openapiclient.NewBriefIPSecPolicyRequest())} // []IPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2489,7 +2489,7 @@ import (
 )
 
 func main() {
-	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example"))} // []IPSecProfileRequest | 
+	iPSecProfileRequest := []openapiclient.IPSecProfileRequest{*openapiclient.NewIPSecProfileRequest(openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest(), *openapiclient.NewBriefIPSecPolicyRequest())} // []IPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -2555,7 +2555,7 @@ import (
 )
 
 func main() {
-	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example")) // WritableIPSecProfileRequest | 
+	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest(openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest(), *openapiclient.NewBriefIPSecPolicyRequest()) // WritableIPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3021,7 +3021,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this IPSec profile.
-	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest("Name_example", openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest("Name_example"), *openapiclient.NewBriefIPSecPolicyRequest("Name_example")) // WritableIPSecProfileRequest | 
+	writableIPSecProfileRequest := *openapiclient.NewWritableIPSecProfileRequest(openapiclient.IPSecProfile_mode_value("esp"), *openapiclient.NewBriefIKEPolicyRequest(), *openapiclient.NewBriefIPSecPolicyRequest()) // WritableIPSecProfileRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3092,7 +3092,7 @@ import (
 )
 
 func main() {
-	iPSecProposalRequest := []openapiclient.IPSecProposalRequest{*openapiclient.NewIPSecProposalRequest("Name_example", openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"))} // []IPSecProposalRequest | 
+	iPSecProposalRequest := []openapiclient.IPSecProposalRequest{*openapiclient.NewIPSecProposalRequest(openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"))} // []IPSecProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3156,7 +3156,7 @@ import (
 )
 
 func main() {
-	iPSecProposalRequest := []openapiclient.IPSecProposalRequest{*openapiclient.NewIPSecProposalRequest("Name_example", openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"))} // []IPSecProposalRequest | 
+	iPSecProposalRequest := []openapiclient.IPSecProposalRequest{*openapiclient.NewIPSecProposalRequest(openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"))} // []IPSecProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3222,7 +3222,7 @@ import (
 )
 
 func main() {
-	iPSecProposalRequest := []openapiclient.IPSecProposalRequest{*openapiclient.NewIPSecProposalRequest("Name_example", openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"))} // []IPSecProposalRequest | 
+	iPSecProposalRequest := []openapiclient.IPSecProposalRequest{*openapiclient.NewIPSecProposalRequest(openapiclient.IKEProposal_encryption_algorithm_value("aes-128-cbc"), openapiclient.IKEProposal_authentication_algorithm_value("hmac-sha1"))} // []IPSecProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3288,7 +3288,7 @@ import (
 )
 
 func main() {
-	writableIPSecProposalRequest := *openapiclient.NewWritableIPSecProposalRequest("Name_example") // WritableIPSecProposalRequest | 
+	writableIPSecProposalRequest := *openapiclient.NewWritableIPSecProposalRequest() // WritableIPSecProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3778,7 +3778,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this IPSec proposal.
-	writableIPSecProposalRequest := *openapiclient.NewWritableIPSecProposalRequest("Name_example") // WritableIPSecProposalRequest | 
+	writableIPSecProposalRequest := *openapiclient.NewWritableIPSecProposalRequest() // WritableIPSecProposalRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3849,7 +3849,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest(), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3913,7 +3913,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest(), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -3979,7 +3979,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := []openapiclient.L2VPNTerminationRequest{*openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest(), "AssignedObjectType_example", int64(123))} // []L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4045,7 +4045,7 @@ import (
 )
 
 func main() {
-	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123)) // L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest(), "AssignedObjectType_example", int64(123)) // L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4535,7 +4535,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this L2VPN termination.
-	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest("Name_example", "Slug_example"), "AssignedObjectType_example", int64(123)) // L2VPNTerminationRequest | 
+	l2VPNTerminationRequest := *openapiclient.NewL2VPNTerminationRequest(*openapiclient.NewBriefL2VPNRequest(), "AssignedObjectType_example", int64(123)) // L2VPNTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4606,7 +4606,7 @@ import (
 )
 
 func main() {
-	l2VPNRequest := []openapiclient.L2VPNRequest{*openapiclient.NewL2VPNRequest("Name_example", "Slug_example")} // []L2VPNRequest | 
+	l2VPNRequest := []openapiclient.L2VPNRequest{*openapiclient.NewL2VPNRequest()} // []L2VPNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4670,7 +4670,7 @@ import (
 )
 
 func main() {
-	l2VPNRequest := []openapiclient.L2VPNRequest{*openapiclient.NewL2VPNRequest("Name_example", "Slug_example")} // []L2VPNRequest | 
+	l2VPNRequest := []openapiclient.L2VPNRequest{*openapiclient.NewL2VPNRequest()} // []L2VPNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4736,7 +4736,7 @@ import (
 )
 
 func main() {
-	l2VPNRequest := []openapiclient.L2VPNRequest{*openapiclient.NewL2VPNRequest("Name_example", "Slug_example")} // []L2VPNRequest | 
+	l2VPNRequest := []openapiclient.L2VPNRequest{*openapiclient.NewL2VPNRequest()} // []L2VPNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -4802,7 +4802,7 @@ import (
 )
 
 func main() {
-	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.BriefL2VPN_type_value("vpws")) // WritableL2VPNRequest | 
+	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest(openapiclient.BriefL2VPN_type_value("vpws")) // WritableL2VPNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5320,7 +5320,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this L2VPN.
-	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest("Name_example", "Slug_example", openapiclient.BriefL2VPN_type_value("vpws")) // WritableL2VPNRequest | 
+	writableL2VPNRequest := *openapiclient.NewWritableL2VPNRequest(openapiclient.BriefL2VPN_type_value("vpws")) // WritableL2VPNRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5391,7 +5391,7 @@ import (
 )
 
 func main() {
-	tunnelGroupRequest := []openapiclient.TunnelGroupRequest{*openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example")} // []TunnelGroupRequest | 
+	tunnelGroupRequest := []openapiclient.TunnelGroupRequest{*openapiclient.NewTunnelGroupRequest()} // []TunnelGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5455,7 +5455,7 @@ import (
 )
 
 func main() {
-	tunnelGroupRequest := []openapiclient.TunnelGroupRequest{*openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example")} // []TunnelGroupRequest | 
+	tunnelGroupRequest := []openapiclient.TunnelGroupRequest{*openapiclient.NewTunnelGroupRequest()} // []TunnelGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5521,7 +5521,7 @@ import (
 )
 
 func main() {
-	tunnelGroupRequest := []openapiclient.TunnelGroupRequest{*openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example")} // []TunnelGroupRequest | 
+	tunnelGroupRequest := []openapiclient.TunnelGroupRequest{*openapiclient.NewTunnelGroupRequest()} // []TunnelGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -5587,7 +5587,7 @@ import (
 )
 
 func main() {
-	tunnelGroupRequest := *openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example") // TunnelGroupRequest | 
+	tunnelGroupRequest := *openapiclient.NewTunnelGroupRequest() // TunnelGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6055,7 +6055,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this tunnel group.
-	tunnelGroupRequest := *openapiclient.NewTunnelGroupRequest("Name_example", "Slug_example") // TunnelGroupRequest | 
+	tunnelGroupRequest := *openapiclient.NewTunnelGroupRequest() // TunnelGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6126,7 +6126,7 @@ import (
 )
 
 func main() {
-	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest(), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6190,7 +6190,7 @@ import (
 )
 
 func main() {
-	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest(), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6256,7 +6256,7 @@ import (
 )
 
 func main() {
-	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
+	tunnelTerminationRequest := []openapiclient.TunnelTerminationRequest{*openapiclient.NewTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest(), openapiclient.PatchedWritableTunnelTerminationRequest_role("peer"), "TerminationType_example")} // []TunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6322,7 +6322,7 @@ import (
 )
 
 func main() {
-	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), "TerminationType_example") // WritableTunnelTerminationRequest | 
+	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest(), "TerminationType_example") // WritableTunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6774,7 +6774,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this tunnel termination.
-	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest("Name_example"), "TerminationType_example") // WritableTunnelTerminationRequest | 
+	writableTunnelTerminationRequest := *openapiclient.NewWritableTunnelTerminationRequest(*openapiclient.NewBriefTunnelRequest(), "TerminationType_example") // WritableTunnelTerminationRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6845,7 +6845,7 @@ import (
 )
 
 func main() {
-	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_status("planned"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
+	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest(openapiclient.PatchedWritableTunnelRequest_status("planned"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6909,7 +6909,7 @@ import (
 )
 
 func main() {
-	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_status("planned"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
+	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest(openapiclient.PatchedWritableTunnelRequest_status("planned"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6975,7 +6975,7 @@ import (
 )
 
 func main() {
-	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_status("planned"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
+	tunnelRequest := []openapiclient.TunnelRequest{*openapiclient.NewTunnelRequest(openapiclient.PatchedWritableTunnelRequest_status("planned"), openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport"))} // []TunnelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7041,7 +7041,7 @@ import (
 )
 
 func main() {
-	writableTunnelRequest := *openapiclient.NewWritableTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport")) // WritableTunnelRequest | 
+	writableTunnelRequest := *openapiclient.NewWritableTunnelRequest(openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport")) // WritableTunnelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7541,7 +7541,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this tunnel.
-	writableTunnelRequest := *openapiclient.NewWritableTunnelRequest("Name_example", openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport")) // WritableTunnelRequest | 
+	writableTunnelRequest := *openapiclient.NewWritableTunnelRequest(openapiclient.PatchedWritableTunnelRequest_encapsulation("ipsec-transport")) // WritableTunnelRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

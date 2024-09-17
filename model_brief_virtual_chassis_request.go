@@ -12,7 +12,6 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the BriefVirtualChassisRequest type satisfies the MappedNullable interface at compile time
@@ -20,7 +19,7 @@ var _ MappedNullable = &BriefVirtualChassisRequest{}
 
 // BriefVirtualChassisRequest Adds support for custom fields and tags.
 type BriefVirtualChassisRequest struct {
-	Name                 string                      `json:"name"`
+	Name                 *string                     `json:"name,omitempty"`
 	Master               NullableNestedDeviceRequest `json:"master,omitempty"`
 	Description          *string                     `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -32,9 +31,8 @@ type _BriefVirtualChassisRequest BriefVirtualChassisRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefVirtualChassisRequest(name string) *BriefVirtualChassisRequest {
+func NewBriefVirtualChassisRequest() *BriefVirtualChassisRequest {
 	this := BriefVirtualChassisRequest{}
-	this.Name = name
 	return &this
 }
 
@@ -46,28 +44,36 @@ func NewBriefVirtualChassisRequestWithDefaults() *BriefVirtualChassisRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *BriefVirtualChassisRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefVirtualChassisRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *BriefVirtualChassisRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BriefVirtualChassisRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetMaster returns the Master field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -155,7 +161,9 @@ func (o BriefVirtualChassisRequest) MarshalJSON() ([]byte, error) {
 
 func (o BriefVirtualChassisRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if o.Master.IsSet() {
 		toSerialize["master"] = o.Master.Get()
 	}
@@ -171,27 +179,6 @@ func (o BriefVirtualChassisRequest) ToMap() (map[string]interface{}, error) {
 }
 
 func (o *BriefVirtualChassisRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"name",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varBriefVirtualChassisRequest := _BriefVirtualChassisRequest{}
 
 	err = json.Unmarshal(data, &varBriefVirtualChassisRequest)

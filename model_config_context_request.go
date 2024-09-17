@@ -20,7 +20,7 @@ var _ MappedNullable = &ConfigContextRequest{}
 
 // ConfigContextRequest Extends the built-in ModelSerializer to enforce calling full_clean() on a copy of the associated instance during validation. (DRF does not do this by default; see https://github.com/encode/django-rest-framework/issues/3144)
 type ConfigContextRequest struct {
-	Name                 string                  `json:"name"`
+	Name                 *string                 `json:"name,omitempty"`
 	Weight               *int32                  `json:"weight,omitempty"`
 	Description          *string                 `json:"description,omitempty"`
 	IsActive             *bool                   `json:"is_active,omitempty"`
@@ -48,9 +48,8 @@ type _ConfigContextRequest ConfigContextRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewConfigContextRequest(name string, data interface{}) *ConfigContextRequest {
+func NewConfigContextRequest(data interface{}) *ConfigContextRequest {
 	this := ConfigContextRequest{}
-	this.Name = name
 	this.Data = data
 	return &this
 }
@@ -63,28 +62,36 @@ func NewConfigContextRequestWithDefaults() *ConfigContextRequest {
 	return &this
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *ConfigContextRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ConfigContextRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *ConfigContextRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ConfigContextRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetWeight returns the Weight field value if set, zero value otherwise.
@@ -667,7 +674,9 @@ func (o ConfigContextRequest) MarshalJSON() ([]byte, error) {
 
 func (o ConfigContextRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Weight) {
 		toSerialize["weight"] = o.Weight
 	}
@@ -735,7 +744,6 @@ func (o *ConfigContextRequest) UnmarshalJSON(data []byte) (err error) {
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
-		"name",
 		"data",
 	}
 

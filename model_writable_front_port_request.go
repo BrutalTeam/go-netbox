@@ -22,7 +22,7 @@ var _ MappedNullable = &WritableFrontPortRequest{}
 type WritableFrontPortRequest struct {
 	Device BriefDeviceRequest         `json:"device"`
 	Module NullableBriefModuleRequest `json:"module,omitempty"`
-	Name   string                     `json:"name"`
+	Name   *string                    `json:"name,omitempty"`
 	// Physical label
 	Label    *string            `json:"label,omitempty"`
 	Type     FrontPortTypeValue `json:"type"`
@@ -44,10 +44,9 @@ type _WritableFrontPortRequest WritableFrontPortRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWritableFrontPortRequest(device BriefDeviceRequest, name string, type_ FrontPortTypeValue, rearPort int32) *WritableFrontPortRequest {
+func NewWritableFrontPortRequest(device BriefDeviceRequest, type_ FrontPortTypeValue, rearPort int32) *WritableFrontPortRequest {
 	this := WritableFrontPortRequest{}
 	this.Device = device
-	this.Name = name
 	this.Type = type_
 	this.RearPort = rearPort
 	var rearPortPosition int32 = 1
@@ -132,28 +131,36 @@ func (o *WritableFrontPortRequest) UnsetModule() {
 	o.Module.Unset()
 }
 
-// GetName returns the Name field value
+// GetName returns the Name field value if set, zero value otherwise.
 func (o *WritableFrontPortRequest) GetName() string {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		var ret string
 		return ret
 	}
-
-	return o.Name
+	return *o.Name
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WritableFrontPortRequest) GetNameOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Name, true
 }
 
-// SetName sets field value
+// HasName returns a boolean if a field has been set.
+func (o *WritableFrontPortRequest) HasName() bool {
+	if o != nil && !IsNil(o.Name) {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
 func (o *WritableFrontPortRequest) SetName(v string) {
-	o.Name = v
+	o.Name = &v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
@@ -442,7 +449,9 @@ func (o WritableFrontPortRequest) ToMap() (map[string]interface{}, error) {
 	if o.Module.IsSet() {
 		toSerialize["module"] = o.Module.Get()
 	}
-	toSerialize["name"] = o.Name
+	if !IsNil(o.Name) {
+		toSerialize["name"] = o.Name
+	}
 	if !IsNil(o.Label) {
 		toSerialize["label"] = o.Label
 	}
@@ -480,7 +489,6 @@ func (o *WritableFrontPortRequest) UnmarshalJSON(data []byte) (err error) {
 	// that every required field exists as a key in the generic map.
 	requiredProperties := []string{
 		"device",
-		"name",
 		"type",
 		"rear_port",
 	}

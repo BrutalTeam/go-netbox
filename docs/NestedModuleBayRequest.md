@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InstalledModule** | Pointer to [**NullableModuleBayNestedModuleRequest**](ModuleBayNestedModuleRequest.md) |  | [optional] 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewNestedModuleBayRequest
 
-`func NewNestedModuleBayRequest(name string, ) *NestedModuleBayRequest`
+`func NewNestedModuleBayRequest() *NestedModuleBayRequest`
 
 NewNestedModuleBayRequest instantiates a new NestedModuleBayRequest object
 This constructor will assign default values to properties that have it defined,
@@ -80,6 +80,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *NestedModuleBayRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

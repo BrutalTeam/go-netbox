@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | Full name of the provider | 
-**Slug** | **string** |  | 
+**Name** | Pointer to **string** | Full name of the provider | [optional] 
+**Slug** | Pointer to **string** |  | [optional] 
 **Accounts** | Pointer to **[]int32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 
 ### NewProviderRequest
 
-`func NewProviderRequest(name string, slug string, ) *ProviderRequest`
+`func NewProviderRequest() *ProviderRequest`
 
 NewProviderRequest instantiates a new ProviderRequest object
 This constructor will assign default values to properties that have it defined,
@@ -51,6 +51,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *ProviderRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetSlug
 
@@ -71,6 +76,11 @@ and a boolean to check if the value has been set.
 
 SetSlug sets Slug field to given value.
 
+### HasSlug
+
+`func (o *ProviderRequest) HasSlug() bool`
+
+HasSlug returns a boolean if a field has been set.
 
 ### GetAccounts
 

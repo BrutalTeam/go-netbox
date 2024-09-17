@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Domain** | Pointer to **string** |  | [optional] 
 **Master** | Pointer to **NullableInt32** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 
 ### NewWritableVirtualChassisRequest
 
-`func NewWritableVirtualChassisRequest(name string, ) *WritableVirtualChassisRequest`
+`func NewWritableVirtualChassisRequest() *WritableVirtualChassisRequest`
 
 NewWritableVirtualChassisRequest instantiates a new WritableVirtualChassisRequest object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *WritableVirtualChassisRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetDomain
 

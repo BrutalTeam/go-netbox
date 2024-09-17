@@ -182,7 +182,7 @@ import (
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest())} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -246,7 +246,7 @@ import (
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest())} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -312,7 +312,7 @@ import (
 )
 
 func main() {
-	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"))} // []AggregateRequest | 
+	aggregateRequest := []openapiclient.AggregateRequest{*openapiclient.NewAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest())} // []AggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,7 +378,7 @@ import (
 )
 
 func main() {
-	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")) // WritableAggregateRequest | 
+	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest()) // WritableAggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -844,7 +844,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this aggregate.
-	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example")) // WritableAggregateRequest | 
+	writableAggregateRequest := *openapiclient.NewWritableAggregateRequest("Prefix_example", *openapiclient.NewBriefRIRRequest()) // WritableAggregateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1057,7 +1057,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest(*openapiclient.NewBriefRIRRequest(), int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1121,7 +1121,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest(*openapiclient.NewBriefRIRRequest(), int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1187,7 +1187,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123))} // []ASNRangeRequest | 
+	aSNRangeRequest := []openapiclient.ASNRangeRequest{*openapiclient.NewASNRangeRequest(*openapiclient.NewBriefRIRRequest(), int64(123), int64(123))} // []ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1253,7 +1253,7 @@ import (
 )
 
 func main() {
-	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123)) // ASNRangeRequest | 
+	aSNRangeRequest := *openapiclient.NewASNRangeRequest(*openapiclient.NewBriefRIRRequest(), int64(123), int64(123)) // ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1773,7 +1773,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this ASN range.
-	aSNRangeRequest := *openapiclient.NewASNRangeRequest("Name_example", "Slug_example", *openapiclient.NewBriefRIRRequest("Name_example", "Slug_example"), int64(123), int64(123)) // ASNRangeRequest | 
+	aSNRangeRequest := *openapiclient.NewASNRangeRequest(*openapiclient.NewBriefRIRRequest(), int64(123), int64(123)) // ASNRangeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6874,7 +6874,7 @@ import (
 )
 
 func main() {
-	rIRRequest := []openapiclient.RIRRequest{*openapiclient.NewRIRRequest("Name_example", "Slug_example")} // []RIRRequest | 
+	rIRRequest := []openapiclient.RIRRequest{*openapiclient.NewRIRRequest()} // []RIRRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -6938,7 +6938,7 @@ import (
 )
 
 func main() {
-	rIRRequest := []openapiclient.RIRRequest{*openapiclient.NewRIRRequest("Name_example", "Slug_example")} // []RIRRequest | 
+	rIRRequest := []openapiclient.RIRRequest{*openapiclient.NewRIRRequest()} // []RIRRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7004,7 +7004,7 @@ import (
 )
 
 func main() {
-	rIRRequest := []openapiclient.RIRRequest{*openapiclient.NewRIRRequest("Name_example", "Slug_example")} // []RIRRequest | 
+	rIRRequest := []openapiclient.RIRRequest{*openapiclient.NewRIRRequest()} // []RIRRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7070,7 +7070,7 @@ import (
 )
 
 func main() {
-	rIRRequest := *openapiclient.NewRIRRequest("Name_example", "Slug_example") // RIRRequest | 
+	rIRRequest := *openapiclient.NewRIRRequest() // RIRRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7540,7 +7540,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this RIR.
-	rIRRequest := *openapiclient.NewRIRRequest("Name_example", "Slug_example") // RIRRequest | 
+	rIRRequest := *openapiclient.NewRIRRequest() // RIRRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7611,7 +7611,7 @@ import (
 )
 
 func main() {
-	roleRequest := []openapiclient.RoleRequest{*openapiclient.NewRoleRequest("Name_example", "Slug_example")} // []RoleRequest | 
+	roleRequest := []openapiclient.RoleRequest{*openapiclient.NewRoleRequest()} // []RoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7675,7 +7675,7 @@ import (
 )
 
 func main() {
-	roleRequest := []openapiclient.RoleRequest{*openapiclient.NewRoleRequest("Name_example", "Slug_example")} // []RoleRequest | 
+	roleRequest := []openapiclient.RoleRequest{*openapiclient.NewRoleRequest()} // []RoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7741,7 +7741,7 @@ import (
 )
 
 func main() {
-	roleRequest := []openapiclient.RoleRequest{*openapiclient.NewRoleRequest("Name_example", "Slug_example")} // []RoleRequest | 
+	roleRequest := []openapiclient.RoleRequest{*openapiclient.NewRoleRequest()} // []RoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -7807,7 +7807,7 @@ import (
 )
 
 func main() {
-	roleRequest := *openapiclient.NewRoleRequest("Name_example", "Slug_example") // RoleRequest | 
+	roleRequest := *openapiclient.NewRoleRequest() // RoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8289,7 +8289,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this role.
-	roleRequest := *openapiclient.NewRoleRequest("Name_example", "Slug_example") // RoleRequest | 
+	roleRequest := *openapiclient.NewRoleRequest() // RoleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8360,7 +8360,7 @@ import (
 )
 
 func main() {
-	routeTargetRequest := []openapiclient.RouteTargetRequest{*openapiclient.NewRouteTargetRequest("Name_example")} // []RouteTargetRequest | 
+	routeTargetRequest := []openapiclient.RouteTargetRequest{*openapiclient.NewRouteTargetRequest()} // []RouteTargetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8424,7 +8424,7 @@ import (
 )
 
 func main() {
-	routeTargetRequest := []openapiclient.RouteTargetRequest{*openapiclient.NewRouteTargetRequest("Name_example")} // []RouteTargetRequest | 
+	routeTargetRequest := []openapiclient.RouteTargetRequest{*openapiclient.NewRouteTargetRequest()} // []RouteTargetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8490,7 +8490,7 @@ import (
 )
 
 func main() {
-	routeTargetRequest := []openapiclient.RouteTargetRequest{*openapiclient.NewRouteTargetRequest("Name_example")} // []RouteTargetRequest | 
+	routeTargetRequest := []openapiclient.RouteTargetRequest{*openapiclient.NewRouteTargetRequest()} // []RouteTargetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -8556,7 +8556,7 @@ import (
 )
 
 func main() {
-	routeTargetRequest := *openapiclient.NewRouteTargetRequest("Name_example") // RouteTargetRequest | 
+	routeTargetRequest := *openapiclient.NewRouteTargetRequest() // RouteTargetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9050,7 +9050,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this route target.
-	routeTargetRequest := *openapiclient.NewRouteTargetRequest("Name_example") // RouteTargetRequest | 
+	routeTargetRequest := *openapiclient.NewRouteTargetRequest() // RouteTargetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9121,7 +9121,7 @@ import (
 )
 
 func main() {
-	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest("Name_example", []int32{int32(123)})} // []ServiceTemplateRequest | 
+	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest([]int32{int32(123)})} // []ServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9185,7 +9185,7 @@ import (
 )
 
 func main() {
-	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest("Name_example", []int32{int32(123)})} // []ServiceTemplateRequest | 
+	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest([]int32{int32(123)})} // []ServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9251,7 +9251,7 @@ import (
 )
 
 func main() {
-	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest("Name_example", []int32{int32(123)})} // []ServiceTemplateRequest | 
+	serviceTemplateRequest := []openapiclient.ServiceTemplateRequest{*openapiclient.NewServiceTemplateRequest([]int32{int32(123)})} // []ServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9317,7 +9317,7 @@ import (
 )
 
 func main() {
-	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceTemplateRequest | 
+	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest(openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9769,7 +9769,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this service template.
-	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceTemplateRequest | 
+	writableServiceTemplateRequest := *openapiclient.NewWritableServiceTemplateRequest(openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceTemplateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9840,7 +9840,7 @@ import (
 )
 
 func main() {
-	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest("Name_example", []int32{int32(123)})} // []ServiceRequest | 
+	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest([]int32{int32(123)})} // []ServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9904,7 +9904,7 @@ import (
 )
 
 func main() {
-	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest("Name_example", []int32{int32(123)})} // []ServiceRequest | 
+	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest([]int32{int32(123)})} // []ServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -9970,7 +9970,7 @@ import (
 )
 
 func main() {
-	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest("Name_example", []int32{int32(123)})} // []ServiceRequest | 
+	serviceRequest := []openapiclient.ServiceRequest{*openapiclient.NewServiceRequest([]int32{int32(123)})} // []ServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10036,7 +10036,7 @@ import (
 )
 
 func main() {
-	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceRequest | 
+	writableServiceRequest := *openapiclient.NewWritableServiceRequest(openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10520,7 +10520,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this service.
-	writableServiceRequest := *openapiclient.NewWritableServiceRequest("Name_example", openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceRequest | 
+	writableServiceRequest := *openapiclient.NewWritableServiceRequest(openapiclient.PatchedWritableServiceRequest_protocol("tcp"), []int32{int32(123)}) // WritableServiceRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10592,7 +10592,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | 
-	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123), "Name_example")} // []VLANRequest | 
+	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123))} // []VLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10733,7 +10733,7 @@ import (
 )
 
 func main() {
-	vLANGroupRequest := []openapiclient.VLANGroupRequest{*openapiclient.NewVLANGroupRequest("Name_example", "Slug_example")} // []VLANGroupRequest | 
+	vLANGroupRequest := []openapiclient.VLANGroupRequest{*openapiclient.NewVLANGroupRequest()} // []VLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10797,7 +10797,7 @@ import (
 )
 
 func main() {
-	vLANGroupRequest := []openapiclient.VLANGroupRequest{*openapiclient.NewVLANGroupRequest("Name_example", "Slug_example")} // []VLANGroupRequest | 
+	vLANGroupRequest := []openapiclient.VLANGroupRequest{*openapiclient.NewVLANGroupRequest()} // []VLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10863,7 +10863,7 @@ import (
 )
 
 func main() {
-	vLANGroupRequest := []openapiclient.VLANGroupRequest{*openapiclient.NewVLANGroupRequest("Name_example", "Slug_example")} // []VLANGroupRequest | 
+	vLANGroupRequest := []openapiclient.VLANGroupRequest{*openapiclient.NewVLANGroupRequest()} // []VLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -10929,7 +10929,7 @@ import (
 )
 
 func main() {
-	vLANGroupRequest := *openapiclient.NewVLANGroupRequest("Name_example", "Slug_example") // VLANGroupRequest | 
+	vLANGroupRequest := *openapiclient.NewVLANGroupRequest() // VLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11461,7 +11461,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this VLAN group.
-	vLANGroupRequest := *openapiclient.NewVLANGroupRequest("Name_example", "Slug_example") // VLANGroupRequest | 
+	vLANGroupRequest := *openapiclient.NewVLANGroupRequest() // VLANGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11532,7 +11532,7 @@ import (
 )
 
 func main() {
-	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123), "Name_example")} // []VLANRequest | 
+	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123))} // []VLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11596,7 +11596,7 @@ import (
 )
 
 func main() {
-	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123), "Name_example")} // []VLANRequest | 
+	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123))} // []VLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11662,7 +11662,7 @@ import (
 )
 
 func main() {
-	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123), "Name_example")} // []VLANRequest | 
+	vLANRequest := []openapiclient.VLANRequest{*openapiclient.NewVLANRequest(int32(123))} // []VLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -11728,7 +11728,7 @@ import (
 )
 
 func main() {
-	writableVLANRequest := *openapiclient.NewWritableVLANRequest(int32(123), "Name_example") // WritableVLANRequest | 
+	writableVLANRequest := *openapiclient.NewWritableVLANRequest(int32(123)) // WritableVLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12262,7 +12262,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this VLAN.
-	writableVLANRequest := *openapiclient.NewWritableVLANRequest(int32(123), "Name_example") // WritableVLANRequest | 
+	writableVLANRequest := *openapiclient.NewWritableVLANRequest(int32(123)) // WritableVLANRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12333,7 +12333,7 @@ import (
 )
 
 func main() {
-	vRFRequest := []openapiclient.VRFRequest{*openapiclient.NewVRFRequest("Name_example")} // []VRFRequest | 
+	vRFRequest := []openapiclient.VRFRequest{*openapiclient.NewVRFRequest()} // []VRFRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12397,7 +12397,7 @@ import (
 )
 
 func main() {
-	vRFRequest := []openapiclient.VRFRequest{*openapiclient.NewVRFRequest("Name_example")} // []VRFRequest | 
+	vRFRequest := []openapiclient.VRFRequest{*openapiclient.NewVRFRequest()} // []VRFRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12463,7 +12463,7 @@ import (
 )
 
 func main() {
-	vRFRequest := []openapiclient.VRFRequest{*openapiclient.NewVRFRequest("Name_example")} // []VRFRequest | 
+	vRFRequest := []openapiclient.VRFRequest{*openapiclient.NewVRFRequest()} // []VRFRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -12529,7 +12529,7 @@ import (
 )
 
 func main() {
-	vRFRequest := *openapiclient.NewVRFRequest("Name_example") // VRFRequest | 
+	vRFRequest := *openapiclient.NewVRFRequest() // VRFRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -13031,7 +13031,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this VRF.
-	vRFRequest := *openapiclient.NewVRFRequest("Name_example") // VRFRequest | 
+	vRFRequest := *openapiclient.NewVRFRequest() // VRFRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)

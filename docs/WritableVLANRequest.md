@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Site** | Pointer to [**NullableBriefSiteRequest**](BriefSiteRequest.md) |  | [optional] 
 **Group** | Pointer to [**NullableBriefVLANGroupRequest**](BriefVLANGroupRequest.md) |  | [optional] 
 **Vid** | **int32** | Numeric VLAN ID (1-4094) | 
-**Name** | **string** |  | 
+**Name** | Pointer to **string** |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenantRequest**](BriefTenantRequest.md) |  | [optional] 
 **Status** | Pointer to [**PatchedWritableVLANRequestStatus**](PatchedWritableVLANRequestStatus.md) |  | [optional] 
 **Role** | Pointer to [**NullableBriefRoleRequest**](BriefRoleRequest.md) |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritableVLANRequest
 
-`func NewWritableVLANRequest(vid int32, name string, ) *WritableVLANRequest`
+`func NewWritableVLANRequest(vid int32, ) *WritableVLANRequest`
 
 NewWritableVLANRequest instantiates a new WritableVLANRequest object
 This constructor will assign default values to properties that have it defined,
@@ -144,6 +144,11 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+### HasName
+
+`func (o *WritableVLANRequest) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetTenant
 
