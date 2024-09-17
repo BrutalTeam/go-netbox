@@ -31,13 +31,13 @@ Name | Type | Description | Notes
 **PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 **RackCount** | **int64** |  | [readonly] 
 **VirtualmachineCount** | Pointer to **int64** |  | [optional] [readonly] 
-**VlanCount** | **int64** |  | [readonly] 
+**VlanCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewSite
 
-`func NewSite(id int32, url string, display string, name string, slug string, circuitCount int64, rackCount int64, vlanCount int64, ) *Site`
+`func NewSite(id int32, url string, display string, name string, slug string, circuitCount int64, rackCount int64, ) *Site`
 
 NewSite instantiates a new Site object
 This constructor will assign default values to properties that have it defined,
@@ -791,6 +791,11 @@ and a boolean to check if the value has been set.
 
 SetVlanCount sets VlanCount field to given value.
 
+### HasVlanCount
+
+`func (o *Site) HasVlanCount() bool`
+
+HasVlanCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -50,6 +50,8 @@ if 'components' in data and 'schemas' in data['components']:
                 'provider_count',
                 'prefix_count',
                 'cluster_count',
+                'vlan_count',
+                'vrf_count',
                 'nat_outside',
             ]
 

@@ -40,8 +40,8 @@ type Tenant struct {
 	RackCount            int64                    `json:"rack_count"`
 	SiteCount            *int64                   `json:"site_count,omitempty"`
 	VirtualmachineCount  *int64                   `json:"virtualmachine_count,omitempty"`
-	VlanCount            int64                    `json:"vlan_count"`
-	VrfCount             int64                    `json:"vrf_count"`
+	VlanCount            *int64                   `json:"vlan_count,omitempty"`
+	VrfCount             *int64                   `json:"vrf_count,omitempty"`
 	ClusterCount         *int64                   `json:"cluster_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -52,7 +52,7 @@ type _Tenant Tenant
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, rackCount int64, vlanCount int64, vrfCount int64) *Tenant {
+func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, rackCount int64) *Tenant {
 	this := Tenant{}
 	this.Id = id
 	this.Url = url
@@ -62,8 +62,6 @@ func NewTenant(id int32, url string, display string, name string, slug string, c
 	this.CircuitCount = circuitCount
 	this.IpaddressCount = ipaddressCount
 	this.RackCount = rackCount
-	this.VlanCount = vlanCount
-	this.VrfCount = vrfCount
 	return &this
 }
 
@@ -652,52 +650,68 @@ func (o *Tenant) SetVirtualmachineCount(v int64) {
 	o.VirtualmachineCount = &v
 }
 
-// GetVlanCount returns the VlanCount field value
+// GetVlanCount returns the VlanCount field value if set, zero value otherwise.
 func (o *Tenant) GetVlanCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.VlanCount
+	return *o.VlanCount
 }
 
-// GetVlanCountOk returns a tuple with the VlanCount field value
+// GetVlanCountOk returns a tuple with the VlanCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetVlanCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		return nil, false
 	}
-	return &o.VlanCount, true
+	return o.VlanCount, true
 }
 
-// SetVlanCount sets field value
+// HasVlanCount returns a boolean if a field has been set.
+func (o *Tenant) HasVlanCount() bool {
+	if o != nil && !IsNil(o.VlanCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlanCount gets a reference to the given int64 and assigns it to the VlanCount field.
 func (o *Tenant) SetVlanCount(v int64) {
-	o.VlanCount = v
+	o.VlanCount = &v
 }
 
-// GetVrfCount returns the VrfCount field value
+// GetVrfCount returns the VrfCount field value if set, zero value otherwise.
 func (o *Tenant) GetVrfCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.VrfCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.VrfCount
+	return *o.VrfCount
 }
 
-// GetVrfCountOk returns a tuple with the VrfCount field value
+// GetVrfCountOk returns a tuple with the VrfCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetVrfCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VrfCount) {
 		return nil, false
 	}
-	return &o.VrfCount, true
+	return o.VrfCount, true
 }
 
-// SetVrfCount sets field value
+// HasVrfCount returns a boolean if a field has been set.
+func (o *Tenant) HasVrfCount() bool {
+	if o != nil && !IsNil(o.VrfCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetVrfCount gets a reference to the given int64 and assigns it to the VrfCount field.
 func (o *Tenant) SetVrfCount(v int64) {
-	o.VrfCount = v
+	o.VrfCount = &v
 }
 
 // GetClusterCount returns the ClusterCount field value if set, zero value otherwise.
@@ -783,8 +797,12 @@ func (o Tenant) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VirtualmachineCount) {
 		toSerialize["virtualmachine_count"] = o.VirtualmachineCount
 	}
-	toSerialize["vlan_count"] = o.VlanCount
-	toSerialize["vrf_count"] = o.VrfCount
+	if !IsNil(o.VlanCount) {
+		toSerialize["vlan_count"] = o.VlanCount
+	}
+	if !IsNil(o.VrfCount) {
+		toSerialize["vrf_count"] = o.VrfCount
+	}
 	if !IsNil(o.ClusterCount) {
 		toSerialize["cluster_count"] = o.ClusterCount
 	}
@@ -809,8 +827,6 @@ func (o *Tenant) UnmarshalJSON(data []byte) (err error) {
 		"circuit_count",
 		"ipaddress_count",
 		"rack_count",
-		"vlan_count",
-		"vrf_count",
 	}
 
 	allProperties := make(map[string]interface{})

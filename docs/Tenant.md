@@ -23,15 +23,15 @@ Name | Type | Description | Notes
 **RackCount** | **int64** |  | [readonly] 
 **SiteCount** | Pointer to **int64** |  | [optional] [readonly] 
 **VirtualmachineCount** | Pointer to **int64** |  | [optional] [readonly] 
-**VlanCount** | **int64** |  | [readonly] 
-**VrfCount** | **int64** |  | [readonly] 
+**VlanCount** | Pointer to **int64** |  | [optional] [readonly] 
+**VrfCount** | Pointer to **int64** |  | [optional] [readonly] 
 **ClusterCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewTenant
 
-`func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, rackCount int64, vlanCount int64, vrfCount int64, ) *Tenant`
+`func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, rackCount int64, ) *Tenant`
 
 NewTenant instantiates a new Tenant object
 This constructor will assign default values to properties that have it defined,
@@ -530,6 +530,11 @@ and a boolean to check if the value has been set.
 
 SetVlanCount sets VlanCount field to given value.
 
+### HasVlanCount
+
+`func (o *Tenant) HasVlanCount() bool`
+
+HasVlanCount returns a boolean if a field has been set.
 
 ### GetVrfCount
 
@@ -550,6 +555,11 @@ and a boolean to check if the value has been set.
 
 SetVrfCount sets VrfCount field to given value.
 
+### HasVrfCount
+
+`func (o *Tenant) HasVrfCount() bool`
+
+HasVrfCount returns a boolean if a field has been set.
 
 ### GetClusterCount
 

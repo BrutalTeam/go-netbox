@@ -54,7 +54,7 @@ type Site struct {
 	PrefixCount          *int64                 `json:"prefix_count,omitempty"`
 	RackCount            int64                  `json:"rack_count"`
 	VirtualmachineCount  *int64                 `json:"virtualmachine_count,omitempty"`
-	VlanCount            int64                  `json:"vlan_count"`
+	VlanCount            *int64                 `json:"vlan_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -64,7 +64,7 @@ type _Site Site
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSite(id int32, url string, display string, name string, slug string, circuitCount int64, rackCount int64, vlanCount int64) *Site {
+func NewSite(id int32, url string, display string, name string, slug string, circuitCount int64, rackCount int64) *Site {
 	this := Site{}
 	this.Id = id
 	this.Url = url
@@ -73,7 +73,6 @@ func NewSite(id int32, url string, display string, name string, slug string, cir
 	this.Slug = slug
 	this.CircuitCount = circuitCount
 	this.RackCount = rackCount
-	this.VlanCount = vlanCount
 	return &this
 }
 
@@ -981,28 +980,36 @@ func (o *Site) SetVirtualmachineCount(v int64) {
 	o.VirtualmachineCount = &v
 }
 
-// GetVlanCount returns the VlanCount field value
+// GetVlanCount returns the VlanCount field value if set, zero value otherwise.
 func (o *Site) GetVlanCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.VlanCount
+	return *o.VlanCount
 }
 
-// GetVlanCountOk returns a tuple with the VlanCount field value
+// GetVlanCountOk returns a tuple with the VlanCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Site) GetVlanCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.VlanCount) {
 		return nil, false
 	}
-	return &o.VlanCount, true
+	return o.VlanCount, true
 }
 
-// SetVlanCount sets field value
+// HasVlanCount returns a boolean if a field has been set.
+func (o *Site) HasVlanCount() bool {
+	if o != nil && !IsNil(o.VlanCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetVlanCount gets a reference to the given int64 and assigns it to the VlanCount field.
 func (o *Site) SetVlanCount(v int64) {
-	o.VlanCount = v
+	o.VlanCount = &v
 }
 
 func (o Site) MarshalJSON() ([]byte, error) {
@@ -1082,7 +1089,9 @@ func (o Site) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.VirtualmachineCount) {
 		toSerialize["virtualmachine_count"] = o.VirtualmachineCount
 	}
-	toSerialize["vlan_count"] = o.VlanCount
+	if !IsNil(o.VlanCount) {
+		toSerialize["vlan_count"] = o.VlanCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -1103,7 +1112,6 @@ func (o *Site) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"circuit_count",
 		"rack_count",
-		"vlan_count",
 	}
 
 	allProperties := make(map[string]interface{})

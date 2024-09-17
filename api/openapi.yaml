@@ -104101,7 +104101,6 @@ components:
       - name
       - slug
       - url
-      - vlan_count
     BriefRoleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -104540,7 +104539,6 @@ components:
       - name
       - slug
       - url
-      - vlan_count
     BriefVLANGroupRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -137533,7 +137531,6 @@ components:
       - name
       - slug
       - url
-      - vlan_count
     RoleRequest:
       type: object
       description: Adds support for custom fields and tags.
@@ -138194,7 +138191,6 @@ components:
       - rack_count
       - slug
       - url
-      - vlan_count
     SiteGroup:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -138565,8 +138561,6 @@ components:
       - rack_count
       - slug
       - url
-      - vlan_count
-      - vrf_count
     TenantGroup:
       type: object
       description: Extends PrimaryModelSerializer to include MPTT support.
@@ -139516,7 +139510,6 @@ components:
       - slug
       - url
       - utilization
-      - vlan_count
     VLANGroupRequest:
       type: object
       description: Adds support for custom fields and tags.
