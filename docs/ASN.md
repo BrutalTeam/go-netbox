@@ -17,13 +17,13 @@ Name | Type | Description | Notes
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **SiteCount** | Pointer to **int64** |  | [optional] [readonly] 
-**ProviderCount** | **int64** |  | [readonly] 
+**ProviderCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewASN
 
-`func NewASN(id int32, url string, display string, asn int64, providerCount int64, ) *ASN`
+`func NewASN(id int32, url string, display string, asn int64, ) *ASN`
 
 NewASN instantiates a new ASN object
 This constructor will assign default values to properties that have it defined,
@@ -402,6 +402,11 @@ and a boolean to check if the value has been set.
 
 SetProviderCount sets ProviderCount field to given value.
 
+### HasProviderCount
+
+`func (o *ASN) HasProviderCount() bool`
+
+HasProviderCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

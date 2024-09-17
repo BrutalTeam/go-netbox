@@ -101549,7 +101549,6 @@ components:
       - asn
       - display
       - id
-      - provider_count
       - url
     ASNRange:
       type: object

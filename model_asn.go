@@ -35,7 +35,7 @@ type ASN struct {
 	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated,omitempty"`
 	SiteCount            *int64                 `json:"site_count,omitempty"`
-	ProviderCount        int64                  `json:"provider_count"`
+	ProviderCount        *int64                 `json:"provider_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -45,13 +45,12 @@ type _ASN ASN
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewASN(id int32, url string, display string, asn int64, providerCount int64) *ASN {
+func NewASN(id int32, url string, display string, asn int64) *ASN {
 	this := ASN{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Asn = asn
-	this.ProviderCount = providerCount
 	return &this
 }
 
@@ -491,28 +490,36 @@ func (o *ASN) SetSiteCount(v int64) {
 	o.SiteCount = &v
 }
 
-// GetProviderCount returns the ProviderCount field value
+// GetProviderCount returns the ProviderCount field value if set, zero value otherwise.
 func (o *ASN) GetProviderCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.ProviderCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.ProviderCount
+	return *o.ProviderCount
 }
 
-// GetProviderCountOk returns a tuple with the ProviderCount field value
+// GetProviderCountOk returns a tuple with the ProviderCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ASN) GetProviderCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ProviderCount) {
 		return nil, false
 	}
-	return &o.ProviderCount, true
+	return o.ProviderCount, true
 }
 
-// SetProviderCount sets field value
+// HasProviderCount returns a boolean if a field has been set.
+func (o *ASN) HasProviderCount() bool {
+	if o != nil && !IsNil(o.ProviderCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetProviderCount gets a reference to the given int64 and assigns it to the ProviderCount field.
 func (o *ASN) SetProviderCount(v int64) {
-	o.ProviderCount = v
+	o.ProviderCount = &v
 }
 
 func (o ASN) MarshalJSON() ([]byte, error) {
@@ -556,7 +563,9 @@ func (o ASN) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SiteCount) {
 		toSerialize["site_count"] = o.SiteCount
 	}
-	toSerialize["provider_count"] = o.ProviderCount
+	if !IsNil(o.ProviderCount) {
+		toSerialize["provider_count"] = o.ProviderCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -574,7 +583,6 @@ func (o *ASN) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"asn",
-		"provider_count",
 	}
 
 	allProperties := make(map[string]interface{})
