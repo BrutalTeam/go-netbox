@@ -12,7 +12,6 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the BriefVLANRequest type satisfies the MappedNullable interface at compile time
@@ -21,7 +20,7 @@ var _ MappedNullable = &BriefVLANRequest{}
 // BriefVLANRequest Adds support for custom fields and tags.
 type BriefVLANRequest struct {
 	// Numeric VLAN ID (1-4094)
-	Vid                  int32   `json:"vid"`
+	Vid                  *int32  `json:"vid,omitempty"`
 	Name                 *string `json:"name,omitempty"`
 	Description          *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -33,9 +32,8 @@ type _BriefVLANRequest BriefVLANRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefVLANRequest(vid int32) *BriefVLANRequest {
+func NewBriefVLANRequest() *BriefVLANRequest {
 	this := BriefVLANRequest{}
-	this.Vid = vid
 	return &this
 }
 
@@ -47,28 +45,36 @@ func NewBriefVLANRequestWithDefaults() *BriefVLANRequest {
 	return &this
 }
 
-// GetVid returns the Vid field value
+// GetVid returns the Vid field value if set, zero value otherwise.
 func (o *BriefVLANRequest) GetVid() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.Vid) {
 		var ret int32
 		return ret
 	}
-
-	return o.Vid
+	return *o.Vid
 }
 
-// GetVidOk returns a tuple with the Vid field value
+// GetVidOk returns a tuple with the Vid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefVLANRequest) GetVidOk() (*int32, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Vid) {
 		return nil, false
 	}
-	return &o.Vid, true
+	return o.Vid, true
 }
 
-// SetVid sets field value
+// HasVid returns a boolean if a field has been set.
+func (o *BriefVLANRequest) HasVid() bool {
+	if o != nil && !IsNil(o.Vid) {
+		return true
+	}
+
+	return false
+}
+
+// SetVid gets a reference to the given int32 and assigns it to the Vid field.
 func (o *BriefVLANRequest) SetVid(v int32) {
-	o.Vid = v
+	o.Vid = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -145,7 +151,9 @@ func (o BriefVLANRequest) MarshalJSON() ([]byte, error) {
 
 func (o BriefVLANRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["vid"] = o.Vid
+	if !IsNil(o.Vid) {
+		toSerialize["vid"] = o.Vid
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
@@ -161,27 +169,6 @@ func (o BriefVLANRequest) ToMap() (map[string]interface{}, error) {
 }
 
 func (o *BriefVLANRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"vid",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varBriefVLANRequest := _BriefVLANRequest{}
 
 	err = json.Unmarshal(data, &varBriefVLANRequest)

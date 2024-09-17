@@ -104512,8 +104512,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - vid
+      required: []
     BriefVRF:
       type: object
       description: Adds support for custom fields and tags.
