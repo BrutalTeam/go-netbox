@@ -51,7 +51,7 @@ type Site struct {
 	LastUpdated          NullableTime           `json:"last_updated,omitempty"`
 	CircuitCount         int64                  `json:"circuit_count"`
 	DeviceCount          *int64                 `json:"device_count,omitempty"`
-	PrefixCount          int64                  `json:"prefix_count"`
+	PrefixCount          *int64                 `json:"prefix_count,omitempty"`
 	RackCount            int64                  `json:"rack_count"`
 	VirtualmachineCount  *int64                 `json:"virtualmachine_count,omitempty"`
 	VlanCount            int64                  `json:"vlan_count"`
@@ -64,7 +64,7 @@ type _Site Site
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSite(id int32, url string, display string, name string, slug string, circuitCount int64, prefixCount int64, rackCount int64, vlanCount int64) *Site {
+func NewSite(id int32, url string, display string, name string, slug string, circuitCount int64, rackCount int64, vlanCount int64) *Site {
 	this := Site{}
 	this.Id = id
 	this.Url = url
@@ -72,7 +72,6 @@ func NewSite(id int32, url string, display string, name string, slug string, cir
 	this.Name = name
 	this.Slug = slug
 	this.CircuitCount = circuitCount
-	this.PrefixCount = prefixCount
 	this.RackCount = rackCount
 	this.VlanCount = vlanCount
 	return &this
@@ -894,28 +893,36 @@ func (o *Site) SetDeviceCount(v int64) {
 	o.DeviceCount = &v
 }
 
-// GetPrefixCount returns the PrefixCount field value
+// GetPrefixCount returns the PrefixCount field value if set, zero value otherwise.
 func (o *Site) GetPrefixCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.PrefixCount
+	return *o.PrefixCount
 }
 
-// GetPrefixCountOk returns a tuple with the PrefixCount field value
+// GetPrefixCountOk returns a tuple with the PrefixCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Site) GetPrefixCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		return nil, false
 	}
-	return &o.PrefixCount, true
+	return o.PrefixCount, true
 }
 
-// SetPrefixCount sets field value
+// HasPrefixCount returns a boolean if a field has been set.
+func (o *Site) HasPrefixCount() bool {
+	if o != nil && !IsNil(o.PrefixCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrefixCount gets a reference to the given int64 and assigns it to the PrefixCount field.
 func (o *Site) SetPrefixCount(v int64) {
-	o.PrefixCount = v
+	o.PrefixCount = &v
 }
 
 // GetRackCount returns the RackCount field value
@@ -1068,7 +1075,9 @@ func (o Site) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DeviceCount) {
 		toSerialize["device_count"] = o.DeviceCount
 	}
-	toSerialize["prefix_count"] = o.PrefixCount
+	if !IsNil(o.PrefixCount) {
+		toSerialize["prefix_count"] = o.PrefixCount
+	}
 	toSerialize["rack_count"] = o.RackCount
 	if !IsNil(o.VirtualmachineCount) {
 		toSerialize["virtualmachine_count"] = o.VirtualmachineCount
@@ -1093,7 +1102,6 @@ func (o *Site) UnmarshalJSON(data []byte) (err error) {
 		"name",
 		"slug",
 		"circuit_count",
-		"prefix_count",
 		"rack_count",
 		"vlan_count",
 	}

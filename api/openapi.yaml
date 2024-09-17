@@ -104101,7 +104101,6 @@ components:
       - display
       - id
       - name
-      - prefix_count
       - slug
       - url
       - vlan_count
@@ -104617,7 +104616,6 @@ components:
       - display
       - id
       - name
-      - prefix_count
       - url
     BriefVRFRequest:
       type: object
@@ -137537,7 +137535,6 @@ components:
       - display
       - id
       - name
-      - prefix_count
       - slug
       - url
       - vlan_count
@@ -138198,7 +138195,6 @@ components:
       - display
       - id
       - name
-      - prefix_count
       - rack_count
       - slug
       - url
@@ -138571,7 +138567,6 @@ components:
       - id
       - ipaddress_count
       - name
-      - prefix_count
       - rack_count
       - slug
       - url
@@ -139448,7 +139443,6 @@ components:
       - display
       - id
       - name
-      - prefix_count
       - url
       - vid
     VLANGroup:
@@ -139880,7 +139874,6 @@ components:
       - id
       - ipaddress_count
       - name
-      - prefix_count
       - url
     VRFRequest:
       type: object

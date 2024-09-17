@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **CircuitCount** | **int64** |  | [readonly] 
 **DeviceCount** | Pointer to **int64** |  | [optional] [readonly] 
 **IpaddressCount** | **int64** |  | [readonly] 
-**PrefixCount** | **int64** |  | [readonly] 
+**PrefixCount** | Pointer to **int64** |  | [optional] [readonly] 
 **RackCount** | **int64** |  | [readonly] 
 **SiteCount** | Pointer to **int64** |  | [optional] [readonly] 
 **VirtualmachineCount** | Pointer to **int64** |  | [optional] [readonly] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewTenant
 
-`func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, prefixCount int64, rackCount int64, vlanCount int64, vrfCount int64, clusterCount int64, ) *Tenant`
+`func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, rackCount int64, vlanCount int64, vrfCount int64, clusterCount int64, ) *Tenant`
 
 NewTenant instantiates a new Tenant object
 This constructor will assign default values to properties that have it defined,
@@ -435,6 +435,11 @@ and a boolean to check if the value has been set.
 
 SetPrefixCount sets PrefixCount field to given value.
 
+### HasPrefixCount
+
+`func (o *Tenant) HasPrefixCount() bool`
+
+HasPrefixCount returns a boolean if a field has been set.
 
 ### GetRackCount
 

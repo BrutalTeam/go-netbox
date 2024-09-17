@@ -36,7 +36,7 @@ type Tenant struct {
 	CircuitCount         int64                    `json:"circuit_count"`
 	DeviceCount          *int64                   `json:"device_count,omitempty"`
 	IpaddressCount       int64                    `json:"ipaddress_count"`
-	PrefixCount          int64                    `json:"prefix_count"`
+	PrefixCount          *int64                   `json:"prefix_count,omitempty"`
 	RackCount            int64                    `json:"rack_count"`
 	SiteCount            *int64                   `json:"site_count,omitempty"`
 	VirtualmachineCount  *int64                   `json:"virtualmachine_count,omitempty"`
@@ -52,7 +52,7 @@ type _Tenant Tenant
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, prefixCount int64, rackCount int64, vlanCount int64, vrfCount int64, clusterCount int64) *Tenant {
+func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, rackCount int64, vlanCount int64, vrfCount int64, clusterCount int64) *Tenant {
 	this := Tenant{}
 	this.Id = id
 	this.Url = url
@@ -61,7 +61,6 @@ func NewTenant(id int32, url string, display string, name string, slug string, c
 	this.Slug = slug
 	this.CircuitCount = circuitCount
 	this.IpaddressCount = ipaddressCount
-	this.PrefixCount = prefixCount
 	this.RackCount = rackCount
 	this.VlanCount = vlanCount
 	this.VrfCount = vrfCount
@@ -534,28 +533,36 @@ func (o *Tenant) SetIpaddressCount(v int64) {
 	o.IpaddressCount = v
 }
 
-// GetPrefixCount returns the PrefixCount field value
+// GetPrefixCount returns the PrefixCount field value if set, zero value otherwise.
 func (o *Tenant) GetPrefixCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.PrefixCount
+	return *o.PrefixCount
 }
 
-// GetPrefixCountOk returns a tuple with the PrefixCount field value
+// GetPrefixCountOk returns a tuple with the PrefixCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetPrefixCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.PrefixCount) {
 		return nil, false
 	}
-	return &o.PrefixCount, true
+	return o.PrefixCount, true
 }
 
-// SetPrefixCount sets field value
+// HasPrefixCount returns a boolean if a field has been set.
+func (o *Tenant) HasPrefixCount() bool {
+	if o != nil && !IsNil(o.PrefixCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetPrefixCount gets a reference to the given int64 and assigns it to the PrefixCount field.
 func (o *Tenant) SetPrefixCount(v int64) {
-	o.PrefixCount = v
+	o.PrefixCount = &v
 }
 
 // GetRackCount returns the RackCount field value
@@ -759,7 +766,9 @@ func (o Tenant) ToMap() (map[string]interface{}, error) {
 		toSerialize["device_count"] = o.DeviceCount
 	}
 	toSerialize["ipaddress_count"] = o.IpaddressCount
-	toSerialize["prefix_count"] = o.PrefixCount
+	if !IsNil(o.PrefixCount) {
+		toSerialize["prefix_count"] = o.PrefixCount
+	}
 	toSerialize["rack_count"] = o.RackCount
 	if !IsNil(o.SiteCount) {
 		toSerialize["site_count"] = o.SiteCount
@@ -790,7 +799,6 @@ func (o *Tenant) UnmarshalJSON(data []byte) (err error) {
 		"slug",
 		"circuit_count",
 		"ipaddress_count",
-		"prefix_count",
 		"rack_count",
 		"vlan_count",
 		"vrf_count",

@@ -48,6 +48,7 @@ if 'components' in data and 'schemas' in data['components']:
                 'device_count',
                 'site_count',
                 'provider_count',
+                'prefix_count',
                 'nat_outside',
             ]
 
