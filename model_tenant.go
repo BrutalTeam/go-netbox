@@ -42,7 +42,7 @@ type Tenant struct {
 	VirtualmachineCount  *int64                   `json:"virtualmachine_count,omitempty"`
 	VlanCount            int64                    `json:"vlan_count"`
 	VrfCount             int64                    `json:"vrf_count"`
-	ClusterCount         int64                    `json:"cluster_count"`
+	ClusterCount         *int64                   `json:"cluster_count,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -52,7 +52,7 @@ type _Tenant Tenant
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, rackCount int64, vlanCount int64, vrfCount int64, clusterCount int64) *Tenant {
+func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, rackCount int64, vlanCount int64, vrfCount int64) *Tenant {
 	this := Tenant{}
 	this.Id = id
 	this.Url = url
@@ -64,7 +64,6 @@ func NewTenant(id int32, url string, display string, name string, slug string, c
 	this.RackCount = rackCount
 	this.VlanCount = vlanCount
 	this.VrfCount = vrfCount
-	this.ClusterCount = clusterCount
 	return &this
 }
 
@@ -701,28 +700,36 @@ func (o *Tenant) SetVrfCount(v int64) {
 	o.VrfCount = v
 }
 
-// GetClusterCount returns the ClusterCount field value
+// GetClusterCount returns the ClusterCount field value if set, zero value otherwise.
 func (o *Tenant) GetClusterCount() int64 {
-	if o == nil {
+	if o == nil || IsNil(o.ClusterCount) {
 		var ret int64
 		return ret
 	}
-
-	return o.ClusterCount
+	return *o.ClusterCount
 }
 
-// GetClusterCountOk returns a tuple with the ClusterCount field value
+// GetClusterCountOk returns a tuple with the ClusterCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Tenant) GetClusterCountOk() (*int64, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.ClusterCount) {
 		return nil, false
 	}
-	return &o.ClusterCount, true
+	return o.ClusterCount, true
 }
 
-// SetClusterCount sets field value
+// HasClusterCount returns a boolean if a field has been set.
+func (o *Tenant) HasClusterCount() bool {
+	if o != nil && !IsNil(o.ClusterCount) {
+		return true
+	}
+
+	return false
+}
+
+// SetClusterCount gets a reference to the given int64 and assigns it to the ClusterCount field.
 func (o *Tenant) SetClusterCount(v int64) {
-	o.ClusterCount = v
+	o.ClusterCount = &v
 }
 
 func (o Tenant) MarshalJSON() ([]byte, error) {
@@ -778,7 +785,9 @@ func (o Tenant) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["vlan_count"] = o.VlanCount
 	toSerialize["vrf_count"] = o.VrfCount
-	toSerialize["cluster_count"] = o.ClusterCount
+	if !IsNil(o.ClusterCount) {
+		toSerialize["cluster_count"] = o.ClusterCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -802,7 +811,6 @@ func (o *Tenant) UnmarshalJSON(data []byte) (err error) {
 		"rack_count",
 		"vlan_count",
 		"vrf_count",
-		"cluster_count",
 	}
 
 	allProperties := make(map[string]interface{})

@@ -25,13 +25,13 @@ Name | Type | Description | Notes
 **VirtualmachineCount** | Pointer to **int64** |  | [optional] [readonly] 
 **VlanCount** | **int64** |  | [readonly] 
 **VrfCount** | **int64** |  | [readonly] 
-**ClusterCount** | **int64** |  | [readonly] 
+**ClusterCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewTenant
 
-`func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, rackCount int64, vlanCount int64, vrfCount int64, clusterCount int64, ) *Tenant`
+`func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, rackCount int64, vlanCount int64, vrfCount int64, ) *Tenant`
 
 NewTenant instantiates a new Tenant object
 This constructor will assign default values to properties that have it defined,
@@ -570,6 +570,11 @@ and a boolean to check if the value has been set.
 
 SetClusterCount sets ClusterCount field to given value.
 
+### HasClusterCount
+
+`func (o *Tenant) HasClusterCount() bool`
+
+HasClusterCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -102114,7 +102114,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
       - display
       - id
       - name
@@ -102181,7 +102180,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
       - display
       - id
       - name
@@ -105906,7 +105904,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
       - display
       - id
       - name
@@ -106039,7 +106036,6 @@ components:
           format: int64
           readOnly: true
       required:
-      - cluster_count
       - display
       - id
       - name
@@ -138562,7 +138558,6 @@ components:
           readOnly: true
       required:
       - circuit_count
-      - cluster_count
       - display
       - id
       - ipaddress_count

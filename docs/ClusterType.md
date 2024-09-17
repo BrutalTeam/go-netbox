@@ -14,13 +14,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**ClusterCount** | **int64** |  | [readonly] 
+**ClusterCount** | Pointer to **int64** |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewClusterType
 
-`func NewClusterType(id int32, url string, display string, name string, slug string, clusterCount int64, ) *ClusterType`
+`func NewClusterType(id int32, url string, display string, name string, slug string, ) *ClusterType`
 
 NewClusterType instantiates a new ClusterType object
 This constructor will assign default values to properties that have it defined,
@@ -299,6 +299,11 @@ and a boolean to check if the value has been set.
 
 SetClusterCount sets ClusterCount field to given value.
 
+### HasClusterCount
+
+`func (o *ClusterType) HasClusterCount() bool`
+
+HasClusterCount returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
