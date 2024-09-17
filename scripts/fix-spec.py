@@ -46,6 +46,7 @@ if 'components' in data and 'schemas' in data['components']:
                 'virtualmachine_count',
                 'devicetype_count',
                 'device_count',
+                'site_count',
                 'nat_outside',
             ]
 

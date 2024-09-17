@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **IpaddressCount** | **int64** |  | [readonly] 
 **PrefixCount** | **int64** |  | [readonly] 
 **RackCount** | **int64** |  | [readonly] 
-**SiteCount** | **int64** |  | [readonly] 
+**SiteCount** | Pointer to **int64** |  | [optional] [readonly] 
 **VirtualmachineCount** | Pointer to **int64** |  | [optional] [readonly] 
 **VlanCount** | **int64** |  | [readonly] 
 **VrfCount** | **int64** |  | [readonly] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 
 ### NewTenant
 
-`func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, prefixCount int64, rackCount int64, siteCount int64, vlanCount int64, vrfCount int64, clusterCount int64, ) *Tenant`
+`func NewTenant(id int32, url string, display string, name string, slug string, circuitCount int64, ipaddressCount int64, prefixCount int64, rackCount int64, vlanCount int64, vrfCount int64, clusterCount int64, ) *Tenant`
 
 NewTenant instantiates a new Tenant object
 This constructor will assign default values to properties that have it defined,
@@ -475,6 +475,11 @@ and a boolean to check if the value has been set.
 
 SetSiteCount sets SiteCount field to given value.
 
+### HasSiteCount
+
+`func (o *Tenant) HasSiteCount() bool`
+
+HasSiteCount returns a boolean if a field has been set.
 
 ### GetVirtualmachineCount
 

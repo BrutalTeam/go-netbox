@@ -15,14 +15,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**SiteCount** | **int32** |  | [readonly] [default to 0]
+**SiteCount** | Pointer to **int32** |  | [optional] [readonly] [default to 0]
 **Depth** | **int32** |  | [readonly] 
 
 ## Methods
 
 ### NewSiteGroup
 
-`func NewSiteGroup(id int32, url string, display string, name string, slug string, siteCount int32, depth int32, ) *SiteGroup`
+`func NewSiteGroup(id int32, url string, display string, name string, slug string, depth int32, ) *SiteGroup`
 
 NewSiteGroup instantiates a new SiteGroup object
 This constructor will assign default values to properties that have it defined,
@@ -336,6 +336,11 @@ and a boolean to check if the value has been set.
 
 SetSiteCount sets SiteCount field to given value.
 
+### HasSiteCount
+
+`func (o *SiteGroup) HasSiteCount() bool`
+
+HasSiteCount returns a boolean if a field has been set.
 
 ### GetDepth
 

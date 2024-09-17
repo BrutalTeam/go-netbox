@@ -101550,7 +101550,6 @@ components:
       - display
       - id
       - provider_count
-      - site_count
       - url
     ASNRange:
       type: object
@@ -104046,7 +104045,6 @@ components:
       - display
       - id
       - name
-      - site_count
       - slug
       - url
     BriefRegionRequest:
@@ -104195,7 +104193,6 @@ components:
       - display
       - id
       - name
-      - site_count
       - slug
       - url
     BriefSiteGroupRequest:
@@ -137452,7 +137449,6 @@ components:
       - display
       - id
       - name
-      - site_count
       - slug
       - url
     RegionRequest:
@@ -138266,7 +138262,6 @@ components:
       - display
       - id
       - name
-      - site_count
       - slug
       - url
     SiteGroupRequest:
@@ -138579,7 +138574,6 @@ components:
       - name
       - prefix_count
       - rack_count
-      - site_count
       - slug
       - url
       - vlan_count

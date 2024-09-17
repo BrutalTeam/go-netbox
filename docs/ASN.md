@@ -16,14 +16,14 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**SiteCount** | **int64** |  | [readonly] 
+**SiteCount** | Pointer to **int64** |  | [optional] [readonly] 
 **ProviderCount** | **int64** |  | [readonly] 
 
 ## Methods
 
 ### NewASN
 
-`func NewASN(id int32, url string, display string, asn int64, siteCount int64, providerCount int64, ) *ASN`
+`func NewASN(id int32, url string, display string, asn int64, providerCount int64, ) *ASN`
 
 NewASN instantiates a new ASN object
 This constructor will assign default values to properties that have it defined,
@@ -377,6 +377,11 @@ and a boolean to check if the value has been set.
 
 SetSiteCount sets SiteCount field to given value.
 
+### HasSiteCount
+
+`func (o *ASN) HasSiteCount() bool`
+
+HasSiteCount returns a boolean if a field has been set.
 
 ### GetProviderCount
 
