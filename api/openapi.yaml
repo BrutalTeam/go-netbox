@@ -102814,8 +102814,7 @@ components:
         description:
           type: string
           maxLength: 200
-      required:
-      - address
+      required: []
     BriefIPSecPolicy:
       type: object
       description: Adds support for custom fields and tags.

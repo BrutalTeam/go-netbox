@@ -12,7 +12,6 @@ package netbox
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
 // checks if the BriefIPAddressRequest type satisfies the MappedNullable interface at compile time
@@ -20,7 +19,7 @@ var _ MappedNullable = &BriefIPAddressRequest{}
 
 // BriefIPAddressRequest Adds support for custom fields and tags.
 type BriefIPAddressRequest struct {
-	Address              string  `json:"address"`
+	Address              *string `json:"address,omitempty"`
 	Description          *string `json:"description,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
@@ -31,9 +30,8 @@ type _BriefIPAddressRequest BriefIPAddressRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBriefIPAddressRequest(address string) *BriefIPAddressRequest {
+func NewBriefIPAddressRequest() *BriefIPAddressRequest {
 	this := BriefIPAddressRequest{}
-	this.Address = address
 	return &this
 }
 
@@ -45,28 +43,36 @@ func NewBriefIPAddressRequestWithDefaults() *BriefIPAddressRequest {
 	return &this
 }
 
-// GetAddress returns the Address field value
+// GetAddress returns the Address field value if set, zero value otherwise.
 func (o *BriefIPAddressRequest) GetAddress() string {
-	if o == nil {
+	if o == nil || IsNil(o.Address) {
 		var ret string
 		return ret
 	}
-
-	return o.Address
+	return *o.Address
 }
 
-// GetAddressOk returns a tuple with the Address field value
+// GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BriefIPAddressRequest) GetAddressOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.Address) {
 		return nil, false
 	}
-	return &o.Address, true
+	return o.Address, true
 }
 
-// SetAddress sets field value
+// HasAddress returns a boolean if a field has been set.
+func (o *BriefIPAddressRequest) HasAddress() bool {
+	if o != nil && !IsNil(o.Address) {
+		return true
+	}
+
+	return false
+}
+
+// SetAddress gets a reference to the given string and assigns it to the Address field.
 func (o *BriefIPAddressRequest) SetAddress(v string) {
-	o.Address = v
+	o.Address = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -111,7 +117,9 @@ func (o BriefIPAddressRequest) MarshalJSON() ([]byte, error) {
 
 func (o BriefIPAddressRequest) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["address"] = o.Address
+	if !IsNil(o.Address) {
+		toSerialize["address"] = o.Address
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -124,27 +132,6 @@ func (o BriefIPAddressRequest) ToMap() (map[string]interface{}, error) {
 }
 
 func (o *BriefIPAddressRequest) UnmarshalJSON(data []byte) (err error) {
-	// This validates that all required properties are included in the JSON object
-	// by unmarshalling the object into a generic map with string keys and checking
-	// that every required field exists as a key in the generic map.
-	requiredProperties := []string{
-		"address",
-	}
-
-	allProperties := make(map[string]interface{})
-
-	err = json.Unmarshal(data, &allProperties)
-
-	if err != nil {
-		return err
-	}
-
-	for _, requiredProperty := range requiredProperties {
-		if _, exists := allProperties[requiredProperty]; !exists {
-			return fmt.Errorf("no value given for required property %v", requiredProperty)
-		}
-	}
-
 	varBriefIPAddressRequest := _BriefIPAddressRequest{}
 
 	err = json.Unmarshal(data, &varBriefIPAddressRequest)

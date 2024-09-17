@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address** | **string** |  | 
+**Address** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBriefIPAddressRequest
 
-`func NewBriefIPAddressRequest(address string, ) *BriefIPAddressRequest`
+`func NewBriefIPAddressRequest() *BriefIPAddressRequest`
 
 NewBriefIPAddressRequest instantiates a new BriefIPAddressRequest object
 This constructor will assign default values to properties that have it defined,
@@ -45,6 +45,11 @@ and a boolean to check if the value has been set.
 
 SetAddress sets Address field to given value.
 
+### HasAddress
+
+`func (o *BriefIPAddressRequest) HasAddress() bool`
+
+HasAddress returns a boolean if a field has been set.
 
 ### GetDescription
 

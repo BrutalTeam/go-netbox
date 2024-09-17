@@ -63,6 +63,9 @@ if 'components' in data and 'schemas' in data['components']:
             if name == 'BriefVLANRequest':
                 non_required_types.append('vid')
 
+            if name == 'BriefIPAddressRequest':
+                non_required_types.append('address')
+
             # remove non-required fields
             if 'required' in schema:
                 # foreach all properties
